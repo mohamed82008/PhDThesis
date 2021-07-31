@@ -1,0 +1,211 @@
+%%Base template MIT thesis
+\documentclass[12pt,vi,twoside]{mitthesis}
+
+%\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\usepackage{newtxtext,newtxmath}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{comment}
+\usepackage{algorithm, algorithmic}
+\usepackage{adjustbox}
+\usepackage{tabularx}
+\usepackage{optidef}
+\usepackage{csquotes}% Recommended
+\usepackage{lgrind}
+\usepackage{multicol}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{fancyheadings}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{rotating}
+%\usepackage{changepage}
+\usepackage{pgfgantt}
+%\usepackage{pdflscape} % provides the landscape environment
+\usepackage{ragged2e} % provides \RaggedLeft
+%\usepackage{geometry} % to change margins
+\usepackage{hyperref}
+\usepackage{natbib}
+\citestyle{aysep={,}}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{appendix}
+\usepackage{afterpage}
+\usepackage[en-US]{datetime2}
+
+\usepackage{pgfplots}
+\usepackage{svg}
+\usepackage{multirow}
+\usepackage{tikzscale}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations,decorations.markings,decorations.text}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+% Adapted from the 'patterns' library: enlarged the distance between the lines from 4pt to 10pt
+\pgfdeclarepatternformonly{north east lines wide}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{10pt}{10pt}}{\pgfqpoint{9pt}{9pt}}%
+{
+  \pgfsetlinewidth{0.4pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{9.1pt}{9.1pt}}
+  \pgfusepath{stroke}
+}
+\tikzset{%
+    body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,thick},
+    marked body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,pattern=north east lines},
+    dimen/.style={<->,>=latex,thin,every rectangle node/.style={fill=white,midway,font=\sffamily}},
+    symmetry/.style={dashed,thin},
+}
+\newcommand\ontop[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\usepackage{makecell}
+\usepackage{cleveref}
+\usepackage{etoolbox}\robustify{\label}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+%\usepackage{minted}
+%\usepackage{pdfpages}
+
+%\lstdefinestyle{sharpc}{language=[Sharp]C,}
+
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+%custom title spacing
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+%\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+%custom section & paragraph
+%\setcounter{secnumdepth}{4}
+%
+%\titleformat{\paragraph}
+%{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\titlespacing*{\paragraph}
+%{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%set hyperlink settings
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+
+
+
+
+\pagestyle{plain}
+
+
+
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}{\bfseries\Large\centering}{\thechapter.}{0.4em}{}
+\titlespacing*{\chapter}{0mm}{3em}{1em}
+
+%empty header for page
+\fancypagestyle{EmptyHeader}{%
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{1pt}
+}
+
+
+%References details
+%\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+%\addbibresource{References/refFile.bib}% Syntax for version >= 1.2
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+
+\begin{document}
+	%The \raggedbottom declaration makes all pages the height of the text on that page. No extra vertical space is added.
+	\raggedbottom
+	
+	%Set Table of Contents Depth
+	%\setcounter{tocdepth}{3}
+	%Set Section Depth
+	\setcounter{secnumdepth}{3}
+	
+	
+	
+	%Empty footer for first pages
+	\pagestyle{empty}
+	
+	\include{StartPages/cover}
+%	\afterpage{\blankpage}
+	
+	\include{StartPages/abstract}
+	
+	\let\cleardoublepage\clearpage	
+	\include{StartPages/copyright}
+	\include{StartPages/DECLARATION}
+	\include{StartPages/ACKNOWLEDGEMENTS}
+	
+	\include{StartPages/contents}
+	\pagestyle{plain}
+	\pagenumbering{roman}
+	
+	\include{StartPages/FiguresTables}
+	\include{StartPages/symbols}
+	
+	
+	%Header & Footer
+	\pagenumbering{arabic}
+	
+	%Include chapters - every chapter is in a separate folder and file
+	\include{Chapters/chap1}
+		\let\cleardoublepage\clearpage
+	\include{Chapters/chap2}
+	\let\cleardoublepage\clearpage
+
+	\include{Chapters/chap3}
+	\let\cleardoublepage\clearpage
+%	\null\newpage
+	\include{Chapters/chap4}
+	\let\cleardoublepage\clearpage
+	\include{Chapters/chap5}
+	\let\cleardoublepage\clearpage
+	
+	%\rhead{BIBLIOGRAPHY}
+%	\chapter*{REFERENCES}
+	\thispagestyle{EmptyHeader}
+	\label{biblio}
+	
+	\bibliography{References/refFile}
+	\bibliographystyle{agsm}
+	
+	\let\cleardoublepage\clearpage
+	\include{Chapters/appendix}
+	
+%	\let\cleardoublepage\clearpage
+%	\rhead{\leftmark}
+%	\let\cleardoublepage\clearpage
+%	\include{StudyPlan/plan}
+\end{document}

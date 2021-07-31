@@ -1,0 +1,1675 @@
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+\chapter{INTRODUCTION}\thispagestyle{EmptyHeader}
+\label{chp:1}
+
+\section{Motivation}
+
+In mechanical design, the performance of a component largely depends on its shape and the material it is made of. Each component is expected to handle specific loading and position requirements at the "interfaces" of the component with the external environment. For example, a table is expected to handle a specific load over its top surface area, while having a fixed base, and being contained in a specific bounding box. The requirements therefore do not dictate any specific shape to the legs or their number. The shape is actually a decision the designer has to make.
+
+Designing against failure is the primary goal of mechanical design. Mechanical failure of a structure can happen due to a number of factors, e.g. yielding, potentially large deformations due to system bifurcation/instability, fracture, fatigue, creep, etc. It is therefore the job of a designer to identify the best designs that prevent against failure while maximizing or minimizing one or more performance or economic metrics. Automating this task using mathematical models and optimisation algorithms is the purpose of the field of topology and shape optimisation.
+
+There are a number of computational challenges that one faces when trying to computationally optimize the shape of a large or high resolution structure with many degrees of freedom. For example, evaluating the performance metrics may require an expensive physical simulation in the form of a finite element analysis (FEA). The optimization algorithm used should be able to handle a large number of decision variables and constraints. The design produced must be robust to changes or uncertainty in the load, boundary conditions, shape, material properties or other problem data.
+
+\newpage
+\section{Aims}
+
+In this thesis, a number of techniques to accelerate topology optimization algorithms in different contexts are presented in hope to make computational topology optimization more scalable, practical and therefore feasible.
+
+\newpage
+\section{Overview of topology optimization}
+
+\subsection{Continuum vs discrete topology optimization}
+
+Topology optimization problems can fall into 2 broad categories:
+\begin{enumerate}
+    \item Continuum topology optimization
+    \item Discrete topology optimization
+\end{enumerate}
+Continuum topology optimization is topology optimization of continuum structures, where continuum structures are structures modelled as one or more volumes of continuum materials, each of which can be meshed to any arbitrary level of fineness. Discrete topology optimization is topology optimization of discrete structures where discrete structures are structures modelled as a finite set of components connected at specific interface points, e.g. truss systems. In this thesis, the focus is on continuum topology optimization however the techniques proposed can generalize to truss or discrete topology optimization as well.
+
+\subsection{Sizing, shape and topology optimization}
+
+In design optimization literature, there is a distinction between the following 3 terms:
+\begin{enumerate}
+    \item Sizing optimization
+    \item Shape optimization
+    \item Topology optimization
+\end{enumerate}
+Topology optimization, also known as generalized shape optimization, is used to refer the case when the algorithm is allowed to choose where to place holes in the shape. Shape optimization on the other hand is used to refer to the case when the algorithm can change the surface of the shape without creating new surfaces or voids. Sizing optimisation is used to refer to the case where a base design is fixed and parameterized and only a few "size" parameters are allowed to change, e.g. the radius of a cylindrical part of the design.
+
+In order to evaluate objectives and constraints of topology optimization problems, solving a finite element analysis (FEA) is necessary. In the next section, I introduce the theory of linear elasticity before talking more about topology optimization formulations.
+
+\newpage
+\section{Quasi-static linear elasticity}
+
+    Topology optimization problems are a sub-class of physics-constrained optimization problems. In this work, the main physics of concern is structural mechanics with the quasi-static, linear elasticity assumption. This section will detail the theory behind quasi-static linear elasticity and how it relates to topology optimization.
+
+\subsection{Strong form}
+
+	Let the base design from which material may be removed be a compact volume. Let the open domain of material strictly inside this volume be $\Omega$ and its boundary be $\partial \Omega$. Let each point in $\Omega$ be positioned at a location $\bm{x}$ and surrounded by an infinitesimal cube with 2 faces normal to each axis. The following governing differential equation, known as Lam\'e equation, holds at any point in $\Omega$, which can be derived from Newton's second law applied on any arbitrary volume of material.
+	\begin{align} \label{governing}
+		& \sigma_{ij,j}(\bm{x}) = -\rho f_i(\bm{x}) \quad \forall \bm{x} \in \Omega
+	\end{align}
+	where $\bm{f}$ is the first order tensor resembling the body force per unit mass (typically due to gravity) whose component along the $i^{th}$ axis is $f_i$. $\rho$ is the point mass density of the material, and $\bm{\sigma}$ is the symmetric second order stress tensor, where $\sigma_{ij}$ is the component of the traction along the $j^{th}$ axis acting on the face of the deformed infinitesimall cube whose outward normal was the $i^{th}$ axis before deformation. This equation holds for any point in the open domain $\Omega$ but not at the boundary $\partial\Omega$ over which boundary conditions apply. $\sigma_{ij,j}$ is the divergence of the stress tensor along the second index, where "$,j$" implies the derivative with respect to $x_j$, and the repeating index $j$ implies the Einstein summation over the span of the index $j$. So $\sigma_{ij,j}$ is nothing but $\sum_{j} \frac{\partial \sigma_{ij}}{\partial x_j}$. Throughout the following derivations, tensor notation will be used, where a repeating index in the same term implies summation over that index, unless otherwise stated or an explicit summation is used, and free indices in an equation imply the enumeration of all combinations of the indices' values.
+
+	Let $\bm{u}(\bm{x})$ be the deformed position of a point originally positioned at $\bm{x}$. The following is the definition of the symmetric second order strain tensor $\bm{\epsilon}$, assuming infinitesimal strain. This does not account for the effect of buckling.
+	\begin{align} \label{strain}
+		& \epsilon_{ij} = \frac{1}{2}(u_{i,j} + u_{j,i})
+	\end{align}
+
+	The constitutive relation between the stress and strain tensors is given as follows.
+	\begin{align} \label{constitutive}
+		& \sigma_{ij} = C_{ijkm} \epsilon_{km}
+	\end{align}
+	where $\bm{C}$ is the fourth order stiffness tensor of the material and $C_{ijkm} = C_{jikm} = C_{ijmk} = C_{kmij}$. For an isotropic solid, the above equation can be simplified using Hooke's law which defines the relationship between the stress and strain tensors as follows.
+	\begin{align}
+		& \sigma_{ij} = \frac{E\nu}{1-\nu^2} \delta_{ij} \epsilon_{kk} + \frac{E\nu}{1+\nu} \epsilon_{ij}
+	\end{align}
+	where $E$ is the Young's modulus, $\nu$ is Poisson's ratio and $\delta_{ij}$ is the Kronecker delta defined to be 1 when $i = j$ and 0 otherwise.
+
+	Let $\partial\Omega_{Di}$ be the portion of the boundary, whose $u_i$ is known to be $g_i$ and therefore enforced by the following so-called Dirichlet boundary condition, e.g. a point with a pin joint for which all 3 degrees of freedom are fixed.
+	\begin{align} \label{dirichlet}
+		& u_i(\bm{x}) = g_i(\bm{x}) \quad \forall \bm{x} \in \partial \Omega_{Di}
+	\end{align}
+
+	Let $\partial\Omega_{Ni}$ be the portion of the boundary over which a force, $t_i$, per unit area along the $i^{th}$ axis is known and therefore enforced by the following so-called Neumann boundary condition. 
+	\begin{align} \label{neumann}
+		& \sigma_{ij}(\bm{x})n_{j}(\bm{x}) = t_{i}(\bm{x}) \quad \forall \bm{x} \in \partial \Omega_{Ni}
+	\end{align}
+	where $\bm{n}$ is the outward normal at the boundary point. Wherever $u_i$ is not restricted on the boundary by a Dirichlet boundary condition, $t_i = 0$ is used in a Neumann boundary condition. This is often called the natural boundary condition. Note that $\overline{\Omega}$, the closure of $\Omega$, is $\Omega \cup \partial\Omega$, and that $\partial\Omega = \partial\Omega_{Di} \cup \partial\Omega_{Ni}$ for each index $i$, where $\partial\Omega_{Di} \cap \partial\Omega_{Ni} = \phi$, that is $\partial\Omega_{Di}$ and $\partial\Omega_{Ni}$ are complements of each other in the superset $\partial\Omega$. However, $\partial\Omega_{Di}$ and $\partial\Omega_{Dj}$ are not necessarily disjoint for $i \neq j$, as well as $\partial\Omega_{Ni}$ and $\partial\Omega_{Nj}$.
+
+	Let $U_i$ be the set of all functions $\{u_i(\bm{x}): u_i(\bm{x}) = g_i, \forall \bm{x} \in \partial\Omega_{Di} \}$. In an analysis problem, the shape, material and boundary conditions are known, and the functions $u_i(\bm{x}) \in U_i$ over the domain $\Omega$ and the surfaces $\partial \Omega_{Ni}$ are to be identified. Post-processing can then be done to identify $\bm{\sigma}$ over $\Omega$ and the reaction forces at the Dirichlet boundaries. Equations \ref{governing}, \ref{dirichlet} and \ref{neumann} represent what is usually referred to as the strong form of the boundary value problem (BVP). It is called strong form because the function $\bm{u}(\bm{x})$ to be found needs to be differentiable twice. This puts a constraint on any approximation scheme that tries to work directly with the strong form. Notice that the BVP is actually made of 2 partial differential equations for a 2D problem and 3 for a 3D problem.
+
+\subsection{Weak form}
+
+	Let $V_i$ be the set of once-differentiable functions $\{v_i(\bm{x}): v_i(\bm{x}) = 0, \forall \bm{x} \in \partial \Omega_{Di}\}$. $v_i(\bm{x})$ is typically called the weighting function or the variation function because of its interpretation in variational mechanics. Given the strong form, the following equation should hold for any arbitrary weighting function $v_i \in V_i$ $\forall i$.
+	\begin{align}
+		& \int\limits_{\Omega} v_i\sigma_{ij,j} \,d\bm{V} = -\int\limits_{\Omega} v_i f_i \rho\,d\bm{V}
+	\end{align}
+	This is nothing but the weighted sum of all partial differential equations integrated over the domain $\Omega$. Using product rule, we know that $(v_i\sigma_{ij})_{,j} = v_{i,j}\sigma_{ij} + v_i\sigma_{ij,j}$, so $v_i\sigma_{ij,j} = (v_i\sigma_{ij})_{,j} - v_{i,j}\sigma_{ij}$. The above integral can therefore be written as:
+	\begin{align}
+		& \int\limits_{\Omega} v_{i,j}\sigma_{ij} \,d\bm{V} = \int\limits_{\Omega} v_i f_i \rho\,d\bm{V} + \int\limits_{\Omega} (v_i\sigma_{ij})_{,j} \,d\bm{V}
+	\end{align}
+	Using the divergence theorem, we know that $\int\limits_{\Omega} (v_i\sigma_{ij})_{,j} \,d\bm{V} = \int\limits_{\partial \Omega} v_i\sigma_{ij}n_j \,d\bm{S}$. Unrolling the Einstein summation and decomposing the domain boundary to Dirichlet and Neumann bounadries for each spatial dimension, we can re-write $\int\limits_{\partial \Omega} v_i\sigma_{ij}n_j \,d\bm{S}$ as:
+	\begin{align}
+        \sum_{i=1}^{nsd}\sum_{j=1}^{nsd}\Bigg(\int\limits_{\partial \Omega_{Di}} v_i\sigma_{ij}n_j \,d\bm{S} + \int\limits_{\partial \Omega_{Ni}} v_i\sigma_{ij}n_j \,d\bm{S}\Bigg)
+	\end{align}
+	where $nsd$ is the number of spatial dimensions, 2 for 2D and 3 for 3D. By definition, $v_i = 0$ on $\partial \Omega_{Di}$. Furthermore, substituting in the Neumann boundary condition, $\sigma_{ij}n_j = t_i$, we get the final weak form of the BVP as follows.
+	\begin{align}
+		& \int\limits_{\Omega} v_{i,j}\sigma_{ij} \,d\bm{V} = \int\limits_{\Omega} v_i f_i \rho\,d\bm{V} + \int\limits_{\partial \Omega_{Ni}} v_it_i \,d\bm{S} \quad \forall v_i \in V_i, i \in [1,nsd]
+	\end{align}
+	This equation should hold for any arbitrary variation functions $v_i \in V_i$.
+
+\subsection{Finite dimensional weak form}
+	The above derivation shows that the strong form implies the weak form. It is also possible to show that the weak form implies the strong form. The 2 forms are therefore both identical and exact. The key idea behind finite element analysis, is that instead of looking for the functions $u_i(\bm{x})$ in an infinite function space $U_i$, also known as a Hilbert function space, we limit the search to a finite set of basis functions, such that the approximate function $u^h_i(\bm{x})$ is assumed to be a linear combination of the finite number of basis functions used.
+
+	Let the domain $\Omega$ be divided into $P$ nodes connected by $E$ regularly shaped disjoint elements, e.g. quadrilaterals for 2D or hexahedrons for 3D, where $\overline{\Omega}$ is the closure of the open domain $\Omega$ and is given by: $\overline{\Omega} = \overline{\bigcup_{e} \Omega^e}$. The element domains are disjoint such that: $\Omega^e \cap \Omega^{e'} = \phi \, \forall e \neq e'$, where $\Omega^e$ is the interior of element $e$. Let there be $P$ basis functions, one for each node such that $N^i(\bm{x})$ is the basis function associated with node $i$. The approximate function $u^h_i(\bm{x})$ can now be chosen from the finite dimensional function space:
+	\begin{align}
+	    U_i^h = \{u^h_i(\bm{x}) = \sum_{j=1}^Pd^i_jN^j(\bm{x}):\bm{d}^i\in\mathbb{R}^{P}, u_i^h(\bm{x}) = g_i(\bm{x}) \, \forall \bm{x} \in \partial \Omega_{Di}\}
+	\end{align} Similarly, let the finite dimensional weighting function $v_i^h(\bm{x})$ be limited to the function space:
+	\begin{align}
+	    V_i^h = \{v^h_i(\bm{x}) = \sum_{j=1}^Pc^i_jN^j(\bm{x}): \bm{c}^i\in\mathbb{R}^{P}, v_i^h(\bm{x}) = 0 \, \forall \bm{x} \in \partial \Omega_{Di}\}
+    \end{align}
+	From \ref{constitutive} and \ref{strain}:
+	\begin{align}
+	    \sigma^h_{ij} = \frac{1}{2}C_{ijkm}(u^h_{k,m} + u^h_{m,k}) = \frac{1}{2}C_{ijkm}u^h_{k,m} + \frac{1}{2}C_{ijkm}u^h_{m,k} = C_{ijkm}u^h_{k,m}
+	\end{align}
+	because $C_{ijkm} = C_{ijmk}$. The weak form can therefore be approximated by:
+	\begin{align}
+		& \int\limits_{\Omega} v^h_{i,j}C_{ijkm}u^h_{k,m} \,d\bm{V} = \int\limits_{\Omega} v^h_i f_i \rho\,d\bm{V} + \int\limits_{\partial \Omega_{Ni}} v^h_it_i \,d\bm{S} \quad \forall v^h_i \in V^h_i, i \in [1,nsd]
+	\end{align}
+
+	Further approximating the domain by the finite elements, we get:
+	\begin{align}
+		& \sum_e \int\limits_{\Omega^e} v^h_{i,j}C_{ijkm}u^h_{k,m} \,d\bm{V} = \sum_e \int\limits_{\Omega^e} v^h_i f_i \rho\,d\bm{V} + \sum_{e \in S} \int\limits_{\partial \Omega^e_{Ni}} v^h_it_i \,d\bm{S} \quad \forall v^h_i \in V^h_i, i \in [1,nsd] 
+	\end{align}
+	where $S$ is the set of elements on the boundary of the discretized domain and $\partial \Omega^e_{Ni}$ resembles the boundary faces of the surface element $e \in S$ over which a Neumann boundary condition applies. In order to identify $v^h_{i,j} = \sum_{k=1}^Pc^i_k\frac{\partial N^k(\bm{x})}{\partial x_j}$ and $u^h_{i,j} = \sum_{k=1}^Pd^i_k\frac{\partial N^k(\bm{x})}{\partial x_j}$ inside an element $e$, firstly $N^k(\bm{x})$ and $\frac{\partial N^k(\bm{x})}{\partial x_j}$ must be identified for $\bm{x} \in \Omega_e$ $\forall e \in [1,E], k \in [1,P]$.
+
+\subsection{Basis functions}
+
+	\subsubsection{Line elements}
+
+	Let the linear element $e$ be made of $n = k + 1$ nodes, of local indices $[1,n]$. Let $x$ be the global position coordinate along the 1D element. Moreover, let $m$ be a 1D line master element going from -1 to 1, and let $\xi$ be the local coordinate of any point in $m$. The following functions are known as the $k^{th}$ order 1D Lagrange polynomial basis functions, defined one for each node of local index $A$ in master element $m$.
+	\begin{align}
+		M^{A}(\xi) = \prod_{B \neq A}\frac{\xi - \xi^{B}}{\xi^{A} - \xi^{B}}
+	\end{align}
+	where $\xi^A$ is the value of $\xi$ at the $A^{th}$ node of master element $m$.
+
+	Notice that $M^{A}$ is 1 at $\xi = \xi^{A}$ and 0 at $\xi = \xi^{B} \, \forall B \neq A$. Also, note that the sum of all basis functions is equal to 1. A one-to-one invertible mapping can now be defined between each point $x \in \Omega_e$, i.e. located in element $e$, and a corresponding point $\xi$ in the master element $m$ located using the interpolation function:
+	\begin{align}
+	    x(\xi) = \sum_{A=1}^{n} x^A_e M^{A}(\xi)
+	\end{align}
+	where $x^A_e$ is the position $x$ of the node whose local index in element $e$ is $A$.
+	
+	In this whole thesis, it will be assumed that the same basis functions are used for the geometric mapping from $\xi$ to $x$ as well as representing the finite dimensional solution to the BVP as follows. This is known as isoparameteric mapping. Let $\bm{CC}^e$ be the cell connectivity vector of cell $e$, such that $CC^e_A = i$ where $A$ is the local index and $i$ is the global index of the node. We can now define $N^i(\xi)$ associated with some global node indexed $i$ as follows:
+	\begin{align}
+		& N^i(x) = \begin{cases}
+			M^{A}(\xi(x)) & \text{if} x \in \Omega_e \, \text{for} \, A: CC^e_A = i\\
+			0 & \text{otherwise}
+		\end{cases}
+	\end{align}
+	where $\xi(x)$ is the inverse function of the mapping function $x(\xi)$. $N^i(\xi)$ will also be used to refer to $N^i(x(\xi))$, where it is clear from context when $x$ and $\xi$ refer to functions and when they refer to variables. From the above definition, each basis function $N^i$ is only non-zero in the elements including node $i$, and 0 in all other elements.
+	
+	\subsubsection{Quadrilateral elements}
+	
+	Let $m$ be a 2D square master element going from $[-1 \, -1]^T$ to $[1 \, 1]^T$, and let $\bm{\xi} = [\xi_1 \, \xi_2]^T$ be the local position vector of a point in $m$. The Lagrange polynomial basis functions for a quadrilateral is formed by taking the tensor product of 2 1D Lagrange polynomials. Note that the number of nodes $n$ required to define a set of $k^{th}$ order Lagrange polynomial basis functions in a quadrilateral is $(k+1)^2$. The following is the definition of the $k^{th}$ order Lagrange polynomial basis functions over the quadrilateral element $e$:
+	\begin{align}
+		& M^{A}(\xi_1, \xi_2) = M^{A}(\xi_1)M^{A}(\xi_2)
+	\end{align}
+	where $n = (k+1)^2$. 
+
+	A one-to-one invertible mapping can then be defined between each point in element $e$ located at $\bm{x_i}$ and the corresponding point in the master element $m$ located at $\bm{\xi}$, using the interpolation function $\bm{x} = \sum_{A=1}^{n} \bm{x}^A_e M^{A}(\bm{\xi})$, where $\bm{x}^A_e$ is the position vector of the node whose local index in element $e$ is $A$. Finally, the global shape functions $N^i(\bm{x})$ are defined as follows:
+	\begin{align}
+		& N^i(\bm{x}) = \begin{cases}
+			M^{A}(\bm{\xi}(\bm{x})) & \text{if} \bm{x} \in \Omega_e \, \text{for} \, A: CC^e_A = i\\
+			0 & \text{otherwise}
+		\end{cases}
+	\end{align}
+	$N^i(\bm{\xi})$ will also be used to refer to $N^i(\bm{x}(\bm{\xi}))$.
+
+	\subsubsection{Hexahedral elements}
+
+	Let $m$ be a 3D cubic master element going from $[-1 \, -1 \, -1]^T$ to $[1 \, 1 \, 1]^T$, and let $\bm{\xi} = [\xi_1 \, \xi_2 \, \xi_3]^T$ be the local position vector of a point in $m$. The Lagrange polynomial basis functions for a hexahedral is formed by taking the tensor product of 3 1D Lagrange polynomials. The number of nodes $n$ required to define a set of $k^{th}$ order Lagrange polynomial basis functions in a hexahedral element is $(k+1)^3$. The following is the definition of the $k^{th}$ order Lagrange polynomial basis functions over the hexahedral element $e$:
+	\begin{align}
+		& M^{A}(\xi_1, \xi_2, \xi_3) = M^{A}(\xi_1)M^{A}(\xi_2)M^{A}(\xi_3)
+	\end{align}
+	where $n = (k+1)^3$. 
+
+	A one-to-one invertible mapping can then be defined between each point in element $e$ located at $\bm{x}$ and the corresponding point in the master element $m$ located at $\bm{\xi}$, using the interpolation function $\bm{x} = \sum_{A=1}^{n} \bm{x}^A_e M^{A}(\xi_1, \xi_2, \xi_3)$. Finally, the global shape functions $N^i(\bm{x})$ are defined as in the 2D case.
+
+\subsection{Variable substitution}
+	Given the above basis functions: 
+	\begin{align}
+		N^i_{,j}(\bm{\xi}) = \frac{\partial N^i}{\partial x_j}(\bm{\xi}) = \begin{cases}
+			M^A_{,j}(\bm{\xi}) & \text{if} \bm{x}(\bm{\xi}) \in \Omega_e \, \text{for} \, A: CC^e_A = i \\
+			0 & \text{otherwise}
+		\end{cases}
+	\end{align}
+	where
+	\begin{align}
+	    M^A_{,j}(\bm{\xi}) = \sum_{k=1}^{nsd} \frac{\partial M^A}{\partial \xi_k}(\bm{\xi}) \frac{\partial \xi_k}{\partial x_j}(\bm{\xi})
+	\end{align}
+	The matrix $\big[\frac{\partial \xi_k}{\partial x_j}\big]$ is the inverse of the Jacobian $\big[\frac{\partial x_k}{\partial \xi_j}\big]$, written as a matrix-valued function of $\bm{\xi}$. 
+
+	Recall that the finite dimensional approximation of the field function $u_i^h(\bm{x})$ is limited to the following function space:
+	\begin{align}
+	    U_i^h = \{u^h_i(\bm{x}) = \sum_{j=1}^Pd^i_jN^j(\bm{x}):\bm{d}^i\in\mathbb{R}^{P}, u_i^h(\bm{x}) = g_i \, \forall \bm{x} \in \partial \Omega_{Di}\}
+	\end{align}
+	where $P$ is the number of nodes in the domain. Similarly, the finite dimensional weighting/variation function $v_i^h(\bm{x})$ is limited to the function space:
+	\begin{align}
+	    V_i^h = \{v^h_i(\bm{x}) = \sum_{j=1}^Pc^i_jN^j(\bm{x}): \bm{c}^i\in\mathbb{R}^{P}, v_i^h(\bm{x}) = 0 \, \forall \bm{x} \in \partial \Omega_{Di}\}
+    \end{align}
+	
+	
+	Let $\partial \Omega^h_{Di}$ be the set of node indices in the discretized domain bounded by a Dirichlet boundary condition along the $i^{th}$ axis. And let:
+	\begin{align}
+	    C^h_i = \{\bm{c^i} : c^i_j = 0 \, \forall j \in \partial \Omega^h_{Di}, \, c^i_j\in\mathbb{R}\, \text{otherwise}\}
+	\end{align}
+    $V_i^h$ can therefore be more specifically defined as:
+    \begin{align}
+        V_i^h = \{v^h_i(\bm{x}) = \sum_{j=1}^Pc^i_jN^j(\bm{x}): \bm{c}^i \in C^h_i\}
+    \end{align}
+	The finite dimensional weak form can now be written as:
+	\begin{align}
+		& \sum_e \int\limits_{\Omega^e} c^i_pN^p_{,j}C_{ijkm}d^k_sN^s_{,m} \,d\bm{V} = \nonumber \\
+		& \qquad \sum_e \int\limits_{\Omega^e} c^i_pN^p f_i \rho\,d\bm{V} + \sum_{e \in S} \int\limits_{\partial \Omega^e_{Ni}} c^i_pN^p t_i \,d\bm{S} \quad \forall \bm{c}^i \in C^h_i, i \in [1,nsd]
+	\end{align}
+	where the $p$ and $s$ indices span $[1,P]$. Notice that the only basis functions $N^p$ which are non-zero in element $e$ are the functions associated with any global node $p$ such that $\exists A : CC^e_A = p$. Similarly, the only non-zero basis functions on a boundary surface element $f \in \partial \Omega^e_{Ni}$ are the basis functions associated with the nodes of that face/edge. So the weak form can also be written using local indices as follows:
+
+	\begin{align}
+		& \sum_e \int\limits_{\Omega^e} \sum_{A=1}^{n_e} \sum_{B=1}^{n_e} c^i_{CC^e_A}M^A_{,j}C_{ijkm}d^k_{CC^e_B}M^B_{,m} \,d\bm{V} = \sum_e \int\limits_{\Omega^e} \sum_{A=1}^{n_e} c^i_{CC^e_A}M^A f_i \rho\,d\bm{V} +  \nonumber \\
+		& \qquad \sum_{e \in S} \sum_{f \in \partial \Omega^e_{Ni}} \int\limits_{f} \sum_{A \in f} c^i_{CC^e_A}M^A t_i \,d\bm{S} \quad \forall \bm{c}^i \in C^h_i, i \in [1,nsd]
+	\end{align}
+	where $n_e$ is the number of nodes in element $e$, and $A \in f$ refers to all the local node indices in surface element $f$. Note that summation is implied over $i$, $j$, $k$ and $m$ on the left-hand-side (LHS), and over $i$ on the right-hand-side (RHS). In the rest of the derivation, global shape functions will be used for neatness sake.
+
+	\subsubsection{Quadrilateral elements}
+	The integrals over $\Omega^e$ are area integrals for 2D problems, and the integrals over $\partial \Omega^e_{Ni}$ are line integrals. The area and line integrals over $\Omega^e$ and $\partial \Omega^e_{Ni}$ respectively can be transformed to area integrals over the master element, and line integrals over the corresponding edges of the master element respectively. Let the Jacobian of the coordinates $\bm{x}$ in element $e$ with respect to the master element's reference coordinates $\bm{\xi}$ be:
+	\begin{align}
+	    \bm{J}^e = \frac{\partial \bm{x}}{\partial \bm{\xi}}
+	\end{align}
+	where $|\bm{J}^e|$ is its determinant. An infinitesimal area in element $e$ is then:
+	\begin{align}
+	    d\bm{V} = |\bm{J}^e|d\bm{V_\xi} = |\bm{J}^e|d\xi_1 d\xi_2
+	\end{align}
+	
+	Let the conditional Jacobian on one of the surface edges $f \in \partial \Omega^e_{Ni}$ be $J^{ef}$. Let $\bar{i}(f) \in [1,2]$ be the dimension along which line $f$ is fixed in the master element such that $\xi_{\bar{i}(f)} = -1 \, or \, 1$. For example, if the line $f$ is horizontal in the master element, $\bar{i}(f) = 2$. $\xi_{\bar{i}(f)}$ will be -1 if $f$ corresponds to the bottom edge of the master element and will be 1 if it corresponds to the top edge. Similarly, if the line $f$ is vertical in the master element, $\bar{i}(f) = 1$. $\xi_{\bar{i}(f)}$ will be -1 if $f$ corresponds to the left edge of the master element and will be 1 if it corresponds to the right edge. Let the non-fixed master element coordinates on line $f$ be $\bar{\bm{\xi}}^f$. The line/conditional Jacobian is then given by:
+	\begin{align}
+	    J^{ef} = \frac{\partial \bm{x}}{\partial \bar{\bm{\xi}}^f}
+	\end{align}
+	In the quadrilateral case, the line Jacobian is a $2 \times 1$ matrix. If the non-fixed coordinate index on line $f$ is $\bar{j}(f) \neq \bar{i}(f)$, an infinitesimal length on the edge $f$ of element $e$ can be written as:
+	\begin{align}
+	    d\bm{S} = J^{ef} d\bm{S_{\xi}} = J^{ef} d\xi_{\bar{j}(f)}
+	\end{align}
+	The approximate weak form can therefore be written as:
+	\begin{align}
+		& \sum_e \int_{-1}^1 \int_{-1}^1 c^i_pN^p_{,j}C_{ijkm}d^k_sN^s_{,m}(\bm{\xi}) \,|\bm{J}^e|d\xi_1 d\xi_2 = \nonumber \\
+		& \qquad \sum_e \int_{-1}^1 \int_{-1}^1 c^i_pN^p f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 \, + \nonumber \\
+		& \qquad \sum_{e \in S} \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 c^i_pN^p(\xi_{\bar{j}(f)}) t_i \,J^{ef} d\xi_{\bar{j}(f)} \quad \forall \bm{c}^i \in C^h_i, i \in [1,2]
+	\end{align}
+	where $N^p(\xi_{\bar{j}(f)})$ is $N^p(\bm{\xi})$ with $\xi_{\bar{i}(f)}$ substituted for its value in edge $f$.
+
+	\subsubsection{Hexahedral elements}
+
+	The volume integrals over $\Omega^e$ can be transformed to volume integrals over the master element, and the surface integrals over $\partial \Omega^e_{Ni}$ can be converted to surface integrals over the corresponding faces of the master element. Let the Jacobian of the coordinates $\bm{x}$ in element $e$ with respect to the master elements reference coordinates $\bm{\xi}$ be:
+	\begin{align}
+	    \bm{J}^e = \frac{\partial \bm{x}}{\partial \bm{\xi}}
+	\end{align}
+	where $|\bm{J}^e|$ is its determinant. An infinitesimal volume in element $e$ is then:
+	\begin{align}
+	    d\bm{V} = |\bm{J}^e|d\bm{V_\xi} = |\bm{J}^e|d\xi_1 d\xi_2 d\xi_3
+	\end{align}
+	
+	Let the conditional Jacobian on one of the surface faces $f \in \partial \Omega^e_{Ni}$ be $J^{ef}$. Let $\bar{i}(f) \in [1,3]$ be the dimension along which face $f$ is fixed in the master element such that $\xi_{\bar{i}(f)} = -1 \, or \, 1$. For example, if the face $f$ is horizontal in the master element, $\bar{i}(f) = 3$. $\xi_{\bar{i}(f)}$ will be -1 if $f$ corresponds to the bottom face of the master element and will be 1 if it corresponds to the top face. Let the non-fixed master element coordinates on face $f$ be $\bar{\bm{\xi}}^f$. The face/conditional Jacobian is then given by:
+	\begin{align}
+	    J^{ef} = \frac{\partial \bm{x}}{\partial \bar{\bm{\xi}}^f}
+	\end{align}
+	In the hexahedral case, the face Jacobian is a $3 \times 2$ matrix. If the non-fixed coordinate indices on face $f$ are $\{\bar{j}(f), \bar{k}(f)\} = [1,3] \setminus \{\bar{i}(f)\}$, an infinitesimal area on the face $f$ of element $e$ can be written as:
+    \begin{align}
+        d\bm{S} = |\bm{J}^{ef}| d\bm{S_{\xi}} = |\bm{J}^{ef}| d\xi_{\bar{j}(f)}d\xi_{\bar{k}(f)}
+    \end{align}
+    The approximate weak form can therefore be written as:
+	\begin{align}
+		& \sum_e \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 c^i_pN^p_{,j}(\bm{\xi})C_{ijkm}d^k_sN^s_{,m}(\bm{\xi}) \,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3= \nonumber \\
+		& \qquad \sum_e \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 c^i_pN^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3 \, + \nonumber \\
+		& \qquad \sum_{e \in S} \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 \int_{-1}^1 c^i_pN^p(\xi_{\bar{j}(f)}, \xi_{\bar{k}(f)})t_i \,|\bm{J}^{ef}| d\xi_{\bar{j}(f)} d\xi_{\bar{k}(f)}\quad \forall \bm{c}^i \in C^h_i, i \in [1,3]
+	\end{align}
+	where $N^p(\xi_{\bar{j}(f)}, \xi_{\bar{k}(f)})$ is $N^p(\bm{\xi})$ with $\xi_{\bar{i}(f)}$ substituted for its value in face $f$.
+
+\subsection{Gaussian quadrature integration}
+	In order to evaluate the above integrals over $[-1, 1]$ 1, 2 or 3 times for line, face and volume integrals, typically the Gauss-Legendre quadrature rule is used to approximate each integral by a weighted summation of the integrand evaluated at $n$ specific points. The points are selected such that a $(2n-1)^{st}$ order polynomial function would be integrated exactly using only $n$ function evaluations. The following table gives the points and weights associated with the Gauss-Legendre quadrature using 1 to 4 points:
+
+	\begin{table}[!h]
+		\centering
+		\begin{tabular}{c c c}
+		\hline n & Points & Weights \\
+		\hline	1	&	0	&	2 \\
+		\hline	2	&	$\pm \sqrt{\frac{1}{3}}$	&	1 \\
+		\hline	3	&	0	&	$\frac{8}{9}$ \\
+					&	$\pm \sqrt{\frac{1}{3}}$ & $\frac{5}{9}$ \\
+		\hline	4	&	$\pm \sqrt{\frac{3}{7}-\frac{2}{7} \sqrt{\frac{6}{5}}}$	&	$\frac{18+\sqrt{30}}{36}$ \\
+					&	$\pm \sqrt{\frac{3}{7}+\frac{2}{7} \sqrt{\frac{6}{5}}}$ & 	$\frac{18-\sqrt{30}}{36}$ \\
+		\hline
+		\end{tabular}
+		\caption{Gauss-Legendre quadrature points and weights}
+		\label{tab:GaussQuad}
+	\end{table}
+
+\subsection{Matrix-vector weak form}
+
+	Let $i'(p,i) = nsd \times (p-1) + i$ be the linearized degree of freedom index corresponding to the $p^{th}$ node and the $i^{th}$ spatial dimension. And let $j'(s,k) = nsd \times (s-1) + k$ be the linearized index corresponding to the $s^{th}$ node and the $k^{th}$ spatial dimension. Each $(p,i)$ index tuple is a degree of freedom in the analysis problem. Moreover, let $I_D$ be
+	\begin{align}
+	    I_D = \{(p-1)+i : p \in \partial \Omega^h_{Di}, \forall i \in [1, nsd]\}
+	\end{align}
+	which is the set of Dirichlet bounded degrees of freedom.
+
+	Additionally, let $\bm{K}^e$ be a hyper-sparse square matrix of size $(P \times nsd) \times (P \times nsd)$ associated with element $e$ such that all the entries in the matrix are structural zeroes except the $(i'(p, i), j'(s, k))^{th}$ entries for all $(p, i, s, k) : (\exists A: CC^e_A = p) \wedge (\exists B: CC^e_B = s)$, i.e. nodes $p$ and $s$ are both connected to element $e$. Similarly, let $\bm{F}^e$ be a hyper-sparse vector of length $P \times nsd$ such that all the entries in the vector are structural zeros except the $i'(p, i)^{th}$ entries for all $(p, i) : \exists A : CC^e_A = p$, i.e. node $p$ is connected to element $e$.
+
+	For the quadrilateral case, the $(i'(p, i), j'(s, k))^{th}$ entry of $\bm{K}^e$ where $(\exists A: CC^e_A = p) \wedge (\exists B: CC^e_B = s)$ is:
+	\begin{align}
+		K^e_{i'(p, i) j'(s, k)} & = \int_{-1}^1 \int_{-1}^1 N^p_{,j}(\bm{\xi})C_{ijkm}N^s_{,m}(\bm{\xi}) \,|\bm{J}^e|d\xi_1 d\xi_2
+	\end{align}
+	And the $i'(p, i)^{th}$ entry of $\bm{F}^e$ where $\exists A: CC^e_A = p$ is:
+	\begin{align}
+        F^e_{i'(p, i)} & = \int_{-1}^1 \int_{-1}^1 N^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 + \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 N^p(\xi_{\bar{j}(f)})t_i \,J^{ef} d\xi_{\bar{j}(f)}
+	\end{align}
+	
+	Similarly for the hexahedral case, , the $(i'(p, i), j'(s, k))^{th}$ entry of $\bm{K}^e$ where $(\exists A: CC^e_A = p) \wedge (\exists B: CC^e_B = s)$ is:
+	\begin{align}
+		K^e_{i'(p, i) j'(s, k)} = \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 N^p_{,j}(\bm{\xi})C_{ijkm}N^s_{,m}(\bm{\xi}) \,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3
+	\end{align}
+	And the $i'(p, i)^{th}$ entry of $\bm{F}^e$ where $\exists A: CC^e_A = p$ is:
+	\begin{align}
+        F^e_{i'(p, i)} = \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 N^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3 + \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 \int_{-1}^1 N^p(\xi_{\bar{j}(f)}, \xi_{\bar{k}(f)})t_i \,|\bm{J}^{ef}| d\xi_{\bar{j}(f)} d\xi_{\bar{k}(f)}
+	\end{align}
+
+	The weak form can therefore be written more compactly as:
+	\begin{align}
+		& \sum_e c_{i'} K^e_{i'j'} d_{j'} = \sum_e c_{i'} F^e_{i'}
+	\end{align}
+	where $c_{i'}$ and $d_{j'}$ are the linearized tensors $c_p^i$ and $d_s^k$ respectively. This equation should hold for all values of $\bm{c} \in \{\bm{c} : (c_{i'} \in \mathbb{R}, \forall i' \notin I_D) \wedge (c_{i'} = 0, \forall i' \in I_D)\}$. $\bm{K}^e$ is typically called the element stiffness matrix, and $\bm{F}^e$ is known as the element force vector. 
+
+	Note also that $(p,i)$ and $(s,k)$ can be respectively swapped in the integral without affecting the function being integrated. This is because $N^p_{,j}C_{ijkm}N^s_{,m} = N^p_{,j}C_{kmij}N^s_{,m} = N^s_{,m}C_{kmij}N^p_{,j} = N^s_{,j}C_{kjim}N^p_{,m}$, so $K^e_{i'j'} = K^e_{j'i'}$. So each matrix $\bm{K}^e$ is symmetric. Also, note that all the terms multiplied by $c_{i'} = 0$ contribute nothing.
+
+	Notice that when a non-boundary element or a boundary element with no external load applied to it is dropped from the analysis, its contribution to the LHS is the term $c_{i'} K^e_{i'j'} d_{j'}$ and its contribution to the RHS is the term $c_{i'} F^e_{i'}$. Notice also that while a valid mesh has been assumed in the derivations, the vertices of such a mesh can be varied freely prior to analysis. So in a shape optimization context, one might consider leaving the mesh vertices as decision variables subject to mesh validity constraints. The vertex positions will not affect the above derivations so long as the cell-vertex connectivity does not change. Most topology optimization approaches however choose to keep vertex positions fixed and assign a binary decision variable to each removable element to either include it in the design or not. The latter approach makes it possible to use existing finite element analysis software to construct element stiffness matrices and force vectors.
+
+	Because the above equation must hold for all $c_{i'}$ where $i' \notin I_D$, the following must hold:
+	\begin{align}
+		& \sum_e K^e_{i'j'} d_{j'} = \sum_e F^e_{i'} \quad \forall i' \notin I_D
+	\end{align}
+	Assembling this system of equations in matrix form, we get:
+	\begin{align}
+		& \bm{\bar{K}} \bm{d} = \bm{\bar{F}}
+	\end{align}
+	where $\bm{\bar{K}}$ is a matrix of shape $(P \times nsd - |I_D|, P \times nsd)$, and $\bm{\bar{F}}$ is a vector of length $P \times nsd - |I_D|$. Finally, because of the Dirichlet boundary condition, $d_{j'}$ is known $\forall j' \in I_D$. Let the column of known $d_{j'}$ values be $\bm{\bar{d}}$, and the remaining unknowns be $\bm{y}$. Additionally, let the columns of $\bm{\bar{K}}$ of indices $j' \in I_D$ be $\bm{\bar{K}}_D$ and the remaining columns be $\bm{K}$. The system of equations can therefore be reduced to:
+	\begin{align}
+		& \bm{K}\bm{y} = \bm{\bar{F}} - \bm{\bar{K}}_D \bm{\bar{d}}
+	\end{align}
+	It is also common to allow the adding of an additional nodal loading vector $\bm{F}_{conc}$ which represent a concentrated load on specific nodes without a Dirichlet boundary condition. While this is not physical, it is generally allowed computationally and is used in a number of standard topology optimization benchmark problems. Letting $\bm{F} = \bm{\bar{F}} - \bm{\bar{K}}_D \bm{\bar{d}} + \bm{F}_{conc}$, we can arrive at the final compact form of the system of equations:
+	\begin{align} \label{final}
+		\bm{K}\bm{y} = \bm{F}
+	\end{align}
+	where $\bm{K}$ is a square matrix of shape $(P \times nsd - |I_D|, P \times nsd - |I_D|)$, and $\bm{F}$ is a vector of length $P \times nsd  - |I_D|$. It is also common to add another term to the load
+
+\subsection{Analysis to topology optimization}
+
+	In a topology optimization context, where each element is associated with a decision variable, $\bm{F}$ will depend on the design in any of the following cases:
+	\begin{enumerate}
+	    \item The elements' weights are not 0.
+	    \item The Neumann boundary conditions, i.e. surface loading, depends on the design.
+	    \item An element with a non-zero Dirichlet boundary condition is not fixed in the design.
+	\end{enumerate}
+	A non-zero body weight or a design-dependent Neumann boundary conditions will make $\bm{\bar{F}}$ depend on the design. If an element with a non-zero Dirichlet boundary condition is not fixed in the design, $\bm{\bar{K}}_D$ will depend on the design. When any of these conditions apply, the problem is said to have design-dependent loading. For simplicity for the rest of this thesis, the following will be assumed:
+	\begin{enumerate}
+	    \item The body weight is negligible compared to the material strength and surface or node loading and can be ignored.
+	    \item All the Dirichlet boundary conditions either have a zero value or the element on which a non-zero Dirichlet boundary condition applies is fixed to be part of the design and is not allowed to be removed.
+	    \item The Neumann boundary conditions either have 0 value or the elements on which a surface load is applied, are guaranteed to be part of the design and are not allowed to be removed.
+	    \item The concentrated load vector $\bm{F}_{conc}$ has a fixed value.
+	\end{enumerate}
+	In topology optimization literature, the symbol $\bm{u}$ is usually used in place of $\bm{y}$ above and the symbol $\bm{f}$ is used in place of $\bm{F}$. For the rest of this document, the standard symbols will be used instead. The system of equations to be solved then becomes:
+	\begin{align}
+		\bm{K}\bm{u} = \bm{f}
+	\end{align}
+    
+    Let $\rho_e$ be a pseudo-density associated with element $e$ such that:
+    \begin{align}
+        \bm{K} = \bm{K}_0 + \sum_e \rho_e \bm{K}_e
+    \end{align}
+    where:
+    \begin{enumerate}
+        \item $\bm{K}_e$ is the hyper-sparse element stiffness matrix of element $e$ with the zero-valued Dirichlet bounded degrees of freedom eliminated.
+        \item $\bm{K}_0$ is the assembled stiffness matrix of all the elements that are fixed to be part of the design, e.g. because they have a non-zero-valued Dirichlet boundary condition or a non-zero-valued Neumann boundary condition.
+    \end{enumerate}
+
+\newpage
+\section{Topology optimization formulations}
+
+\subsection{Design parameterization}
+
+Continuum topology optimization is fundamentally an infinitely sized discrete optimization problem of deciding which points have material and which do not. However, the problem cannot be solved in general in this form so the design needs to be parameterized using a finite dimensional parameterization. There are a number of techniques and algorithms that have been developed for continuum topology optimization over the last 3 decades:
+\begin{enumerate}
+    \item Homogenization method \citep{Bendsoe1988}
+    %\item Bubble method \citep{Eschenauer1994}
+    \item Level set method (LSM) \citep{Osher1988, Allaire2002, Wang2003, Wang2004, Guirguis2016}
+    \item Solid isotropic material with penalization (SIMP) \citep{Bendsoe1989,Sigmund2001,Rojas-Labanda2015}
+    \item Evolutionary and bi-evolutionary structural optimization (ESO / BESO) \citep{YM1992,XY1998,Huang2010a}
+    \item Genetic evolutionary structural optimization (GESO) \citep{Sandgren1990a, Liu2008}. 
+\end{enumerate}
+
+Different methods use different design parameterizations. The most popular parameterization used by the homogenization method, SIMP, ESO/BESO and GESO is using a so-called ground mesh of finite elements where each element is assigned decision variable. This reduces the infinitely sized problem to a finitely sized one of deciding which elements of the ground mesh should be assigned material and which should not. LSM uses a different design parameterization. A so-called parameteric level set function is specified over the base design. The level set of the function then defines the boundary between material and void in the design. The level set function has a finite number of parameters so the topology optimization problem reduces to the problem of finding the best parameter values.
+
+The homogenization method was primarily developed to perform shape and topology optimization using composite materials having a layered structure of isotropic materials, and/or using materials with microstructural voids. The homoegenization method therefore relaxes the binary material variable to a continuous one between 0 and 1. While this relaxation can have physical justifications, such as using material with microstructural voids and the relative sheet thickness in 2D structures, in most cases it is desirable to simply create a design out of an existing manufacturable isotropic or anisotropic material, rather than proposing a new material or microstructure altogether. This is particularly important when designing 3D structures because a fractional material cannot have a simple physical interpretation such as sheet thickness in 2D structures. It is for this reason that the most popular topology optimization families of algorithms nowadays are SIMP, BESO and LSM all of which typically deal with isotropic materials and attempt to achieve a black-and-white topology as opposed to having grey areas of fractional material, where black represents material existence and white represents void.
+
+The rest of this thesis will be dedicated to topology optimization methods that use the element-based design parameterization where each element is associated with a decision variable.
+
+\subsection{Compliance minimization}
+
+The linear, elastic, quasi-static, deterministic, volume constrained compliance minimization (VCCM) problem with design-independent loading has been a particularly well studied problem in the field of topology optimization since its inception. The goal of the VCCM problem is to design a statically supported structure subject to external loads such that the structure has minimum compliance subject to a maximum volume constraint, where compliance is defined as:
+\begin{align} \label{eqn:compliance}
+  C = \bm{u}^T\bm{K}\bm{u} = \bm{f}^T\bm{K}^{-1}\bm{f}
+\end{align}
+i.e. twice the strain energy of the system, where $\bm{K}$ is the stiffness matrix assembled from element stiffness matrices, $\bm{u}$ is the displacement vector of all the degrees of freedom of the ground mesh, such that $u_i$ corresponds to the $i^{th}$ degree of freedom of the ground mesh, and $\bm{f}$ is the load vector assembled from surface and point loads. To evaluate the compliance of a certain mesh, an FEA is performed evaluating the degrees of freedom $\bm{u} = \bm{K}^{-1}\bm{f}$ subject to the loads and boundary conditions of the problem.
+
+When using a ground mesh parameterization, one well documented challenge with the compliance minimization problem is that the optimal solution tends to exhibit a chequerboard pattern due to an error in the FEA which under-estiamtes the compliance associated with some linear finite elements arranged in the chequerboard pattern (\cite{Diaz1995}), when this arrangement is not even physically feasible. There are a number of approaches to eliminate the chequerboard ( \cite{Sigmund1998}). One simple way is to use quadratic finite elements which is shown to eliminate this disadvantage of FEA (\cite{Rahmatalla2004}). However, this approach increases the number of degrees of freedom in every function evaluation. More cheaply, a filter can be used blurring out the chequerboard pattern before proceeding with the FEA thus eliminating the advantage of chequerboard designs. Different types of filters will be discussed in section \ref{sec:filter}.
+
+\subsection{Compliance-constrained optimization}
+
+Instead of minimizing the compliance subject to a volume constrained, one may also want to put a constraint on the compliance and minimize the volume instead. This could more closely map a designer's objective of creating light-weight structures that don't significantly deform.
+
+\subsection{Filter types} \label{sec:filter}
+
+Filters are typically used in topology optimization to achieve 1 or more of:
+\begin{enumerate}
+    \item Reduce mesh dependence, e.g. chequerboard pattern.
+    \item Speed up the optimization algorithm's convergence
+    \item Increase feature thickness in the final design
+    \item 
+\end{enumerate}
+Filters recompute the density of each element as the weighted mean of the densities of the elements in its neighbourhoods. There are various weighting schemes used in literature but it's unclear if or when any one method is more favourable than the others. The filtering operator is equivalent to multiplying a vector by a matrix $\bm{A}$ where each row in $\bm{A}$ sums up to 1. There are 2 ways to apply filters in topology optimization:
+\begin{enumerate}
+    \item Density filters
+    \item Sensitivity filters
+\end{enumerate}
+Density filters apply a linear filtering operator $\bm{A}$ to the decision variables $\bm{x}$, such that the filtered variables become:
+\begin{align}
+    \bm{y}(\bm{x}) = \bm{A} \bm{x}
+\end{align}
+Note that:
+\begin{align}
+    \frac{d(f(\bm{y}(\bm{x})))}{d\bm{x}} = \bm{A}' \frac{d(f(\bm{y}))}{d\bm{y}}
+\end{align}
+Density filters therefore filter the decision variables by $\bm{A}$ and the gradient vector by $\bm{A}'$. So if we define the pseudo-density $\rho_e$ as:
+\begin{align}
+    \rho_e = y_e
+\end{align}
+oppositely signed partials in the same neighbourhood will tend to cancel out and the pseudo-density of element $e$ will be an average of the decision variables in the neighbourhood of element $e$.
+
+Sensitivity filters on the other hand are mathematically improper filters in that they apply the filtering operator $\bm{A}$ to the gradient vector only without filtering the decision variables:
+\begin{align}
+    f(\bm{y}(\bm{x})) = f(\bm{x}) \\
+    \frac{d(f(\bm{y}(\bm{x})))}{d\bm{x}} = \bm{A} \frac{d(f(\bm{x}))}{d\bm{x}}
+\end{align}
+This is known to empirically achieve a similar effect of eliminating chequerboard patterns but may also cause convergence issues when using mathematical optimization algorithms that are sensitive to the accuracy of the gradient.
+
+\subsection{Nested vs simultaneous analysis and design}
+
+There are 2 broad categories of approaches to topology optimization algorithms:
+\begin{enumerate}
+    \item Simultaneous analysis and design (SAND)
+    \item Nested analysis and design (NAND)
+\end{enumerate}
+
+In the SAND formulation, the analysis equations e.g. $\bm{K} \bm{u} = \bm{f}$ is formulated as a constraint in the optimization problem. The optimization algorithm then attempts to find $\bm{x}$ and $\bm{u}$ simultaneously. Taking the VCCM problem as an example, the SAND formulation is:
+\begin{mini!}|l|[3]
+    {\bm{x}, \bm{u}}{C = \bm{u}^T\bm{K}(\bm{x})\bm{u}}{}{}
+    \addConstraint {\bm{K}(\bm{x}) \bm{u} = \bm{f}}{}
+    \addConstraint {\quad \bm{v}^T \bm{\rho}(\bm{x}) \leq V \times \bm{1}^T \bm{v}}{}
+    \addConstraint {\quad x_e \in \{0,1\}}{\quad \forall e}
+\end{mini!}
+where:
+\begin{enumerate}
+    \item $\bm{v}$ is a vector of element volumes.
+    \item $\bm{\rho}(\bm{x}) = \bm{A} \bm{x}$, where $\bm{A}$ is the filter matrix.
+    \item $\rho_e(\bm{x})$ is the $e^{th}$ element of $\bm{\rho}(\bm{x})$.
+    \item $\bm{K}(\bm{x}) = \bm{K}_0 + \sum_e \rho_e(\bm{x}) \bm{K}_e$.
+\end{enumerate}
+
+In the NAND formulation, the field function $\bm{u}(\bm{x}) = \bm{K}^{-1}\bm{f}$ is defined to be a function of the design variables $\bm{x}$ instead, making $\bm{x}$ the only decision variable in the problem. This reduces the number of decision variables and constraints in the optimization problem. The NAND formulation is:
+\begin{mini!}|l|[3]
+    {\bm{x}}{C = \bm{f}^T(\bm{K}(\bm{x}))^{-1}\bm{f}}{}{}
+    \addConstraint {\quad \bm{v}^T \bm{\rho}(\bm{x}) \leq V \times \bm{1}^T \bm{v}}{\label{eqn:max_vol}}
+    \addConstraint {\quad x_e \in \{0,1\}}{\quad \forall e}
+\end{mini!}
+However, since the NAND formulation assumes that the global stiffness matrix $\bm{K}$ is invertible, the pseudo-densities $\bm{\rho}$ cannot be allowed to go to 0. This is because if all the elements surrounding a node have a 0 pseudo-density, $\bm{K}$ can be shown to be singular, which means that this node's degrees of freedoms are free to take any value without violating the physics constraints. It is for this reason that the pseudo-densities are defined differently in the NAND formulation:
+\begin{align}
+    \bm{\rho}(\bm{x}) = (1 - \rho_{min}) \bm{A} \bm{x} + \rho_{min} \bm{1}
+\end{align}
+where $\rho_{min}$ is a positive constant $\ll 1$ called the minimum pseudo-density. $\rho_{min}$ approximates the pseudo-density of a void element without letting $\bm{K}$ be singular. However, $\rho_{min}$ was also shown by me to play a significant role in the VCCM problem \citep{TAREK2020112880}.
+
+\subsection{Solid isotropic material with penalization}
+
+So far the decision variables $\bm{x}$ were assumed to be binary, i.e. either 0 or 1. The SIMP algorithm however does a few things differently:
+\begin{enumerate}
+    \item The binary constraint on $x_e$ is relaxed to $0 \leq x_e \leq 1$ instead. This turns the optimization problem into a so-called nonlinear program (NLP) instead of an integer nonlinear program (INLP) in the NAND case, i.e a nonlinear program with all integer variables, or a mixed integer nonlinear program (MINLP) in the SAND case, i.e. a nonlinear program with mixed continuous and integer variables.
+    \item A so-called penalty function $P$ is applied element-wise on the decision variables to indirectly enforce a mostly binary design at the end of the optimization.
+    \item An optional projection function $Proj$ is also applied element-wise to further enforce the pseudo-densities to be mostly binary.
+\end{enumerate}
+$P(x)$ and $Proj(x)$ will be used from now on to refer to the (element-wise) application of the penalty and projection functions if $x$ is a scalar (vector).
+
+The term SIMP is often associated with the following choice of penalty function, also known as the power penalty:
+\begin{align}
+    P(x_e) = x_e^p
+\end{align}
+for some penalty value $p \geq 1$. Another popular penalty function choice is the so-called rational penalty \citep{Stolpe2001a}:
+\begin{align}
+    P(x_e) = \frac{x_e}{1+p(1-x_e)}
+\end{align}
+for some $p \geq 0$. When using the rational penalty, the algorithm is often called the \textit{rational approximation of material properties} (RAMP).
+
+The most common projection function used is the regularized Heaviside projection function \citep{Guest2004}:
+\begin{align}
+ Proj(\rho_e) = 1 - e^{-\beta*\rho_e} + \rho_e * e^{-\beta}
+\end{align}
+for some choice of constant $\beta \geq 0$. When $\beta$ is 0, the projection function is a no-op. Increasing $\beta$ makes the function approximate a step function at $\rho_e = 0.0$.
+
+The SIMP NAND formulation of the VCCM problem is therefore:
+\begin{mini!}|l|[3]
+    {\bm{x}}{C = \bm{f}^T(\bm{K}(\bm{x}))^{-1}\bm{f}}{}{}
+    \addConstraint {\quad \bm{v}^T \bm{\rho}(\bm{x}) \leq V \times \bm{1}^T \bm{v}}{\label{eqn:max_vol}}
+    \addConstraint {\quad 0 \leq x_e \leq 1}{\quad \forall e}
+\end{mini!}
+where $\bm{\rho}(\bm{x})$ is the vector of pseudo-densities obtained after sequentially applying to $\bm{x}$:
+\begin{enumerate}
+  \item A chequerboard density filter of the form $f_1(\bm{x}) = \bm{A} \bm{x}$, 
+  \item An interpolation of the form $f_2(y) = (1 - \rho_{min})y + \rho_{min}$ applied element-wise for some small $\rho_{min} > 0$, 
+  \item A penalty such as the power penalty $f_3(z) = P(z; p)$ applied element-wise for some penalty value $p$, and
+  \item A projection function $Proj$ such as the regularized Heaviside projection applied element-wise.
+\end{enumerate}
+The interpolation and penalization steps may be swapped.
+
+While the original SIMP without projection was first developed as a heuristic with no theoretical results, later  \cite{Rietz2001} proved some theoretical properties of SIMP and the VCCM problem. More specifically, Rietz proved that a finite value of $p$ will converge to a 0-1 solution of the VCCM problem under the following assumptions:
+\begin{enumerate}[label=(\arabic*)]
+    \item All the elements have unit volume $v_e = 1$, 
+    \item The volume threshold $V \times \sum\limits_e v_e$ is integer, and 
+    \item The partial derivative $\frac{\partial C}{\partial P(x_e)}$ is upper and lower bounded by finite, strictly negative values for all elements $e$.
+\end{enumerate}
+If additionally the original binary VCCM had a unique global solution and each SIMP subproblem is solved globally, then a finite value of $p$ was shown to be sufficient for convergence to the global optimal solution of the binary VCCM problem. A few years later, \cite{Martinez2005} relaxed some of the assumptions made by Rietz and provided a way to reason about the convergence of SIMP for problems other than the VCCM problem.
+
+\cite{Stolpe2001a} proved a similar result for the RAMP scheme for compliance minimization problems showing that there exists a finite penalty value $p_{max}$ at which the compliance function becomes concave, thus admitting some binary solutions as some of the optima of the NLP. A few years later,  \cite{Martinez2005} relaxed some of the assumptions made by Rietz and provided a way to reason about the convergence of SIMP for problems other than the VCCM problem. 
+
+\subsection{Continuation SIMP}
+
+The traditional SIMP solves a single nonlinear approximation using a single value for $p$, typically $p = 3$ with the power penalty function. However, it is also common practice to apply a so-called continuation on one or more parameters of the SIMP algorithm. For example, the so-called \textit{continuation} SIMP can solve a sequence of NLP sub-problems with increasing values of penalty $p$, e.g from $p = 1$ to $p = 5$.
+
+\begin{algorithm}
+\caption{Decaying tolerance continuation SIMP}
+\label{alg:cont_simp}
+\begin{algorithmic}[1]
+  \REQUIRE Nonlinear problem callback $Prob$, initial topology $\bm{x}_0$, penalty function $P$, initial penalty $p_0$, penalty step $\Delta p$, maximum penalty $p_{max}$, tolerance $tol$, tolerance decay factor $\theta = 1$, minimum tolerance $tol_{min} = 0$.
+  \STATE $\bm{x} = \bm{x}_0$
+  \FOR{$p$ in $p_0$:$\Delta p$:$p_{max}$}
+  \STATE $\bm{x} = \text{SOLVE}(Prob(P, p), \bm{x}, tol)$
+  \STATE $tol = max(\theta \times tol, tol_{min})$
+  \ENDFOR
+  \STATE \textbf{return} $\bm{x}$
+\end{algorithmic}
+\end{algorithm}
+
+The basic continuation SIMP (CSIMP) algorithm in literature is shown in Algorithm \ref{alg:cont_simp}, where a fixed penalty step $\Delta p$ is used and the tolerance used to terminate the NLP solve is optionally decayed by some factor $\theta \leq 1$. The CSIMP algorithm introduces a number of additional hyper-parameters:
+\begin{enumerate}
+    \item Initial and final penalties, $p_0$ and $p_{max}$.
+    \item Tolerance decay parameter $\theta$.
+    \item Minimum tolerance, $tol_{min}$.
+\end{enumerate}
+Choosing these hyper-parameters is non-trivial and can be problem-dependent and/or scale-dependent.
+
+CSIMP is commonly associated with its ability to \textit{avoid local minima}. \cite{Rojas-Labanda2015} reviewed a number of CSIMP works in literature showing a consensus that this ability is largely empirical. Empirical evidence was also reestablished in the same paper by comparing CSIMP to a single penalty SIMP on 375 problems showing that the former was more robust at converging to a Karush-Kuhn-Tucker (KKT) point of the desired tolerance for the test problems. On the other hand, \cite{Stolpe2001} demonstrated a few problems where CSIMP fails to produce a 0-1 design even for large penalty values since the fractional solution of the subproblem with $p = 1$ is also a KKT point for the subproblem with higher penalty values. 
+
+While CSIMP has no rigorous theoretical grounds, empirically CSIMP has been a good heuristic for obtaining good designs in many cases \citep{Rojas-Labanda2015}. The intuition behind CSIMP seems to come from the VCCM problem where the original unpenalized nonlinear approximation with $p = 1$ is a proven convex program \citep{Svanberg1994}, whereas using $p > 1$ makes the problem non-convex. Consequently, at $p = 1$ the relaxed VCCM problem, if feasible with a solution space of non-empty interior, has a global optimal solution that can be obtained in polynomial time and whose objective value is a lower bound on the binary VCCM's global optimal value \citep{Boyd2009}. It is therefore hoped that the solution using $p = 1.1$ will be close enough to that of $p = 1$ while making the solution slightly less fractional. So assuming the penalty trick is really effective at eliminating fractional values, for high enough values of $p$, a mostly 0-1 solution would be obtained that is hopefully not too far from the fractional lower bound solution. 
+
+The main drawback of CSIMP compared to the single penalty SIMP is that it usually requires a large number of FEA simulations to converge. 
+
+
+% Continuum topology optimization is fundamentally an infinitely sized discrete/binary optimization problem of deciding which points have material and which points do not. However, solving the problem in this form is impractical since for the structure to be manufacturable, it cannot have voids arbitrarily closely to each other. So one common approach is to specify a \textit{ground mesh}, and reduce the infinitely sized problem to a finitely sized one of deciding which element $e$ of the ground mesh should be assigned material, $x_e = 1$ (solid), and which should not, $x_e = 0$ (void). Two of the most prominent families of topology optimization algorithms to this date are the solid isotropic material with penalization (SIMP) \citep{Bendsøe1989,Sigmund2001,Rojas-Labanda2015} and the bi-directional evolutionary structural optimization (BESO) \citep{YM1992,XY1998,Huang2010a}. SIMP relaxes the binary material variable to a continuous one such that $0 \leq x_e \leq 1$ and tries to solve a continuous approximation of the original problem, while BESO solves the problem in its binary form. 
+
+
+\subsection{Evolutionary structural optimization}
+
+ESO and its extension BESO also use a ground mesh parameterization however the binary variable is not relaxed for optimization. BESO can be viewed as a form of binary gradient descent that relies on first order information to compute the \textit{sensitivies} of the elements based on which a certain number of elements is removed and/or added in every iteration until convergence.
+
+Two problem classes where the BESO algorithm was originally developed to solve are: the VCCM problem, and the stress constrained volume minimization problem. The element removal/adding criteria is typically closely related to the gradient of the objective and/or constraints' mathematical form. For instance in stress constrained problems, mesh elements with low stress values get removed while elements close to high stress areas get added to the design according to a specific rule to ensure convergence. In compliance minimization problems, the cell compliance is the criteria instead where elements with low compliance get removed and elements close to high compliance areas get added to the design.
+
+The BESO algorithm has been improved over the years subject to criticism by \cite{Zhou2001} and \cite{Rozvany2009} for its inability to solve the tie-beam problem shown in Figure \ref{fig:TieBeam}. \cite{Huang2010a} then proposed the improved \textit{soft-kill} BESO. While still a binary gradient descent algorithm, the soft-kill BESO relies on $\rho_{min} > 0$ and a penalty function much like SIMP to compute the sensitivities. These changes enabled the soft-kill BESO to solve the tie-beam problem, however its biggest disadvantage yet is that it is not straightforward to generalize it to problems with arbitrary constraints and objectives often requiring taking the Lagrangian relaxation of the problem and solving for the Lagrangian dual variables while finding the optimal topology (primal variables) \citep{Huang2010a}. However, in the VCCM class of problems, BESO exhibits a very competitive performance. Another similar binary gradient descent algorithm for topology optimization was also proposed by \cite{Browne2013}.
+
+\begin{comment}
+\begin{figure}
+  \centering
+  \resizebox{0.5\textwidth}{!}{
+    \begin{tikzpicture}
+        \draw[fill,color=gray!70] (0,-0.1) rectangle (-0.3,2.1);
+        \node [align=center, body,line width=1.2pt,minimum height=2cm,minimum width=8cm,anchor=south west] (body1) at (0,0) {};
+        \draw (body1.south east) -- ++(1,0) coordinate (D1) -- +(5pt,0);
+        \draw (body1.north east) -- ++(1,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {40mm};
+
+        \draw (body1.north west) -- ++(0,0.5) coordinate (D1) -- +(0,5pt);
+        \draw (body1.north east) -- ++(0,0.5) coordinate (D2) -- +(0,5pt);
+        \draw [dimen] (D1) -- (D2) node {160mm};
+        \draw[->,line width=1pt] (8,1) -- (8.15,1) -- (8.15,0.2);
+        \node (arrowhead) at (8.4,0.25) {F};
+    \end{tikzpicture} \newline
+  }
+  \caption{Cantilever beam problem before topology optimization.}
+  \label{fig:CantBeam}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+    \resizebox{1\textwidth}{!}{
+      \begin{tikzpicture}[>=latex]
+        \draw[line width=1.2pt] (-6,0) rectangle (6,2);
+          \draw (6,0) -- ++(0.7,0) coordinate (D1) -- +(5pt,0);
+          \draw (6,2) -- ++(0.7,0) coordinate (D2) -- +(5pt,0);
+          \draw [dimen] (D1) -- (D2) node {20mm};
+          \draw (-6,2) -- ++(0,1.3) coordinate (D3) -- +(0,5pt);
+          \draw (6,2) -- ++(0,1.3) coordinate (D4) -- +(0,5pt);
+          \draw [dimen] (D3) -- (D4) node {120mm};
+
+        \draw (-6,0) -- (-6.2,-0.3) -- (-5.8,-0.3) -- cycle;
+        \draw (-6.15,-0.36) circle (0.06);
+        \draw (-5.85,-0.36) circle (0.06);
+        \node [marked body,minimum height=0.1cm,minimum width=1cm,anchor=center] at (-6,-0.42-0.05) {};
+
+        \draw (6,0) -- (6.2,-0.3) -- (5.8,-0.3) -- cycle;
+        \node [marked body,minimum height=0.1cm,minimum width=1cm,anchor=center] at (6,-0.35) {};
+
+        \draw[->,line width=1pt] (0,3) -- (0,2);
+        \node (arrowhead) at (0.2,2.7) {F};
+      \end{tikzpicture}
+    }
+    \caption{Full beam}
+    \label{fig:FullMBB}
+  \end{subfigure}
+  \begin{subfigure}{0.4\textwidth}
+    \hfill
+    \resizebox{1\textwidth}{!}{
+      \begin{tikzpicture}[>=latex]
+        \draw[line width=1.2pt] (0,0) rectangle (6,2);
+        \draw (6,0) -- ++(0.7,0) coordinate (D1) -- +(5pt,0);
+        \draw (6,2) -- ++(0.7,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {20mm};
+        \draw (0,2) -- ++(0,0.5) coordinate (D3) -- +(0,5pt);
+        \draw (6,2) -- ++(0,0.5) coordinate (D4) -- +(0,5pt);
+        \draw [dimen] (D3) -- (D4) node {60mm};
+
+        \draw (0,2) -- (-0.3,2.2) -- (-0.3,1.8) -- cycle;
+        \draw (-0.36,2.15) circle (0.06);
+        \draw (-0.36,1.85) circle (0.06);
+        \node [marked body,minimum height=1cm,minimum width=0.1cm,anchor=center] at (-0.42-0.05,2) {};
+
+        \draw (0,1) -- (-0.3,1.2) -- (-0.3,0.8) -- cycle;
+        \draw (-0.36,1.15) circle (0.06);
+        \draw (-0.36,0.85) circle (0.06);
+        \node [marked body,minimum height=1cm,minimum width=0.1cm,anchor=center] at (-0.42-0.05,1) {};
+
+        \draw (0,0) -- (-0.3,0.2) -- (-0.3,-0.2) -- cycle;
+        \draw (-0.36,0.15) circle (0.06);
+        \draw (-0.36,-0.15) circle (0.06);
+        \node [marked body,minimum height=1cm,minimum width=0.1cm,anchor=center] at (-0.42-0.05,0) {};
+        
+        \draw (6,0) -- (6.2,-0.3) -- (5.8,-0.3) -- cycle;
+        \draw (6.15,-0.36) circle (0.06);
+        \draw (5.85,-0.36) circle (0.06);
+        \node [marked body,minimum height=0.1cm,minimum width=1cm,anchor=center] at (6,-0.42-0.05) {};
+
+        \draw[->,line width=1pt] (0,3) -- (0,2);
+        \node (arrowhead) at (0,3.2) {F};
+      \end{tikzpicture}
+    }
+    \caption{Half beam}
+    \label{fig:HalfMBB}
+  \end{subfigure}
+  \caption{Messerschmitt-Bolkow-Blohm (MBB) beam problem}
+  \label{fig:MBBBeam}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \resizebox{0.5\textwidth}{!}{
+    \begin{tikzpicture}[>=latex]
+        \draw[fill,color=gray!70] (-0.2,2) rectangle (3.2,2.5);
+        \draw[line width=1.2pt] (0, 2) node(nodeA){} -- (3, 2) node(nodeB){} -- (3, -1) -- (6, -1) node(nodeC){} -- (6, -4) node(nodeD){} -- (0, -4) node(nodeE){} -- cycle;
+        
+        \draw (nodeA) -- ++(0,1) coordinate (D1) -- +(0,5pt);
+        \draw (nodeB) -- ++(0,1) coordinate (D2) -- +(0,5pt);
+        \draw [dimen] (D1) -- (D2) node {50 mm};
+
+        \draw (nodeA) -- ++(-1,0) coordinate (D1) -- +(-5pt,0);
+        \draw (nodeE) -- ++(-1,0) coordinate (D2) -- +(-5pt,0);
+        \draw [dimen] (D1) -- (D2) node {100 mm};
+
+        \draw (nodeC) -- ++(1,0) coordinate (D1) -- +(5pt,0);
+        \draw (nodeD) -- ++(1,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {50 mm};
+
+        \draw (nodeE) -- ++(0,-1) coordinate (D1) -- +(0,-5pt);
+        \draw (nodeD) -- ++(0,-1) coordinate (D2) -- +(0,-5pt);
+        \draw [dimen] (D1) -- (D2) node {100 mm};
+
+        \draw[->,line width=1pt] (6,-2.5) -- (6.2,-2.5) -- (6.2,-3.15);
+        \node (arrowhead) at (6.2,-3.25) {F};
+    \end{tikzpicture} \newline
+  }
+  \caption{L-shaped beam problem}
+  \label{fig:LBeam}
+\end{figure}
+\end{comment}
+
+\begin{figure}
+  \centering
+  \resizebox{0.7\textwidth}{!}{
+    \begin{tikzpicture}[>=latex]
+      \draw[fill,color=gray!70] (-0.2,-0.15) rectangle (0,0.9);
+      \draw[step=0.25cm] (0,0) grid (8,0.75);
+      \draw[step=0.25cm] (7.5,0.75) grid (7.75,1.75);
+      \draw (7.5,0.75) -- (7.5,1.75);
+      \draw (7.625,1.75) -- (7.8,2) -- (7.45,2) -- cycle;
+      \draw (7.8,2.06) circle (0.06);
+      \draw (7.45,2.06) circle (0.06);
+      \node [marked body,minimum height=0.1cm,minimum width=0.75cm,anchor=center] at (7.625,2.18) {};
+
+      \draw [->] (8.5,0) -- (8.1,0);
+      \draw [->] (8.5,0.25) -- (8.1,0.25);
+      \draw [->] (8.5,0.5) -- (8.1,0.5);
+      \draw [->] (8.5,0.75) -- (8.1,0.75);
+      \draw [line width=1.2pt] (8.5,0) -- (8.5,0.75) node[draw=none,fill=none,font=\scriptsize,midway,right] {2};
+      
+      \draw [->] (7.5,-0.1) -- (7.5,-0.5);
+      \draw [->] (7.75,-0.1) -- (7.75,-0.5);
+      \draw [line width=1.2pt] (7.5,-0.1) -- (7.75,-0.1) node[draw=none,fill=none,font=\scriptsize,midway,below,yshift=-0.3cm] {1};
+
+      \draw (-0.65,0) -- ++(0.2,0) coordinate (D1) -- +(5pt,0);
+      \draw (-0.65,0.75) -- ++(0.2,0) coordinate (D2) -- +(5pt,0);
+      \draw [dimen] (D1) -- (D2) node {3};
+
+      \draw (0,-1.2) -- ++(0,0.2) coordinate (D1) -- +(0,5pt);
+      \draw (8,-1.2) -- ++(0,0.2) coordinate (D2) -- +(0,5pt);
+      \draw [dimen] (D1) -- (D2) node {32};
+    \end{tikzpicture}
+  }
+  \caption{Tie beam problem}
+  \label{fig:TieBeam}
+\end{figure}
+
+
+\subsection{Genetic evolutionary structural optimization}
+
+While ESO is an acronym for evolutionary structural optimization, it has no direct relationship with the Darwinian evolutionary algorithms (EAs), in fact ESO/BESO is a completely deterministic algorithm. Some specializations of the Darwinian EAs to topology optimization was also attempted in papers like \cite{Sandgren1990,Liu2008}. However, the so-called genetic ESO (GESO) method proposed by \cite{Liu2008} can also be viewed as a stochastic version of ESO/BESO since an unconventional definition of the solution population is used, where a single solution is treated as a population and every mesh element is a member of the population. This is different from the conventional meaning of a population in genetic algorithms (GAs), where a population must be made of many solutions each of which has an objective value and can be either feasible or not. The GA-like technique used by \cite{Liu2008} results in a stochastic re-ordering of the removal and addition of elements, compared to the deterministic BESO algorithm, which therefore makes it more like a binary stochastic gradient descent algorithm. Traditional EAs, e.g. GAs \citep{Sandgren1990}, and more generally zero-order optimization methods, e.g. pattern search \citep{Guirguis2016}, tried in literature fail to perform as well as SIMP and BESO since they require a prohibitively large number of function evaluations, more than 10s of thousands, even for toy problems, where each function evaluation can be an expensive FEA. Also the scale of problems required to be solved in practice can involve anywhere from 1000s to 100,000,000s of decision variables and zero-order methods are known for not scaling well when the number of decision variables is even in the 100s. On the other hand, SIMP and BESO tend to converge to good solutions in 100s of function evaluations at the very most, often in much less. Also huge scale problems with 10s of millions of decision variables were successfully solved in literature, e.g. \cite{Aage2015}, using these methods.
+
+\subsection{Topology optimization problem classes}
+
+A number of mechanical structure problems were studied and successfully solved in topology optimization literature where some of the objectives were: 
+
+\begin{enumerate}[label=(\arabic*)]
+  \item Compliance minimization \citep{Bendsoe1989}, 
+  \item Material volume/cost minimization \citep{Payten1998,Bruggi2012}, 
+  \item Maximum stress minimization \citep{Yang1996,Lian2017}, or 
+  \item Minimum eigenvalue maximization \citep{Neves1995,Rahmatalla2003,Munk2017}. 
+\end{enumerate}
+Some of the constraints used were: 
+\begin{enumerate}[label=(\arabic*)]
+  \item Volume constraint \citep{Bendsoe1989}, 
+  \item Maximum compliance constraint \citep{Bruggi2012,Collet2017}, 
+  \item Maximum displacement constraint \citep{Huang2010a}, 
+  \item Local/global stress constraints \citep{Payten1998,Amir2017}, 
+  \item Fatigue constraints \citep{Oest2017,Collet2017}, and/or 
+  \item Global stability/buckling/bifurcation constraints \citep{Kocvara2004,Browne2013,Deng2017}.
+\end{enumerate}
+Some of the mechanical systems studied were: 
+\begin{enumerate}[label=(\arabic*)]
+  \item Linear, elastic, quasi-static systems \citep{Bendsoe1989}, 
+  \item Nonlinear, compliant mechanisms \citep{Sigmund1997}, 
+  \item Nonlinear, elasto-plastic systems \citep{Maute1997,Amir2017}, or 
+  \item Linear/nonlinear vibrating systems \citep{Zargham2016}. 
+\end{enumerate}
+And finally the loads handled were: 
+\begin{enumerate}[label=(\arabic*)]
+  \item Single or multiple \citep{Allaire2004}, 
+  \item Design-independent or design-dependent \citep{Lee2012},
+  \item Static or dynamic \citep{Zhang2016}, and 
+  \item Deterministic or stochastic \citep{Zhang2016}. 
+\end{enumerate}
+Multiobjective problems combining multiple of the above objectives have also been scarcely considered \citep{Suresh2010,Sato2017a}. Many of the papers cited above have used either SIMP or BESO variants.
+
+\begin{comment}
+There are a number of problem domains, loading and boundary conditions commonly used for benchmarking and testing purposes. In this section, 3 common problem domains are summarized. 
+
+a point load is applied on the center of the right end of a beam fixed on the other end as shown in Fig. \ref{fig:CantBeam}. A force $F = 1 \text{ N}$ was used, as well as a thickness of $1 \text{ mm}$ and a Young's modulus of $E = 1 \text{ MPa}$. This problem was solved by \cite{Huang2010a} to benchmark soft-kill BESO against CSIMP.
+
+
+\begin{figure}[!htbp]
+  \centering
+  \resizebox{0.5\textwidth}{!}{
+    \begin{tikzpicture}
+        \draw[fill,color=gray!70] (0,-0.1) rectangle (-0.3,2.1);
+        \node [align=center, body,line width=1.2pt,minimum height=2cm,minimum width=8cm,anchor=south west] (body1) at (0,0) {};
+        \draw (body1.south east) -- ++(1,0) coordinate (D1) -- +(5pt,0);
+        \draw (body1.north east) -- ++(1,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {40mm};
+
+        \draw (body1.north west) -- ++(0,0.5) coordinate (D1) -- +(0,5pt);
+        \draw (body1.north east) -- ++(0,0.5) coordinate (D2) -- +(0,5pt);
+        \draw [dimen] (D1) -- (D2) node {160mm};
+        \draw[->,line width=1pt] (8,1) -- (8.15,1) -- (8.15,0.2);
+        \node (arrowhead) at (8.4,0.25) {F};
+    \end{tikzpicture} \newline
+  }
+  \caption{Cantilever beam problem before topology optimization.}
+  \label{fig:CantBeam}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \begin{subfigure}{0.7\textwidth}
+    \resizebox{1\textwidth}{!}{
+      \begin{tikzpicture}[>=latex]
+        \draw[line width=1.2pt] (-6,0) rectangle (6,2);
+          \draw (6,0) -- ++(0.7,0) coordinate (D1) -- +(5pt,0);
+          \draw (6,2) -- ++(0.7,0) coordinate (D2) -- +(5pt,0);
+          \draw [dimen] (D1) -- (D2) node {20mm};
+          \draw (-6,2) -- ++(0,1.3) coordinate (D3) -- +(0,5pt);
+          \draw (6,2) -- ++(0,1.3) coordinate (D4) -- +(0,5pt);
+          \draw [dimen] (D3) -- (D4) node {120mm};
+
+        \draw (-6,0) -- (-6.2,-0.3) -- (-5.8,-0.3) -- cycle;
+        \draw (-6.15,-0.36) circle (0.06);
+        \draw (-5.85,-0.36) circle (0.06);
+        \node [marked body,minimum height=0.1cm,minimum width=1cm,anchor=center] at (-6,-0.42-0.05) {};
+
+        \draw (6,0) -- (6.2,-0.3) -- (5.8,-0.3) -- cycle;
+        \node [marked body,minimum height=0.1cm,minimum width=1cm,anchor=center] at (6,-0.35) {};
+
+        \draw[->,line width=1pt] (0,3) -- (0,2);
+        \node (arrowhead) at (0.2,2.7) {F};
+      \end{tikzpicture}
+    }
+    \caption{Full beam}
+    \label{fig:FullMBB}
+  \end{subfigure}
+  \begin{subfigure}{0.4\textwidth}
+    \hfill
+    \resizebox{1\textwidth}{!}{
+      \begin{tikzpicture}[>=latex]
+        \draw[line width=1.2pt] (0,0) rectangle (6,2);
+        \draw (6,0) -- ++(0.7,0) coordinate (D1) -- +(5pt,0);
+        \draw (6,2) -- ++(0.7,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {20mm};
+        \draw (0,2) -- ++(0,0.5) coordinate (D3) -- +(0,5pt);
+        \draw (6,2) -- ++(0,0.5) coordinate (D4) -- +(0,5pt);
+        \draw [dimen] (D3) -- (D4) node {60mm};
+
+        \draw (0,2) -- (-0.3,2.2) -- (-0.3,1.8) -- cycle;
+        \draw (-0.36,2.15) circle (0.06);
+        \draw (-0.36,1.85) circle (0.06);
+        \node [marked body,minimum height=1cm,minimum width=0.1cm,anchor=center] at (-0.42-0.05,2) {};
+
+        \draw (0,1) -- (-0.3,1.2) -- (-0.3,0.8) -- cycle;
+        \draw (-0.36,1.15) circle (0.06);
+        \draw (-0.36,0.85) circle (0.06);
+        \node [marked body,minimum height=1cm,minimum width=0.1cm,anchor=center] at (-0.42-0.05,1) {};
+
+        \draw (0,0) -- (-0.3,0.2) -- (-0.3,-0.2) -- cycle;
+        \draw (-0.36,0.15) circle (0.06);
+        \draw (-0.36,-0.15) circle (0.06);
+        \node [marked body,minimum height=1cm,minimum width=0.1cm,anchor=center] at (-0.42-0.05,0) {};
+        
+        \draw (6,0) -- (6.2,-0.3) -- (5.8,-0.3) -- cycle;
+        \draw (6.15,-0.36) circle (0.06);
+        \draw (5.85,-0.36) circle (0.06);
+        \node [marked body,minimum height=0.1cm,minimum width=1cm,anchor=center] at (6,-0.42-0.05) {};
+
+        \draw[->,line width=1pt] (0,3) -- (0,2);
+        \node (arrowhead) at (0,3.2) {F};
+      \end{tikzpicture}
+    }
+    \caption{Half beam}
+    \label{fig:HalfMBB}
+  \end{subfigure}
+  \caption{Messerschmitt-Bolkow-Blohm (MBB) beam problem}
+  \label{fig:MBBBeam}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \resizebox{0.5\textwidth}{!}{
+    \begin{tikzpicture}[>=latex]
+        \draw[fill,color=gray!70] (-0.2,2) rectangle (3.2,2.5);
+        \draw[line width=1.2pt] (0, 2) node(nodeA){} -- (3, 2) node(nodeB){} -- (3, -1) -- (6, -1) node(nodeC){} -- (6, -4) node(nodeD){} -- (0, -4) node(nodeE){} -- cycle;
+        
+        \draw (nodeA) -- ++(0,1) coordinate (D1) -- +(0,5pt);
+        \draw (nodeB) -- ++(0,1) coordinate (D2) -- +(0,5pt);
+        \draw [dimen] (D1) -- (D2) node {50 mm};
+
+        \draw (nodeA) -- ++(-1,0) coordinate (D1) -- +(-5pt,0);
+        \draw (nodeE) -- ++(-1,0) coordinate (D2) -- +(-5pt,0);
+        \draw [dimen] (D1) -- (D2) node {100 mm};
+
+        \draw (nodeC) -- ++(1,0) coordinate (D1) -- +(5pt,0);
+        \draw (nodeD) -- ++(1,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {50 mm};
+
+        \draw (nodeE) -- ++(0,-1) coordinate (D1) -- +(0,-5pt);
+        \draw (nodeD) -- ++(0,-1) coordinate (D2) -- +(0,-5pt);
+        \draw [dimen] (D1) -- (D2) node {100 mm};
+
+        \draw[->,line width=1pt] (6,-2.5) -- (6.2,-2.5) -- (6.2,-3.15);
+        \node (arrowhead) at (6.2,-3.25) {F};
+    \end{tikzpicture} \newline
+  }
+  \caption{L-shaped beam problem}
+  \label{fig:LBeam}
+\end{figure}
+
+\end{comment}
+
+\newpage
+\section{Nonlinear programming}
+
+Part of the SIMP algorithm is solving an NLP using a constrained mathematical optimization algorithm. Zero-order algorithms don't scale too well so they are typically not used for topology optimization. Second order algorithms requiring Hessians are typically too computationally prohibitive because the Hessian with respect to per-element decision variables will typically be a huge dense matrix. Therefore, first order algorithms are by far the most commonly used class of algorithms in topology optimization. There are 2 notable algorithms that were developed specifically for SIMP:
+\begin{enumerate}
+    \item The method of moving asymptotes (MMA) \citep{Svanberg1987} and its globally convergent extension \citep{Svanberg2002}.
+    \item The convex linearization method (CONLIN) \citep{Fleury1989}
+\end{enumerate}
+Other algorithms that have been used in literature \citep{Rojas-Labanda2015,Pereira2004,tarek2021robust} include:
+\begin{enumerate}
+    \item The primal-dual interior point optimizer (IPOPT) \citep{Wachter2006}, with the limited memory Broyden, Fletcher, Goldfarb, and Shann (l-BFGS) approximation of the inverse Lagrangian Hessian \citep{Nocedal2006}
+    \item The first order augmented Lagrangian (AugLag) algorithm \citep{Bertsekas1996}.
+\end{enumerate}
+
+In this section, the original MMA, IPOPT and AugLag will be explained further because they are used in the thesis. Notably, MMA cannot handle equality constraints directly, only inequality constraints, while IPOPT and AugLag handle both equality and inequality constraints. MMA, IPOPT and AugLag are all local optimization algorithms that seek to find a so-called KKT point, which under certain assumptions is a local optimum solution.
+
+In this section, the terms \textit{linear} and \textit{affine} will be used inter-changeably in the context of classifying a function/constraint as either a linear/affine or a nonlinear function/constraint. Even though there is a distinction between the 2 terms, optimization literature commonly uses these 2 terms inter-changeably for the same purpose.
+
+\subsection{Formulations}
+
+There are generally a number of ways to formulate the same optimization or decision problem using mathematical functions and decision variables. For instance, consider the following inequality constrained optimization problem:
+\begin{mini}|l|[3]
+  {\bm{x}}{f_0(\bm{x})}{\label{form:I}}{}
+  \addConstraint {f_i(\bm{x})}{\leq 0}{\quad \forall i = 1..I}
+  \addConstraint {l_j \leq x_j \leq u_j}{}{\quad \forall j = 1..V}
+\end{mini}
+where $I$ is the number of constraints, $V$ is the number of decision variables, $f_i$ is a potentially nonlinear scalar-valued function of $\bm{x}$ and $\bm{l}$ and $\bm{u}$ are finite vectors of lower and upper bounds on the decision vector $\bm{x}$ respectively. Two formulations are considered equivalent for optimization purposes if every optimal solution of one formulation maps to an optimal solution in the other formulation. In the following sub-sections, 2 relevant re-formulation tricks will be presented. For more re-formulation techniques, the readers are referred to the excellent online book titled: "MOSEK Modeling Cookbook" by MOSEK ApS \citep{mosekcookbook}.
+
+\subsubsection{A linear objective is all you need}
+
+For instance, consider the alternative formulation:
+\begin{mini}|l|[3]
+  {\bm{x}, c}{c \label{form:II}}{}{}
+  \addConstraint {f_0(\bm{x})}{\leq c}{}
+  \addConstraint {f_i(\bm{x})}{\leq 0}{\quad \forall i = 1..I}
+  \addConstraint {l_j \leq x_j \leq u_j}{}{\quad \forall j = 1..V}
+\end{mini}
+where we added a new decision variable $c$ and a new constraint $f_0(\bm{x}) \leq c$ to the previous formulation and changed the objective to minimizing $c$ which is a linear function of the decision variables.
+
+It is clear that if $\bm{x}^*$ is an optimal solution of formulation \ref{form:I}, then $(\bm{x}, c) = (\bm{x}^*, f_0(\bm{x}^*))$ is optimal in formulation \ref{form:II}. This is because $f_0(\bm{x}^*)$ is the lowest value $f_0(\bm{x})$ can take for any feasible $\bm{x}$ according to the remaining inequality constraints, and $c = f_0(\bm{x}^*)$ is the lowest value the objective $c$ can take without violating the constraint on $c$.
+
+Conversely, if $(\bm{x}^*, c^*)$ is an optimal solution of formulation \ref{form:II}, $\bm{x}^*$ must be optimal in formulation \ref{form:I}. Since $c$ shows up in only one constraint:
+\begin{align}
+    f_0(\bm{x}) \leq c
+\end{align}
+in formulation \ref{form:II}, for $(\bm{x}^*, c^*)$ to be optimal, $c^*$ must be equal to $f_0(\bm{x}^*)$. And since this is lowest value $c$ can take, it must be the lowest value $f_0(\bm{x})$ can take without violating any of the other constraints on $\bm{x}$, which in turn makes $\bm{x}^*$ an optimal solution to formulation \ref{form:I}. This completes the proof.
+
+\subsubsection{Slack variables}
+
+Another common formulation transformation is changing all the inequality constraints to equality constraints except the variable bounds. This can be done by introducing additional slack variables. Let $\bm{s}$ be a vector of so-called slack variables with length $I$, where $s_i$ is the $i^{th}$ element of the vector associated with constraint $i$ for $i \in 1..I$. Formulation \ref{form:I} can be re-written as:
+\begin{mini}|l|[3]
+  {\bm{x}, \bm{s}}{f_0(\bm{x})}{\label{form:III}}{}
+  \addConstraint {f_i(\bm{x}) + s_i}{= 0}{\quad \forall i = 1..I}
+  \addConstraint {l_j \leq x_j \leq u_j}{}{\quad \forall j = 1..V}
+  \addConstraint {s_i \geq 0}{}{\quad \forall i = 1..I}
+\end{mini}
+
+Since $\bm{s}$ doesn't show up in the objective, in order to prove that formulations \ref{form:I} and \ref{form:III} are equivalent for optimization purposes, it suffices to show that every feasible solution $\bm{x}$ to formulation \ref{form:I} can be mapped a feasible solution $(\bm{x}, \bm{s})$ in formulation \ref{form:III} and vice versa.
+
+It is simple to show that if $\bm{x}$ is a feasible solution in formulation \ref{form:I}, that $(\bm{x}, \bm{s})$ where $\bm{s}: s_i = -f_i(\bm{x})\, \forall i \in 1..I$ is a feasible solution in formulation \ref{form:III}. This is because for $\bm{x}$ to be feasible in formulation \ref{form:I}, $f_i(\bm{x})$ must be non-positive for all $i$ which makes $s_i$ non-negative. Conversely, if $(\bm{x}, \bm{s})$ is a feasible solution to formulation \ref{form:III}, $\bm{x}$ is clearly feasible in formulation \ref{form:I} because $s_i$ will be non-negative which implies that $f_i(\bm{x}) \leq 0$ for all $i$. This completes the proof.
+
+\subsubsection{Equality constraints and empty interiors}
+
+While the following equality constraint:
+\begin{align}
+  f(\bm{x}) = 0
+\end{align}
+is in theory equivalent to the following 2 inequality constraints:
+\begin{align}
+  0 \leq f(\bm{x}) \leq 0
+\end{align}
+this transformation does not change the shape or nature of the feasible domain. Not all NLP algorithms that can handle inequality constraints can also handle problems with 2 inequality constraints derived from an equality constraint like this. For instance, the convergence proof of the globally convergent MMA algorithm \citep{Svanberg2002} assumes that the feasible domain must have a non-empty interior. Equality constraints introduce an "empty interior". A domain $D \subseteq \mathbb{R}^V$ is said to have a non-empty interior if $\exists (\bm{x}_c \in D, r > 0)$ such that $\bm{x}_c + \bm{u} \in D$ for all $\bm{u}$ in $\{\bm{u} : \bm{u} \in \mathbb{R}^V \wedge ||\bm{u}||_2 \leq r\}$. Since equality constraints change the feasible domain to a lower dimensional manifold embedded in $\mathbb{R}^V$, there exist no such $(\bm{x}_c, r)$ in equality constrained problems. Therefore, the MMA algorithm will fail if the interior of the feasible domain is empty.
+
+Linear equality constraints are generally an exception though. While technically still introducing an empty interior, most NLP algorithms can either natively handle linear equality constraints or the linear equality constrained NLP can be re-parameterized such that the interior of the feasible domain is no longer empty. IPOPT and AugLag can handle linear and even nonlinear equality constraints natively. Sequential quadratic programming (SQP) methods \citep{Boyd2009} can only handle linear equality constraints natively whereas nonlinear ones must get locally approximated by linear ones in an iterative process. MMA however doesn't handle either linear or nonlinear equality constraints natively. But it can be made to support linear ones with a simple nullspace re-parameterization trick.
+
+Let the following be the linear equality constrained NLP with a nonlinear objective and inequality constraints:
+\begin{mini}|l|[3]
+  {\bm{x}}{f_0(\bm{x})}{\label{form:IV}}{}
+  \addConstraint {f_i(\bm{x})}{\leq 0}{\quad \forall i = 1..I}
+  \addConstraint {l_j \leq x_j \leq u_j}{}{\quad \forall j = 1..V}
+  \addConstraint {\bm{A} \bm{x}}{= b}{}
+\end{mini}
+where $\bm{A}$ is a constant matrix of size $(M \times V)$ and $\bm{b}$ is a constant vector. Let $\bm{x}_0$ be an arbitrary point that satisfies the $\bm{A} \bm{x} = \bm{b}$ constraint, e.g. $\bm{x}_0 = \bm{A}^{+} \bm{b}$ where $\bm{A}^{+}$ is the Moore-Penrose pseudoinverse of $\bm{A}$ \citep{Golub1996}. Let $\bm{N}$ be the nullspace matrix of $\bm{A}$ such that $\bm{A} \times \bm{N} = \bm{0}$, where $\bm{N}$ is of size $V \times U$. Every feasible solution $\bm{x}$ to the constraints $\bm{A} \bm{x} = \bm{b}$ can now be written as:
+\begin{align}
+    \bm{x} = \bm{x}_0 + \bm{N} \bm{y}
+\end{align}
+for some $\bm{y} \in \mathbb{R}^U$, where $U < V$. Substituting for $\bm{x}$ in formulation \ref{form:IV}, we get:
+\begin{mini}|l|[3]
+  {\bm{y}}{f_0(\bm{x}_0 + \bm{N} \bm{y})}{\label{form:V}}{}
+  \addConstraint {f_i(\bm{x}_0 + \bm{N} \bm{y})}{\leq 0}{\quad \forall i = 1..I}
+  \addConstraint {\bm{l} \leq \bm{x}_0 + \bm{N} \bm{y} \leq \bm{u}}{}{}
+\end{mini}
+The re-parameterization essentially limits the feasible domain to the nullspace of the linear constraints since the "interior" is non-empty once we limit ourselves to the nullspace. A similar re-parameterization trick can also be used for some nonlinear manifolds, e.g. optimization on the surface of a hyper-sphere.
+
+Beside the iterative linear approximation of nonlinear equality constraints, MMA can also be made to approximately support nonlinear equality constraints by relaxing it as follows:
+\begin{align}
+  -\epsilon \leq f(\bm{x}) \leq \epsilon
+\end{align}
+where $\epsilon > 0$ which creates a non-empty interior.
+
+\subsection{Regularity conditions}
+
+There are a number of optimization algorithms that can solve a general NLP without assuming convexity. Most NLP algorithms tend to converge to a locally optimal solution without global optimality guarantees and this suffices in many applications. For simplicity, assume all the inequality constraints have been converted to equality constraints using slack variables. Let the NLP with equality constraints be:
+\begin{mini!}|l|[3]
+  {\bm{x}}{f(\bm{x})}{}{}
+  \addConstraint {\quad \bm{c}(\bm{x}) = \bm{0}}{}
+  \addConstraint {\quad \bm{l} \leq \bm{x} \leq \bm{u}}{}
+\end{mini!}
+where $\bm{c}(\bm{x})$ is of length $E$. Additionally, let $f$ and $\bm{c}$ be continuous and twice differentiable functions.
+
+A point $\bm{x}$ is called a regular point if it satisfies one of the so-called constraint qualification conditions. Three common constraint qualifications for NLPs are:
+\begin{enumerate}
+    \item Linear constraint qualification (LCQ): $\bm{c}(\bm{x})$ is an affine function.
+    \item Linear independence constraint qualification (LICQ): the rows of $\nabla \bm{c}(\bm{x})$ and the gradients of the active (i.e. satisfied at equality) bound constraints are linearly independent at $\bm{x}$.
+    \item Mangasarian-Fromovitz constraint qualification (MFCQ): the rows of $\nabla \bm{c}(\bm{x})$ are linearly independent at $\bm{x}$ and there exists a direction vector $\bm{d} \in \mathbb{R}^V$ where $d_i > 0$ if $x_i = l_i$, $d_i < 0$ if $x_i = u_i$, and $\nabla \bm{c}(\bm{x})^T \bm{d} = \bm{0}$.
+\end{enumerate}
+
+Alternatively, if the problem is convex and the nonlinear inequality constraints are not converted to equality constraints, every feasible point is regular if $\exists \bm{x}$ such that all the inequality constraints are satisfied but not active (i.e. satisfied at a strict inequality) and all the linear equality constraints are satisfied. This condition is known as Slater's condition \citep{Boyd2009}.
+
+\subsection{Sufficient optimality conditions for regular points}
+
+Let:
+\begin{align}
+  L(\bm{x}, \bm{\lambda}, \bm{z}_+, \bm{z}_-) = f(\bm{x}) + \bm{c}(\bm{x})^T \bm{\lambda} + (\bm{x} - \bm{u})^T \bm{z}_+  - (\bm{x} - \bm{l})^T \bm{z}_-
+\end{align}
+where $\bm{\lambda} \in \mathbb{R}^E$ is the vector of Lagrangian multipliers of the nonlinear constraints, $\bm{z}_- \in \mathbb{R}^V_+$ is the vector of Lagrangian multipliers of the $\geq$ bound constraints, and $\bm{z}_+ \in \mathbb{R}^V_+$ is the vector of Lagrangian multipliers of the $\leq$ bound constraints.
+
+If $\bm{x}$ is regular and is a local optimum of the NLP, then $\exists (\bm{\lambda}, \bm{z}_+, \bm{z}_-)$ such that:
+\begin{align}
+  \nabla_{\bm{x}} L(\bm{x}, \bm{\lambda}, \bm{z}_+, \bm{z}_-) = \bm{0} \label{eqn:stationarity} \\
+  \bm{c}(\bm{x}) = 0  \label{eqn:primal_feasible_1} \\
+  \bm{l} \leq \bm{x} \leq \bm{u}  \label{eqn:primal_feasible_2}  \\
+  \bm{z}_+ \geq \bm{0}  \label{eqn:dual_feasible_1}  \\
+  \bm{z}_- \geq \bm{0} \label{eqn:dual_feasible_2} \\
+  (\bm{x} - \bm{u})^T \bm{z}_+ = 0 \label{eqn:complementarity_1} \\
+  (\bm{x} - \bm{l})^T \bm{z}_- = 0 \label{eqn:complementarity_2} \\
+  \nabla \bm{c}(\bm{x})^T \nabla_{\bm{x}\bm{x}}^2 L(\bm{x}, \bm{\lambda}, \bm{z}_+, \bm{z}_-) \nabla \bm{c}(\bm{x}) \succcurlyeq \bm{0} \label{eqn:second_order}
+\end{align}
+These conditions are known as the KKT sufficient conditions for optimality and $\bm{x}$ would be called a KKT point \citep{Boyd2009}. Condition \ref{eqn:stationarity} is known as the stationarity condition which generalizes the 0 gradient condition for unconstrained NLPs. Conditions \ref{eqn:primal_feasible_1} and \ref{eqn:primal_feasible_2} are known as primal feasibility conditions. Conditions \ref{eqn:dual_feasible_1} and \ref{eqn:dual_feasible_2} are known as dual feasibility conditions. Finally, condition \ref{eqn:second_order} is known as the second order KKT optimality condition which generalizes the second order optimality condition for unconstrained NLPs, where $\bm{A} \succcurlyeq \bm{0}$ when $\bm{A}$ is a matrix means that $\bm{A}$ must be positive semi-definite.
+
+Note that not every local optimal solution to the NLP must be a regular point or by consequence a KKT point for that matter. Therefore, these conditions are not necessary conditions for optimality for general NLPs. However for convex problems, if Slater's condition is satisfied, these conditions are both necessary and sufficient and the local/global optimum is guaranteed to be a regular and a KKT point \citep{Boyd2009}. All the optimization algorithms presented next seek to find a locally optimal KKT point.
+
+\subsection{Method of moving asymptotes}
+
+  Consider the following inequality constrained optimization problem:
+  \begin{mini}|l|[3]
+    {\bm{x}}{f_0(\bm{x})}{\label{form:I}}{}
+    \addConstraint {f_i(\bm{x})}{\leq 0}{\quad \forall i = 1..I}
+    \addConstraint {l_j \leq x_j \leq u_j}{}{\quad \forall j = 1..V}
+  \end{mini}
+  where $I$ is the number of inequality constraints, $V$ is the number of decision variables, $f_i$ is a potentially nonlinear scalar-valued function of $\bm{x}$ and $\bm{l}$ and $\bm{u}$ are finite vectors of lower and upper bounds on the decision vector $\bm{x}$ respectively.
+
+  The first MMA algorithm proposed by \cite{Svanberg1987} relied on a separable convex approximation of the objective and constraint functions. A function $f(\bm{x})$ is linearly approximated with respect to either $t_{l,j}$ or $t_{u,j}$, where:
+  \begin{align}
+      t_{l,j} = t_l(x_j; L_j) = \frac{1}{x_j - L_j} \\
+      t_{u,j} = t_u(x_j; U_j) = \frac{1}{U_j - x_j}
+  \end{align}
+  for all $j \in 1..V$ for some constants $L_j$ and $U_j$, where $l_j \leq L_j < U_j \leq u_j$, and $L_j$ and $U_j$ are known as the asymptotes of the approximation. The choice of which function, $t_{l,j}$ or $t_{u,j}$, to approximate $f$ with respect to, for each variable $x_j$, depends on the sign of the partial derivative $\frac{\partial f}{\partial x_j}$ such that the approximation is convex.
+
+  More specifically, let the MMA approximation of $f(\bm{x})$ around $\bar{\bm{x}}$ be:
+  \begin{align}
+    \bar{f}(\bm{x}; \bar{\bm{x}}) = f(\bar{\bm{x}}) + \Sigma_j \bar{f}_j(x_j; \bar{\bm{x}})
+  \end{align}
+  Let $\bar{f}_j(x_j; \bar{\bm{x}})$ be:
+  \begin{align}
+    \bar{f}_j(x_j; \bar{\bm{x}}) & = \begin{cases}
+      \Bigl( t_l(x_j; L_j) - t_l(\bar{x}_j; L_j) \Bigr) \frac{\partial f}{\partial t_{l,j}}(\bar{\bm{x}}), & \frac{\partial f}{\partial x_j}(\bar{\bm{x}}) < 0 \\
+      \Bigl( t_u(x_j; U_j) - t_u(\bar{x}_j; U_j) \Bigr) \frac{\partial f}{\partial t_{u,j}}(\bar{\bm{x}}), & \frac{\partial f}{\partial x_j}(\bar{\bm{x}}) \geq 0
+    \end{cases}
+  \end{align}
+  where $\bar{x}_j$ is the $j^{th}$ element of $\bar{\bm{x}}$ and $\frac{\partial f}{\partial t_{l,j}}$ and $\frac{\partial f}{\partial t_{u,j}}$ are:
+  \begin{align}
+    & \frac{\partial f}{\partial t_{l,j}} = \frac{\partial f}{\partial x_j} / \frac{d t_{l,j}}{d x_j} = - (x_j - L_j)^2 \frac{\partial f}{\partial x_j} \\
+    & \frac{\partial f}{\partial t_{u,j}} = \frac{\partial f}{\partial x_j} / \frac{d t_{u,j}}{d x_j} = (U_j - x_j)^2 \frac{\partial f}{\partial x_j}
+  \end{align}
+  $\bar{f}_j(x_j; \bar{\bm{x}})$ can therefore be written as:
+  \begin{align}
+    \bar{f}_j(x_j; \bar{\bm{x}}) & = \begin{cases}
+      -\Bigl( t_l(x_j; L_j) - t_l(\bar{x}_j; L_j) \Bigr) (\bar{x}_j - L_j)^2 \frac{\partial f}{\partial x_j}(\bar{\bm{x}}), & \frac{\partial f}{\partial x_j}(\bar{\bm{x}}) < 0 \\
+      \Bigl( t_u(x_j; U_j) - t_u(\bar{x}_j; U_j) \Bigr) (U_j - \bar{x}_j)^2 \frac{\partial f}{\partial x_j}(\bar{\bm{x}}), & \frac{\partial f}{\partial x_j}(\bar{\bm{x}}) \geq 0
+    \end{cases}
+  \end{align}  
+
+  The signs of the gradient and Hessian of $\bar{f}(\bm{x}; \bar{\bm{x}})$ therefore depend mostly on $t_l(x_j; L_j)$ and $t_u(x_j; U_j)$. Since the approximation is separable in $\bm{x}$, the Hessian of $\bar{f}(\bm{x}; \bar{\bm{x}})$ wrt $\bm{x}$ is a diagonal matrix where the $j^{th}$ diagonal element is:
+  \begin{align}
+    \frac{\partial^2 \bar{f}}{\partial x_j^2} = \begin{cases}
+      -\frac{d^2 t_{l,j}}{d x_j^2} (\bar{x}_j - L_j)^2 \frac{\partial f}{\partial x_j}(\bar{\bm{x}}), & \frac{\partial f}{\partial x_j}(\bar{\bm{x}}) < 0 \\
+      \frac{d^2 t_{u,j}}{d x_j^2} (U_j - \bar{x}_j)^2 \frac{\partial f}{\partial x_j}(\bar{\bm{x}}), & \frac{\partial f}{\partial x_j}(\bar{\bm{x}}) \geq 0
+    \end{cases}
+  \end{align}
+  Since $\frac{d^2 t_{l,j}}{d x_j^2}$ and $\frac{d^2 t_{u,j}}{d x_j^2}$ are both positive for all $x_j$, it is clear that the MMA approximation is always going to be convex.
+
+  In each iteration of the MMA algorithm, convex approximations of the objective and all the constraint functions are formed around the current solution and the approximate problem is solved to optimality while restricting the decision variables to be between the asymptotes $\bm{L}$ and $\bm{U}$ instead of the original bounds $\bm{l}$ and $\bm{u}$. This is similar to the trust region approach. Let the restricted convex approximation of the original nonlinear program be:
+  \begin{mini*}|l|[3]
+    {\bm{x}}{\bar{f}_0(\bm{x}; \bar{\bm{x}})}{}{}
+    \addConstraint {\bar{f}_i(\bm{x}; \bar{\bm{x}})}{\leq 0}{\quad \forall i = 1..I}
+    \addConstraint {\alpha_j \leq x_j \leq \beta_j}{}{\quad \forall j = 1..V}
+  \end{mini*}
+  where each decision variable $x_j$ is restricted to be between $\alpha_j = max(l_j, L_j)$ and $\beta_j = min(u_j, U_j)$ and $\bar{f}_i(\bm{x}; \bar{\bm{x}})$ is the MMA approximation of $f_i(\bm{x})$ around $\bar{\bm{x}}$. In order to form the approximation above, the gradient of the objective and the full Jacobian of the constraint functions need to be computed first. This typically limits the MMA algorithm's scalability in handling many constraints where the full Jacobian can be expensive to form, e.g. in stress-constrained topology optimization. However if only a few constraints exist, the MMA algorithm is usually quite robust when starting from a feasible solution. Most importantly is that once the approximate problem is formed, no more calls to the objective or constraint kernels are required by the primal-dual algorithm to solve the approximate problem to optimality.
+
+  Once the approximation is formed, the separable nature of the MMA convex approximation then allows the approximate nonlinear program to be solved to optimality using an efficient primal-dual Lagrangian optimization algorithm \citep{Svanberg1987}. The dual of the convex approximation problem above is the following lower bound constrained nested optimization problem:
+  \begin{maxi*}|l|[3]
+    {\bm{\bm{\lambda} \geq \bm{0}}}{\min_{\bm{l} \leq \bm{x} \leq \bm{u}} \mathcal{L}(\bm{x}, \bm{\lambda}) = r_0 + \sum_{j=1}^V \mathcal{L}_j}{}{}
+  \end{maxi*}
+  where
+  \begin{align}
+    \mathcal{L}_j(x_j; \bm{\lambda}) & = \frac{p_{0,j} + \sum_i \lambda_i p_{i,j}}{U_j - x_j} + \frac{q_{0,j} + \sum_i \lambda_i q_{i,j}}{x_j - L_j} \\
+    r_0 & = f_0(\bar{\bm{x}}) - \sum_{j=1}^V \frac{p_{0,j}}{U_j - \bar{x}_j} + \frac{q_{0,j}}{\bar{x}_j - L_j} \\
+    p_{i,j} & = \begin{cases}
+      (U_j - \bar{x}_j)^2 \frac{\partial f_i}{\partial x_j}(\bar{\bm{x}}) & \frac{\partial f_i}{\partial x_j}(\bar{\bm{x}}) > 0 \\
+      0 & \frac{\partial f_i}{\partial x_j}(\bar{\bm{x}}) \leq 0
+    \end{cases} \\
+    q_{i,j} & = \begin{cases}
+      0 & \frac{\partial f_i}{\partial x_j}(\bar{\bm{x}}) \geq 0 \\
+      -(\bar{x}_j - L_j)^2 \frac{\partial f_i}{\partial x_j}(\bar{\bm{x}}) & \frac{\partial f_i}{\partial x_j}(\bar{\bm{x}}) < 0
+  \end{cases}
+  \end{align}
+  The primal optimal solution $\bm{x}^*$ of the convex approximation has an analytic form as a function of the dual solution $\bm{\lambda}$:
+  \begin{align}
+    x^*_j(\bm{\lambda}) = \begin{cases}
+      \alpha_j & \frac{\partial \mathcal{L}_j}{\partial x_j}(\alpha_j; \bm{\lambda}) \geq 0 \\
+      \beta_j & \frac{\partial \mathcal{L}_j}{\partial x_j}(\beta_j; \bm{\lambda}) \leq 0 \\
+      \frac{(p_{0,j} + \sum_i \lambda_i p_{i,j})^{1/2} L_j + (q_{0,j} + \sum_i \lambda_i q_{i,j})^{1/2} U_j}{(p_{0,j} + \sum_i \lambda_i p_{i,j})^{1/2} + (q_{0,j} + \sum_i \lambda_i q_{i,j})^{1/2}} & otherwise
+    \end{cases}
+  \end{align}
+
+  Since the optimization of the approximate nonlinear program requires no calls to the objective or constraint kernels, its performance is independent of the computational complexity of computing the objective value, its gradient, the constraint values and their Jacobian.
+  
+  One of the biggest numerical challenges in topology optimization is that the scale of the objective and constraints can often be vastly different. For example in the VCCM problem, the objective value scales up with the volume of the design and the Young's modulus while the volume fraction constraint does not. Moreover, the $\infty$-norm of the gradient of the volume fraction constraint scales down as the number of elements increases while that of the gradient of the compliance function does not. This usually results in problems where the objective and constraints span multiple orders of magnitude. This difference in scale usually means that more iterations are needed to converge to sufficiently large or sufficiently small elements of the dual solution $\bm{\lambda}$ that satisfies the first order KKT optimality conditions. More specifically in the MMA algorithm, this mostly translates to requiring more iterations to solve the approximate problem to optimality and usually not many more subproblems to be solved. However as mentioned earlier, the additional iterations needed to solve the approximate subproblem do not require any additional calls to the objective or constraint kernels. This is an especially attractive feature of the MMA algorithm in topology optimization since scaling issues are common and the computational time is usually dominated by the time it takes to compute the objective, the constraints and their gradients.
+
+  Another attractive feature of the MMA algorithm is the low sensitivity of the algorithm's performance to most of the parameters. In this thesis, the lower bound constrained dual of the convex approximation is solved using a log-barrier method with the nonlinear conjugate gradient algorithm \citep{Nocedal2006}. The parameters of the subproblem optimizer generally have little effect on the performance of the MMA algorithm for the reason mentioned above. The main parameters which tend to affect the performance of the algorithm by changing the number of subproblems that need to be solved are: $s_{init}$ used to specify the initial asymptotes, $s_{incr}$ used to widen the asymptotes of each variable and $s_{decr}$ used to tighten the asymptotes for each variable. These parameters are described in details by \cite{Svanberg1987}. Finally, a tolerance $tol$ must be picked to terminate the algorithm.
+
+\subsection{Primal-dual interior point method}
+
+  In this section, the primal-dual interior point optimizer (IPOPT) as described in \cite{Wachter2006} and implemented in the IPOPT software will be described. This algorithm and its implementation are well tested in practice. However, the main disadvantage of the IPOPT algorithm is its complexity and the large number of hyper-parameters as will be seen next.
+  
+  Consider the following equality constrained optimization problem:
+  \begin{mini}|l|[3]
+    {\bm{x}}{f(\bm{x})}{}{}
+    \addConstraint {\bm{c}(\bm{x})}{= \bm{0}}{}
+    \addConstraint \bm{l} \leq {\bm{x} \leq \bm{u}}{}{}
+  \end{mini}
+  where the length of $\bm{x}$ is $V$, $E$ is the number of elements in the output of the vector-valued function $\bm{c}(\bm{x})$, $f$ is a potentially nonlinear scalar-valued function of $\bm{x}$ and $\bm{l}$ and $\bm{u}$ are the lower and upper bounds on the variables. If there are inequality constraints, they can be converted to equality constraints by adding slack variables. Additionally, let $\mathcal{I}_{\bm{l}}$ be the set of variable indices with a finite lower bound and $\mathcal{I}_{\bm{u}}$ be the set of variable indices with a finite upper bound. Additionally, assume that the lower and upper bounds are not equal for any variable. If a variable's lower and upper bounds are equal, it can be fixed and removed from the optimization.
+
+  In the IPOPT algorithm by \cite{Wachter2006}, a so-called log barrier method \citep{Boyd2009} is used to guarantee that $\bm{l} \leq \bm{x} \leq \bm{u}$ remains satisfied at every intermediate solution if the initial solution is within the bounds. This is achieved using a so-called barrier function such as $-\mu \Big( \sum_{i \in \mathcal{I}_{\bm{l}}} \log{(x_i - l_i)} + \sum_{i \in \mathcal{I}_{\bm{u}}} \log{(u_i - x_i)} \Big)$ for some $\mu > 0$ which would go to $\infty$ if any of the decision variables approaches one of its finite bounds. This creates a barrier stopping the optimizer from every reaching the finite bound. It can be shown that if a decreasing geometric series of values $\mu$ are used that the solutions of the sub-problems will follow a so-called critical path converging to a KKT point in convex problems satisfying Slater's condition \citep{Boyd2009}. However, if the optimal solution is exactly on a boundary, the problem can become numerically unstable near the optimal solution. Therefore, the variable bounds are typically relaxed slightly. In particular, the lower bound $l_i$ where $i \in \mathcal{I}_{\bm{l}}$ is relaxed by $tol \times \max{(1, |l_i|)}$, and the upper bound $u_i$ where $i \in \mathcal{I}_{\bm{u}}$ is relaxed by $tol \times \max{(1, |u_i|)}$. $\bm{l}$ and $\bm{u}$ will refer to the relaxed lower and upper bounds from now on.
+  
+  One final catch in the barrier problem formulation is that if the set of optimal points to the original problem does not consist of isolated points, but contains an unbounded connected subspace, e.g. a line to $\infty$ or $-\infty$ for one or more variables, the log-barrier term may become $-\infty$. This is only possible if a variable is bounded from one side only where it's allowed to go to $\pm \infty$ from the other side. If this happens, the minimum objective value of the barrier problem becomes $-\infty$ even when the original problem's objective value is bounded. For this reason, the following additional term is added to the barrier objective:
+  \begin{align}
+      \kappa_d \mu \sum_{i \in \mathcal{I}_{\bm{l}} \setminus \mathcal{I}_{\bm{u}}} \log (x_i - l_i) + \kappa_d \mu \sum_{i \in \mathcal{I}_{\bm{u}} \setminus \mathcal{I}_{\bm{l}}} \log (u_i - x_i)
+  \end{align}
+  for some small constant $\kappa_d \in (0, 1)$. This way, divergence of variables having only one bound is penalized. The effect of this additional term is reduced as $\mu$ decreases and can be shown to not affect the local convergence proof \citep{Wachter2006}. The barrier sub-problem is therefore defined as:
+  \begin{mini}|l|[3]
+    {\bm{x}}{\phi_{\mu}(\bm{x}) = f(\bm{x}) - \mu \sum_{i \in \mathcal{I}_{\bm{l}}} \log{(x_i - l_i)} - \mu \sum_{i \in \mathcal{I}_{\bm{u}}} \log{(u_i - x_i)}}{}{}
+    \breakObjective{ + \kappa_d \mu \sum_{i \in \mathcal{I}_{\bm{l}} \setminus \mathcal{I}_{\bm{u}}} \log (x_i - l_i) + \kappa_d \mu \sum_{i \in \mathcal{I}_{\bm{u}} \setminus \mathcal{I}_{\bm{l}}} \log (u_i - x_i)}
+    \addConstraint {\bm{c}(\bm{x})}{= \bm{0}}{}
+  \end{mini}
+  The KKT stationarity condition is therefore:
+  \begin{align}
+      \nabla f(\bm{x}) + \nabla \bm{c}(\bm{x})^T \bm{\lambda} - \bm{z}_{\bm{l}} - \bm{z}_{\bm{u}} = \bm{0}
+  \end{align}
+  where $\bm{\lambda}$ is the vector Lagrangian multipliers associated with the equality constraint $\bm{c}(\bm{x}) = \bm{0}$, $\bm{z}_{\bm{l}}$ is a vector whose $i^{th}$ element is:
+  \begin{align}
+      z_{l_i} = \begin{cases}
+        \frac{\mu}{x_i - l_i} & i \in \mathcal{I}_{\bm{l}} \cap \mathcal{I}_{\bm{u}} \\
+        \frac{(1 - \kappa_d) \mu}{x_i - l_i} &  i \in \mathcal{I}_{\bm{l}} \setminus \mathcal{I}_{\bm{u}} \\
+        0 & otherwise,
+      \end{cases}
+  \end{align}
+  and $\bm{z}_{\bm{u}}$ is a vector whose $i^{th}$ element is:
+  \begin{align}
+      z_{u_i} = \begin{cases}
+        \frac{\mu}{u_i - x_i} & i \in \mathcal{I}_{\bm{l}} \cap \mathcal{I}_{\bm{u}} \\
+        \frac{(1 - \kappa_d) \mu}{u_i - x_i} &  i \in \mathcal{I}_{\bm{u}} \setminus \mathcal{I}_{\bm{l}} \\
+        0 & otherwise,
+      \end{cases}
+  \end{align}
+  
+  Additionally, let $\bm{Z}_{\bm{l}}$ be the diagonal matrix whose diagonal is $\bm{z}_{\bm{l}}$, $\bm{Z}_{\bm{u}}$ be the diagonal matrix whose diagonal is $\bm{z}_{\bm{u}}$, $\bm{X}_{\bm{l}}$ be the diagonal matrix whose diagonal is:
+  \begin{align}
+      \tilde{x}_{l_i} = \begin{cases}
+        x_i - l_i & i \in \mathcal{I}_{\bm{l}} \cap \mathcal{I}_{\bm{u}} \\
+        \frac{x_i - l_i}{1 - \kappa_d} &  i \in \mathcal{I}_{\bm{l}} \setminus \mathcal{I}_{\bm{u}} \\
+        0 & otherwise,
+      \end{cases}
+  \end{align}
+  and $\bm{X}_{\bm{u}}$ be the diagonal matrix whose diagonal is:
+  \begin{align}
+      \tilde{x}_{u_i} = \begin{cases}
+        u_i - x_i & i \in \mathcal{I}_{\bm{l}} \cap \mathcal{I}_{\bm{u}} \\
+        \frac{u_i - x_i}{1 - \kappa_d} &  i \in \mathcal{I}_{\bm{u}} \setminus \mathcal{I}_{\bm{l}} \\
+        0 & otherwise,
+      \end{cases}
+  \end{align}
+  
+  The first order KKT sufficient conditions for optimality assuming the constraint qualifications are satisfied can therefore be written as:
+  \begin{align}
+      \nabla f(\bm{x}) + \nabla \bm{c}(\bm{x})^T \bm{\lambda} - \bm{z}_{\bm{l}} - \bm{z}_{\bm{u}} = \bm{0} \\
+      \bm{c}(\bm{x}) = \bm{0} \\
+      \bm{X}_{\bm{l}} \bm{Z}_{\bm{l}} \bm{1} - \mu \bm{1} = \bm{0} \label{eqn:reciprocal1} \\
+      \bm{X}_{\bm{u}} \bm{Z}_{\bm{u}} \bm{1} - \mu \bm{1} = \bm{0} \label{eqn:reciprocal2} \\
+      \bm{l} \leq \bm{x} \leq \bm{u} \\
+      \bm{z}_{\bm{l}} \geq \bm{0} \\
+      \bm{z}_{\bm{u}} \geq \bm{0}
+  \end{align}
+  where $\bm{1}$ is a vector of ones. Conditions \ref{eqn:reciprocal1} and \ref{eqn:reciprocal2} ensure that the relationship between $\bm{X}_{\bm{l}}$, $\bm{Z}_{\bm{l}}$, $\bm{X}_{\bm{u}}$ and $\bm{Z}_{\bm{u}}$ is maintained according to the definitions of $\bm{z}_{\bm{l}}$ and $\bm{z}_{\bm{u}}$. Assume $l_i$ and $u_i$ are both finite for some index $i$. Given that $\mu$ is positive, condition \ref{eqn:reciprocal1} guarantees that $x_i - l_i$ and $z_i$ will either be both positive or both negative. However even if we start from a value for $x_i > l_i$ and $z_i > 0$, during the intermediate line search steps, there is a non-zero chance that both $x_i - l_i$ and $z_i$ may become negative simultaneously for some $i$, hence the need for the explicit non-negativity constraints on $\bm{z}_{\bm{l}}$ and $\bm{z}_{\bm{u}}$, and the bounds constraints on $\bm{x}$.
+  
+  The primal-dual interior point optimizer presented in \cite{Wachter2006} computes an approximate solution to the barrier problem for a fixed value of $\mu$ then decreases $\mu$ and continues the solution of the next barrier problem from the approximate solution of the previous one. The optimality error is defined as:
+  \begin{align}
+      E_{\mu}(\bm{x}, \bm{\lambda}, \bm{z}_{\bm{l}}, \bm{z}_{\bm{u}}) := \max \Bigg\{ \frac{||\nabla f(\bm{x}) + \nabla \bm{c}(\bm{x})^T \bm{\lambda} - \bm{z}_{\bm{l}} - \bm{z}_{\bm{u}}||}{s_d}, ||\bm{c}(\bm{x})||_1, \frac{||\bm{X}_{\bm{l}} \bm{Z}_{\bm{l}} \bm{1} - \mu \bm{1}||_{\infty}}{s_c}, \frac{||\bm{X}_{\bm{u}} \bm{Z}_{\bm{u}} \bm{1} - \mu \bm{1}||_{\infty}}{s_c} \Bigg\}
+  \end{align}
+  with scaling parameters $s_d, s_c \geq 1$ defined below. $E_0(\bm{x}, \bm{\lambda}, \bm{z}_{\bm{l}}, \bm{z}_{\bm{u}})$ is the optimality error for the original problem. Let $(\tilde{\bm{x}}_*, \tilde{\bm{\lambda}}_*, \tilde{\bm{z}}_{\bm{l}, *}, \tilde{\bm{z}}_{\bm{u}, *})$ be the approximate solution of the barrier problem. The algorithm terminates if $E_0(\tilde{\bm{x}}_*, \tilde{\bm{\lambda}}_*, \tilde{\bm{z}}_{\bm{l}, *}, \tilde{\bm{z}}_{\bm{u}, *}) \leq tol$ for some tolerance $tol$.
+  
+  It is possible that the magnitudes of $\bm{\lambda}$, $\bm{z}_{\bm{l}}$ and $\bm{z}_{\bm{u}}$ might become very large, e.g. if the gradients of the active constraints are nearly linearly dependent in a solution to the original problem. This is why the scaling factors $s_d$ and $s_c$ are used to make it easier to satisfy the terminating condition around these solutions. $s_d$ and $s_c$ are therefore chosen as:
+  \begin{align}
+      s_d = \max \Bigg\{ s_{max}, \frac{||\lambda||_1 + ||\bm{z}_{\bm{l}}||_1 + ||\bm{z}_{\bm{u}}||_1}{E + V} \Bigg\} / s_{max} \\
+      s_c = \max \Bigg\{ s_{max}, \frac{||\bm{z}_{\bm{l}}||_1 + ||\bm{z}_{\bm{u}}||_1}{V} \Bigg\} / s_{max}
+  \end{align}
+  Using these scaling factors, a component of the optimality error will be scaled, whenever the average value of the multipliers becomes larger than a fixed number $s_{max} \geq 1$
+  
+  Denoting with $j$ the outer iteration counter of barrier sub-problems. Each barrier problem $j$ is terminated when:
+  \begin{align}
+      E_{\mu_{j-1}}(\tilde{\bm{x}}_{*,j}, \tilde{\bm{\lambda}}_{*,j}, \tilde{\bm{z}}_{\bm{l},*,j}, \tilde{\bm{z}}_{\bm{u},*,j}) \leq \kappa_{\epsilon} \mu_j
+  \end{align}
+  for a constant $\kappa_{\epsilon} > 0$. The new barrier parameter $\mu_{j}$ is then obtained using:
+  \begin{align}
+      \mu_j = \max \Bigg\{ \frac{tol}{10}, \min \Big\{ \kappa_{\mu} \mu_{j-1}, \mu_{j-1}^{\theta_\mu} \Big\} \Bigg\}
+  \end{align}
+  with constants $\kappa_{\mu} \in (0, 1)$ and $\theta_{\mu} \in (1, 2)$. In this way, $\mu$ is eventually decreased at a superlinear rate. On the other hand, this update rule stops $\mu$ from becoming smaller than necessary given the desired tolerance $tol$.
+  
+  In order to solve the barrier problem for a given value $\mu = \mu_j$, damped Newton's method is applied to the primal-dual optimality conditions. Here we use $k$ to denote the iteration counter for the inner iterations when solving the barrier problem. Given an iterate $(\bm{x}_k, \bm{\lambda}_k, \bm{z}_{\bm{l}, k}, \bm{z}_{\bm{u}, k})$ with $\bm{l} < \bm{x}_k < \bm{u}$ and  $\bm{z}_{\bm{l}, k}, \bm{z}_{\bm{u}, k} > \bm{0}$, some search directions $(\bm{d}_k^{\bm{x}}, \bm{d}_k^{\bm{\lambda}}, \bm{d}_k^{\bm{z}_{\bm{l}}}, \bm{d}_k^{\bm{z}_{\bm{u}}})$ are obtained using the regularized linearization of the optimality conditions (excluding the inequality constraints):
+  \begin{align}
+      \begin{bmatrix}
+        \bm{W}_k + \delta_w \bm{I} & \bm{A}_k & -\bm{I} & -\bm{I} \\
+        \bm{A}_k^T & -\delta_c \bm{I} & \bm{0} & \bm{0} \\
+        \bm{Z}_{\bm{l},k} & \bm{0} & \bm{X}_{\bm{l},k} & \bm{0} \\
+        \bm{Z}_{\bm{u},k} & \bm{0} & \bm{0} & \bm{X}_{\bm{u}, k}
+      \end{bmatrix} \begin{pmatrix}
+        \bm{d}_k^{\bm{x}} \\
+        \bm{d}_k^{\bm{\lambda}} \\
+        \bm{d}_k^{\bm{z}_{\bm{l}}} \\
+        \bm{d}_k^{\bm{z}_{\bm{u}}}
+      \end{pmatrix} = - \begin{pmatrix}
+        \nabla f(\bm{x}_k) + \bm{A}_k^T \bm{\lambda}_k - \bm{z}_{\bm{l}, k} - \bm{z}_{\bm{u}, k}  \\
+        \bm{c}(\bm{x}_k) \\
+        \bm{X}_{\bm{l}, k} \bm{Z}_{\bm{l}, k} \bm{1} - \mu_j \bm{1} \\
+        \bm{X}_{\bm{u}, k} \bm{Z}_{\bm{u}, k} \bm{1} - \mu_j \bm{1}
+      \end{pmatrix}
+  \end{align}
+  where $\delta_w$ and $\delta_c$ are non-negative constants and $\bm{A}_k := \nabla \bm{c}(\bm{x}_k)^T$ and $\bm{W}_k := \nabla^2_{\bm{x}\bm{x}} \mathcal{L}(\bm{x}_k, \bm{\lambda}_k)$ which is the Hessian of the Lagrangian function of the original problem, where:
+  \begin{align}
+    \mathcal{L}(\bm{x}, \bm{\lambda}) := f(x) + \bm{c}(\bm{x})^T \bm{\lambda}
+  \end{align}
+  Note that the Lagrangian terms from the bounds constraint $\bm{0} \leq \bm{x} \leq \bm{u}$ in the original problem can be ignored since their contribution to the Hessian is 0. When the Hessian of the Lagrangian is not available, an l-BFGS approximation \citep{Nocedal2006} of the Hessian can be used instead. This changes the IPOPT algorithm from a second order algorithm to a first order one. And the Newton update becomes a quasi-Newton update.
+  
+  When $\delta_w$ and $\delta_c$ are 0s, we get the linearization of the primal-dual first order KKT conditions. However, since the Hessian of the Lagrangian function isn't necessarily a positive definite matrix when the NLP is non-convex and in order to guarantee that the search directions obtained are descent directions \citep{Wachter2006}, a positive value for $\delta_w$ is used. Additionally, if the gradients of the active constraints are (nearly) linearly dependent, the matrix on the LHS will be (nearly) singular even if the Hessian of the Lagrangian is positive definite. To stop the matrix from becoming singular in this case, a positive value for $\delta_c$ can be used. If the matrix is so ill-conditioned even with large values for $\delta_w$ and $\delta_c$, the algorithm gives up on finding a search direction and attempts a feasibility restoration step, hoping that the matrix has better properties close to feasible points. For more on the feasibility restoration phase or on the heuristic used to choose $\delta_w$ and $\delta_c$, the readers are referred to section 3.1 in \cite{Wachter2006}.
+  
+  Instead of solving the non-symmetric system of equations above, one can instead change the system as such:
+  \begin{align}
+      \begin{bmatrix}
+        \bm{W}_k + \delta_w \bm{I} & \bm{A}_k & -\bm{I} & -\bm{I} \\
+        \bm{A}_k^T & -\delta_c \bm{I} & \bm{0} & \bm{0} \\
+        \bm{X}_{\bm{l}}^{+} \bm{Z}_{\bm{l},k} & \bm{0} & \bm{I} & \bm{0} \\
+        \bm{X}_{\bm{u}}^{+} \bm{Z}_{\bm{u},k} & \bm{0} & \bm{0} & \bm{I}
+      \end{bmatrix} \begin{pmatrix}
+        \bm{d}_k^{\bm{x}} \\
+        \bm{d}_k^{\bm{\lambda}} \\
+        \bm{d}_k^{\bm{z}_{\bm{l}}} \\
+        \bm{d}_k^{\bm{z}_{\bm{u}}}
+      \end{pmatrix} = - \begin{pmatrix}
+        \nabla f(\bm{x}_k) + \bm{A}_k^T \bm{\lambda}_k - \bm{z}_{\bm{l}, k} - \bm{z}_{\bm{u}, k}  \\
+        \bm{c}(\bm{x}_k) \\
+        \bm{z}_{\bm{l}, k} - \mu_j \bm{X}_{\bm{l}}^{+} \bm{1} \\
+        \bm{z}_{\bm{u}, k} - \mu_j \bm{X}_{\bm{u}}^{+} \bm{1}
+      \end{pmatrix}
+  \end{align}
+  where $\bm{X}^{+}$ is the Moore-Penrose pseudoinverse of $\bm{X}$ \citep{Golub1996}. Adding the third and fourth equations to the first one, the third and fourth blocks of coefficients of the first equation will be eliminated.
+  \begin{align}
+      \begin{bmatrix}
+        \bm{W}_k + \delta_w \bm{I} + \bm{\Sigma}_k & \bm{A}_k & \bm{0} & \bm{0} \\
+        \bm{A}_k^T & -\delta_c \bm{I} & \bm{0} & \bm{0} \\
+        \bm{X}_{\bm{l}}^{+} \bm{Z}_{\bm{l},k} & \bm{0} & \bm{I} & \bm{0} \\
+        \bm{X}_{\bm{u}}^{+} \bm{Z}_{\bm{u},k} & \bm{0} & \bm{0} & \bm{I}
+      \end{bmatrix} \begin{pmatrix}
+        \bm{d}_k^{\bm{x}} \\
+        \bm{d}_k^{\bm{\lambda}} \\
+        \bm{d}_k^{\bm{z}_{\bm{l}}} \\
+        \bm{d}_k^{\bm{z}_{\bm{u}}}
+      \end{pmatrix} = - \begin{pmatrix}
+        \nabla f(\bm{x}_k) + \bm{A}_k^T \bm{\lambda}_k - \mu_j \bm{X}_{\bm{l}}^{+} \bm{1} - \mu_j \bm{X}_{\bm{u}}^{+} \bm{1}  \\
+        \bm{c}(\bm{x}_k) \\
+        \bm{z}_{\bm{l}, k} - \mu_j \bm{X}_{\bm{l}}^{+} \bm{1} \\
+        \bm{z}_{\bm{u}, k} - \mu_j \bm{X}_{\bm{u}}^{+} \bm{1}
+      \end{pmatrix}
+  \end{align}
+  where $\bm{\Sigma}_k = \bm{X}_{\bm{l}}^{+} \bm{Z}_{\bm{l},k} + \bm{X}_{\bm{u}}^{+} \bm{Z}_{\bm{u},k}$. Therefore, one can now solve for $\bm{d}_k^{\bm{x}}$ and $\bm{d}_k^{\bm{\lambda}}$ by solving the following symmetric linear system:
+  \begin{align}
+      \begin{bmatrix}
+        \bm{W}_k + \delta_w \bm{I} + \bm{\Sigma}_k & \bm{A}_k \\
+        \bm{A}_k^T & -\delta_c \bm{I}
+      \end{bmatrix} \begin{pmatrix}
+        \bm{d}_k^{\bm{x}} \\
+        \bm{d}_k^{\bm{\lambda}}
+      \end{pmatrix} = - \begin{pmatrix}
+        \nabla f(\bm{x}_k) + \bm{A}_k^T \bm{\lambda}_k - \mu_j \bm{X}_{\bm{l}}^{+} \bm{1} - \mu_j \bm{X}_{\bm{u}}^{+} \bm{1}  \\
+        \bm{c}(\bm{x}_k)
+      \end{pmatrix}
+  \end{align}  
+  then use the value of $\bm{d}_k^{\bm{x}}$ to find $\bm{d}_k^{\bm{z}_{\bm{l}}}$ and $\bm{d}_k^{\bm{z}_{\bm{u}}}$ using:
+  \begin{align}
+      \bm{d}_k^{\bm{z}_{\bm{l}}} = - \bm{z}_{\bm{l}, k} + \mu_j \bm{X}_{\bm{l}}^{+} \bm{1} - \bm{X}_{\bm{l}}^{+} \bm{Z}_{\bm{l}, k} \bm{d}_k^{\bm{x}} \\
+      \bm{d}_k^{\bm{z}_{\bm{u}}} =  = - \bm{z}_{\bm{u}, k} + \mu_j \bm{X}_{\bm{u}}^{+} \bm{1} - \bm{X}_{\bm{u}}^{+} \bm{Z}_{\bm{u}, k} \bm{d}_k^{\bm{x}}
+  \end{align}
+
+  Having computed the solution to the search directions linear system of equations to obtain $(\bm{d}_k^{\bm{x}}, \bm{d}_k^{\bm{\lambda}}, \bm{d}_k^{\bm{z}_{\bm{l}}}, \bm{d}_k^{\bm{z}_{\bm{u}}})$, now two step sizes $\alpha_k, \alpha_k^{\bm{z}} \in (0, 1]$ have to be determined in order to obtain the next iterate using:
+  \begin{align}
+      \bm{x}_{k+1} := \bm{x}_k + \alpha_k \bm{d}_k^{\bm{x}} \\
+      \bm{\lambda}_{k+1} := \bm{\lambda}_k + \alpha_k \bm{d}_k^{\bm{\lambda}} \\
+      \bm{z}_{\bm{l}, k+1} := \bm{z}_{\bm{l}, k} + \alpha_k^{\bm{z}} \bm{d}_k^{\bm{z}_{\bm{l}}} \\
+      \bm{z}_{\bm{u},k+1} := \bm{z}_{\bm{u}, k} + \alpha_k^{\bm{z}} \bm{d}_k^{\bm{z}_{\bm{u}}}
+  \end{align}
+  When the step sizes are chosen, the bounds on $\bm{x}$, $\bm{z}_{\bm{l}}$ and $\bm{z}_{\bm{u}}$ are enforced. Let $\tau_j \in (0, 1)$ be the so-called fraction-to-the-boundary parameter given by:
+  \begin{align}
+      \tau_j = \max \{\tau_{min}, 1 - \mu_j \}
+  \end{align}
+  where $\tau_{min} \in (0, 1)$ is its minimum value. The step sizes are then chosen using the following fraction-to-the-boundary rule:
+  \begin{align}
+      \alpha_k^{max} & := \max \Bigg\{ \alpha \in (0, 1] : \Big( \tau \bm{l} + (1 - \tau_j) \bm{x}_k \Big) \leq \Big( \bm{x}_k + \alpha \bm{d}_k^{\bm{x}} \Big) \leq \Big( \tau \bm{u} + (1 - \tau_j) \bm{x}_k \Big) \Bigg\} \\
+      \alpha_k^{\bm{z}} & := \max \big\{ \alpha \in (0, 1] : \big( \bm{z}_{\bm{l}, k} + \alpha \bm{d}_k^{\bm{z}_{\bm{l}}} \geq (1 - \tau_j) \bm{z}_{\bm{l}, k} \big) \wedge \big( \bm{z}_{\bm{u}, k} + \alpha \bm{d}_k^{\bm{z}_{\bm{u}}} \geq (1 - \tau_j) \bm{z}_{\bm{u}, k} \big) \big\}
+  \end{align}
+  where the actual step size $\alpha_k \in (0, \alpha_k^{max}]$ is determined using a backtracking line search procedure exploring a decreasing sequence of trial step sizes: 
+  \begin{align}
+      \alpha_{k,l} = 2^{-l} \alpha_k^{max}
+  \end{align}
+  with $l = 0, 1, 2, \dots$.
+  
+  Choosing the step sizes is done using a so-called line search filter method. During line search, a step size is considered acceptable if it leads to an acceptable reduction in the objective value of the barrier problem $\phi_{\mu}(\bm{x})$, and/or the constraint violation $\theta(\bm{x}) =  ||\bm{c}(\bm{x})||_1$ with a certain emphasis on the latter quantity. Let $\bm{x}_k(\alpha_{k,l})$ be:
+  \begin{align}
+      \bm{x}_k(\alpha_{k,l}) := \bm{x}_k + \alpha_{k,l} \bm{d}_k^{\bm{x}}
+  \end{align}
+  There are 2 acceptable criteria used to accept a trial step size. The following conditions are called the "switching conditions":
+  \begin{align}
+      \nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}} < 0 \\
+      \alpha_{k,l}[-\nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}}]^{S_\phi} > \delta [\theta(\bm{x}_k)]^{S_{\theta}}
+  \end{align}
+  for some constants $\delta > 0$, $S_{\phi} > 1$ and $S_{\theta} \geq 1$. If $\theta(\bm{x}_k) \leq \theta^{min}$, for some constant $\theta^{min} \in (0, \infty)$, and the following so-called "switching conditions" are satisfied, a step size $\alpha_{k,l}$ is considered acceptable if the following so-called Armijo condition is satisfied:
+  \begin{align}
+      \phi_{\mu_j}(\bm{x}_k(\alpha_{k,l})) \leq \phi_{\mu_j}(\bm{x}_k) + \eta_{\phi} \alpha_{k,l} \nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}}
+  \end{align}
+  for some constant $\eta_{\theta} \in (0, 0.5)$ and $(\theta(\bm{x}_k(\alpha_{k,l})), \phi_{\mu_j}(\bm{x}_k(\alpha_{k,l}))) \notin \mathcal{F}_k$ where $\mathcal{F}_k$ is a filter set (defined below) used to reject a trial solution if its constraint violation is too high or if it has a close barrier objective value and constraint violation value as certain previous iterates $\bm{x}_k$. This filter method ensures that the algorithm cannot cycle between 2 points that alternately decrease the constraint violation and barrier objective value.  If the trial step is rejected, a so-called second order correction (SOC) step is performed. The SOC step is explained below.
+  
+  If either $\theta(\bm{x}_k) > \theta^{min}$ or the switching conditions are violated, a step size $\alpha_{k,l}$ is considered acceptable if either:
+  \begin{align}
+      \theta(\bm{x}_k(\alpha_{k,l})) \leq (1 - \gamma_{\theta}) \theta(\bm{x}_k) \\
+      (\theta(\bm{x}_k(\alpha_{k,l})), \phi_{\mu_j}(\bm{x}_k(\alpha_{k,l}))) \notin \mathcal{F}_k
+  \end{align}
+  or
+  \begin{align}
+      \phi_{\mu_j}(\bm{x}_k(\alpha_{k,l})) \leq \phi_{\mu_j}(\bm{x}_k) - \gamma_{\phi} \theta(\bm{x}_k) \\
+      (\theta(\bm{x}_k(\alpha_{k,l})), \phi_{\mu_j}(\bm{x}_k(\alpha_{k,l}))) \notin \mathcal{F}_k
+  \end{align}
+  is satisfied for some constants $\gamma_{\theta}, \gamma_{\phi} \in (0, 1)$. If the trial step is rejected, the SOC step is performed.
+  
+  The filter set $\mathcal{F}_k$ is initialized as:
+  \begin{align}
+      \mathcal{F}_0 = \{ (\theta, \phi) \in \mathbb{R}^2 : \theta \geq \theta^{max} \}
+  \end{align}
+  Then after every iteration $k$ if an accepted trial point $\bm{x}_k$ doesn't satisfy either the switching conditions or the Armijo rule, the filter set is updated as:
+  \begin{align}
+      \mathcal{F}_{k+1} = \mathcal{F}_k \cup \Bigg\{ (\theta, \phi) \in \mathbb{R}^2 : \Big( \theta \geq (1 - \gamma_{\theta}) \theta(\bm{x}_k) \Big) \wedge \Big( \phi \geq \phi_{\mu_j}(\bm{x}_k) - \gamma_{\phi} \theta(\bm{x}_k) \Big) \Bigg\}
+  \end{align}
+  Every time the barrier parameter $\mu$ is decreased in the outer iterations of the algorithm, the filter set is reset to its definition at $k = 0$.
+  
+  If the backtracking procedure (SOC steps included) fails to find an acceptable trial step $\alpha_{k,l} \geq \alpha_k^{min}$, where:
+  \begin{multline}
+    \alpha_k^{min} := \\
+    \gamma_{\alpha} \times \begin{cases}
+      \min \Bigg\{ \gamma_{\theta}, \frac{\gamma_{\theta} \theta(\bm{x}_k)}{-\nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}}}, \frac{\delta [\theta(\bm{x}_k)^{S_{\theta}}]}{[-\nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}}]^{S_{\phi}}}  \Bigg\} & \Big( \nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}} < 0 \Big) \wedge \Big( \theta(\bm{x}_k) \leq \theta^{min} \Big) \\
+      \min \Bigg\{ \gamma_{\theta}, \frac{\gamma_{\phi} \theta(\bm{x}_k)}{-\nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}}} \Bigg\} & \Big( \nabla \phi_{\mu_j}(\bm{x}_k)^T \bm{d}_k^{\bm{x}} < 0 \Big) \wedge \Big( \theta(\bm{x}_k) > \theta^{min} \Big) \\
+      \gamma_{\theta} & otherwise,
+    \end{cases}
+  \end{multline}
+  for some safety factor $\gamma_{\alpha} \in (0, 1]$, the algorithm reverts to a feasibility restoration phase. For details on the feasibility restoration phase, please refer to section 3.3 in \cite{Wachter2006}.
+  
+  If a trial step $\alpha_{k,l}$ is rejected for some iteration $l$ in the backtracking procedure and $\theta(\bm{x}_k(\alpha_{k,l})) \geq \theta(\bm{x}_k)$, before moving on to the next trial, an SOC step is performed. The SOC step aims to reduce the infeasibility by applying an additional Newton-type step for the constraints at the point $\bm{x}_k + \tilde{\bm{d}}_k^{\bm{x}}$ where $\tilde{\bm{d}}_k^{\bm{x}} = \alpha_{k,l} \bm{d}_k^{\bm{x}}$ using the Jacobian $\bm{A}_k^T$ at $\bm{x}_k$ to obtain a direction update $\bm{d}_k^{\bm{x},soc}$ by solving:
+  \begin{align}
+      \bm{A}_k^T \bm{d}_k^{\bm{x},soc} + \bm{c}(\bm{x}_k + \alpha_{k,l} \bm{d}_k^{\bm{x}}) = \bm{0}
+  \end{align}
+  The new corrected search direction is then obtained from:
+  \begin{align}
+      \bm{d}_k^{\bm{x},cor} = \alpha_{k,l} \bm{d}_k^{\bm{x}} + \bm{d}_k^{\bm{x},soc}
+  \end{align}
+  The details of efficiently and carefully calculating $\bm{d}_k^{\bm{x},soc}$ can be found in section 2.4 in \cite{Wachter2006}. Once the corrected search direction $\bm{d}_k^{\bm{x},cor}$ has been computed, we again apply the fraction-to-the-boundary rule:
+  \begin{align}
+      \alpha_{k}^{soc} := \max \Bigg\{ \alpha \in (0, 1] : \Big( \tau \bm{l} + (1 - \tau_j) \bm{x}_k \Big) \leq \Big( \bm{x}_k + \alpha \bm{d}_k^{\bm{x}, cor} \Big) \leq \Big( \tau \bm{u} + (1 - \tau_j) \bm{x}_k \Big) \Bigg\}
+  \end{align}
+  and check if the resulting trial point:
+  \begin{align}
+      \bm{x}_k^{soc} := \bm{x}_k + \alpha_k^{soc} \bm{d}_k^{\bm{x}, cor}
+  \end{align}
+  is acceptable to the filter and satisfies the acceptance criteria set earlier replacing $\bm{x}(\alpha_{k,l})$ with $\bm{x}_k^{soc}$ while keeping $\bm{d}_k^{\bm{x}}$ as-is. If the new iterate is still rejected, the correction step is repeated (replacing $\alpha_{k,l}$ with $\alpha_k^{soc}$, and $\bm{d}_k^{\bm{x}}$ with $\bm{d}_k^{\bm{x}, cor}$ in the SOC step) unless the correction step has not decreased the constraint violation by a fraction $\kappa_{soc} \in (0, 1)$ or a maximum number $p^{max}$ of SOC steps has been performed. In that case, the original search direction $\bm{d}_k^{\bm{x}}$ is reverted to and the regular backtracking line search is resumed with a shorter step size.
+  
+  When multiple trial steps are rejected because the filter set is too strict or the progress made in the objective or constraint violation is insufficient, 2 accelerating heuristics are further employed to relax the acceptance criteria under some conditions. More on this can be found in section 3.2 in \cite{Wachter2006}.
+  
+  Finally after taking a step successfully, each variable $z_{l_i}$ in $\bm{z}_{\bm{l}}$ and each variable $z_{u_i}$ in $\bm{z}_{\bm{u}}$ then get clamped to an interval to avoid their extreme deviation:
+  \begin{align}
+    z_{l_i} \in \begin{cases}
+      \Big[ \frac{\mu_j}{\kappa_{\Sigma} (x_i - l_i)}, \frac{\kappa_{\Sigma} \mu_j}{(x_i - l_i)} \Big] & i \in \mathcal{I}_{\bm{l}} \cap \mathcal{I}_{\bm{u}} \\
+      \Big[ \frac{(1 - \kappa_d) \mu_j}{\kappa_{\Sigma} (x_i - l_i)}, \frac{\kappa_{\Sigma} (1 - \kappa_d) \mu_j}{x_i - l_i} \Big] &  i \in \mathcal{I}_{\bm{l}} \setminus \mathcal{I}_{\bm{u}} \\
+      [0, 0] & otherwise
+    \end{cases} \\
+    z_{u_i} \in \begin{cases}
+      \Big[ \frac{\mu_j}{\kappa_{\Sigma} (u_i - x_i)}, \frac{\kappa_{\Sigma} \mu_j}{u_i - x_i} \Big] & i \in \mathcal{I}_{\bm{l}} \cap \mathcal{I}_{\bm{u}} \\
+      \Big[ \frac{(1 - \kappa_d) \mu_j}{\kappa_{\Sigma} (u_i - x_i)}, \frac{\kappa_{\Sigma} (1 - \kappa_d) \mu_j}{u_i - x_i} \Big] &  i \in \mathcal{I}_{\bm{u}} \setminus \mathcal{I}_{\bm{l}} \\
+      [0, 0] & otherwise
+    \end{cases}
+  \end{align}
+  This clamping step creates a safeguard needed for the global convergence proof of the algorithm \citep{Wachter2006}. A large value for $\kappa_{\bm{\Sigma}} = 10^{10}$ is used to only minimally interfere with the Newton or quasi-Newton update.
+  
+\subsection{Augmented Lagrangian algorithm}
+
+  Both the MMA and IPOPT algorithms discussed previously require the full Jacobian of the constraints. This can be computationally prohibitive in some applications. In some cases, computing the Jacobian is much more expensive than calling the operator $\bm{v} \to \bm{J}' \bm{v}$ where $\bm{J}$ is the Jacobian of the constraints and $\bm{v}$ is a vector. The augmented Lagrangian algorithm only requires this operator and not the full Jacobian matrix.
+  
+  Consider the following inequality constrained optimization problem:
+  \begin{mini}|l|[3]
+    {\bm{x}}{f_0(\bm{x})}{\label{form:I}}{}
+    \addConstraint {f_i(\bm{x})}{\leq 0}{\quad \forall i = 1..I}
+    \addConstraint {f_i(\bm{x})}{= 0}{\quad \forall i = I+1..I+E}
+    \addConstraint {l_j \leq x_j \leq u_j}{}{\quad \forall j = 1..V}
+  \end{mini}
+  where $I$ is the number of inequality constraints, $E$ is the number of equality constraints and $V$ is the number of decision variables, $f_i$ is a potentially nonlinear scalar-valued function of $\bm{x}$ and $\bm{l}$ and $\bm{u}$ are finite vectors of lower and upper bounds on the decision vector $\bm{x}$ respectively.
+
+  The augmented Lagrangian algorithm (AugLag) is not a single algorithm but a family of algorithms in which the main idea is to reduce the above minimization problem to the following max-min formulation:
+  \begin{maxi}|l|[3]
+    {\bm{\lambda} \in \bm{Y}_{\bm{\lambda}}}{\min_{\bm{l} \leq \bm{x} \leq \bm{u}} \Big\{ \mathcal{L}_c(\bm{x}, \bm{\lambda}) = f_0(\bm{x}) + \sum_{i=1}^{I+E} \lambda_i f_i(\bm{x}) + c \sum_{i=1}^{I} \max \{f_i(\bm{x}), 0\}^2 + c \sum_{i=I+1}^{I+E} |f_i(\bm{x})|^2 \Big\}}{}{}
+  \end{maxi}
+  for some constant $c \geq 0$, where $\bm{Y}_{\bm{\lambda}} = \{ \bm{\lambda} : \lambda_i \geq 0 \, \forall i \in [1, I], \lambda_i \in \mathbb{R} \, \forall i \in [I+1,I+E] \}$ and $\mathcal{L}_c$ is known as the augmented Lagrangian function. Assume all the functions used are continuous and twice differentiable.
+  
+  Note how the inequality and equality constraints were relaxed and added to the objective but the bounds constraints were not. That is the inner minimization still needs to respect the bounds constraints. The choice of which constraints to relax and which to handle directly, as well as which optimizer to use for the inner optimization problem and which one to use for the outer problem can lead to different variants of the augmented Lagrangian family of algorithms. The optimal value of the augmented Lagrangian function subject to some relaxed constraints is known to be always less than or equal to the optimal value of the original optimization problem. It is also well known that the outer maximization problem is always concave (i.e. tractable) even if the objective and constraint functions were non-convex \citep{Bertsekas1996}.
+  
+  It is well known \citep{Bertsekas1996} that if:
+  \begin{enumerate}
+      \item The original problem has an isolated set of local minima $\bm{X}^*$ which is compact,
+      \item The constant $c$ is increased in a sequence $\{ c_k \}$ such that $0 < c_k < c_{k+1}$, and
+      \item The Lagrangian multipliers $\bm{\lambda}$ follow an arbitrary bounded sequence $\{ \bm{\lambda}_k \}$ where $\lambda_{k,i}$ is the $i^{th}$ element of $\bm{\lambda}_k$
+  \end{enumerate}
+  then there exists a sub-sequence of points $\{ \bm{x}_k \}_K$ converging to a point $\bm{x}^* \in \bm{X}^*$ such that $\bm{x_k}$ is a local minimum for the following augmented Lagrangian sub-problem:
+    \begin{mini}|l|[3]
+    {\bm{l} \leq \bm{x} \leq \bm{u}}{\Big\{\mathcal{L}_{c_k}(\bm{x}, \bm{\lambda}_k) = f_0(\bm{x}) + \sum_{i=1}^{I+E} \lambda_{k,i} f_i(\bm{x}) + c_k \sum_{i=1}^{I} \max \{f_i(\bm{x}), 0\}^2 + c_k \sum_{i=I+1}^{I+E} f_i(\bm{x})^2 \Big\}}{}{}
+  \end{mini}
+  
+  If additionally each $\bm{x}_k$ is a global minimum of the augmented Lagrangian sub-problem with $c_k$ and $\bm{\lambda}_k$, and the feasible set is compact, e.g. $\bm{l}$ and $\bm{u}$ are finite, then every limit point of the sequence $\{ \bm{x}_k \}$ is a global minimum of the original problem. Note that it is possible for the original problem to have a (unique) global minimum but the augmented Lagrangian sub-problem is unbounded from below. This is a weakness of the AugLag algorithm that needs to be addressed in implementation. However if the feasible domain is compact, this weakness is eliminated.
+  
+  If additionally the sub-sequence $\{ \bm{x}_k \}_K$ converges to a point $\bm{x}^* \in \bm{X}^*$ that satisfies one of the constraint qualification conditions, then the sequence $\{ \text{proj}_{Y_{\bm{\lambda}}} (\bm{\lambda}_k + c_k \bm{G}_k) \}$ converges to a point $\bm{\lambda}^*$ such that $(\bm{x}^*, \bm{\lambda}^*)$ satisfy the first order sufficient KKT optimality conditions, where $\bm{G}_k$ is a vector of length $I + E$ and whose $i^{th}$ element is $f_i(\bm{x}_k)$ \citep{Bertsekas1996}. Another weakness of the AugLag algorithm is that the sub-problem's optimizer may converge to a point that doesn't satisfy any of the constraint qualification conditions for the original problem. One case where this is guaranteed to happen is if the original problem is infeasible so the quadratic term dominates the augmented Lagrangian function as $c \to \infty$ and every (approximate) KKT point of the sub-problem must (approximately) violate the constraint qualification conditions of the original problem.
+  
+  Instead of choosing $\bm{\lambda}_k$ arbitrarily, if $\bm{\lambda}_{k+1}$ is chosen as:
+  \begin{align}
+      \bm{\lambda}_{k+1} = \text{proj}_{Y_{\bm{\lambda}}} (\bm{\lambda}_k + \alpha_k \bm{G}_k)
+  \end{align}
+  where $\alpha_k = c_k$, convergence can often be significantly accelerated and the algorithm typically converges at lower values of $c_k$. The dual update step size $\alpha_k$ can also be improved to a more "optimal" choice than $c_k$ or a Newton/quasi-Newton direction can be used instead of $\bm{G}_k$. These can lead to faster convergence but come at an increased computational cost. For more on the augmented Lagrangian algorithm, see \cite{Bertsekas1996}.
+  
+  In the context of topology optimization, one challenge with AugLag is that the Hessian of the augmented Lagrangian function becomes rather ill-conditioned for large values of $c$ where the condition number of the Hessian matrix goes to $\infty$ as $c \to \infty$. Given that computing the Hessian of the augmented Lagrangian in topology optimization is generally intractable, one must rely on first order methods to optimize the sub-problem. However even quasi-Newton methods may very well encounter difficulty converging if the Hessian approximation is not good enough and/or the starting point is not near a solution. Adding to this the scaling issues that are commonly found in topology optimization and this makes AugLag extremely difficult to fine-tune in practice when using it in topology optimization. The convergence speed and numerical stability of AugLag can be extremely sensitive to the initial value of $c$, its increment rate, the initial solution, and the sub-problem's optimizer's terminating conditions.
+  
+  The main computational advantage of AugLag is that it can handle block constraints more efficiently. Let $\bm{G}(\bm{x})$ be the vector-valued function whose components are the constraint functions $f_i(\bm{x}) \, \forall i \in [1, I+E]$ and let $\bm{M}(\bm{x}) = \text{proj}_{\bm{Y}_{\bm{\lambda}}} \bm{G}(\bm{x})$ be the projection of $\bm{G}(\bm{x})$ on $\bm{Y}_{\bm{\lambda}}$. The augmented Lagrangian formulation can therefore be written as:
+  \begin{maxi}|l|[3]
+    {\bm{\lambda} \in \bm{Y}_{\bm{\lambda}}}{\min_{\bm{l} \leq \bm{x} 
+    \leq \bm{u}} \{ \mathcal{L}_c(\bm{x}, \bm{\lambda}) = f(\bm{x}) + (\bm{\lambda} + c \bm{M}(\bm{x}))^T \bm{G}(\bm{x}) \}}{}{}
+  \end{maxi}
+  Note that the gradient of $\mathcal{L}_c(\bm{x}, \bm{\lambda})$ wrt $\bm{x}$, $\nabla_{\bm{x}} \mathcal{L}_c(\bm{x}, \bm{\lambda})$, can be written in terms of the gradient of $f(\bm{x})$, $\nabla_{\bm{x}} f(\bm{x})$, and the Jacobian of $\bm{G}(\bm{x})$, $\nabla_{\bm{x}} \bm{G}(\bm{x})$, as:
+  \begin{align}
+    \nabla_{\bm{x}} \mathcal{L}_c(\bm{x}, \bm{\lambda}) = \nabla_{\bm{x}} f(\bm{x}) + \nabla_{\bm{x}} \bm{G}(\bm{x})^T (\bm{\lambda} + 2 c \bm{M}(\bm{x}))
+  \end{align}
+  To compute the above gradient, the full Jacobian of the constraints need not be built. Only the operator $\bm{w} \to \nabla_{\bm{x}} \bm{G}(\bm{x})^T \bm{w}$ needs to be defined. For the purposes of this paper, the term \textit{block constraint} will be used to refer to constraints on functions $\bm{G}(\bm{x})$  where the operator $\bm{w} \to \nabla_{\bm{x}} \bm{G}(\bm{x})^T \bm{w}$ can be defined more efficiently than simply calculating the entire Jacobian, $\nabla_{\bm{x}} \bm{G}(\bm{x})$, and then multiplying its transpose by $\bm{w}$.
+
+\newpage
+\section{Topology optimization under uncertainty}
+
+Every topology optimization problem has some input data such as:
+\begin{enumerate}
+\item The shape of the base design from which material may be removed, 
+\item The load applied on the design, or
+\item The material properties such as the Young's modulus or Poisson ratio
+\end{enumerate}
+These data are usually fixed or can be described in terms of other fixed parameters. However, sometimes the optimal solution of the topology optimization problem can be rather sensitive to the values of these data, such that a small change in the data can cause a significant change in the objective or render the optimal solution obtained infeasible. Treating uncertainty in the optimization problem's data is therefore of utmost importance, and indeed it has been studied for a long time in optimization literature in general as well as in design and topology optimization literature.
+
+Robust optimization (RO), stochastic optimization (SO), risk-averse optimization (RAO) and reliability-based design optimization (RBDO) are some of the terms used in literature to describe a plethora of techniques for handling uncertainty in the data of an optimization problem. 
+
+\subsection{Robust optimization}
+
+RO defines the data as a set, resembling the uncertainty, such that the objective and/or constraints are defined over the whole set \citep{Bertsimas2011}, e.g. a coefficient can be allowed to be in the set $[0.9, 1.1]$ instead of exactly 1. The set can be continuous, discrete or a mixed set. In the case of loading uncertainty, this can be an interval set for the load magnitude or angle, a hyper-ellipsoid set for multiple force components, a discrete set of finite loading scenarios, or any other set. The objective is typically either:
+\begin{enumerate}
+  \item Minimizing or maximizing a function with no uncertainty in its data, or
+  \item Minimizing the maximum or maximizing the minimum of a function over the set of different values that the problem's data can take. 
+\end{enumerate}
+The constraint functions are point-based functions that must lie in the feasible domain for every data point in the uncertainty set. Note that when the objective is minimizing the maximum, it can be converted to an equivalent problem with another robust constraint and a single-variable objective function as such:
+  \begin{mini!}|l|[3]
+    {\bm{x}, c}{c}{}{}
+    \addConstraint {\quad g(\bm{x}; \bm{f}) - c \leq 0}{\quad \forall \bm{f} \in U}
+  \end{mini!}
+where $\bm{f}$ is the load vector, $\bm{x}$ is the topology design variables, $c$ is the objective and $U$ is the set of all possible load scenarios. The same can be done for maximizing the minimum. There is therefore no loss of generality in assuming that the objective is certain, and only the constraints' data is uncertain. For more on RO, the readers are referred to \cite{Bertsimas2011} and \cite{AharonBen-Tal2009}.
+
+\subsection{Stochastic and risk-averse optimization}
+
+SO and RAO assume that the data follows a known probability distribution \citep{Shapiro2009,Choi2007}. Let $\bm{f}$ be a random load and $\bm{x}$ be the topology design variables. A probabilistic constraint can be defined as:
+\begin{align}
+  & P(g(\bm{x}; \bm{f}) \leq 0) \geq \eta 
+\end{align}
+where $\bm{f}$ follows a known probability distribution. This constraint is often called a chance constraint or a reliability constraint in RBDO. Note that the minimization of the $\eta$-percentile can be modeled using a chance constraint and a deterministic objective as follows:
+\begin{mini!}|l|[3]
+  {\bm{\bm{x}, \gamma}}{\gamma}{}{}
+  \addConstraint {\quad P(g(\bm{x}; \bm{f}) - \gamma \leq 0) \geq \eta}{}
+\end{mini!}
+The objective of an SO problem is typically either deterministic or some probabilistic function such as the mean of a function of the random variable, its variance, standard deviation or a weighted sum of such terms. The biggest challenge of the probabilistic approach is evaluating and differentiating the probabilistic function to use in various optimization algorithms. SO has its roots in optimization theory and operations research where a family of approaches known as chance-constrained optimization were developed to tractably approximate the probabilistic constraint.
+
+RAO can be considered a sub-field of SO borrowing concepts from risk analysis in mathematical economics to define various risk measures and tractable approximations to be used in objectives and/or constraints in SO. One such risk measure is the conditional value-at-risk (CVaR). Let $z = g(\bm{x}; \bm{f})$. The value-at-risk (VaR) is defined as:
+\begin{align}
+ & \bm{\mathrm{VaR}}(z; \eta) = \inf\{\gamma | \bm{P}(z \leq \gamma) \geq \eta\}
+\end{align}
+The probabilistic/chance/reliability constraint $P(g(\bm{x}; \bm{f}) \leq 0) \geq \eta$ is the same as $\bm{\mathrm{VaR}}(z; \eta) \leq 0$. One common risk measure used in RAO to approximate VaR is the conditional value-at-risk (CVaR) defined as: 
+\begin{align}
+ & \bm{\mathrm{CVaR}}(z; \eta) = \inf_{\beta}(\beta + 1/(1-\eta) \bm{E}(z - \beta)_+)
+\end{align}
+It is known that $\bm{\mathrm{CVaR}}(z;\eta) \geq \bm{\mathrm{VaR}}(z;\eta)$. When $\bm{f}$ comes from a continuous distribution, an interpretation of $\bm{\mathrm{CVaR}}(z;\eta)$ is as the expected shortfall, also known as the conditional expectation, $\bm{E}(z|z \geq \beta^*)$, where $\beta^* = \bm{\mathrm{VaR}}(z;\eta)$. Other more traditional risk measures include the weighted sum of mean and variance of a function or the weighted sum of the mean and standard deviation. For more on SO and RAO, the reader is referred to \cite{Shapiro2009}. 
+
+A special case of SO problems is when the objective is defined as the mean of a function, its variance, standard deviation and/or a weighted sum of them over a deterministic set of data scenarios. While not strictly probabilistic, a probabilistic view would be to assume a uniform distribution over the domain of the set. This can therefore be considered a special-case SO problem. More generally, robust constraints can be viewed as probabilistic constraints with a uniform distribution over the set's domain and $\eta = 1$. This view is not very common in practice though since RO problems typically have more efficient algorithms than those of SO problems with arbitrary distributions.
+
+\subsection{Reliability-based design optimization}
+
+RBDO and its ancestor, reliability analysis, are more common in the sizing optimization literature. Classically, RBDO has been about solving optimization problems with a probabilistic constraint, called the reliability constraint, much like SO. One of the most common RBDO techniques used in topology optimization literature is the first-order reliability method (FORM). In FORM, the random variable $\bm{f}$ is assumed to be a function of a multivariate unit Gaussian random variable $\bm{u}$ whose mean is $\bm{0}$ and covariance is the identity matrix. Let $G(\bm{x}; \bm{u}) = g(\bm{x}; \bm{f}(\bm{u}))$. The reliability constraint can therefore be written as: $P(G(\bm{x}; \bm{u}) \leq 0) \geq \eta$ or $P(G(\bm{x}; \bm{u}) > 0) \leq 1 - \eta$ for some $\eta \geq 0.5$, where $P(G(\bm{x}; \bm{u}) > 0)$ is known as the probability of failure $P_f$. The function $G(\bm{x}; \bm{u})$, also known as the limit state function, is then linearly approximated with respect to $\bm{u}$ using Taylor series expansion around a point $\bm{u}_0$:
+\begin{align}
+ & \tilde{G}(\bm{x}; \bm{u}) = G(\bm{x}; \bm{u}_0) + \nabla_{\bm{u}} G(\bm{x}; \bm{u}_0)^T(\bm{u} - \bm{u}_0)
+\end{align}
+The function $\tilde{G}$ is then assumed to follow a normal distribution and its first and second moments are computed using the expression above. This approximation approach is known as the first-order second-moment (FOSM) approach. The choice of the linearization point $\bm{u}_0$ is known to affect the accuracy of FOSM, where the mean $\bm{0}$ is typically outperformed by the less obvious alternative known as the most probable point (MPP) $\bm{u}^*$. There are two ways to define the MPP point: the reliability index approach (RIA) \citep{Chang1996,Tu1999} and the performance measure approach (PMA) \citep{Tu1999}.
+
+RIA defines $\bm{u}^*$ as the optimal solution of the reliability analysis optimization problem:
+\begin{mini!}|l|[3]
+ {\bm{u}}{||\bm{u}||}{}{}
+ \addConstraint {\quad G(\bm{x}; \bm{u}) = 0}{}
+\end{mini!}
+at the current design $\bm{x}$. The so-called reliability index $\beta$ is then defined as: $\beta = ||\bm{u}^*||$. If $\bm{u}^*$ is a Karush-Kuhn-Tucker (KKT) point of the above problem, given the normality assumption on $\tilde{G}$, the reliability index $\beta = ||\bm{u}^*|| = \frac{G(\bm{x}; \bm{u}^*) - \mu_{\tilde{G}}(\bm{x})}{\sigma_{\tilde{G}}(\bm{x})} = -\frac{\mu_{\tilde{G}}(\bm{x})}{\sigma_{\tilde{G}}(\bm{x})}$, where $\mu_{\tilde{G}}$ is the mean of $\tilde{G}$ and $\sigma_{\tilde{G}}$ is its standard deviation. The probability of failure is therefore given by $P_f = \Phi(-\beta)$, where $\Phi$ is the cumulative distribution function (CDF) of the standard normal distribution with mean 0 and unit variance. Since $\Phi^{-1}$ is a monotonically increasing function, the reliability constraint can be re-written as:
+\begin{align}
+ & P(G(\bm{x}; \bm{u}) > 0) = P_f = \Phi(-\beta) \leq 1 - \eta \\
+ & \beta \geq -\Phi^{-1}(1 - \eta) \\
+ & \beta \geq \Phi^{-1}(\eta)
+\end{align}
+The gradient of $\beta$ with respect to $\bm{x}$ can be efficiently computed using the KKT optimality conditions of the reliability analysis optimization problem. $\Phi^{-1}(\eta)$ is sometimes called the target reliability index $\beta_t$.
+
+PMA on the other hand uses a different definition for the MPP point $\bm{u}^*$. Let the function $F_{\tilde{G}}(t; \bm{x}) = \int_{\tilde{G}(\bm{x}; \bm{u}) \leq t} f_{\bm{u}} d\bm{u}$, where $f_{\bm{u}}$ is the probability density function (PDF) of the random variable $\bm{u}$. Under the normality assumption of $\tilde{G}$, $F_{\tilde{G}}(t; \bm{x}) = \Phi(\frac{t - \mu_{\tilde{G}}(\bm{x})}{\sigma_{\tilde{G}}(\bm{x})})$ is monotonically increasing in $t$ and invertible. The approximate reliability constraint $P(\tilde{G}(\bm{x}; \bm{u}) \leq 0) \geq \eta$ can therefore be written as:
+\begin{align}
+ & F_{\tilde{G}}(0; \bm{x}) \geq \eta \\
+ & F_{\tilde{G}}^{-1}(\eta; \bm{x}) \leq 0 \\
+ & \mu_{\tilde{G}}(\bm{x}) + \Phi^{-1}(\eta) \sigma_{\tilde{G}}(\bm{x}) \leq 0
+\end{align}
+Let $G_p(\bm{x}) = F_{\tilde{G}}^{-1}(\eta; \bm{x}) = \mu_{\tilde{G}}(\bm{x}) + \Phi^{-1}(\eta) \sigma_{\tilde{G}}(\bm{x})$. $G_p(\bm{x})$ is known as the performance measure. Taking the linearization point $\bm{u}_0$ to be the optimal KKT solution $\bm{u}^*$ of the following so-called inverse reliability optimization problem:
+\begin{mini!}|l|[3]
+ {\bm{u}}{G(\bm{x}; \bm{u})}{}{}
+ \addConstraint {||\bm{u}|| = \Phi^{-1}(\eta)}{}
+\end{mini!}
+at the current design $\bm{x}$, $||\bm{u}^*|| = \frac{G(\bm{x}; \bm{u}^*) - \mu_{\tilde{G}}(\bm{x})}{\sigma_{\tilde{G}}(\bm{x})} = \Phi^{-1}(\eta)$. Substituting for $\Phi^{-1}(\eta)$ in $F_{\tilde{G}}^{-1}(\eta; \bm{x})$, $G_p(\bm{x}) = G(\bm{x}; \bm{u}^*)$. The gradient of $G_p(\bm{x})$ is therefore equal to the partial of $G(\bm{x}; \bm{u}^*)$ with respect to $\bm{x}$. One of the advantages of PMA is that efficient algorithms have been developed to solve the inverse reliability optimization problem which is just optimizing an objective over the surface of a sphere.
+
+A second less common reliability method is known as the second order reliability method (SORM) which makes use of a second order Taylor series expansion of the function $G$ with respect to $\bm{u}$ before assuming the approximation follows a Gaussian distribution. This approximation approach is known as the second order, second moment (SOSM) approach. SORM is less common than FORM though because of the computational cost of computing the second order term in the Taylor series expansion while generally adding little to the accuracy according to \cite{Choi2007}. 
+
+Both the RIA and PMA approaches essentially turn the stochastic optimization problem with reliability constraint to a deterministic bi-level optimization problem. Some RBDO algorithms solve the optimization problems from the two levels sequentially, i.e. not nested, in order to reduce the computational cost of the algorithms. For more on RBDO and reliability analysis, the reader is referred to \cite{Choi2007} and \cite{Youn2004}. It is interesting to note that while classic RBDO has been about handling probabilistic reliability constraints, more recently the non-probabilistic RBDO (NRBDO) was developed, applying similar techniques as in classic RBDO but for handling set-based, non-probabilistic uncertainty to solve RO problems \citep{Luo2009,Kang2009,Guo2015,Zheng2018a,Wang2019a,Wang2019b}.
+
+\subsection{Relationship between uncertainty paradigms}
+
+There are ways to (approximately) convert between the continuous set, discrete set and probabilistic representations of data uncertainty in constraints. For instance, a constraint generation approach and a separation oracle can be used to represent the continuous set using a finite discrete set of constraint violating scenarios \citep{AharonBen-Tal2009}. This approach is also known as the \textit{anti-optimization} method in design optimization literature \citep{Elishakoff1994,Lombardi1998}. Monte Carlo sampling can be used to conservatively approximate the probabilistic constraint using a robust constraint on a discrete set of scenarios, such that satisfying the robust constraint guarantees satisfying the probabilistic constraint \citep{Tempo1996}. Probabilistic inference methods such as maximum likelihood estimation and maximum a-posteriori estimation can be used to infer the underlying distribution from which a discrete set of data scenarios could have been generated \citep{Bishop2006}. This can be combined with any unsupervised machine learning model for dimensionality reduction such as principal component analysis (PCA). The exact convex hull of a discrete set of scenarios can be obtained using computational geometry in 2- and 3- dimensional spaces \citep{DeBerg2008} with approximation algorithms in higher dimensions \citep{Sartipizadeh2016}. Finally, the continuous set robust counterpart of a chance constraint can sometimes be formulated such that satisfying the robust constraint guarantees satisfying the probabilistic constraint \citep{AharonBen-Tal2009}.
+
+Note that in topology optimization literature, the term "\textit{robust topology optimization}" is often used to refer to minimizing the weighted sum of the mean, and variance or standard deviation of a function subject to probabilistic uncertainty \citep{Dunning2013,Zhao2014,Cuellar2018}. However, this use of the term "\textit{robust}" is not consistent with the standard definition of RO in optimization theory literature, e.g. \cite{AharonBen-Tal2009}. The more compliant term is \textit{stochastic topology optimization} or \textit{risk-averse topology optimization}.
+
+\newpage
+\section{Linear algebra}
+
+\subsection{Solving a linear system}
+
+When performing FEA, often a linear system solve of the form $\bm{u} = \bm{K} \setminus \bm{f}$ needs to be performed where $\bm{K}$ is a sparse positive definite and $\bm{f}$ is a dense or sparse vector. Let $\bm{K}$ be a sparse matrix of size $n \times n$. The number of non-zeros in $\bm{K}$ is typically $O(n)$. The inverse of an arbitrary sparse matrix is generally a dense matrix which requires $O(n^2)$ memory. It is therefore not recommended to attempt to invert $\bm{K}$ especially that we only need to solve the linear system and don't care about the inverse of $\bm{K}$. One can solve the linear system above by decomposition $\bm{K}$ into $\bm{L} \bm{L}^T$ where $\bm{L}$ is a lower triangular matrix. This factorization is known as Cholesky factorization \citep{Golub1996}. The linear system solve can therefore be written as:
+\begin{align}
+    \bm{u} & = (\bm{L} \bm{L}^T)^{-1} \bm{f} \\
+    & = \bm{L}^{-T} \bm{L}^{-1} \bm{f}
+\end{align}
+Solving the linear system then boils down to solving the 2 triangular systems below:
+\begin{align}
+    \bm{y} = \bm{L} \setminus \bm{f} \\
+    \bm{u} = \bm{L}^T \setminus \bm{y}
+\end{align}
+If $\bm{K}$ is dense, the Cholesky factorization requires approximately $n^3 / 3$ floating point operations (flops) \citep{Golub1996}. The triangular systems can then be solved efficiently using Gaussian elimination which has $O(n^2)$ time complexity. However, for sparse $\bm{K}$ the main advantage of the Cholesky factorization comes from the lower fill-in rate in the sparse Cholesky factor $\bm{L}$ which tends to be more sparse than the inverse. Therefore, the factorization and Gaussian eliminations, although still having a worst case time complexity of $O(n^3)$ and worst case space complexity of $O(n^2)$, tend to be more efficient in practice. In practice also the $O(n^2)$ memory tends to be the bottleneck and not the $O(n^3)$ time. In other words, we usually run out of RAM before the algorithm becomes too slow to use.
+
+If the so-called "direct" solver based on Cholesky factorization becomes computationally prohibitive either in memory or time, one can use iterative solvers instead, e.g. the conjugate gradient (CG) algorithm \citep{Golub1996}. CG only requires the multiplication operation $\bm{v} \to \bm{K} \bm{v}$ to compute the solution to the linear system. The multiplication operator requires only $O(n)$ flops. However the convergence rate of CG tends to be very low if the condition number of $\bm{K}$ is large. In topology optimization, the global stiffness matrix assembled from the element stiffness matrices and pseudo-densities can be extremely ill-conditioned. Therefore, a good preconditioner is necessary to achieve reasonable convergence speed.
+
+\subsection{Eigenvalue decomposition}
+
+Let $\bm{A}$ be a square matrix. A normal vector $\bm{v} : ||\bm{v}||_2 = 1$ is called an eigenvector of $\bm{A}$ if:
+\begin{align}
+    \bm{A} \bm{v} = \lambda \bm{v} \\
+    (\bm{A} - \lambda \bm{I}) \bm{v} = \bm{0}
+\end{align}
+for some number $\lambda$ and $\lambda$ is called its eigenvalue. A matrix can have multiple eigenvectors with equal or different eigenvalues.
+
+If $\bm{A}$ is Hermitian (or real and symmetric), all its eigenvalues will be real numbers. The so-called Rayleigh quotient is then given by:
+\begin{align}
+    R(\bm{A}, \bm{x}) = \frac{\bm{x}^T \bm{A} \bm{x}}{\bm{x}^T \bm{x}}
+\end{align}
+which can be shown to be always bounded between:
+\begin{align}
+    \lambda_{min} = R(\bm{A}, \bm{v}_{min}) \leq R(\bm{A}, \bm{x}) \leq R(\bm{A}, \bm{v}_{max}) = \lambda_{max}
+\end{align}
+$\forall \bm{x}$ where $\lambda_{min}$ and $\lambda_{max}$ are the minimum and maximum eigenvalues of $\bm{A}$ respectively and $\bm{v}_{min}$ and $\bm{v}_{max}$ are the associated eigenvectors.
+
+A square matrix $\bm{A}$ is called diagonalizable if it is similar to a diagonal matrix $\bm{D}$. Two matrices ${A}$ and $\bm{D}$ are similar if there exists an invertible matrix $\bm{P}$ such that:
+\begin{align}
+    \bm{A} = \bm{P} \bm{D} \bm{P}^{-1}
+\end{align}
+If additionally the L-2 norm of each column of $\bm{P}$ is 1, this decomposition is called an eigenvalue decomposition, where the diagonal of $\bm{D}$ will be the vector of $\bm{A}$'s eigenvalues and the columns of $\bm{P}$ are the associated eigenvectors (one for each eigenvalue). When $\bm{A}$ is real and symmetric, $\bm{P}^{-1} = \bm{P}^T$, i.e. $\bm{P}$ is an orthonormal/unitary matrix, and $\bm{D}$ and $\bm{P}$ are guaranteed to be matrices of real numbers. A real symmetric matrix is always diagonalizable.
+
+\subsection{Singular value decomposition}
+
+The singular value decomposiiton (SVD) of an $m \times n$ matrix $\bm{F}$ is a factorization of the form:
+\begin{align}
+    \bm{F} = \bm{U} \bm{S} \bm{V}^T \\
+    \bm{U}^T \bm{U} = \bm{I} \\
+    \bm{V}^T \bm{V} = \bm{I}
+\end{align}
+where $\bm{U}$ is an $m \times n$ unitary matrix, $\bm{S}$ is an $m \times n$ rectangular diagonal matrix with non-negative real numbers on the diagonal and $\bm{V}$ is an $n \times n$ unitary matrix. If $\bm{F}$ is real, $\bm{U}$ and $\bm{V}$ will also be real matrices. If $\bm{F}$ is a tall or wide matrix, often one would be interested in the so-called compact SVD. If $\bm{F}$ is tall (i.e. $m > n$) in the compact SVD, $\bm{S}$ would be $n \times n$ and only the first $n$ columns of $\bm{V}$ would be kept. If $\bm{F}$ is wide in the compact SVD, only the first $m$ columns of $\bm{U}$ would be kept and $\bm{S}$ would be of size $m \times m$.
+
+\subsection{Trace estimation}
+
+\cite{Hutchinson1990} developed an unbiased estimator for the trace of a square matrix $\bm{A}$. Hutchinson's trace estimator is given by:
+\begin{align}
+  tr(\bm{A}) = E_{\bm{v}}(\bm{v}^T \bm{A} \bm{v}) \approx \frac{1}{N} \sum_{i=1}^{N} \bm{v}_i^T \bm{A} \bm{v}_i
+\end{align}
+where $\bm{v}$ is a random vector with each element independently distributed with 0 mean and unit variance, $\bm{v}_i$ are samples of the random vector $\bm{v}$, also known as probing vectors, and $N$ is the number of such probing vectors. One common distribution used for the elements of $\bm{v}$ is the Rademacher distribution which is a discrete distribution with support $\{-1, 1\}$ each of which has a probability of 0.5. Hutchinson proved that an estimator with the Rademacher distribution for $\bm{v}$ will have the least variance among all other distributions.
+
+\subsection{Diagonal estimation}
+
+Much like the trace, the diagonal of a square matrix $\bm{A}$ can be estimated. One diagonal estimator directly related to Hutchinson's trace estimator was proposed by \cite{Bekas2007}:
+\begin{align}
+  diag(\bm{A}) = E(\bm{D}_{\bm{v}} \bm{A} \bm{v}) \approx \frac{1}{N} \sum_{i=1}^N \bm{D}_{\bm{v}_i} \bm{A} \bm{v}_i
+\end{align}
+where $diag(\bm{A})$ is the diagonal of $\bm{A}$ as a vector, $\bm{D}_{\bm{v}}$ is the diagonal matrix with a diagonal $\bm{v}$, $\bm{v}$ is a random vector distributed much like in Hutchinson's estimator, $\bm{v}_i$ are the probing vector instances of $\bm{v}$ and $N$ is the number of probing vectors. The sum of the elements of the diagonal estimator above gives us Hutchinson's trace estimator. Bekas et. al. also showed that one can use use the deterministic basis of a Hadamard matrix as probing vectors $\bm{v}_i$ instead of random vectors and that this increases the accuracy of the diagonal estimator.
+
+\newpage
+\section{Scope and limitations of the study}
+
+In this thesis, a number of techniques to accelerate topology optimization algorithms are proposed.
+\begin{enumerate}
+    \item In chapter \ref{chp:2}, an accelerate technique for continuation SIMP is proposed whereby the penalty is adapted to reduce the number of sub-problems solved in a systematic way. The gains are demonstrated using various compliance minimization problems.
+    \item In chapter \ref{chp:3}, the problem of loading uncertainty is presented and tackled using novel efficient exact methods. The computational time complexities of the proposed methods will be shown to be strictly better than the naive straight-forward approaches.
+    \item In chapter \ref{chp:4}, approximate methods for stochastic and risk-averse compliance-based topology optimization problems will be presented.
+\end{enumerate}
+
+\newpage
+\section{Significance of the study}
+
+One of the main obstacles to the wide adoption topology optimization in practice is the lack of computationally efficient, scalable algorithms that can efficiently handle a large number of elements as well as uncertainty in the data, e.g. loading conditions. Reducing the computational time to solve problems of a particular size means that larger problems can be solved for a given time. Practical design problems must also consider uncertainty in the loading conditions which is a further complexity that this thesis helps address.
+
+\clearpage
+\newpage

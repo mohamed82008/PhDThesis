@@ -1,0 +1,50 @@
+\begin{table}
+\centering
+\tabcolsep=0.09cm
+% table caption is above the table
+\caption{This table shows the effect of penalty adaptation on CSIMP with decreasing tolerance. The table shows the results of the experiments studying the effect of solution reuse on: 1) the number of FEA simulations (Sims) required by CSIMP, 2) the final objective of the continuous NLP at $p = 5$ (C-Obj), 3) the objective value of the rounded discrete solution (D-Obj), 4) the percentage of fractionness (\% frac), and 4) the volume fraction of the rounded discrete solution ($V_{0-1}$). The parameters of each experiment are described in Table \ref{tab:exp_params2}.}
+\label{tab:dec_tol_csimp1_reuse}
+\begin{tabular}{|l|l|l|l|l||l|l|l|l|}
+\hline\noalign{\smallskip}
+Exp & \multicolumn{4}{c||}{\textbf{Fixed $\Delta p = \Delta p_0$}} & \multicolumn{4}{c|}{\textbf{\% Increase due to $\Delta p$ adaptation}} \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+& \textbf{Sims} & \textbf{C-Obj / D-Obj} & \textbf{\% frac} & \textbf{$V_{0-1}$} & \textbf{Sims} & \textbf{C-Obj / D-Obj} & \textbf{\% frac} & \textbf{$V_{0-1}$}\\
+\hline
+1 & 251 & 505.7/5206.3 & 1.0 & 0.304 & 45.0 & 0.8/-87.0 & -30.0 & -0.3 \\ 
+\hline
+2 &  466 & 517.0/2747.8 & 1.2 & 0.305 & -34.8 & -0.7/-57.3 & -16.7 & -0.7 \\ 
+\hline
+3 &  216 & 329.8/329.2 & 0.5 & 0.502 & -37.5 & 0.8/0.2 & 180.0 & 0.6 \\ 
+\hline
+4 &  209 & 331.9/330.2 & 1.0 & 0.502 & -30.1 & 0.4/0.1 & 30.0 & 0.2 \\ 
+\hline
+\hline
+5 & 164 & 283.9/276.1 & 1.8 & 0.305 & -17.7 & -2.3/-1.0 & -22.2 & -1.0 \\ 
+\hline
+6 & 232 & 284.2/276.1 & 1.9 & 0.303 & -41.4 & -2.4/-1.2 & -26.3 & -0.3 \\ 
+\hline
+7 & 243 & 176.4/175.7 & 0.6 & 0.501 & -36.6 & -0.2/0.0 & 0.0 & 0.0 \\ 
+\hline
+8 & 262 & 177.2/176.2 & 1.4 & 0.505 & -38.9 & -0.1/-0.4 & -35.7 & -0.6 \\ 
+\hline
+\hline
+9 & 178 & 100.0/99.6 & 0.5 & 0.302 & -33.1 & 0.2/0.2 & 20.0 & -0.3 \\ 
+\hline
+10 & 220 & 100.2/100.0 & 0.3 & 0.301 & -46.4 & 0.2/-0.2 & 100.0 & 0.0 \\ 
+\hline
+11 & 127 & 65.4/65.3 & 0.4 & 0.501 & -28.3 & 0.2/0.2 & 0.0 & 0.0 \\ 
+\hline
+12 & 174 & 65.3/65.2 & 0.3 & 0.501 & -45.4 & 0.3/0.3 & 33.3 & -0.2 \\ 
+\hline
+\hline
+13 & 86 & 13.4/13.2 & 1.3 & 0.301 & -33.7 & 0.7/0.0 & 15.4 & -0.3 \\ 
+\hline
+14 & 136 & 13.5/13.2 & 1.5 & 0.3 & -58.1 & 0.0/0.0 & 0.0 & 0.0 \\ 
+\hline
+15 & 90 & 9.5/9.4 & 1.3 & 0.5 & -44.4 & 0.0/0.0 & 76.9 & 0.0 \\ 
+\hline
+16 & 124 & 9.5/9.4 & 1.5 & 0.5 & -66.1 & 0.0/0.0 & 33.3 & 0.2 \\ 
+\hline
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}

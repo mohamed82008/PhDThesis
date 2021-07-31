@@ -1,0 +1,35 @@
+\begin{figure}
+\centering
+\resizebox{\textwidth}{!}{
+  \begin{tikzpicture}[>=latex]
+    \draw[fill,color=gray!70] (-0.2,-0.15) rectangle (0,0.9);
+    \draw[step=0.25cm] (0,0) grid (8,0.75);
+    \draw[step=0.25cm] (7.5,0.75) grid (7.75,1.75);
+    \draw (7.5,0.75) -- (7.5,1.75);
+    \draw (7.625,1.75) -- (7.8,2) -- (7.45,2) -- cycle;
+    \draw (7.8,2.06) circle (0.06);
+    \draw (7.45,2.06) circle (0.06);
+    \node [marked body,minimum height=0.1cm,minimum width=0.75cm,anchor=center] at (7.625,2.18) {};
+
+    \draw [->] (8.5,0) -- (8.1,0);
+    \draw [->] (8.5,0.25) -- (8.1,0.25);
+    \draw [->] (8.5,0.5) -- (8.1,0.5);
+    \draw [->] (8.5,0.75) -- (8.1,0.75);
+    \draw [line width=1.2pt] (8.5,0) -- (8.5,0.75) node[draw=none,fill=none,font=\scriptsize,midway,right] {2};
+    
+    \draw [->] (7.5,-0.1) -- (7.5,-0.5);
+    \draw [->] (7.75,-0.1) -- (7.75,-0.5);
+    \draw [line width=1.2pt] (7.5,-0.1) -- (7.75,-0.1) node[draw=none,fill=none,font=\scriptsize,midway,below,yshift=-0.3cm] {1};
+
+    \draw (-0.65,0) -- ++(0.2,0) coordinate (D1) -- +(5pt,0);
+    \draw (-0.65,0.75) -- ++(0.2,0) coordinate (D2) -- +(5pt,0);
+    \draw [dimen] (D1) -- (D2) node {3};
+
+    \draw (0,-1.2) -- ++(0,0.2) coordinate (D1) -- +(0,5pt);
+    \draw (8,-1.2) -- ++(0,0.2) coordinate (D2) -- +(0,5pt);
+    \draw [dimen] (D1) -- (D2) node {32};
+  \end{tikzpicture}
+}
+\caption{Tie beam problem}
+\label{fig:TieBeam}
+\end{figure}

@@ -1,0 +1,21 @@
+  % -*- Mode:TeX -*-
+%% This file simply contains the commands that actually generate the table of
+%% Contents
+\setcounter{secnumdepth}{5}
+\renewcommand*\contentsname{TABLE OF CONTENTS}
+\tableofcontents
+\let\cleardoublepage\clearpage
+\newpage
+
+%%List of Figures
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\renewcommand*\listfigurename{LIST OF FIGURES}
+\listoffigures
+\clearpage
+\newpage
+
+%%List of Tables
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+\renewcommand*\listtablename{LIST OF TABLES}
+\listoftables
+%\clearpage

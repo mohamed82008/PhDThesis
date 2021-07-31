@@ -1,0 +1,20 @@
+\begin{figure}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+        \draw[fill,color=gray!70] (0,-0.1) rectangle (-0.3,2.1);
+        \node [align=center, body,line width=1.2pt,minimum height=2cm,minimum width=8cm,anchor=south west] (body1) at (0,0) {};
+        \draw (body1.south east) -- ++(1,0) coordinate (D1) -- +(5pt,0);
+        \draw (body1.north east) -- ++(1,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {40mm};
+
+        \draw (body1.north west) -- ++(0,0.5) coordinate (D1) -- +(0,5pt);
+        \draw (body1.north east) -- ++(0,0.5) coordinate (D2) -- +(0,5pt);
+        \draw [dimen] (D1) -- (D2) node {160mm};
+        \draw[->,line width=1pt] (8,1) -- (8.15,1) -- (8.15,0.2);
+        \node (arrowhead) at (8.4,0.25) {F};
+    \end{tikzpicture} \newline
+  }
+  \caption{Cantilever beam problem before topology optimization.}
+  \label{fig:CantBeam1}
+\end{figure}

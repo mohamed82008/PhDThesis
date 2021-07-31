@@ -1,0 +1,30 @@
+\begin{figure}
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}[>=latex]
+        \draw[fill,color=gray!70] (-0.2,2) rectangle (3.2,2.5);
+        \draw[line width=1.2pt] (0, 2) node(nodeA){} -- (3, 2) node(nodeB){} -- (3, -1) -- (6, -1) node(nodeC){} -- (6, -4) node(nodeD){} -- (0, -4) node(nodeE){} -- cycle;
+        
+        \draw (nodeA) -- ++(0,1) coordinate (D1) -- +(0,5pt);
+        \draw (nodeB) -- ++(0,1) coordinate (D2) -- +(0,5pt);
+        \draw [dimen] (D1) -- (D2) node {50 mm};
+
+        \draw (nodeA) -- ++(-1,0) coordinate (D1) -- +(-5pt,0);
+        \draw (nodeE) -- ++(-1,0) coordinate (D2) -- +(-5pt,0);
+        \draw [dimen] (D1) -- (D2) node {100 mm};
+
+        \draw (nodeC) -- ++(1,0) coordinate (D1) -- +(5pt,0);
+        \draw (nodeD) -- ++(1,0) coordinate (D2) -- +(5pt,0);
+        \draw [dimen] (D1) -- (D2) node {50 mm};
+
+        \draw (nodeE) -- ++(0,-1) coordinate (D1) -- +(0,-5pt);
+        \draw (nodeD) -- ++(0,-1) coordinate (D2) -- +(0,-5pt);
+        \draw [dimen] (D1) -- (D2) node {100 mm};
+
+        \draw[->,line width=1pt] (6,-2.5) -- (6.2,-2.5) -- (6.2,-3.15);
+        \node (arrowhead) at (6.2,-3.25) {F};
+    \end{tikzpicture} \newline
+  }
+  \caption{L-shaped beam problem}
+  \label{fig:LBeam}
+\end{figure}

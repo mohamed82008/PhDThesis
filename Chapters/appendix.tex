@@ -1,0 +1,32 @@
+\appendix
+\addappheadtotoc
+%\chapter{Appendices}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{B\arabic{figure}}
+
+\section{Partial derivative of the inverse quadratic form} \label{app1}
+
+In this section, it will be shown that the $i^{th}$ partial derivative of:
+\begin{align}
+  f(\bm{x}) & = \bm{v}^T (\bm{A}(\bm{x}))^{-1} \bm{v}
+\end{align}
+is
+\begin{align}
+  \frac{\partial f}{\partial x_i} & = -\bm{y}^T \frac{\partial \bm{A}}{\partial x_i} \bm{y}^T
+\end{align}
+where $\bm{A}$ is a matrix-valued function of $\bm{x}$, $\bm{v}$ is a constant vector and $\bm{y} = \bm{A}^{-1} \bm{v}$ is a an implicit function of $\bm{x}$ because $\bm{A}$ is a function of $\bm{x}$.
+
+\begin{align}
+  \bm{v} & = \bm{A} \bm{y} \\
+  \bm{0} & = \bm{A} \frac{\partial \bm{y}}{\partial x_i} + \frac{\partial \bm{A}}{\partial x_i} \bm{y} \\
+  \frac{\partial y}{\partial x_i} & = - \bm{A}^{-1} \frac{\partial \bm{A}}{\partial x_i} \bm{y} \\
+  f(\bm{x}) & = \bm{v}^T \bm{A}^{-1} \bm{v} \\
+  & = \bm{y}^T \bm{A} \bm{y} \\
+  \frac{\partial f}{\partial x_i} & = 2 \bm{y}^T \bm{A} \frac{\partial \bm{y}}{\partial x_i} + \bm{y}^T \frac{\partial \bm{A}}{\partial x_i} \bm{y} \\
+  & = - 2 \bm{y}^T \bm{A} \bm{A}^{-1} \frac{\partial \bm{A}}{\partial x_i} \bm{y} + \bm{y}^T \frac{\partial \bm{A}}{\partial x_i} \bm{y} \\
+  & = - 2 \bm{y}^T \frac{\partial \bm{A}}{\partial x_i} \bm{y} + \bm{y}^T \frac{\partial \bm{A}}{\partial x_i} \bm{y} \\
+  & = - \bm{y}^T \frac{\partial \bm{A}}{\partial x_i} \bm{y}
+\end{align}

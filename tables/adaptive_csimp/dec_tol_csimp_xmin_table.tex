@@ -1,0 +1,50 @@
+\begin{table}
+\centering
+\tabcolsep=0.09cm
+% table caption is above the table
+\caption{This table shows the effect of increasing $x_{min}$ on CSIMP with decreasing tolerance and a fixed penalty step. The table shows the results of the experiments studying the effect of increasing $x_{min}$: 1) the number of FEA simulations (Sims) required by CSIMP, 2) the final objective of the continuous NLP at $p = 5$ (C-Obj), 3) the objective value of the rounded discrete solution (D-Obj), and 4) the percentage of fractionness (\% frac). The parameters of each experiment are described in Table \ref{tab:exp_params2}.}
+\label{tab:dec_tol_csimp_xmin}
+\begin{tabular}{|l|l|l|l|l||l|l|}
+\hline\noalign{\smallskip}
+Exp & \multicolumn{3}{c||}{\textbf{$x_{min} = 0.001$}} & \multicolumn{3}{c|}{\textbf{\% Increase - $x_{min} = 0.01$}} \\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+& \textbf{Sims} & \textbf{C-Obj / D-Obj} & \textbf{\% frac} & \textbf{Sims} & \textbf{C-Obj / D-Obj} & \textbf{\% frac}\\
+\hline
+1 & 185 & 814.2/581.6 & 17.3 & -23.8 & -16.4/-4.2 & -18.5 \\ 
+\hline
+2 &  316 & 720.4/553.1 & 14.0 & -29.7 & -5.9/2.8 & 0.0 \\ 
+\hline
+3 &  139 & 375.0/342.3 & 11.5 & -15.1 & -3.3/-1.3 & -12.2 \\ 
+\hline
+4 &  236 & 367.3/338.9 & 9.8 & -23.3 & -1.5/-0.1 & 2.0 \\ 
+\hline
+\hline
+5 & 130 & 619.6/293.9 & 24.6 & -7.7 & -13.9/14.0 & -0.8 \\ 
+\hline
+6 & 260 & 606.5/292.8 & 24.3 & -21.2 & -12.4/9.6 & 0.0 \\ 
+\hline
+7 & 130 & 219.5/175.3 & 18.1 & -7.7 & -2.9/1.0 & -0.6 \\ 
+\hline
+8 & 211 & 218.8/175.1 & 17.9 & -6.6 & -2.6/1.1 & 1.1 \\ 
+\hline
+\hline
+9 & 153 & 121.5/103.4 & 9.0 & -20.9 & -3.0/1.3 & 1.1 \\ 
+\hline
+10 & 226 & 123.5/104.1 & 9.6 & -14.6 & -4.7/0.5 & -5.2 \\ 
+\hline
+11 & 142 & 69.8/65.6 & 6.8 & -26.8 & -0.9/0.5 & -4.4 \\ 
+\hline
+12 & 192 & 69.9/65.7 & 6.8 & -12.0 & -1.1/0.2 & -2.9 \\ 
+\hline
+\hline
+13 & 97 & 16.1/13.1 & 10.1 & -1.0 & -1.9/0.0 & 2.0 \\ 
+\hline
+14 & 161 & 16.0/13.1 & 10.1 & 0.0 & -1.2/0.0 & 1.0 \\ 
+\hline
+15 & 97 & 10.2/9.3 & 10.9 & 0.0 & -1.0/0.0 & -0.9 \\ 
+\hline
+16 & 161 & 10.2/9.3 & 11.0 & 0.0 & -1.0/0.0 & -0.9 \\ 
+\hline
+\noalign{\smallskip}\hline
+\end{tabular}
+\end{table}
