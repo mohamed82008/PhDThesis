@@ -1,0 +1,187 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand{\transparent@use}[1]{}
+\citation{Guest2008}
+\citation{Dunning2011}
+\citation{Zhao2014}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Exact compliance-based optimization with finitely many loading scenarios}{140}{chapter.3}\protected@file@percent }
+\newlabel{chp:3}{{3}{140}{Exact compliance-based optimization with finitely many loading scenarios}{chapter.3}{}}
+\newlabel{chp:3@cref}{{[chapter][3][]3}{[1][140][]140}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{140}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Literature review}{140}{section.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Mean compliance minimization}{140}{subsection.3.2.1}\protected@file@percent }
+\citation{Zhang2017a}
+\citation{Hutchinson1990}
+\citation{Zhao2014}
+\citation{Liu2018a}
+\citation{Dunning2013}
+\citation{Zhao2014b}
+\citation{Chen2010}
+\citation{Martinez-Frutos2016}
+\citation{Cuellar2018}
+\citation{Martinez-Frutos2018}
+\citation{Zhao2014b}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Risk-averse compliance minimization}{142}{subsection.3.2.2}\protected@file@percent }
+\citation{Garcia-Lopez2013}
+\citation{Kriegesmann2019}
+\citation{Keshavarzzadeh2017}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Probabilistic constraints and reliability-based topology optimization}{144}{subsection.3.2.3}\protected@file@percent }
+\citation{Kharmanda2002,Kharmanda2004}
+\citation{Jung2004}
+\citation{Kim2006}
+\citation{Kim2007,Kim2008}
+\citation{YM1992,XY1998,Huang2010a}
+\citation{Ouyang2008}
+\citation{Silva2010}
+\citation{Nguyen2011}
+\citation{Zhao2016}
+\citation{Jalalpour2016}
+\citation{YM1992,XY1998,Huang2010a}
+\citation{Yin2018}
+\citation{Brittain2012}
+\citation{Holmberg2015}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Maximum compliance constraint}{146}{subsection.3.2.4}\protected@file@percent }
+\citation{Thore2017}
+\citation{Holmberg2015}
+\citation{Liu2018}
+\citation{Luo2009}
+\citation{Wang2018a}
+\citation{Wang2017,Wang2019a}
+\citation{Zheng2018a}
+\citation{Wang2019b}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Compliance sample mean and its gradient}{148}{section.3.3}\protected@file@percent }
+\newlabel{sec:proposed_mean}{{3.3}{148}{Compliance sample mean and its gradient}{section.3.3}{}}
+\newlabel{sec:proposed_mean@cref}{{[section][3][3]3.3}{[1][148][]148}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Naive approach}{148}{subsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Singular value decomposition}{150}{subsection.3.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Summary of the computational cost of the algorithms discussed to calculate the mean compliance and its gradient. \#Lin is the number of linear system solves required.\relax }}{151}{table.caption.19}\protected@file@percent }
+\newlabel{tab:perf_mean}{{3.1}{151}{Summary of the computational cost of the algorithms discussed to calculate the mean compliance and its gradient. \#Lin is the number of linear system solves required.\relax }{table.caption.19}{}}
+\newlabel{tab:perf_mean@cref}{{[table][1][3]3.1}{[1][151][]151}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Scalar-valued function of load compliances and its gradient}{151}{section.3.4}\protected@file@percent }
+\newlabel{sec:proposed_risk}{{3.4}{151}{Scalar-valued function of load compliances and its gradient}{section.3.4}{}}
+\newlabel{sec:proposed_risk@cref}{{[section][4][3]3.4}{[1][151][]151}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Naive approach}{152}{subsection.3.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Singular value decomposition}{153}{subsection.3.4.2}\protected@file@percent }
+\citation{Bertsekas1996}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Summary of the computational cost of the algorithms discussed to calculate the load compliances $\bm  {C}$ as well as $\nabla _{\bm  {\rho }} \bm  {C}^T \bm  {w}$ for any vector $\bm  {w}$. \#Lin is the number of linear system solves required. This can be used to compute the variance, standard deviation as well as other scalar-valued functions of $\bm  {C}$. If the full Jacobian is required, the naive method requires the same computational cost as that of computing $\nabla _{\bm  {\rho }} \bm  {C}^T \bm  {w}$, and the SVD-based method has a time complexity of $O((n_s \times n_{dofs} + n_E) \times L)$ for the additional work other than the linear system solves and SVD.\relax }}{154}{table.caption.20}\protected@file@percent }
+\newlabel{tab:perf_scalar}{{3.2}{154}{Summary of the computational cost of the algorithms discussed to calculate the load compliances $\bm {C}$ as well as $\nabla _{\bm {\rho }} \bm {C}^T \bm {w}$ for any vector $\bm {w}$. \#Lin is the number of linear system solves required. This can be used to compute the variance, standard deviation as well as other scalar-valued functions of $\bm {C}$. If the full Jacobian is required, the naive method requires the same computational cost as that of computing $\nabla _{\bm {\rho }} \bm {C}^T \bm {w}$, and the SVD-based method has a time complexity of $O((n_s \times n_{dofs} + n_E) \times L)$ for the additional work other than the linear system solves and SVD.\relax }{table.caption.20}{}}
+\newlabel{tab:perf_scalar@cref}{{[table][2][3]3.2}{[1][154][]154}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Maximum compliance constraint}{155}{section.3.5}\protected@file@percent }
+\newlabel{sec:proposed_max}{{3.5}{155}{Maximum compliance constraint}{section.3.5}{}}
+\newlabel{sec:proposed_max@cref}{{[section][5][3]3.5}{[1][154][]155}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Setup and Implementation}{156}{section.3.6}\protected@file@percent }
+\newlabel{sec:exp_impl}{{3.6}{156}{Setup and Implementation}{section.3.6}{}}
+\newlabel{sec:exp_impl@cref}{{[section][6][3]3.6}{[1][156][]156}}
+\citation{Huang2010a}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-1}{\ignorespaces Cantilever beam problem. $\bm  {F}_2$ and $\bm  {F}_3$ are at 45 degree angles.\relax }}{157}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:CantBeam}{{3-1}{157}{Cantilever beam problem. $\bm {F}_2$ and $\bm {F}_3$ are at 45 degree angles.\relax }{figure.caption.21}{}}
+\newlabel{fig:CantBeam@cref}{{[figure][1][3]3-1}{[1][156][]157}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Test problems}{157}{subsection.3.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1.1}2D cantilever beam}{157}{subsubsection.3.6.1.1}\protected@file@percent }
+\citation{Bezanson2014}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.6.1.2}3D cantilever beam}{159}{subsubsection.3.6.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Software}{159}{subsection.3.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3}Settings}{159}{subsection.3.6.3}\protected@file@percent }
+\citation{Svanberg1987}
+\citation{Nocedal2006}
+\citation{KMogensen2018}
+\citation{Hager2006}
+\citation{Wachter2006}
+\citation{Bertsekas1996}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Results and Discussion}{161}{section.3.7}\protected@file@percent }
+\newlabel{sec:results}{{3.7}{161}{Results and Discussion}{section.3.7}{}}
+\newlabel{sec:results@cref}{{[section][7][3]3.7}{[1][161][]161}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Speed comparison}{161}{subsection.3.7.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces The table shows the function values of $\mu _C$ computed using the naive exact method (Exact-Naive) and the exact method with SVD (Exact-SVD). The table also shows the time required to compute $\mu _C$ and its gradient in each case.\relax }}{161}{table.caption.22}\protected@file@percent }
+\newlabel{tab:time_mean}{{3.3}{161}{The table shows the function values of $\mu _C$ computed using the naive exact method (Exact-Naive) and the exact method with SVD (Exact-SVD). The table also shows the time required to compute $\mu _C$ and its gradient in each case.\relax }{table.caption.22}{}}
+\newlabel{tab:time_mean@cref}{{[table][3][3]3.3}{[1][161][]161}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces The table shows the function values of $\sigma _C$ and its gradients for a full ground mesh computed using the naive exact method (Exact-Naive) and the exact method with SVD (Exact-SVD). The table also shows the time required to compute $\sigma _C$ and its gradient in each case.\relax }}{162}{table.caption.23}\protected@file@percent }
+\newlabel{tab:time_std}{{3.4}{162}{The table shows the function values of $\sigma _C$ and its gradients for a full ground mesh computed using the naive exact method (Exact-Naive) and the exact method with SVD (Exact-SVD). The table also shows the time required to compute $\sigma _C$ and its gradient in each case.\relax }{table.caption.23}{}}
+\newlabel{tab:time_std@cref}{{[table][4][3]3.4}{[1][161][]162}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-2}{\ignorespaces Flowchart of the experiments' workflow. Only the mean compliance objective, mean-std compliance objective or maximum compliance constraint are scaled by the inverse of their initial value. The volume function is not scaled.\relax }}{162}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:flowchart}{{3-2}{162}{Flowchart of the experiments' workflow. Only the mean compliance objective, mean-std compliance objective or maximum compliance constraint are scaled by the inverse of their initial value. The volume function is not scaled.\relax }{figure.caption.24}{}}
+\newlabel{fig:flowchart@cref}{{[figure][2][3]3-2}{[1][162][]162}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Optimization}{162}{subsection.3.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2.1}Mean compliance minimization}{162}{subsubsection.3.7.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3-3}{\ignorespaces Optimal topology of the mean compliance minimization problem using continuation SIMP and the SVD-based method for evaluating the mean compliance.\relax }}{163}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:mean}{{3-3}{163}{Optimal topology of the mean compliance minimization problem using continuation SIMP and the SVD-based method for evaluating the mean compliance.\relax }{figure.caption.25}{}}
+\newlabel{fig:mean@cref}{{[figure][3][3]3-3}{[1][162][]163}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-4}{\ignorespaces Cut views of the optimal topologies of the 3D mean compliance minimization problem using exact method with SVD.\relax }}{163}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:exact_mean_3d}{{3-4}{163}{Cut views of the optimal topologies of the 3D mean compliance minimization problem using exact method with SVD.\relax }{figure.caption.26}{}}
+\newlabel{fig:exact_mean_3d@cref}{{[figure][4][3]3-4}{[1][162][]163}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Summary statistics of the load compliances of the optimal solutions of the 2D and 3D mean compliance minimization problems using the SVD-based method to evaluate the mean compliance.\relax }}{164}{table.caption.27}\protected@file@percent }
+\newlabel{tab:mean_stats}{{3.5}{164}{Summary statistics of the load compliances of the optimal solutions of the 2D and 3D mean compliance minimization problems using the SVD-based method to evaluate the mean compliance.\relax }{table.caption.27}{}}
+\newlabel{tab:mean_stats@cref}{{[table][5][3]3.5}{[1][162][]164}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2.2}Mean-std compliance minimization}{164}{subsubsection.3.7.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Summary statistics of the load compliances of the optimal solutions of the 2D and 3D mean-std compliance minimization problems using the SVD-based method to evaluate the mean-std compliance.\relax }}{164}{table.caption.30}\protected@file@percent }
+\newlabel{tab:mean_std_stats}{{3.6}{164}{Summary statistics of the load compliances of the optimal solutions of the 2D and 3D mean-std compliance minimization problems using the SVD-based method to evaluate the mean-std compliance.\relax }{table.caption.30}{}}
+\newlabel{tab:mean_std_stats@cref}{{[table][6][3]3.6}{[1][164][]164}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-5}{\ignorespaces Optimal topology of the mean-std compliance minimization problem using continuation SIMP and the SVD-based method to compute the mean-std.\relax }}{165}{figure.caption.28}\protected@file@percent }
+\newlabel{fig:mean_std}{{3-5}{165}{Optimal topology of the mean-std compliance minimization problem using continuation SIMP and the SVD-based method to compute the mean-std.\relax }{figure.caption.28}{}}
+\newlabel{fig:mean_std@cref}{{[figure][5][3]3-5}{[1][164][]165}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-6}{\ignorespaces Cut views of the optimal topologies of the 3D mean-std compliance minimization problem using the exact method with SVD.\relax }}{165}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:exact_mean_std_3d}{{3-6}{165}{Cut views of the optimal topologies of the 3D mean-std compliance minimization problem using the exact method with SVD.\relax }{figure.caption.29}{}}
+\newlabel{fig:exact_mean_std_3d@cref}{{[figure][6][3]3-6}{[1][164][]165}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-7}{\ignorespaces Profile of the optimal mean and standard deviation of the compliance for different standard deviation multiples in the objective.\relax }}{166}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:mean_std_profile}{{3-7}{166}{Profile of the optimal mean and standard deviation of the compliance for different standard deviation multiples in the objective.\relax }{figure.caption.31}{}}
+\newlabel{fig:mean_std_profile@cref}{{[figure][7][3]3-7}{[1][166][]166}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.7.2.3}Maximum compliance constrained optimization}{166}{subsubsection.3.7.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3-8}{\ignorespaces Optimal topologies of the 2D mean-std compliance minimization problem using different standard deviation multiples $m$ in the objective $\mu _C + m \sigma _C$.\relax }}{167}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:mean_m_std_2d}{{3-8}{167}{Optimal topologies of the 2D mean-std compliance minimization problem using different standard deviation multiples $m$ in the objective $\mu _C + m \sigma _C$.\relax }{figure.caption.32}{}}
+\newlabel{fig:mean_m_std_2d@cref}{{[figure][8][3]3-8}{[1][166][]167}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-9}{\ignorespaces Optimal topology of the volume minimization problem subject to a maximum compliance constraint using continuation SIMP and the augmented Lagrangian method with the exact SVD approach. The maximum compliance of the design above is 69847.0 Nmm and the volume fraction is 0.584.\relax }}{168}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:max}{{3-9}{168}{Optimal topology of the volume minimization problem subject to a maximum compliance constraint using continuation SIMP and the augmented Lagrangian method with the exact SVD approach. The maximum compliance of the design above is 69847.0 Nmm and the volume fraction is 0.584.\relax }{figure.caption.33}{}}
+\newlabel{fig:max@cref}{{[figure][9][3]3-9}{[1][168][]168}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Conclusion}{168}{section.3.8}\protected@file@percent }
+\newlabel{sec:conclusion}{{3.8}{168}{Conclusion}{section.3.8}{}}
+\newlabel{sec:conclusion@cref}{{[section][8][3]3.8}{[1][168][]168}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3-10}{\ignorespaces Cut views of the 3D optimal topology of the volume minimization problem subject to a maximum compliance constraint using continuation SIMP and the augmented Lagrangian method with the exact SVD approach. The maximum compliance of the design above is 68992.4 Nmm and the volume fraction is 0.791.\relax }}{169}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:max_3d}{{3-10}{169}{Cut views of the 3D optimal topology of the volume minimization problem subject to a maximum compliance constraint using continuation SIMP and the augmented Lagrangian method with the exact SVD approach. The maximum compliance of the design above is 68992.4 Nmm and the volume fraction is 0.791.\relax }{figure.caption.34}{}}
+\newlabel{fig:max_3d@cref}{{[figure][10][3]3-10}{[1][168][]169}}
+\@setckpt{Chapters/chap3}{
+\setcounter{page}{170}
+\setcounter{equation}{15}
+\setcounter{enumi}{3}
+\setcounter{enumii}{3}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{3}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{3}
+\setcounter{section}{8}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{10}
+\setcounter{table}{6}
+\setcounter{savepage}{0}
+\setcounter{theorem}{0}
+\setcounter{corollary}{0}
+\setcounter{parentequation}{0}
+\setcounter{float@type}{8}
+\setcounter{algorithm}{1}
+\setcounter{ALC@unique}{6}
+\setcounter{ALC@line}{6}
+\setcounter{ALC@rem}{0}
+\setcounter{ALC@depth}{0}
+\setcounter{Item}{99}
+\setcounter{Hfootnote}{7}
+\setcounter{bookmark@seq@number}{86}
+\setcounter{LT@tables}{1}
+\setcounter{LT@chunks}{6}
+\setcounter{caption@flags}{0}
+\setcounter{continuedfloat}{0}
+\setcounter{r@tfl@t}{0}
+\setcounter{NAT@ctr}{0}
+\setcounter{subfigure}{2}
+\setcounter{subtable}{0}
+\setcounter{@pps}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{svg@param@lastpage}{0}
+\setcounter{svg@param@currpage}{-1}
+\setcounter{nlinenum}{0}
+\setcounter{section@level}{0}
+}

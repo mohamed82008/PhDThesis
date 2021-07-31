@@ -1,0 +1,819 @@
+\begin{thebibliography}{xx}
+
+\harvarditem[Aage et~al.]{Aage, Andreassen \harvardand\
+  Lazarov}{2015}{Aage2015}
+Aage, N., Andreassen, E. \harvardand\ Lazarov, B.~S.  \harvardyearleft
+  2015\harvardyearright , `{Topology optimization using PETSc: An easy-to-use,
+  fully parallel, open source topology optimization framework}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 51}(3),~565--572.
+
+\harvarditem[{Aharon Ben-Tal} et~al.]{{Aharon Ben-Tal}, {Laurent El Ghaoui}
+  \harvardand\ Nemirovski}{2009}{AharonBen-Tal2009}
+{Aharon Ben-Tal}, {Laurent El Ghaoui} \harvardand\ Nemirovski, A.
+  \harvardyearleft 2009\harvardyearright , {\em {Robust Optimization}},
+  Princeton University Press.
+
+\harvarditem{Allaire \harvardand\ Jouve}{2004}{Allaire2004}
+Allaire, G. \harvardand\ Jouve, F.  \harvardyearleft 2004\harvardyearright ,
+  `{A level-set method for vibration and multiple loads}', {\em Computer
+  Methods in Applied Mechanics and Engineering} pp.~1--28.
+
+\harvarditem[Allaire et~al.]{Allaire, Jouve \harvardand\
+  Toader}{2002}{Allaire2002}
+Allaire, G., Jouve, F. \harvardand\ Toader, A.-M.  \harvardyearleft
+  2002\harvardyearright , `{A level-set method for shape optimization}', {\em
+  Comptes Rendus Mathematique} {\bf 334}(12),~1125--1130.
+
+\harvarditem{Amir}{2015}{Amir2015}
+Amir, O.  \harvardyearleft 2015\harvardyearright , `{Revisiting approximate
+  reanalysis in topology optimization: on the advantages of recycled
+  preconditioning in a minimum weight procedure}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 51}(1),~41--57.
+
+\harvarditem{Amir}{2017}{Amir2017}
+Amir, O.  \harvardyearleft 2017\harvardyearright , `{Stress-constrained
+  continuum topology optimization: a new approach based on elasto-plasticity}',
+  {\em Structural and Multidisciplinary Optimization} {\bf 55}(5),~1797--1818.
+
+\harvarditem[Amir et~al.]{Amir, Aage \harvardand\ Lazarov}{2014}{Amir2014}
+Amir, O., Aage, N. \harvardand\ Lazarov, B.~S.  \harvardyearleft
+  2014\harvardyearright , `{On multigrid-CG for efficient topology
+  optimization}', {\em Structural and Multidisciplinary Optimization} {\bf
+  49}(5),~815--829.
+
+\harvarditem[Amir et~al.]{Amir, Bends{\o}e \harvardand\
+  Sigmund}{2009}{Amir2009}
+Amir, O., Bends{\o}e, M.~P. \harvardand\ Sigmund, O.  \harvardyearleft
+  2009\harvardyearright , `{Approximate reanalysis in topology optimization}',
+  {\em International Journal for Numerical Methods in Engineering} {\bf
+  78}(12),~1474--1491.
+
+\harvarditem{ApS}{2018}{mosekcookbook}
+ApS, M.  \harvardyearleft 2018\harvardyearright , `Mosek modeling cookbook'.
+\newline\harvardurl{https://docs.mosek.com/MOSEKModelingCookbook-v2.pdf}
+
+\harvarditem[Bekas et~al.]{Bekas, Kokiopoulou \harvardand\
+  Saad}{2007}{Bekas2007}
+Bekas, C., Kokiopoulou, E. \harvardand\ Saad, Y.  \harvardyearleft
+  2007\harvardyearright , `{An estimator for the diagonal of a matrix}', {\em
+  Applied Numerical Mathematics} {\bf 57}(11-12),~1214--1229.
+
+\harvarditem{Bends{\o}e}{1989}{Bendsoe1989}
+Bends{\o}e, M.~P.  \harvardyearleft 1989\harvardyearright , `{Optimal shape
+  design as a material distribution problem}', {\em Structural Optimization}
+  {\bf 1}(4),~193--202.
+
+\harvarditem{Bends{\o}e \harvardand\ Kikuchi}{1988}{Bendsoe1988}
+Bends{\o}e, M.~P. \harvardand\ Kikuchi, N.  \harvardyearleft
+  1988\harvardyearright , `{Generating optimal topologies in structural design
+  using a homogenization method}', {\em Computer Methods in Applied Mechanics
+  and Engineering} {\bf 71}(2),~197--224.
+
+\harvarditem{Bends{\o}e \harvardand\ Sigmund}{2004}{Bendsoe2004}
+Bends{\o}e, M.~P. \harvardand\ Sigmund, O.  \harvardyearleft
+  2004\harvardyearright , {\em {Topology Optimization: Theory, Methods and
+  Applications.}}, 2 edn, Springer-Verlag Berlin Heidelberg.
+
+\harvarditem{Bertsekas}{1996}{Bertsekas1996}
+Bertsekas, D.~P.  \harvardyearleft 1996\harvardyearright , {\em {Constrained
+  Optimization and Lagrange Multiplier Methods}}, Athena Scientific.
+
+\harvarditem[Bertsimas et~al.]{Bertsimas, Brown \harvardand\
+  Caramanis}{2011}{Bertsimas2011}
+Bertsimas, D., Brown, D.~B. \harvardand\ Caramanis, C.  \harvardyearleft
+  2011\harvardyearright , `{Theory and applications of robust optimization}',
+  {\em SIAM Review} {\bf 53}(3),~464--501.
+
+\harvarditem[Bezanson et~al.]{Bezanson, Edelman, Karpinski \harvardand\
+  Shah}{2014}{Bezanson2014}
+Bezanson, J., Edelman, A., Karpinski, S. \harvardand\ Shah, V.~B.
+  \harvardyearleft 2014\harvardyearright , `{Julia: A Fresh Approach to
+  Numerical Computing}'.
+
+\harvarditem{Bishop}{2006}{Bishop2006}
+Bishop, C.~M.  \harvardyearleft 2006\harvardyearright , {\em {Pattern
+  recognition and machine learning}}, Springer.
+
+\harvarditem{Boyd \harvardand\ Vandenberghe}{2009}{Boyd2009}
+Boyd, S. \harvardand\ Vandenberghe, L.  \harvardyearleft 2009\harvardyearright
+  , {\em {Convex Optimization}}.
+
+\harvarditem[Brittain et~al.]{Brittain, Silva \harvardand\
+  Tortorelli}{2012}{Brittain2012}
+Brittain, K., Silva, M. \harvardand\ Tortorelli, D.~A.  \harvardyearleft
+  2012\harvardyearright , `{Minmax topology optimization}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 45}(5),~657--668.
+
+\harvarditem{Browne}{2013}{Browne2013}
+Browne, P.  \harvardyearleft 2013\harvardyearright , {Topology Optimization of
+  Linear Elastic Structures}, PhD thesis.
+
+\harvarditem{Bruggi \harvardand\ Duysinx}{2012}{Bruggi2012}
+Bruggi, M. \harvardand\ Duysinx, P.  \harvardyearleft 2012\harvardyearright ,
+  `{Topology optimization for minimum weight with compliance and stress
+  constraints}', {\em Structural and Multidisciplinary Optimization} {\bf
+  46}(3),~369--384.
+
+\harvarditem{Bruggi \harvardand\ Verani}{2011}{Bruggi2011}
+Bruggi, M. \harvardand\ Verani, M.  \harvardyearleft 2011\harvardyearright ,
+  `{A fully adaptive topology optimization algorithm with goal-oriented error
+  control}', {\em Computers and Structures} {\bf 89}(15-16),~1481--1493.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.compstruc.2011.05.003}
+
+\harvarditem[Chen et~al.]{Chen, Lee \harvardand\ Chen}{2010}{Chen2010}
+Chen, S., Lee, S. \harvardand\ Chen, W.  \harvardyearleft 2010\harvardyearright
+  , `{Level set based robust shape and topology optimization under random field
+  uncertainties}', {\em Proceedings of the ASME International Design
+  Engineering Technical Conferences and Computers and Information in
+  Engineering Conference 2009, DETC2009} {\bf 5}(PART B),~1295--1305.
+
+\harvarditem[Choi et~al.]{Choi, Grandhi \harvardand\ Canfield}{2007}{Choi2007}
+Choi, S.-K., Grandhi, R.~V. \harvardand\ Canfield, R.~A.  \harvardyearleft
+  2007\harvardyearright , {\em {Reliability-based Structural Design}},
+  Springer-Verlag.
+
+\harvarditem[Collet et~al.]{Collet, Bruggi \harvardand\
+  Duysinx}{2017}{Collet2017}
+Collet, M., Bruggi, M. \harvardand\ Duysinx, P.  \harvardyearleft
+  2017\harvardyearright , `{Topology optimization for minimum weight with
+  compliance and simplified nominal stress constraints for fatigue
+  resistance}', {\em Structural and Multidisciplinary Optimization} {\bf
+  55}(3),~839--855.
+
+\harvarditem[Cuellar et~al.]{Cuellar, Pereira, Menezes \harvardand\
+  Cunha}{2018}{Cuellar2018}
+Cuellar, N., Pereira, A., Menezes, I.~F. \harvardand\ Cunha, A.
+  \harvardyearleft 2018\harvardyearright , `{Non-intrusive polynomial chaos
+  expansion for topology optimization using polygonal meshes}', {\em Journal of
+  the Brazilian Society of Mechanical Sciences and Engineering} {\bf
+  40}(12),~1--18.
+\newline\harvardurl{https://doi.org/10.1007/s40430-018-1464-2}
+
+\harvarditem[Dadalau et~al.]{Dadalau, Hafla \harvardand\
+  Verl}{2009}{Dadalau2009}
+Dadalau, A., Hafla, A. \harvardand\ Verl, A.  \harvardyearleft
+  2009\harvardyearright , `{A new adaptive penalization scheme for topology
+  optimization}', {\em Production Engineering} {\bf 3}(4-5),~427--434.
+
+\harvarditem[de~Berg et~al.]{de~Berg, Cheong, van Kreveld \harvardand\
+  Overmars}{2008}{DeBerg2008}
+de~Berg, M., Cheong, O., van Kreveld, M. \harvardand\ Overmars, M.
+  \harvardyearleft 2008\harvardyearright , {\em {Computational Geometry}}, 3
+  edn, Springer Berlin Heidelberg, Berlin, Heidelberg.
+\newline\harvardurl{http://link.springer.com/10.1007/978-3-540-77974-2}
+
+\harvarditem[Deepak et~al.]{Deepak, Dinesh, Sahu \harvardand\
+  Ananthasuresh}{2009}{Deepak2009}
+Deepak, S.~R., Dinesh, M., Sahu, D.~K. \harvardand\ Ananthasuresh, G.~K.
+  \harvardyearleft 2009\harvardyearright , `{A Comparative Study of the
+  Formulations and Benchmark Problems for the Topology Optimization of
+  Compliant Mechanisms}', {\em Journal of Mechanisms and Robotics} {\bf
+  1}(1),~011003.
+
+\harvarditem{Deng \harvardand\ Suresh}{2017}{Deng2017}
+Deng, S. \harvardand\ Suresh, K.  \harvardyearleft 2017\harvardyearright ,
+  `{Topology optimization under thermo-elastic buckling}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 55}(5),~1759--1772.
+
+\harvarditem{D{\'{i}}az \harvardand\ Sigmund}{1995}{Diaz1995}
+D{\'{i}}az, A. \harvardand\ Sigmund, O.  \harvardyearleft 1995\harvardyearright
+  , `{Checkerboard patterns in layout optimization}', {\em Structural
+  Optimization} {\bf 10}(1),~40--45.
+
+\harvarditem{Dunning \harvardand\ Kim}{2013}{Dunning2013}
+Dunning, P.~D. \harvardand\ Kim, H.~A.  \harvardyearleft 2013\harvardyearright
+  , `{Robust topology optimization: Minimization of expected and variance of
+  compliance}', {\em AIAA Journal} {\bf 51}(11),~2656--2664.
+
+\harvarditem[Dunning et~al.]{Dunning, Kim \harvardand\
+  Mullineux}{2011}{Dunning2011}
+Dunning, P.~D., Kim, H.~A. \harvardand\ Mullineux, G.  \harvardyearleft
+  2011\harvardyearright , `{Introducing loading uncertainty in topology
+  optimization}', {\em AIAA Journal} {\bf 49}(4),~760--768.
+
+\harvarditem[Elishakoff et~al.]{Elishakoff, Haftka \harvardand\
+  Fang}{1994}{Elishakoff1994}
+Elishakoff, I., Haftka, R.~T. \harvardand\ Fang, J.  \harvardyearleft
+  1994\harvardyearright , `{Structural design under bounded
+  uncertainty-Optimization with anti-optimization}', {\em Computers and
+  Structures} {\bf 53}(6),~1401--1405.
+
+\harvarditem{Fleury}{1989}{Fleury1989}
+Fleury, C.  \harvardyearleft 1989\harvardyearright , `{CONLIN: An efficient
+  dual optimizer based on convex approximation concepts}', {\em Structural
+  Optimization} {\bf 1}(2),~81--89.
+
+\harvarditem[{Gao Xingjun} et~al.]{{Gao Xingjun}, {Li Lijuan} \harvardand\ {Ma
+  Haitao}}{2017}{GaoXingjun2017}
+{Gao Xingjun}, {Li Lijuan} \harvardand\ {Ma Haitao}  \harvardyearleft
+  2017\harvardyearright , `{An Adaptive Continuation Method for Topology
+  Optimization of Continuum Structures Considering Buckling Constraints}', {\em
+  International Journal of Applied Mechanics} {\bf 09}(07),~1750092.
+
+\harvarditem[Garcia-Lopez et~al.]{Garcia-Lopez, Sanchez-Silva, Medaglia
+  \harvardand\ Chateauneuf}{2013}{Garcia-Lopez2013}
+Garcia-Lopez, N.~P., Sanchez-Silva, M., Medaglia, A.~L. \harvardand\
+  Chateauneuf, A.  \harvardyearleft 2013\harvardyearright , `{An improved
+  robust topology optimization approach using multiobjective evolutionary
+  algorithms}', {\em Computers and Structures} {\bf 125},~1--10.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.compstruc.2013.04.025}
+
+\harvarditem{Golub \harvardand\ Loan}{1996}{Golub1996}
+Golub, G.~H. \harvardand\ Loan, C. F.~V.  \harvardyearleft
+  1996\harvardyearright , {\em {Matrix Computations}}, Vol.~10.
+
+\harvarditem{Guest \harvardand\ Igusa}{2008}{Guest2008}
+Guest, J.~K. \harvardand\ Igusa, T.  \harvardyearleft 2008\harvardyearright ,
+  `{Structural optimization under uncertain loads and nodal locations}', {\em
+  Computer Methods in Applied Mechanics and Engineering} {\bf
+  198}(1),~116--124.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2008.04.009}
+
+\harvarditem[Guest et~al.]{Guest, Pr{\'{e}}vost \harvardand\
+  Belytschko}{2004}{Guest2004}
+Guest, J.~K., Pr{\'{e}}vost, J.~H. \harvardand\ Belytschko, T.
+  \harvardyearleft 2004\harvardyearright , `{Achieving minimum length scale in
+  topology optimization using nodal design variables and projection
+  functions}', {\em International Journal for Numerical Methods in Engineering}
+  {\bf 61}(2),~238--254.
+
+\harvarditem{Guirguis \harvardand\ Aly}{2016}{Guirguis2016}
+Guirguis, D. \harvardand\ Aly, M.~F.  \harvardyearleft 2016\harvardyearright ,
+  `{A derivative-free level-set method for topology optimization}', {\em Finite
+  Elements in Analysis and Design} {\bf 120},~41--56.
+
+\harvarditem{Guo \harvardand\ Lu}{2015}{Guo2015}
+Guo, S.~X. \harvardand\ Lu, Z.~Z.  \harvardyearleft 2015\harvardyearright , `{A
+  non-probabilistic robust reliability method for analysis and design
+  optimization of structures with uncertain-but-bounded parameters}', {\em
+  Applied Mathematical Modelling} {\bf 39}(7),~1985--2002.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.apm.2014.10.026}
+
+\harvarditem{Hager \harvardand\ Zhang}{2006}{Hager2006}
+Hager, W.~W. \harvardand\ Zhang, H.  \harvardyearleft 2006\harvardyearright ,
+  `{Algorithm 851: CG{\_}DESCENT, a conjugate gradient method with guaranteed
+  descent}', {\em ACM Transactions on Mathematical Software (TOMS)} {\bf
+  32}(1),~113--137.
+\newline\harvardurl{http://portal.acm.org/citation.cfm?id=1132979}
+
+\harvarditem[Holmberg et~al.]{Holmberg, Thore \harvardand\
+  Klarbring}{2015}{Holmberg2015}
+Holmberg, E., Thore, C.~J. \harvardand\ Klarbring, A.  \harvardyearleft
+  2015\harvardyearright , `{Worst-case topology optimization of self-weight
+  loaded structures using semi-definite programming}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 52}(5),~915--928.
+
+\harvarditem{Huang \harvardand\ Xie}{2010}{Huang2010a}
+Huang, X. \harvardand\ Xie, Y.~M.  \harvardyearleft 2010\harvardyearright , `{A
+  further review of ESO type methods for topology optimization}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 41}(5),~671--683.
+
+\harvarditem{Hutchinson}{1990}{Hutchinson1990}
+Hutchinson, M.~F.  \harvardyearleft 1990\harvardyearright , `{A stochastic
+  estimator of the trace of the influence matrix for laplacian smoothing
+  splines}', {\em Communications in Statistics - Simulation and Computation}
+  {\bf 19}(2),~433--450.
+
+\harvarditem{Jalalpour \harvardand\ Tootkaboni}{2016}{Jalalpour2016}
+Jalalpour, M. \harvardand\ Tootkaboni, M.  \harvardyearleft
+  2016\harvardyearright , `{An efficient approach to reliability-based topology
+  optimization for continua under material uncertainty}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 53}(4),~759--772.
+
+\harvarditem{Jung \harvardand\ Cho}{2004}{Jung2004}
+Jung, H.~S. \harvardand\ Cho, S.  \harvardyearleft 2004\harvardyearright ,
+  `{Reliability-based topology optimization of geometrically nonlinear
+  structures with loading and material uncertainties}', {\em Finite Elements in
+  Analysis and Design} {\bf 41}(3),~311--331.
+
+\harvarditem{{K Mogensen} \harvardand\ {N Riseth}}{2018}{KMogensen2018}
+{K Mogensen}, P. \harvardand\ {N Riseth}, A.  \harvardyearleft
+  2018\harvardyearright , `{Optim: A mathematical optimization package for
+  Julia}', {\em Journal of Open Source Software} {\bf 3}(24),~615.
+\newline\harvardurl{http://joss.theoj.org/papers/10.21105/joss.00615}
+
+\harvarditem{Kang \harvardand\ Luo}{2009}{Kang2009}
+Kang, Z. \harvardand\ Luo, Y.  \harvardyearleft 2009\harvardyearright ,
+  `{Non-probabilistic reliability-based topology optimization of geometrically
+  nonlinear structures using convex models}', {\em Computer Methods in Applied
+  Mechanics and Engineering} {\bf 198}(41-44),~3228--3238.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2009.06.001}
+
+\harvarditem[Keshavarzzadeh et~al.]{Keshavarzzadeh, Fernandez \harvardand\
+  Tortorelli}{2017}{Keshavarzzadeh2017}
+Keshavarzzadeh, V., Fernandez, F. \harvardand\ Tortorelli, D.~A.
+  \harvardyearleft 2017\harvardyearright , `{Topology optimization under
+  uncertainty via non-intrusive polynomial chaos expansion}', {\em Computer
+  Methods in Applied Mechanics and Engineering} {\bf 318},~120--147.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2017.01.019}
+
+\harvarditem{Kharmanda \harvardand\ Olhoff}{2002}{Kharmanda2002}
+Kharmanda, G. \harvardand\ Olhoff, N.  \harvardyearleft 2002\harvardyearright ,
+  `{Reliability-Based Topology Optimization as a New Strategy to Generate
+  Different Structural Topologies}', {\em 15th Nordic Seminar on Computational
+  Mechanics} (January).
+
+\harvarditem[Kharmanda et~al.]{Kharmanda, Olhoff, Mohamed \harvardand\
+  Lemaire}{2004}{Kharmanda2004}
+Kharmanda, G., Olhoff, N., Mohamed, A. \harvardand\ Lemaire, M.
+  \harvardyearleft 2004\harvardyearright , `{Reliability-based topology
+  optimization}', {\em Structural and Multidisciplinary Optimization} {\bf
+  26}(5),~295--307.
+
+\harvarditem[Kim et~al.]{Kim, Wang, Bae, Moon \harvardand\ Choi}{2006}{Kim2006}
+Kim, C., Wang, S., Bae, K.~R., Moon, H. \harvardand\ Choi, K.~K.
+  \harvardyearleft 2006\harvardyearright , `{Reliability-based topology
+  optimization with uncertainties}', {\em Journal of Mechanical Science and
+  Technology} {\bf 20}(4),~494--504.
+
+\harvarditem[Kim et~al.]{Kim, Lee, Park, Yu \harvardand\ Han}{2008}{Kim2008}
+Kim, S.~R., Lee, W.~G., Park, J.~Y., Yu, J.~S. \harvardand\ Han, S.~Y.
+  \harvardyearleft 2008\harvardyearright , `{Reliability-based topology
+  optimization using reliability index approach}', {\em ICEM 2008:
+  International Conference on Experimental Mechanics 2008} {\bf 7375}(August
+  2009),~73752W.
+
+\harvarditem[Kim et~al.]{Kim, Park, Lee, Yu \harvardand\ Han}{2007}{Kim2007}
+Kim, S.-R., Park, J.-Y., Lee, W.-G., Yu, J.-S. \harvardand\ Han, S.-Y.
+  \harvardyearleft 2007\harvardyearright , `{Reliability-Based Topology
+  Optimization Based on Evolutionary Structural Optimization}', {\em
+  International Journal of Mechanical Systems Science and Engineering} {\bf
+  1}(3),~168--172.
+
+\harvarditem{Ko{\v{c}}vara \harvardand\ Stingl}{2004}{Kocvara2004}
+Ko{\v{c}}vara, M. \harvardand\ Stingl, M.  \harvardyearleft
+  2004\harvardyearright , `{Solving nonconvex SDP problems of structural
+  optimization with stability control}', {\em Optimization Methods and
+  Software} {\bf 19}(5 SPEC. ISS.),~595--609.
+
+\harvarditem{Kriegesmann \harvardand\ L{\"{u}}deker}{2019}{Kriegesmann2019}
+Kriegesmann, B. \harvardand\ L{\"{u}}deker, J.~K.  \harvardyearleft
+  2019\harvardyearright , `{Robust compliance topology optimization using the
+  first-order second-moment method}', {\em Structural and Multidisciplinary
+  Optimization} {\bf 60}(1),~269--286.
+
+\harvarditem{Lambe \harvardand\ Czekanski}{2018}{Lambe2018}
+Lambe, A.~B. \harvardand\ Czekanski, A.  \harvardyearleft 2018\harvardyearright
+  , `{Topology optimization using a continuous density field and adaptive mesh
+  refinement}', {\em International Journal for Numerical Methods in
+  Engineering} {\bf 113}(3),~357--373.
+
+\harvarditem[Lee et~al.]{Lee, James \harvardand\ Martins}{2012}{Lee2012}
+Lee, E., James, K.~A. \harvardand\ Martins, J.~R.  \harvardyearleft
+  2012\harvardyearright , `{Stress-constrained topology optimization with
+  design-dependent loading}', {\em Structural and Multidisciplinary
+  Optimization} {\bf 46}(5),~647--661.
+
+\harvarditem[Lian et~al.]{Lian, Christiansen, Tortorelli, Sigmund \harvardand\
+  Aage}{2017}{Lian2017}
+Lian, H., Christiansen, A.~N., Tortorelli, D.~A., Sigmund, O. \harvardand\
+  Aage, N.  \harvardyearleft 2017\harvardyearright , `{Combined shape and
+  topology optimization for minimization of maximal von Mises stress}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 55}(5),~1541--1557.
+
+\harvarditem{Liu \harvardand\ Gea}{2018}{Liu2018}
+Liu, J.~T. \harvardand\ Gea, H.~C.  \harvardyearleft 2018\harvardyearright ,
+  `{Robust topology optimization under multiple independent unknown-but-bounded
+  loads}', {\em Computer Methods in Applied Mechanics and Engineering} {\bf
+  329},~464--479.
+\newline\harvardurl{https://doi.org/10.1016/j.cma.2017.09.033}
+
+\harvarditem{Liu \harvardand\ Wen}{2018}{Liu2018a}
+Liu, J. \harvardand\ Wen, G.  \harvardyearleft 2018\harvardyearright ,
+  `{Continuum topology optimization considering uncertainties in load locations
+  based on the cloud model}', {\em Engineering Optimization} {\bf
+  50}(6),~1041--1060.
+\newline\harvardurl{https://doi.org/10.1080/0305215X.2017.1361417}
+
+\harvarditem[Liu et~al.]{Liu, Yi, Li \harvardand\ Shen}{2008}{Liu2008}
+Liu, X., Yi, W.-J., Li, Q. \harvardand\ Shen, P.-S.  \harvardyearleft
+  2008\harvardyearright , `{Genetic evolutionary structural optimization}',
+  {\em Journal of Constructional Steel Research} {\bf 64}(3),~305--311.
+
+\harvarditem{Lombardi \harvardand\ Haftka}{1998}{Lombardi1998}
+Lombardi, M. \harvardand\ Haftka, R.~T.  \harvardyearleft 1998\harvardyearright
+  , `{Anti-optimization technique for structural design under load
+  uncertainties}', {\em Computer Methods in Applied Mechanics and Engineering}
+  {\bf 157}(1-2),~19--31.
+
+\harvarditem[Luo et~al.]{Luo, Kang, Luo \harvardand\ Li}{2009}{Luo2009}
+Luo, Y., Kang, Z., Luo, Z. \harvardand\ Li, A.  \harvardyearleft
+  2009\harvardyearright , `{Continuum topology optimization with
+  non-probabilistic reliability constraints based on multi-ellipsoid convex
+  model}', {\em Structural and Multidisciplinary Optimization} {\bf
+  39}(3),~297--310.
+
+\harvarditem{Mart{\'{i}}nez-Frutos \harvardand\
+  Herrero-P{\'{e}}rez}{2016}{Martinez-Frutos2016}
+Mart{\'{i}}nez-Frutos, J. \harvardand\ Herrero-P{\'{e}}rez, D.
+  \harvardyearleft 2016\harvardyearright , `{Large-scale robust topology
+  optimization using multi-GPU systems}', {\em Computer Methods in Applied
+  Mechanics and Engineering} {\bf 311},~393--414.
+
+\harvarditem[Mart{\'{i}}nez-Frutos et~al.]{Mart{\'{i}}nez-Frutos,
+  Herrero-P{\'{e}}rez, Kessler \harvardand\ Periago}{2018}{Martinez-Frutos2018}
+Mart{\'{i}}nez-Frutos, J., Herrero-P{\'{e}}rez, D., Kessler, M. \harvardand\
+  Periago, F.  \harvardyearleft 2018\harvardyearright , `{Risk-averse
+  structural topology optimization under random fields using stochastic
+  expansion methods}', {\em Computer Methods in Applied Mechanics and
+  Engineering} {\bf 330},~180--206.
+\newline\harvardurl{https://doi.org/10.1016/j.cma.2017.10.026}
+
+\harvarditem{Mart{\'{i}}nez}{2005}{Martinez2005}
+Mart{\'{i}}nez, J.~M.  \harvardyearleft 2005\harvardyearright , `{A note on the
+  theoretical convergence properties of the SIMP method}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 29}(4),~319--323.
+
+\harvarditem{Maute \harvardand\ Ramm}{1995}{Maute1995}
+Maute, K. \harvardand\ Ramm, E.  \harvardyearleft 1995\harvardyearright ,
+  `{Adaptive topology optimization}', {\em Structural Optimization} {\bf
+  10}(2),~100--112.
+
+\harvarditem{Maute \harvardand\ Ramm}{1998}{Maute1997}
+Maute, K. \harvardand\ Ramm, E.  \harvardyearleft 1998\harvardyearright ,
+  `{Adaptive Topology Optimization of Elastoplastic Structures}', {\em
+  Structural Optimization} {\bf 15},~81--91.
+
+\harvarditem[Munk et~al.]{Munk, Vio \harvardand\ Steven}{2017}{Munk2017}
+Munk, D.~J., Vio, G.~A. \harvardand\ Steven, G.~P.  \harvardyearleft
+  2017\harvardyearright , `{A simple alternative formulation for structural
+  optimisation with dynamic and buckling objectives}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 55}(3),~969--986.
+
+\harvarditem[Neves et~al.]{Neves, Rodrigues \harvardand\
+  Guedes}{1995}{Neves1995}
+Neves, M., Rodrigues, H. \harvardand\ Guedes, J.  \harvardyearleft
+  1995\harvardyearright , `{Generalized topology design of structures with a
+  buckling load criterion}', {\em Structural Optimization} {\bf 10},~71--78.
+
+\harvarditem[Nguyen et~al.]{Nguyen, Song \harvardand\
+  Paulino}{2011}{Nguyen2011}
+Nguyen, T.~H., Song, J. \harvardand\ Paulino, G.~H.  \harvardyearleft
+  2011\harvardyearright , `{Single-loop system reliability-based topology
+  optimization considering statistical dependence between limit-states}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 44}(5),~593--611.
+
+\harvarditem{Nocedal \harvardand\ Wright}{2006}{Nocedal2006}
+Nocedal, J. \harvardand\ Wright, S.~J.  \harvardyearleft 2006\harvardyearright
+  , {\em {Numerical Optimization}}, Springer Sc.
+
+\harvarditem{Oest \harvardand\ Lund}{2017}{Oest2017}
+Oest, J. \harvardand\ Lund, E.  \harvardyearleft 2017\harvardyearright ,
+  `{Topology optimization with finite-life fatigue constraints}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 56}(5),~1045--1059.
+
+\harvarditem{Osher}{1988}{Osher1988}
+Osher, S.~J.  \harvardyearleft 1988\harvardyearright , `{Fronts Propagating
+  with Curvature Dependent Speed}', {\em Computational Physics} {\bf
+  79}(1),~1--5.
+
+\harvarditem[Ouyang et~al.]{Ouyang, Zhang \harvardand\ Kuang}{2008}{Ouyang2008}
+Ouyang, G., Zhang, X. \harvardand\ Kuang, Y.  \harvardyearleft
+  2008\harvardyearright , `{Reliability-based topology optimization of
+  continuous structures}', {\em Proceedings of the World Congress on
+  Intelligent Control and Automation (WCICA)} (50375051),~7021--7025.
+
+\harvarditem{Payten \harvardand\ Law}{1998}{Payten1998}
+Payten, W.~M. \harvardand\ Law, M.  \harvardyearleft 1998\harvardyearright ,
+  `{Generalized shape optimization using stress constraints under multiple load
+  cases}', {\em Structural Optimization} {\bf 15}(3-4),~269--274.
+
+\harvarditem[Pereira et~al.]{Pereira, Fancello \harvardand\
+  Barcellos}{2004}{Pereira2004}
+Pereira, J.~T., Fancello, E.~A. \harvardand\ Barcellos, C.~S.  \harvardyearleft
+  2004\harvardyearright , `{Topology optimization of continuum structures with
+  material failure constraints}',  {\bf 66},~50--66.
+
+\harvarditem{Rahmatalla \harvardand\ Swan}{2004}{Rahmatalla2004}
+Rahmatalla, S. \harvardand\ Swan, C.  \harvardyearleft 2004\harvardyearright ,
+  `{A Q4/Q4 continuum structural topology optimization implementation}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 27}(1-2),~130--135.
+
+\harvarditem{Rahmatalla \harvardand\ Swan}{2003}{Rahmatalla2003}
+Rahmatalla, S. \harvardand\ Swan, C.~C.  \harvardyearleft 2003\harvardyearright
+  , `{Continuum Topology Optimization of Buckling-Sensitive Structures}', {\em
+  AIAA Journal} {\bf 41}(6),~1180--1189.
+
+\harvarditem{Rietz}{2001}{Rietz2001}
+Rietz, A.  \harvardyearleft 2001\harvardyearright , `{Sufficiency of a finite
+  exponent in SIMP (power law) methods}', {\em Structural and Multidisciplinary
+  Optimization} {\bf 21}(2),~159--163.
+
+\harvarditem{Rojas-Labanda \harvardand\ Stolpe}{2015{\em a}}{Rojas-Labanda2015}
+Rojas-Labanda, S. \harvardand\ Stolpe, M.  \harvardyearleft 2015{\em
+  a}\harvardyearright , `{Automatic penalty continuation in structural topology
+  optimization}', {\em Structural and Multidisciplinary Optimization} {\bf
+  52}(6),~1205--1221.
+
+\harvarditem{Rojas-Labanda \harvardand\ Stolpe}{2015{\em
+  b}}{Rojas-Labanda2015a}
+Rojas-Labanda, S. \harvardand\ Stolpe, M.  \harvardyearleft 2015{\em
+  b}\harvardyearright , `{Benchmarking optimization solvers for structural
+  topology optimization}', {\em Structural and Multidisciplinary Optimization}
+  {\bf 52}(3),~527--547.
+
+\harvarditem{Rozvany}{2009}{Rozvany2009}
+Rozvany, G. I.~N.  \harvardyearleft 2009\harvardyearright , `{A critical review
+  of established methods of structural topology optimization}', {\em Structural
+  and Multidisciplinary Optimization} {\bf 37}(3),~217--237.
+
+\harvarditem{{Salazar de Troya} \harvardand\
+  Tortorelli}{2018}{SalazardeTroya2018}
+{Salazar de Troya}, M.~A. \harvardand\ Tortorelli, D.~A.  \harvardyearleft
+  2018\harvardyearright , `{Adaptive mesh refinement in stress-constrained
+  topology optimization}', {\em Structural and Multidisciplinary Optimization}
+  {\bf 58}(6),~2369--2386.
+
+\harvarditem{Sandgren}{1990}{Sandgren1990}
+Sandgren, E.  \harvardyearleft 1990\harvardyearright , `{Nonlinear integer and
+  discrete programming in mechanical design optimization}', {\em Journal of
+  Mechanisms, Transmissions, and Automation in Design} {\bf 112}(2),~223--229.
+
+\harvarditem[Sandgren et~al.]{Sandgren, Jensen \harvardand\ {W.
+  Welton}}{1990}{Sandgren1990a}
+Sandgren, E., Jensen, E. \harvardand\ {W. Welton}, J.  \harvardyearleft
+  1990\harvardyearright , `{Topological design of structural components using
+  genetic optimization methods.}', {\em Sensitivity Analysis and Optimization
+  with Numerical Methods, ASME-AMD} {\bf 115},~31--43.
+
+\harvarditem{Sartipizadeh \harvardand\ Vincent}{2016}{Sartipizadeh2016}
+Sartipizadeh, H. \harvardand\ Vincent, T.~L.  \harvardyearleft
+  2016\harvardyearright , `{Computing the Approximate Convex Hull in High
+  Dimensions}'.
+\newline\harvardurl{http://arxiv.org/abs/1603.04422}
+
+\harvarditem[Sato et~al.]{Sato, Izui, Yamada \harvardand\
+  Nishiwaki}{2017}{Sato2017a}
+Sato, Y., Izui, K., Yamada, T. \harvardand\ Nishiwaki, S.  \harvardyearleft
+  2017\harvardyearright , `{Pareto frontier exploration in multiobjective
+  topology optimization using adaptive weighting and point selection schemes}',
+  {\em Structural and Multidisciplinary Optimization} {\bf 55}(2),~409--422.
+
+\harvarditem[Shapiro et~al.]{Shapiro, Dentcheva \harvardand\
+  Ruszczy{\'{n}}ski}{2009}{Shapiro2009}
+Shapiro, A., Dentcheva, D. \harvardand\ Ruszczy{\'{n}}ski, A.  \harvardyearleft
+  2009\harvardyearright , {\em {Lectures on Stochastic Programming}}.
+
+\harvarditem{Sigmund}{1997}{Sigmund1997}
+Sigmund, O.  \harvardyearleft 1997\harvardyearright , `{On the design of
+  compliant mechanisms using topology optimization}', {\em Mechanics of
+  Structures and Machines} {\bf 25}(4),~493--524.
+
+\harvarditem{Sigmund}{2001}{Sigmund2001}
+Sigmund, O.  \harvardyearleft 2001\harvardyearright , `{A 99 line topology
+  optimization code written in matlab}', {\em Structural and Multidisciplinary
+  Optimization} {\bf 21}(2),~120--127.
+
+\harvarditem{Sigmund \harvardand\ Petersson}{1998}{Sigmund1998}
+Sigmund, O. \harvardand\ Petersson, J.  \harvardyearleft 1998\harvardyearright
+  , `{Numerical instabilities in topology optimization: A survey on procedures
+  dealing with checkerboards, mesh-dependencies and local minima}', {\em
+  Structural Optimization} {\bf 16}(1),~68--75.
+
+\harvarditem[Silva et~al.]{Silva, Tortorelli, Norato, Ha \harvardand\
+  Bae}{2010}{Silva2010}
+Silva, M., Tortorelli, D.~A., Norato, J.~A., Ha, C. \harvardand\ Bae, H.~R.
+  \harvardyearleft 2010\harvardyearright , `{Component and system
+  reliability-based topology optimization using a single-loop method}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 41}(1),~87--106.
+
+\harvarditem{Stainko}{2006}{Stainko2006}
+Stainko, R.  \harvardyearleft 2006\harvardyearright , `{An adaptive multilevel
+  approach to the minimal compliance problem in topology optimization}', {\em
+  Communications in Numerical Methods in Engineering} {\bf 22}(2),~109--118.
+
+\harvarditem{Stolpe \harvardand\ Svanberg}{2001{\em a}}{Stolpe2001a}
+Stolpe, M. \harvardand\ Svanberg, K.  \harvardyearleft 2001{\em
+  a}\harvardyearright , `{An alternative interpolation scheme for minimum
+  compliance topology optimization}', {\em Structural and Multidisciplinary
+  Optimization} {\bf 22}(2),~116--124.
+
+\harvarditem{Stolpe \harvardand\ Svanberg}{2001{\em b}}{Stolpe2001}
+Stolpe, M. \harvardand\ Svanberg, K.  \harvardyearleft 2001{\em
+  b}\harvardyearright , `{On the trajectories of penalization methods for
+  topology optimization}', {\em Structural and Multidisciplinary Optimization}
+  {\bf 21}(2),~128--139.
+
+\harvarditem{Suresh}{2010}{Suresh2010}
+Suresh, K.  \harvardyearleft 2010\harvardyearright , `{A 199-line Matlab code
+  for Pareto-optimal tracing in topology optimization}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 42}(5),~665--679.
+
+\harvarditem{Svanberg}{1987}{Svanberg1987}
+Svanberg, K.  \harvardyearleft 1987\harvardyearright , `{The method of moving
+  asymptotes - a new method for structural optimization}', {\em International
+  Journal for Numerical Methods in Engineering} {\bf 24}(2),~359--373.
+
+\harvarditem{Svanberg}{1994}{Svanberg1994}
+Svanberg, K.  \harvardyearleft 1994\harvardyearright , `{On the convexity and
+  concavity of compliances}', {\em Structural Optimization} {\bf
+  7}(1-2),~42--46.
+
+\harvarditem{Svanberg}{2002}{Svanberg2002}
+Svanberg, K.  \harvardyearleft 2002\harvardyearright , `{A Class of Globally
+  Convergent Optimization Methods Based on Conservative Convex Separable
+  Approximations}', {\em SIAM Journal on Optimization} {\bf 12}(2),~555--573.
+
+\harvarditem{Tarek \harvardand\ Ray}{2020}{TAREK2020112880}
+Tarek, M. \harvardand\ Ray, T.  \harvardyearleft 2020\harvardyearright ,
+  `Adaptive continuation solid isotropic material with penalization for volume
+  constrained compliance minimization', {\em Computer Methods in Applied
+  Mechanics and Engineering} {\bf 363},~112880.
+\newline\harvardurl{https://www.sciencedirect.com/science/article/pii/S0045782520300621}
+
+\harvarditem{Tarek \harvardand\ Ray}{2021}{tarek2021robust}
+Tarek, M. \harvardand\ Ray, T.  \harvardyearleft 2021\harvardyearright ,
+  `Robust and stochastic compliance-based topology optimization with finitely
+  many loading scenarios'.
+
+\harvarditem[Tempo et~al.]{Tempo, Bai \harvardand\ Dabbene}{1996}{Tempo1996}
+Tempo, R., Bai, E.~W. \harvardand\ Dabbene, F.  \harvardyearleft
+  1996\harvardyearright , `{Probabilistic robustness analysis: explicit bounds
+  for the minimum number of samples}', {\em Proceedings of the IEEE Conference
+  on Decision and Control} {\bf 3}(December),~2355--3592.
+
+\harvarditem[Thore et~al.]{Thore, Holmberg \harvardand\
+  Klarbring}{2017}{Thore2017}
+Thore, C.~J., Holmberg, E. \harvardand\ Klarbring, A.  \harvardyearleft
+  2017\harvardyearright , `{A general framework for robust topology
+  optimization under load-uncertainty including stress constraints}', {\em
+  Computer Methods in Applied Mechanics and Engineering} {\bf 319},~1--18.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2017.02.015}
+
+\harvarditem[Tu et~al.]{Tu, Choi \harvardand\ Park}{1999}{Tu1999}
+Tu, J., Choi, K.~K. \harvardand\ Park, Y.~H.  \harvardyearleft
+  1999\harvardyearright , `{A new study on reliability- based design
+  optimization}', {\em Journal of Mechanical Design, Transactions of the ASME}
+  {\bf 121}(4),~557--564.
+
+\harvarditem[Valdez et~al.]{Valdez, Botello, Ochoa, Marroqu{\'{i}}n
+  \harvardand\ Cardoso}{2017}{Valdez2017}
+Valdez, S.~I., Botello, S., Ochoa, M.~A., Marroqu{\'{i}}n, J.~L. \harvardand\
+  Cardoso, V.  \harvardyearleft 2017\harvardyearright , `{Topology Optimization
+  Benchmarks in 2D: Results for Minimum Compliance and Minimum Volume in Planar
+  Stress Problems}', {\em Archives of Computational Methods in Engineering}
+  {\bf 24}(4),~803--839.
+
+\harvarditem{W{\"{a}}chter \harvardand\ Biegler}{2006}{Wachter2006}
+W{\"{a}}chter, A. \harvardand\ Biegler, L.~T.  \harvardyearleft
+  2006\harvardyearright , {\em {On the Implementation of a Primal-Dual Interior
+  Point Filter Line Search Algorithm for Large-Scale Nonlinear Programming}},
+  Vol. 106.
+
+\harvarditem[Wang et~al.]{Wang, Liang \harvardand\ Wu}{2018}{Wang2018a}
+Wang, L., Liang, J. \harvardand\ Wu, D.  \harvardyearleft 2018\harvardyearright
+  , `{A non-probabilistic reliability-based topology optimization (NRBTO)
+  method of continuum structures with convex uncertainties}', {\em Structural
+  and Multidisciplinary Optimization} {\bf 58}(6),~2601--2620.
+
+\harvarditem{Wang, Liu, Yang \harvardand\ Hu}{2019}{Wang2019b}
+Wang, L., Liu, D., Yang, Y. \harvardand\ Hu, J.  \harvardyearleft
+  2019\harvardyearright , `{Novel methodology of Non-probabilistic
+  Reliability-based Topology Optimization (NRBTO) for multi-material layout
+  design via interval and convex mixed uncertainties}', {\em Computer Methods
+  in Applied Mechanics and Engineering} {\bf 346},~550--573.
+\newline\harvardurl{https://doi.org/10.1016/j.cma.2018.11.035}
+
+\harvarditem[Wang et~al.]{Wang, Liu, Yang, Wang \harvardand\
+  Qiu}{2017}{Wang2017}
+Wang, L., Liu, D., Yang, Y., Wang, X. \harvardand\ Qiu, Z.  \harvardyearleft
+  2017\harvardyearright , `{A novel method of non-probabilistic
+  reliability-based topology optimization corresponding to continuum structures
+  with unknown but bounded uncertainties}', {\em Computer Methods in Applied
+  Mechanics and Engineering} {\bf 326},~573--595.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2017.08.023}
+
+\harvarditem{Wang, Xia, Zhang \harvardand\ Lv}{2019}{Wang2019a}
+Wang, L., Xia, H., Zhang, X. \harvardand\ Lv, Z.  \harvardyearleft
+  2019\harvardyearright , `{Non-probabilistic reliability-based topology
+  optimization of continuum structures considering local stiffness and strength
+  failure}', {\em Computer Methods in Applied Mechanics and Engineering} {\bf
+  346},~788--809.
+\newline\harvardurl{https://doi.org/10.1016/j.cma.2018.09.021}
+
+\harvarditem[Wang et~al.]{Wang, Wang \harvardand\ Guo}{2003}{Wang2003}
+Wang, M.~Y., Wang, X. \harvardand\ Guo, D.  \harvardyearleft
+  2003\harvardyearright , `{A level set method for structural topology
+  optimization}', {\em Computer Methods in Applied Mechanics and Engineering}
+  {\bf 192}(1-2),~227--246.
+
+\harvarditem[Wang et~al.]{Wang, de~Sturler \harvardand\
+  Paulino}{2010}{Wang2010a}
+Wang, S., de~Sturler, E. \harvardand\ Paulino, G.~H.  \harvardyearleft
+  2010\harvardyearright , `{Dynamic Adaptive Mesh Refinement for Topology
+  Optimization}',  pp.~1--23.
+\newline\harvardurl{http://arxiv.org/abs/1009.4975}
+
+\harvarditem[Wang et~al.]{Wang, Wang \harvardand\ Guo}{2004}{Wang2004}
+Wang, X., Wang, M. \harvardand\ Guo, D.  \harvardyearleft 2004\harvardyearright
+  , `{Structural shape and topology optimization in a level-set-based framework
+  of region representation}', {\em Structural and Multidisciplinary
+  Optimization} {\bf 27}(1-2),~1--19.
+
+\harvarditem[Wang et~al.]{Wang, Kang \harvardand\ He}{2014}{Wang2014}
+Wang, Y., Kang, Z. \harvardand\ He, Q.  \harvardyearleft 2014\harvardyearright
+  , `{Adaptive topology optimization with independent error control for
+  separated displacement and density fields}', {\em Computers and Structures}
+  {\bf 135},~50--61.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.compstruc.2014.01.008}
+
+\harvarditem[Wang et~al.]{Wang, He, Luo \harvardand\ Kang}{2013}{Wang2013}
+Wang, Y.~Q., He, J.~J., Luo, Z. \harvardand\ Kang, Z.  \harvardyearleft
+  2013\harvardyearright , `{An adaptive method for high-resolution topology
+  design}', {\em Acta Mechanica Sinica/Lixue Xuebao} {\bf 29}(6),~840--850.
+
+\harvarditem{Xie \harvardand\ Steven}{1992}{YM1992}
+Xie, Y. \harvardand\ Steven, G.  \harvardyearleft 1992\harvardyearright ,
+  {Shape and layout optimization via an evolutionary procedure.}, {\em in}
+  `Proceedings of the International Conference Comput. Eng. (Hong Kong), Hong
+  Kong University', p.~421.
+
+\harvarditem{Yang \harvardand\ Chen}{1996}{Yang1996}
+Yang, R.~J. \harvardand\ Chen, C.~J.  \harvardyearleft 1996\harvardyearright ,
+  `{Stress-based topology optimization}', {\em Structural Optimization} {\bf
+  12}(2-3),~98--105.
+
+\harvarditem[Yang et~al.]{Yang, Xie, Steven \harvardand\ Querin}{1998}{XY1998}
+Yang, X., Xie, Y., Steven, G. \harvardand\ Querin, O.  \harvardyearleft
+  1998\harvardyearright , {Bi-directional evolutionary structural
+  optimization.}, {\em in} `Proceedings of the 7th AIAA/USAF/NASA/ISSMO
+  Symposium Multidisc Anal. Optim (St. Louis)', pp.~1449--1457.
+
+\harvarditem[Yin et~al.]{Yin, Yu \harvardand\ Xia}{2018}{Yin2018}
+Yin, H., Yu, D. \harvardand\ Xia, B.  \harvardyearleft 2018\harvardyearright ,
+  `{Reliability-based topology optimization for structures using fuzzy set
+  model}', {\em Computer Methods in Applied Mechanics and Engineering} {\bf
+  333},~197--217.
+\newline\harvardurl{https://doi.org/10.1016/j.cma.2018.01.019}
+
+\harvarditem{Youn \harvardand\ Choi}{2004}{Youn2004}
+Youn, B.~D. \harvardand\ Choi, K.~K.  \harvardyearleft 2004\harvardyearright ,
+  `{Selecting probabilistic approaches for realiability-based design
+  optimization}', {\em AIAA Journal} {\bf 42}(1),~124--131.
+
+\harvarditem[Yu et~al.]{Yu, Chang \harvardand\ Choi}{1998}{Chang1996}
+Yu, X., Chang, K.~H. \harvardand\ Choi, K.~K.  \harvardyearleft
+  1998\harvardyearright , `{Probabilistic structural durability prediction}',
+  {\em AIAA Journal} {\bf 36}(4),~628--637.
+
+\harvarditem[Zargham et~al.]{Zargham, Ward, Ramli \harvardand\
+  Badruddin}{2016}{Zargham2016}
+Zargham, S., Ward, T.~A., Ramli, R. \harvardand\ Badruddin, I.~A.
+  \harvardyearleft 2016\harvardyearright , `{Topology optimization: a review
+  for structural designs under vibration problems}', {\em Structural and
+  Multidisciplinary Optimization} {\bf 53}(6),~1157--1177.
+
+\harvarditem[Zhang et~al.]{Zhang, Kang \harvardand\ Zhang}{2016}{Zhang2016}
+Zhang, X., Kang, Z. \harvardand\ Zhang, W.  \harvardyearleft
+  2016\harvardyearright , `{Robust topology optimization for dynamic compliance
+  minimization under uncertain harmonic excitations with inhomogeneous
+  eigenvalue analysis}', {\em Structural and Multidisciplinary Optimization}
+  {\bf 54}(6),~1469--1484.
+
+\harvarditem[Zhang et~al.]{Zhang, de~Sturler \harvardand\
+  Paulino}{2017}{Zhang2017a}
+Zhang, X.~S., de~Sturler, E. \harvardand\ Paulino, G.~H.  \harvardyearleft
+  2017\harvardyearright , `{Stochastic sampling for deterministic structural
+  topology optimization with many load cases: Density-based and ground
+  structure approaches}', {\em Computer Methods in Applied Mechanics and
+  Engineering} {\bf 325},~463--487.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2017.06.035}
+
+\harvarditem{Zhao \harvardand\ Wang}{2014{\em a}}{Zhao2014b}
+Zhao, J. \harvardand\ Wang, C.  \harvardyearleft 2014{\em a}\harvardyearright ,
+  `{Robust structural topology optimization under random field loading
+  uncertainty}', {\em Structural and Multidisciplinary Optimization} {\bf
+  50}(3),~517--522.
+
+\harvarditem{Zhao \harvardand\ Wang}{2014{\em b}}{Zhao2014}
+Zhao, J. \harvardand\ Wang, C.  \harvardyearleft 2014{\em b}\harvardyearright ,
+  `{Robust topology optimization under loading uncertainty based on linear
+  elastic theory and orthogonal diagonalization of symmetric matrices}', {\em
+  Computer Methods in Applied Mechanics and Engineering} {\bf 273},~204--218.
+\newline\harvardurl{http://dx.doi.org/10.1016/j.cma.2014.01.018}
+
+\harvarditem[Zhao et~al.]{Zhao, Chen, Ma \harvardand\ Lin}{2016}{Zhao2016}
+Zhao, Q., Chen, X., Ma, Z. \harvardand\ Lin, Y.  \harvardyearleft
+  2016\harvardyearright , `{A Comparison of Deterministic, Reliability-Based
+  Topology Optimization under Uncertainties}', {\em Acta Mechanica Solida
+  Sinica} {\bf 29}(1),~31--45.
+
+\harvarditem[Zheng et~al.]{Zheng, Luo, Jiang, Ni \harvardand\
+  Wu}{2018}{Zheng2018a}
+Zheng, J., Luo, Z., Jiang, C., Ni, B. \harvardand\ Wu, J.  \harvardyearleft
+  2018\harvardyearright , `{Non-probabilistic reliability-based topology
+  optimization with multidimensional parallelepiped convex model}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 57}(6),~2205--2221.
+
+\harvarditem[Zheng et~al.]{Zheng, Zhao, Yu \harvardand\ Sun}{2017}{Zheng2017}
+Zheng, S., Zhao, X., Yu, Y. \harvardand\ Sun, Y.  \harvardyearleft
+  2017\harvardyearright , `{The approximate reanalysis method for topology
+  optimization under harmonic force excitations with multiple frequencies}',
+  {\em Structural and Multidisciplinary Optimization} {\bf 56}(5),~1185--1196.
+
+\harvarditem{Zhou \harvardand\ Rozvany}{2001}{Zhou2001}
+Zhou, M. \harvardand\ Rozvany, G. I.~N.  \harvardyearleft 2001\harvardyearright
+  , `{On the validity of ESO type methods in topology optimization}', {\em
+  Structural and Multidisciplinary Optimization} {\bf 21}(1),~80--83.
+
+\end{thebibliography}
