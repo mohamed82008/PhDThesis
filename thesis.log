@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.15)  31 JUL 2021 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.15)  12 SEP 2021 19:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -34,22 +34,81 @@ Copyright given to author, permission to copy/distribute given to MIT.
 \@titlesupervisor=\box45
 \@abstractsupervisor=\box46
 \c@savepage=\count177
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count178
+\Gm@cntv=\count179
+\c@Gm@tempcnt=\count180
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks16
+)
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: 
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(144.54pt, 397.48502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=397.48502pt
+* \textheight=650.43001pt
+* \oddsidemargin=72.27pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks17
-\thm@bodyfont=\toks18
-\thm@headfont=\toks19
-\thm@notefont=\toks20
-\thm@headpunct=\toks21
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
 \thm@preskip=\skip49
 \thm@postskip=\skip50
 \thm@headsep=\skip51
-\dth@everypar=\toks22
+\dth@everypar=\toks24
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/03/22 3.42 The Babel package
@@ -62,12 +121,12 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/03/22 3.42 Babel common definitions
-\babel@savecnt=\count178
-\U@D=\dimen135
+\babel@savecnt=\count181
+\U@D=\dimen143
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count179
+\bbl@dirlevel=\count182
 )
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
@@ -76,8 +135,8 @@ Package babel Info: \l@australian = using hyphenrules for ukenglish
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language21) on input line 108.
 ))
-\c@theorem=\count180
-\c@corollary=\count181
+\c@theorem=\count183
+\c@corollary=\count184
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/newtxtext.sty
 Package: newtxtext 2020/03/02 v1.625
@@ -97,23 +156,22 @@ LaTeX Info: Redefining \textsw on input line 47.
 LaTeX Info: Redefining \textssc on input line 48.
 LaTeX Info: Redefining \textulc on input line 49.
 )
-\ntx@fs=\dimen136
+\ntx@fs=\dimen144
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks23
-\XKV@tempa@toks=\toks24
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
-\XKV@depth=\count182
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
+)
+\XKV@depth=\count185
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count183
+\etb@tempcnta=\count186
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
@@ -130,7 +188,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 LaTeX Font Info:    Changing ? sub-encoding to TS1/0 on input line 75.
 )
-\ntxt@cntz=\count184
+\ntxt@cntz=\count187
 LaTeX Font Info:    Redeclaring math symbol \mathsterling on input line 263.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/newtxmath.sty
@@ -147,73 +205,70 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks25
-\ex@=\dimen137
+\@emptytoks=\toks27
+\ex@=\dimen145
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen138
+\pmbraise@=\dimen146
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count185
+\inf@bad=\count188
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count186
-\leftroot@=\count187
+\uproot@=\count189
+\leftroot@=\count190
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count188
-\DOTSCASE@=\count189
+\classnum@=\count191
+\DOTSCASE@=\count192
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box47
 \strutbox@=\box48
-\big@size=\dimen139
+\big@size=\dimen147
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count190
-\c@MaxMatrixCols=\count191
+\macc@depth=\count193
+\c@MaxMatrixCols=\count194
 \dotsspace@=\muskip16
-\c@parentequation=\count192
-\dspbrk@lvl=\count193
-\tag@help=\toks26
-\row@=\count194
-\column@=\count195
-\maxfields@=\count196
-\andhelp@=\toks27
-\eqnshift@=\dimen140
-\alignsep@=\dimen141
-\tagshift@=\dimen142
-\tagwidth@=\dimen143
-\totwidth@=\dimen144
-\lineht@=\dimen145
-\@envbody=\toks28
+\c@parentequation=\count195
+\dspbrk@lvl=\count196
+\tag@help=\toks28
+\row@=\count197
+\column@=\count198
+\maxfields@=\count199
+\andhelp@=\toks29
+\eqnshift@=\dimen148
+\alignsep@=\dimen149
+\tagshift@=\dimen150
+\tagwidth@=\dimen151
+\totwidth@=\dimen152
+\lineht@=\dimen153
+\@envbody=\toks30
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks29
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-))
+)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
-\tx@cntz=\count197
+\tx@cntz=\count266
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/kastrup/binhex.tex)
-\tx@Isdigit=\count198
-\tx@IsAlNum=\count199
-\tx@tA=\toks30
-\tx@tB=\toks31
+\tx@Isdigit=\count267
+\tx@IsAlNum=\count268
+\tx@tA=\toks32
+\tx@tB=\toks33
 \tx@su=\read3
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 317.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -296,7 +351,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
 
 (Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 570.
-\tx@sbptoks=\toks32
+\tx@sbptoks=\toks34
 LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 792.
 LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 793.
 LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 794.
@@ -311,12 +366,12 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 851.
 LaTeX Font Info:    Redeclaring math accent \dot on input line 876.
 LaTeX Font Info:    Redeclaring math accent \ddot on input line 877.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 1940.
-\ntx@numstart=\count266
-\ntx@UCstart=\count267
-\ntx@lcstart=\count268
-\ntx@tmpc=\count269
-\ntx@imath=\count270
-\ntx@jmath=\count271
+\ntx@numstart=\count269
+\ntx@UCstart=\count270
+\ntx@lcstart=\count271
+\ntx@tmpc=\count272
+\ntx@imath=\count273
+\ntx@jmath=\count274
 LaTeX Info: Redefining \Bbbk on input line 2449.
 LaTeX Info: Redefining \not on input line 2598.
 LaTeX Info: Redefining \textsquare on input line 2628.
@@ -336,47 +391,31 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/comment/comment.sty
-\CommentStream=\write3
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2019/11/15 version 4.22 text color boxes
 
-Excluding comment 'comment')
-(/usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
-nment
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks35
+\pgfutil@tempdima=\dimen154
+\pgfutil@tempdimb=\dimen155
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count272
-\float@exts=\toks33
-\float@box=\box49
-\@float@everytoks=\toks34
-\@floatcapt=\box50
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
-\@float@every@algorithm=\toks35
-\c@algorithm=\count273
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count274
-\c@ALC@line=\count275
-\c@ALC@rem=\count276
-\c@ALC@depth=\count277
-\ALC@tlm=\skip55
-\algorithmicindent=\skip56
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box49
+(/usr/local/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
-
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -394,87 +433,370 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen146
-\Gin@req@width=\dimen147
+\Gin@req@height=\dimen156
+\Gin@req@width=\dimen157
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box51
-)
-\tc@llx=\dimen148
-\tc@lly=\dimen149
-\tc@urx=\dimen150
-\tc@ury=\dimen151
-Package trimclip Info: Using driver 'tc-pdftex.def'.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks36
+\pgfkeys@temptoks=\toks37
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks38
 ))
-\adjbox@Width=\dimen152
-\adjbox@Height=\dimen153
-\adjbox@Depth=\dimen154
-\adjbox@Totalheight=\dimen155
-\adjbox@pwidth=\dimen156
-\adjbox@pheight=\dimen157
-\adjbox@pdepth=\dimen158
-\adjbox@ptotalheight=\dimen159
+\pgf@x=\dimen158
+\pgf@y=\dimen159
+\pgf@xa=\dimen160
+\pgf@ya=\dimen161
+\pgf@xb=\dimen162
+\pgf@yb=\dimen163
+\pgf@xc=\dimen164
+\pgf@yc=\dimen165
+\pgf@xd=\dimen166
+\pgf@yd=\dimen167
+\w@pgf@writea=\write3
+\r@pgf@reada=\read4
+\c@pgf@counta=\count275
+\c@pgf@countb=\count276
+\c@pgf@countc=\count277
+\c@pgf@countd=\count278
+\t@pgf@toka=\toks39
+\t@pgf@tokb=\toks40
+\t@pgf@tokc=\toks41
+\pgf@sys@id@count=\count279
 
-(/usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count278
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box52
-\sift@deathcycles=\count279
-\@vwid@loff=\dimen160
-\@vwid@roff=\dimen161
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count280
+\pgfsyssoftpath@bigbuffer@items=\count281
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen168
+\pgfmath@count=\count282
+\pgfmath@box=\box50
+\pgfmath@toks=\toks42
+\pgfmath@stack@operand=\toks43
+\pgfmath@stack@operation=\toks44
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count283
+)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen169
+\pgf@picmaxx=\dimen170
+\pgf@picminy=\dimen171
+\pgf@picmaxy=\dimen172
+\pgf@pathminx=\dimen173
+\pgf@pathmaxx=\dimen174
+\pgf@pathminy=\dimen175
+\pgf@pathmaxy=\dimen176
+\pgf@xx=\dimen177
+\pgf@xy=\dimen178
+\pgf@yx=\dimen179
+\pgf@yy=\dimen180
+\pgf@zx=\dimen181
+\pgf@zy=\dimen182
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen183
+\pgf@path@lasty=\dimen184
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen185
+\pgf@shorten@start@additional=\dimen186
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box51
+\pgf@hbox=\box52
+\pgf@layerbox@main=\box53
+\pgf@picture@serial@count=\count284
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen187
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen188
+\pgf@pt@y=\dimen189
+\pgf@pt@temp=\dimen190
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen191
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen192
+\pgf@sys@shading@range@num=\count285
+\pgf@shadingcount=\count286
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box54
 ))
-(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen162
-\ar@mcellbox=\box53
-\extrarowheight=\dimen163
-\NC@list=\toks36
-\extratabsurround=\skip57
-\backup@length=\skip58
-\ar@cellbox=\box54
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-\TX@col@width=\dimen164
-\TX@old@table=\dimen165
-\TX@old@col=\dimen166
-\TX@target=\dimen167
-\TX@delta=\dimen168
-\TX@cols=\count280
-\TX@ftn=\toks37
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-(/usr/local/texlive/2020/texmf-dist/tex/latex/optidef/optidef.sty
-Package: optidef 2019/04/23 - version=3.1, Package for defining optimization pr
-oblems
-
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box55
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen193
+\pgf@nodesepend=\dimen194
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks45
+\verbatim@line=\toks46
+\verbatim@in@stream=\read5
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
+\tcb@titlebox=\box56
+\tcb@upperbox=\box57
+\tcb@lowerbox=\box58
+\tcb@phantombox=\box59
+\c@tcbbreakpart=\count287
+\c@tcblayer=\count288
+\tcolorbox@number=\count289
+\tcb@temp=\box60
+\tcb@temp=\box61
+\tcb@temp=\box62
+\tcb@temp=\box63
+\tcb@out=\write4
+\tcb@record@out=\write5
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write6
+
+Excluding comment 'comment')
+(/usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count290
+\float@exts=\toks47
+\float@box=\box64
+\@float@everytoks=\toks48
+\@floatcapt=\box65
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks49
+\c@algorithm=\count291
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count292
+\c@ALC@line=\count293
+\c@ALC@rem=\count294
+\c@ALC@depth=\count295
+\ALC@tlm=\skip55
+\algorithmicindent=\skip56
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box66
+)
+\tc@llx=\dimen195
+\tc@lly=\dimen196
+\tc@urx=\dimen197
+\tc@ury=\dimen198
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen199
+\adjbox@Height=\dimen256
+\adjbox@Depth=\dimen257
+\adjbox@Totalheight=\dimen258
+\adjbox@pwidth=\dimen259
+\adjbox@pheight=\dimen260
+\adjbox@pdepth=\dimen261
+\adjbox@ptotalheight=\dimen262
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count296
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box67
+\sift@deathcycles=\count297
+\@vwid@loff=\dimen263
+\@vwid@roff=\dimen264
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen265
+\ar@mcellbox=\box68
+\extrarowheight=\dimen266
+\NC@list=\toks50
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box69
+)
+\TX@col@width=\dimen267
+\TX@old@table=\dimen268
+\TX@old@col=\dimen269
+\TX@target=\dimen270
+\TX@delta=\dimen271
+\TX@cols=\count298
+\TX@ftn=\toks51
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/optidef/optidef.sty
+Package: optidef 2019/04/23 - version=3.1, Package for defining optimization pr
+oblems
+
 (/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count281
-\calc@Bcount=\count282
-\calc@Adimen=\dimen169
-\calc@Bdimen=\dimen170
+\calc@Acount=\count299
+\calc@Bcount=\count300
+\calc@Adimen=\dimen272
+\calc@Bdimen=\dimen273
 \calc@Askip=\skip59
 \calc@Bskip=\skip60
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count283
+\calc@Ccount=\count301
 \calc@Cskip=\skip61
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/mathtools/mhsetup.sty
@@ -484,17 +806,17 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count284
-\l_MT_multwidth_dim=\dimen171
+\g_MT_multlinerow_int=\count302
+\l_MT_multwidth_dim=\dimen274
 \origjot=\skip62
-\l_MT_shortvdotswithinadjustabove_dim=\dimen172
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen173
-\l_MT_above_intertext_sep=\dimen174
-\l_MT_below_intertext_sep=\dimen175
-\l_MT_above_shortintertext_sep=\dimen176
-\l_MT_below_shortintertext_sep=\dimen177
-\xmathstrut@box=\box55
-\xmathstrut@dim=\dimen178
+\l_MT_shortvdotswithinadjustabove_dim=\dimen275
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen276
+\l_MT_above_intertext_sep=\dimen277
+\l_MT_below_intertext_sep=\dimen278
+\l_MT_above_shortintertext_sep=\dimen279
+\l_MT_below_shortintertext_sep=\dimen280
+\xmathstrut@box=\box70
+\xmathstrut@dim=\dimen281
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/xifthen/xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
@@ -508,25 +830,25 @@ Package: expl3 2020-03-06 L3 programming layer (loader)
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count285
-\l__pdf_internal_box=\box56
+\l__kernel_color_stack_int=\count303
+\l__pdf_internal_box=\box71
 ))
 Package: xparse 2020-03-06 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count286
-\g__xparse_grabber_int=\count287
-\l__xparse_m_args_int=\count288
-\l__xparse_v_nesting_int=\count289
+\l__xparse_current_arg_int=\count304
+\g__xparse_grabber_int=\count305
+\l__xparse_m_args_int=\count306
+\l__xparse_v_nesting_int=\count307
 )
 \widthInit=\skip63
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
-\csq@reset=\count290
-\csq@gtype=\count291
-\csq@glevel=\count292
-\csq@qlevel=\count293
-\csq@maxlvl=\count294
-\csq@tshold=\count295
-\csq@ltx@everypar=\toks38
+\csq@reset=\count308
+\csq@gtype=\count309
+\csq@glevel=\count310
+\csq@qlevel=\count311
+\csq@maxlvl=\count312
+\csq@tshold=\count313
+\csq@ltx@everypar=\toks52
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
@@ -539,54 +861,39 @@ File: csquotes.cfg
 ))
 (./lgrind.sty
 Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
-\lc@unt=\count296
-\ln@xt=\count297
-\LGnuminterval=\count298
+\lc@unt=\count314
+\ln@xt=\count315
+\LGnuminterval=\count316
 \LGindent=\skip64
 \LGsloppy=\skip65
-\procbox=\box57
-\ls@far=\box58
-\tb@x=\box59
-\TBw@d=\dimen179
-\@ts=\dimen180
+\procbox=\box72
+\ls@far=\box73
+\tb@x=\box74
+\TBw@d=\dimen282
+\@ts=\dimen283
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count299
-\mult@box=\box60
-\multicol@leftmargin=\dimen181
-\c@unbalance=\count300
-\c@collectmore=\count301
-\doublecol@number=\count302
-\multicoltolerance=\count303
-\multicolpretolerance=\count304
-\full@width=\dimen182
-\page@free=\dimen183
-\premulticols=\dimen184
-\postmulticols=\dimen185
+\c@tracingmulticols=\count317
+\mult@box=\box75
+\multicol@leftmargin=\dimen284
+\c@unbalance=\count318
+\c@collectmore=\count319
+\doublecol@number=\count320
+\multicoltolerance=\count321
+\multicolpretolerance=\count322
+\full@width=\dimen285
+\page@free=\dimen286
+\premulticols=\dimen287
+\postmulticols=\dimen288
 \multicolsep=\skip66
 \multicolbaselineskip=\skip67
-\partial@page=\box61
-\last@line=\box62
-\maxbalancingoverflow=\dimen186
-\mult@rightbox=\box63
-\mult@grightbox=\box64
-\mult@gfirstbox=\box65
-\mult@firstbox=\box66
-\@tempa=\box67
-\@tempa=\box68
-\@tempa=\box69
-\@tempa=\box70
-\@tempa=\box71
-\@tempa=\box72
-\@tempa=\box73
-\@tempa=\box74
-\@tempa=\box75
-\@tempa=\box76
-\@tempa=\box77
-\@tempa=\box78
-\@tempa=\box79
-\@tempa=\box80
-\@tempa=\box81
+\partial@page=\box76
+\last@line=\box77
+\maxbalancingoverflow=\dimen289
+\mult@rightbox=\box78
+\mult@grightbox=\box79
+\mult@gfirstbox=\box80
+\mult@firstbox=\box81
 \@tempa=\box82
 \@tempa=\box83
 \@tempa=\box84
@@ -609,15 +916,30 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box101
 \@tempa=\box102
 \@tempa=\box103
-\c@minrows=\count305
-\c@columnbadness=\count306
-\c@finalcolumnbadness=\count307
-\last@try=\dimen187
-\multicolovershoot=\dimen188
-\multicolundershoot=\dimen189
-\mult@nat@firstbox=\box104
-\colbreak@box=\box105
-\mc@col@check@num=\count308
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\c@minrows=\count323
+\c@columnbadness=\count324
+\c@finalcolumnbadness=\count325
+\last@try=\dimen290
+\multicolovershoot=\dimen291
+\multicolundershoot=\dimen292
+\mult@nat@firstbox=\box119
+\colbreak@box=\box120
+\mc@col@check@num=\count326
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/cmap/cmap.sty
 Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
 
@@ -694,9 +1016,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen190
-\Hy@linkcounter=\count309
-\Hy@pagecounter=\count310
+\@linkdim=\dimen293
+\Hy@linkcounter=\count327
+\Hy@pagecounter=\count328
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
@@ -709,7 +1031,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count311
+\Hy@SavedSpaceFactor=\count329
 Package hyperref Info: Hyper figures OFF on input line 4547.
 Package hyperref Info: Link nesting OFF on input line 4552.
 Package hyperref Info: Hyper index ON on input line 4555.
@@ -717,14 +1039,14 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count312
+\c@Hy@tempcnt=\count330
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen191
+\XeTeXLinkMargin=\dimen294
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -733,9 +1055,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count313
-\Field@Width=\dimen192
-\Fld@charsize=\dimen193
+\Fld@menulength=\count331
+\Field@Width=\dimen295
+\Fld@charsize=\dimen296
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -749,9 +1071,9 @@ LaTeX Info: Redefining \pageref on input line 6504.
 (/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count314
-\c@Item=\count315
-\c@Hfootnote=\count316
+\Hy@abspage=\count332
+\c@Item=\count333
+\c@Hfootnote=\count334
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -761,8 +1083,8 @@ File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 (/usr/local/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
-\Fld@listcount=\count317
-\c@bookmark@seq@number=\count318
+\Fld@listcount=\count335
+\c@bookmark@seq@number=\count336
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -776,25 +1098,24 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip77
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box106
+\ttl@box=\box121
 \beforetitleunit=\skip78
 \aftertitleunit=\skip79
-\ttl@plus=\dimen194
-\ttl@minus=\dimen195
-\ttl@toksa=\toks39
-\titlewidth=\dimen196
-\titlewidthlast=\dimen197
-\titlewidthfirst=\dimen198
+\ttl@plus=\dimen297
+\ttl@minus=\dimen298
+\ttl@toksa=\toks53
+\titlewidth=\dimen299
+\titlewidthlast=\dimen300
+\titlewidthfirst=\dimen301
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\enitkv@toks@=\toks40
 \labelindent=\skip80
-\enit@outerparindent=\dimen199
-\enit@toks=\toks41
-\enit@inbox=\box107
-\enit@count@id=\count319
-\enitdp@description=\count320
+\enit@outerparindent=\dimen302
+\enit@toks=\toks54
+\enit@inbox=\box122
+\enit@count@id=\count337
+\enitdp@description=\count338
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
@@ -805,17 +1126,17 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip82
 \LTpre=\skip83
 \LTpost=\skip84
-\LTchunksize=\count321
-\LTcapwidth=\dimen256
-\LT@head=\box108
-\LT@firsthead=\box109
-\LT@foot=\box110
-\LT@lastfoot=\box111
-\LT@cols=\count322
-\LT@rows=\count323
-\c@LT@tables=\count324
-\c@LT@chunks=\count325
-\LT@p@ftn=\toks42
+\LTchunksize=\count339
+\LTcapwidth=\dimen303
+\LT@head=\box123
+\LT@firsthead=\box124
+\LT@foot=\box125
+\LT@lastfoot=\box126
+\LT@cols=\count340
+\LT@rows=\count341
+\c@LT@tables=\count342
+\c@LT@chunks=\count343
+\LT@p@ftn=\toks55
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -823,17 +1144,17 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen257
-\captionmargin@=\dimen258
-\captionwidth=\dimen259
-\caption@tempdima=\dimen260
-\caption@indent=\dimen261
-\caption@parindent=\dimen262
-\caption@hangindent=\dimen263
+\captionmargin=\dimen304
+\captionmargin@=\dimen305
+\captionwidth=\dimen306
+\caption@tempdima=\dimen307
+\caption@indent=\dimen308
+\caption@parindent=\dimen309
+\caption@hangindent=\dimen310
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count326
-\c@continuedfloat=\count327
+\c@caption@flags=\count344
+\c@continuedfloat=\count345
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
@@ -843,261 +1164,16 @@ Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count328
+\c@r@tfl@t=\count346
 \rotFPtop=\skip85
 \rotFPbot=\skip86
-\rot@float@box=\box112
-\rot@mess@toks=\toks43
+\rot@float@box=\box127
+\rot@mess@toks=\toks56
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgfgantt/pgfgantt.sty
 Package: pgfgantt 2018/01/10 v5.0 Draw Gantt diagrams with TikZ
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
-x
-\pgfutil@everybye=\toks44
-\pgfutil@tempdima=\dimen264
-\pgfutil@tempdimb=\dimen265
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
-sts.tex))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box113
-(/usr/local/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
-))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-))
-Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks45
-\pgfkeys@temptoks=\toks46
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
-ode.tex
-\pgfkeys@tmptoks=\toks47
-))
-\pgf@x=\dimen266
-\pgf@y=\dimen267
-\pgf@xa=\dimen268
-\pgf@ya=\dimen269
-\pgf@xb=\dimen270
-\pgf@yb=\dimen271
-\pgf@xc=\dimen272
-\pgf@yc=\dimen273
-\pgf@xd=\dimen274
-\pgf@yd=\dimen275
-\w@pgf@writea=\write4
-\r@pgf@reada=\read4
-\c@pgf@counta=\count329
-\c@pgf@countb=\count330
-\c@pgf@countc=\count331
-\c@pgf@countd=\count332
-\t@pgf@toka=\toks48
-\t@pgf@tokb=\toks49
-\t@pgf@tokc=\toks50
-\pgf@sys@id@count=\count333
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
-)
-Driver file for pgf: pgfsys-pdftex.def
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
-ef
-File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
-df.def
-File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
-code.tex
-File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count334
-\pgfsyssoftpath@bigbuffer@items=\count335
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
-code.tex
-File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen276
-\pgfmath@count=\count336
-\pgfmath@box=\box114
-\pgfmath@toks=\toks51
-\pgfmath@stack@operand=\toks52
-\pgfmath@stack@operation=\toks53
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
-tex
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
-.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
-nometric.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
-m.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
-rison.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
-code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
-.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
-code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
-erarithmetics.code.tex)))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count337
-)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
-de.tex
-File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen277
-\pgf@picmaxx=\dimen278
-\pgf@picminy=\dimen279
-\pgf@picmaxy=\dimen280
-\pgf@pathminx=\dimen281
-\pgf@pathmaxx=\dimen282
-\pgf@pathminy=\dimen283
-\pgf@pathmaxy=\dimen284
-\pgf@xx=\dimen285
-\pgf@xy=\dimen286
-\pgf@yx=\dimen287
-\pgf@yy=\dimen288
-\pgf@zx=\dimen289
-\pgf@zy=\dimen290
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
-ruct.code.tex
-File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen291
-\pgf@path@lasty=\dimen292
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
-.code.tex
-File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen293
-\pgf@shorten@start@additional=\dimen294
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
-de.tex
-File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box115
-\pgf@hbox=\box116
-\pgf@layerbox@main=\box117
-\pgf@picture@serial@count=\count338
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
-ate.code.tex
-File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen295
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
-ations.code.tex
-File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen296
-\pgf@pt@y=\dimen297
-\pgf@pt@temp=\dimen298
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
-e.tex
-File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
-ode.tex
-File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
-ssing.code.tex
-File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
-de.tex
-File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen299
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
-e.tex
-File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen300
-\pgf@sys@shading@range@num=\count339
-\pgf@shadingcount=\count340
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
-e.tex
-File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
-code.tex
-File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box118
-))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
-de.tex
-File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
-ncy.code.tex
-File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
-code.tex
-File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
-tex
-File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
-e.tex
-File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box119
-)
-(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
-tex
-File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--0-65.sty
-Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen301
-\pgf@nodesepend=\dimen302
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
--1-18.sty
-Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
-))
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
 (/usr/local/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
@@ -1107,10 +1183,10 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen303
-\pgffor@skip=\dimen304
-\pgffor@stack=\toks54
-\pgffor@toks=\toks55
+\pgffor@iter=\dimen311
+\pgffor@skip=\dimen312
+\pgffor@stack=\toks57
+\pgffor@toks=\toks58
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -1119,34 +1195,34 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count341
-\pgfplotmarksize=\dimen305
+\pgf@plot@mark@count=\count347
+\pgfplotmarksize=\dimen313
 )
-\tikz@lastx=\dimen306
-\tikz@lasty=\dimen307
-\tikz@lastxsaved=\dimen308
-\tikz@lastysaved=\dimen309
-\tikz@lastmovetox=\dimen310
-\tikz@lastmovetoy=\dimen311
-\tikzleveldistance=\dimen312
-\tikzsiblingdistance=\dimen313
-\tikz@figbox=\box120
-\tikz@figbox@bg=\box121
-\tikz@tempbox=\box122
-\tikz@tempbox@bg=\box123
-\tikztreelevel=\count342
-\tikznumberofchildren=\count343
-\tikznumberofcurrentchild=\count344
-\tikz@fig@count=\count345
+\tikz@lastx=\dimen314
+\tikz@lasty=\dimen315
+\tikz@lastxsaved=\dimen316
+\tikz@lastysaved=\dimen317
+\tikz@lastmovetox=\dimen318
+\tikz@lastmovetoy=\dimen319
+\tikzleveldistance=\dimen320
+\tikzsiblingdistance=\dimen321
+\tikz@figbox=\box128
+\tikz@figbox@bg=\box129
+\tikz@tempbox=\box130
+\tikz@tempbox@bg=\box131
+\tikztreelevel=\count348
+\tikznumberofchildren=\count349
+\tikznumberofcurrentchild=\count350
+\tikz@fig@count=\count351
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count346
-\pgfmatrixcurrentcolumn=\count347
-\pgf@matrix@numberofcolumns=\count348
+\pgfmatrixcurrentrow=\count352
+\pgfmatrixcurrentcolumn=\count353
+\pgf@matrix@numberofcolumns=\count354
 )
-\tikz@expandcount=\count349
+\tikz@expandcount=\count355
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1159,13 +1235,13 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 code.tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen314
+\arrowsize=\dimen322
 ))
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box124
-\pgf@layerboxsaved@background=\box125
+\pgf@layerbox@background=\box132
+\pgf@layerboxsaved@background=\box133
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarycalc.code.tex
@@ -1196,34 +1272,34 @@ File: pgflibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 tex
 File: pgfcalendar.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-\pgfcalendarcurrentjulian=\count350
-\pgf@cal@easter@Y=\count351
-\pgf@cal@easter@G=\count352
-\pgf@cal@easter@C=\count353
-\pgf@cal@easter@X=\count354
-\pgf@cal@easter@Z=\count355
-\pgf@cal@easter@D=\count356
-\pgf@cal@easter@E=\count357
-\pgf@cal@easter@N=\count358
-\pgf@cal@easter@M=\count359
-\pgf@cal@easter@julianday=\count360
+\pgfcalendarcurrentjulian=\count356
+\pgf@cal@easter@Y=\count357
+\pgf@cal@easter@G=\count358
+\pgf@cal@easter@C=\count359
+\pgf@cal@easter@X=\count360
+\pgf@cal@easter@Z=\count361
+\pgf@cal@easter@D=\count362
+\pgf@cal@easter@E=\count363
+\pgf@cal@easter@N=\count364
+\pgf@cal@easter@M=\count365
+\pgf@cal@easter@julianday=\count366
 ))
-\gtt@currentline=\count361
-\gtt@lasttitleline=\count362
-\gtt@currgrid=\count363
-\gtt@chartwidth=\count364
-\gtt@lasttitleslot=\count365
-\gtt@elementid=\count366
-\gtt@today@slot=\count367
-\gtt@startjulian=\count368
-\gtt@endjulian=\count369
-\gtt@chartid=\count370
-\gtt@vrule@slot=\count371
-\gtt@calendar@slots=\count372
-\gtt@calendar@weeknumber=\count373
-\gtt@calendar@startofweek=\count374
-\gtt@left@slot=\count375
-\gtt@right@slot=\count376
+\gtt@currentline=\count367
+\gtt@lasttitleline=\count368
+\gtt@currgrid=\count369
+\gtt@chartwidth=\count370
+\gtt@lasttitleslot=\count371
+\gtt@elementid=\count372
+\gtt@today@slot=\count373
+\gtt@startjulian=\count374
+\gtt@endjulian=\count375
+\gtt@chartid=\count376
+\gtt@vrule@slot=\count377
+\gtt@calendar@slots=\count378
+\gtt@calendar@weeknumber=\count379
+\gtt@calendar@startofweek=\count380
+\gtt@left@slot=\count381
+\gtt@right@slot=\count382
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
 
@@ -1250,14 +1326,14 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip101
 \bibsep=\skip102
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count377
+\c@NAT@ctr=\count383
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip103
-\multirow@cntb=\count378
+\multirow@cntb=\count384
 \multirow@dima=\skip104
-\bigstrutjot=\dimen315
+\bigstrutjot=\dimen323
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
@@ -1270,20 +1346,20 @@ LaTeX Info: Redefining \bm on input line 209.
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
-\c@subfigure=\count379
-\c@subtable=\count380
+\c@subfigure=\count385
+\c@subtable=\count386
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count381
-\c@@ppsavesec=\count382
-\c@@ppsaveapp=\count383
+\c@@pps=\count387
+\c@@ppsavesec=\count388
+\c@@ppsaveapp=\count389
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/afterpage.sty
 Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
-\AP@output=\toks56
-\AP@partial=\box126
-\AP@footins=\box127
+\AP@output=\toks59
+\AP@partial=\box134
+\AP@footins=\box135
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/datetime2/datetime2.sty
 Package: datetime2 2020/03/02 v1.5.6 (NLCT) date and time formats
@@ -1308,12 +1384,12 @@ File: datetime2-en-US.ldf 2019/10/21 v1.05 (NLCT)
 Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks57
-\t@pgfplots@tokb=\toks58
-\t@pgfplots@tokc=\toks59
-\pgfplots@tmpa=\dimen316
-\c@pgfplots@coordindex=\count384
-\c@pgfplots@scanlineindex=\count385
+\t@pgfplots@toka=\toks60
+\t@pgfplots@tokb=\toks61
+\t@pgfplots@tokc=\toks62
+\pgfplots@tmpa=\dimen324
+\c@pgfplots@coordindex=\count390
+\c@pgfplots@scanlineindex=\count391
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
 .code.tex))
@@ -1331,14 +1407,14 @@ liststructure.code.tex)
 liststructureext.code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 array.code.tex
-\c@pgfplotsarray@tmp=\count386
+\c@pgfplotsarray@tmp=\count392
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 matrix.code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
 shared.code.tex
-\c@pgfplotstable@counta=\count387
-\t@pgfplotstable@a=\toks60
+\c@pgfplotstable@counta=\count393
+\t@pgfplotstable@a=\toks63
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 deque.code.tex)
@@ -1350,7 +1426,7 @@ ta.code.tex))
 .code.tex)
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
 s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count388
+\c@pgfplotslibrarysurf@no=\count394
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def)))
@@ -1382,16 +1458,16 @@ x)
 s/tikzlibrarydecorations.code.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
 s.code.tex
-\pgfdecoratedcompleteddistance=\dimen317
-\pgfdecoratedremainingdistance=\dimen318
-\pgfdecoratedinputsegmentcompleteddistance=\dimen319
-\pgfdecoratedinputsegmentremainingdistance=\dimen320
-\pgf@decorate@distancetomove=\dimen321
-\pgf@decorate@repeatstate=\count389
-\pgfdecorationsegmentamplitude=\dimen322
-\pgfdecorationsegmentlength=\dimen323
+\pgfdecoratedcompleteddistance=\dimen325
+\pgfdecoratedremainingdistance=\dimen326
+\pgfdecoratedinputsegmentcompleteddistance=\dimen327
+\pgfdecoratedinputsegmentremainingdistance=\dimen328
+\pgf@decorate@distancetomove=\dimen329
+\pgf@decorate@repeatstate=\count395
+\pgfdecorationsegmentamplitude=\dimen330
+\pgfdecorationsegmentlength=\dimen331
 )
-\tikz@lib@dec@box=\box128
+\tikz@lib@dec@box=\box136
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.pathmorphing.code.tex
@@ -1401,13 +1477,13 @@ brarydecorations.pathmorphing.code.tex))
 s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count390
-\pgfplots@xmin@reg=\dimen324
-\pgfplots@xmax@reg=\dimen325
-\pgfplots@ymin@reg=\dimen326
-\pgfplots@ymax@reg=\dimen327
-\pgfplots@zmin@reg=\dimen328
-\pgfplots@zmax@reg=\dimen329
+\pgfplots@numplots=\count396
+\pgfplots@xmin@reg=\dimen332
+\pgfplots@xmax@reg=\dimen333
+\pgfplots@ymin@reg=\dimen334
+\pgfplots@ymax@reg=\dimen335
+\pgfplots@zmin@reg=\dimen336
+\pgfplots@zmax@reg=\dimen337
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryplotmarks.code.tex
@@ -1430,9 +1506,9 @@ Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\svg@box=\box129
-\c@svg@param@lastpage=\count391
-\c@svg@param@currpage=\count392
+\svg@box=\box137
+\c@svg@param@lastpage=\count397
+\c@svg@param@currpage=\count398
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/transparent/transparent.sty
 Package: transparent 2019/11/29 v1.4 Transparency via pdfTeX's color stack (HO)
@@ -1443,12 +1519,12 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/local/texlive/2020/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count393
-\decimalpart=\count394
+\integerpart=\count399
+\decimalpart=\count400
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box130
+\tikzscale@measuredSize=\box138
 )
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.markings.code.tex
@@ -1458,15 +1534,15 @@ brarydecorations.markings.code.tex))
 s/tikzlibrarydecorations.text.code.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.text.code.tex
-\pgf@lib@dec@text@box=\box131
+\pgf@lib@dec@text@box=\box139
 )
-\tikz@lib@dec@te@box=\box132
+\tikz@lib@dec@te@box=\box140
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen330
-\c@nlinenum=\count395
-\TeXr@lab=\toks61
+\rotheadsize=\dimen338
+\c@nlinenum=\count401
+\TeXr@lab=\toks64
 )
 (/usr/local/texlive/2020/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1483,7 +1559,7 @@ LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `amsthm' support loaded on input line 3026.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 120.
+Package hyperref Info: Option `colorlinks' set `true' on input line 130.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1577,16 +1653,16 @@ LaTeX Warning: Label `tab:time_std' multiply defined.
 LaTeX Warning: Label `tab:time_std@cref' multiply defined.
 
 
-LaTeX Warning: Label `tab:mean_stats' multiply defined.
-
-
-LaTeX Warning: Label `tab:mean_stats@cref' multiply defined.
-
-
 LaTeX Warning: Label `fig:mean' multiply defined.
 
 
 LaTeX Warning: Label `fig:mean@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:mean_stats' multiply defined.
+
+
+LaTeX Warning: Label `tab:mean_stats@cref' multiply defined.
 
 
 LaTeX Warning: Label `tab:mean_std_stats' multiply defined.
@@ -1621,66 +1697,101 @@ LaTeX Warning: Label `sec:conclusion@cref' multiply defined.
 ) (./Chapters/chap5.aux) (./Chapters/appendix.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 147.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 157.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 147.
+ 157.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 157.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-147.
+157.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 157.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 147.
+ 157.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 157.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 147.
+e 157.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 147.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
-LaTeX Font Info:    ... okay on input line 147.
-\c@mv@tabular=\count396
-\c@mv@boldtabular=\count397
+LaTeX Font Info:    ... okay on input line 157.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
+LaTeX Font Info:    ... okay on input line 157.
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(144.54pt, 397.48502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=397.48502pt
+* \textheight=650.43001pt
+* \oddsidemargin=72.27pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=95.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@mv@tabular=\count402
+\c@mv@boldtabular=\count403
+ABD: EveryShipout initializing macros
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count398
-\scratchdimen=\dimen331
-\scratchbox=\box133
-\nofMPsegments=\count399
-\nofMParguments=\count400
-\everyMPshowfont=\toks62
-\MPscratchCnt=\count401
-\MPscratchDim=\dimen332
-\MPnumerator=\count402
-\makeMPintoPDFobject=\count403
-\everyMPtoPDFconversion=\toks63
+\scratchcounter=\count404
+\scratchdimen=\dimen339
+\scratchbox=\box141
+\nofMPsegments=\count405
+\nofMParguments=\count406
+\everyMPshowfont=\toks65
+\MPscratchCnt=\count407
+\MPscratchDim=\dimen340
+\MPnumerator=\count408
+\makeMPintoPDFobject=\count409
+\everyMPtoPDFconversion=\toks66
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1690,8 +1801,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box134
-Package hyperref Info: Link coloring ON on input line 147.
+\AtBeginShipoutBox=\box142
+Package hyperref Info: Link coloring ON on input line 157.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1703,27 +1814,26 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count404
+\c@section@level=\count410
 )
-LaTeX Info: Redefining \ref on input line 147.
-LaTeX Info: Redefining \pageref on input line 147.
-LaTeX Info: Redefining \nameref on input line 147.
+LaTeX Info: Redefining \ref on input line 157.
+LaTeX Info: Redefining \pageref on input line 157.
+LaTeX Info: Redefining \nameref on input line 157.
  (./thesis.out) (./thesis.out)
-\@outlinefile=\write5
-\openout5 = `thesis.out'.
+\@outlinefile=\write7
+\openout7 = `thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: rotating package is loaded.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
-ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 147.
+ ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 157.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 147.
+ on input line 157.
 
 \openout2 = `StartPages/cover.aux'.
 
@@ -1751,6 +1861,7 @@ Package datetime2 Warning: Region `english' has ignored
 [1
 
 
+
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \openout2 = `StartPages/abstract.aux'.
 
@@ -1764,14 +1875,14 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 
 
 
-] [3] [4])
+] [3] [4] [5])
 \openout2 = `StartPages/copyright.aux'.
 
  (./StartPages/copyright.tex)
 \openout2 = `StartPages/DECLARATION.aux'.
 
 
-(./StartPages/DECLARATION.tex) [5
+(./StartPages/DECLARATION.tex) [6
 
 
 
@@ -1780,7 +1891,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 ]
 \openout2 = `StartPages/ACKNOWLEDGEMENTS.aux'.
 
- (./StartPages/ACKNOWLEDGEMENTS.tex [6
+ (./StartPages/ACKNOWLEDGEMENTS.tex [7
 
 
 ])
@@ -1825,1157 +1936,1172 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 8.8pt on input line 7.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 6.6pt on input line 7.
- [7
+ [8
 
 
 
-] [8]
-[9] [10] [11])
-\tf@toc=\write6
-\openout6 = `thesis.toc'.
+] [9]
+[10] [11] [12])
+\tf@toc=\write8
+\openout8 = `thesis.toc'.
 
- [12])
+ [13])
 \openout2 = `StartPages/FiguresTables.aux'.
 
  (./StartPages/FiguresTables.tex (./thesis.lof [1
 
 
-] [2]
-[3] [4])
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
+]
+[2] [3] [4])
+\tf@lof=\write9
+\openout9 = `thesis.lof'.
 
  [5] [6] (./thesis.lot [7
 
 ] [8] [9] [10])
-\tf@lot=\write8
-\openout8 = `thesis.lot'.
+\tf@lot=\write10
+\openout10 = `thesis.lot'.
 
- [11])
+ [11] [12])
 \openout2 = `StartPages/symbols.aux'.
 
 
 (./StartPages/symbols.tex
-Overfull \hbox (68.04308pt too wide) in alignment at lines 5--9
+Overfull \hbox (104.17805pt too wide) in alignment at lines 5--9
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (68.04308pt too wide) in alignment at lines 9--15
+Overfull \hbox (104.17805pt too wide) in alignment at lines 9--15
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (68.04308pt too wide) in alignment at lines 15--37
+Overfull \hbox (104.17805pt too wide) in alignment at lines 15--37
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (68.04308pt too wide) in alignment at lines 37--57
+Overfull \hbox (104.17805pt too wide) in alignment at lines 37--57
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (68.04308pt too wide) in alignment at lines 57--77
+Overfull \hbox (104.17805pt too wide) in alignment at lines 57--77
  [] [] [] [] [] 
  []
 
-[12
+[13
 
 
 
 ]
-Overfull \hbox (68.04308pt too wide) in alignment at lines 77--78
+Overfull \hbox (104.17805pt too wide) in alignment at lines 77--78
  [] [] [] [] [] 
  []
 
-[13])
+[14])
 \openout2 = `Chapters/chap1.aux'.
 
  (./Chapters/chap1.tex
 Chapter 1.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 10.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.17 
-      [1
+l.15 \end{titlepage}
+                     [1
 
 
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.18 \newpage
-              [2]pdfTeX warning (ext4): destination with the same identifier (n
-ame{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.23 \newpage
-              [3]
+
+]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 26.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 26.
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+(Font)              scaled to size 17.28pt on input line 18.
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 
-      [4]pdfTeX warning (ext4): destination with the same identifier (name{page
-.5}) has been already used, duplicate ignored
+l.25 
+      [2]pdfTeX warning (ext4): destination with the same identifier (name{page
+.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 \newpage
-              [5]pdfTeX warning (ext4): destination with the same identifier (n
-ame{page.6}) has been already used, duplicate ignored
+l.26 \newpage
+              [3]pdfTeX warning (ext4): destination with the same identifier (n
+ame{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.59 
-      [6]pdfTeX warning (ext4): destination with the same identifier (name{page
-.7}) has been already used, duplicate ignored
+l.31 \newpage
+              [4]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 14.4pt on input line 34.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.4pt on input line 34.
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.76 	\begin{align}
-                    \label{dirichlet} [7]pdfTeX warning (ext4): destination wit
-h the same identifier (name{page.8}) has been already used, duplicate ignored
+l.52 
+      [5]pdfTeX warning (ext4): destination with the same identifier (name{page
+.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.87 
+l.55 \newpage
+              [6]pdfTeX warning (ext4): destination with the same identifier (n
+ame{page.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.67 
+      [7]pdfTeX warning (ext4): destination with the same identifier (name{page
+.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.82 
       [8]pdfTeX warning (ext4): destination with the same identifier (name{page
 .9}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.101 	\end{align}
-                   [9]pdfTeX warning (ext4): destination with the same identifi
-er (name{page.10}) has been already used, duplicate ignored
+l.95 
+      [9]pdfTeX warning (ext4): destination with the same identifier (name{page
+.10}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.112 	\begin{align}
+l.107 	\begin{align}
                      [10]pdfTeX warning (ext4): destination with the same ident
 ifier (name{page.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.132 
-       [11]pdfTeX warning (ext4): destination with the same identifier (name{pa
-ge.12}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.149 	I
-        n this whole thesis, it will be assumed that the same basis function...
-[12]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 155.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 155.
- [13] [14] [15] [16] [17] [18] [19] [20] [21]
-Overfull \hbox (53.3262pt too wide) detected at line 328
+l.120 	\begin{align}
+                     [11]
+Overfull \hbox (18.07275pt too wide) detected at line 138
 []
  []
 
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.138 	\end{align}
+                   [12]pdfTeX warning (ext4): destination with the same identif
+ier (name{page.13}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.152 	\begin{align}
+                     [13]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 163.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 163.
+ [14] [15] [16] [17] [18] [19] [20] [21]
+Overfull \hbox (9.28937pt too wide) detected at line 288
+[]
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
-[37]
+[37] [38] [39] [40]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 549.
+put line 556.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 553.
- [38] [39] [40] Excluding 'comment' comment.
+(Font)              scaled to size 10.0pt on input line 560.
+ [41] [42] [43] Excluding 'comment' comment.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 744.
-LaTeX Font Info:    Trying to load font information for T1+qhv on input line 74
-4.
+(Font)              scaled to size 8.0pt on input line 751.
+LaTeX Font Info:    Trying to load font information for T1+qhv on input line 75
+1.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 744.
- [41] [42]
-[43] Excluding 'comment' comment. [44] [45] [46] [47] [48] [49] [50] [51]
-[52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65]
-Overfull \hbox (67.92455pt too wide) detected at line 1229
+(Font)              scaled to size 10.79993pt on input line 751.
+ [44] [45]
+[46] Excluding 'comment' comment. [47] [48] [49] [50] [51] [52] [53] [54]
+[55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]
+Overfull \hbox (104.05952pt too wide) detected at line 1236
 []
  []
 
-[66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76]
-Overfull \hbox (4.89175pt too wide) detected at line 1454
+[70] [71] [72] [73] [74]
+Overfull \hbox (17.21829pt too wide) detected at line 1355
+[]
+ []
+
+[75] [76] [77]
+Overfull \hbox (32.81596pt too wide) detected at line 1407
+ []$[]\OML/ntxmi/m/it/12 ^^M[] \LMS/ntxsy/m/n/12 ^^B []$ []  
+ []
+
+[78]
+Overfull \hbox (9.26387pt too wide) detected at line 1421
+[]
+ []
+
+[79] [80] [81]
+Overfull \hbox (41.02673pt too wide) detected at line 1461
 [][][][]
  []
 
-[77] [78] [79] [80] [81] [82] [83] [84]
-Overfull \hbox (7.05151pt too wide) in paragraph at lines 1536--1538
-\T1/ntxtlf/m/n/12 The prob-a-bilis-tic/chance/reliability con-straint $\OML/ntx
-mi/m/it/12 P\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 g\LMS/ntxsy/m/n/12 ¹\OML/ntxm
-i/b/it/12 x\OT1/ntxtlf/m/n/12 ; \OML/ntxmi/b/it/12 f\LMS/ntxsy/m/n/12 º ^^T \OT
-1/ntxtlf/m/n/12 0\LMS/ntxsy/m/n/12 º ^^U \OML/ntxmi/m/it/12 ^^Q$ \T1/ntxtlf/m/n
-/12 is the same as $[]\LMS/ntxsy/m/n/12 ¹\OML/ntxmi/m/it/12 z\OT1/ntxtlf/m/n/12
- ; \OML/ntxmi/m/it/12 ^^Q\LMS/ntxsy/m/n/12 º ^^T
+[82]
+Overfull \hbox (35.29317pt too wide) detected at line 1475
+[][][][]
  []
 
-[85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99])
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97]
+[98] [99] [100] [101] [102] [103])
 \openout2 = `Chapters/chap2.aux'.
 
-
-(./Chapters/chap2.tex
+ (./Chapters/chap2.tex
 Chapter 2.
-(./images/adaptive_csimp/cantbeam.tex) (./images/adaptive_csimp/mbbbeam.tex
+[104
+
+
+
+
+] (./images/adaptive_csimp/cantbeam.tex)
+(./images/adaptive_csimp/mbbbeam.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 26.
-)
-[100
+) [105] [106]
 
-
-
-] [101]
-
-Package natbib Warning: Multiple citation on page 102: same authors and year
+Package natbib Warning: Multiple citation on page 107: same authors and year
 (natbib)                without distinguishing extra letter,
 (natbib)                appears as question mark.
 
-[102] [103] [104] [105] [106] [107] [108] [109] [110]
-(./images/adaptive_csimp/lbeam.tex) [111] [112] [113]
+[107] [108] [109] [110] [111] [112] [113] [114] [115]
+(./images/adaptive_csimp/lbeam.tex) [116] [117] [118]
 LaTeX Font Info:    Trying to load font information for T1+ntxsups on input lin
-e 152.
+e 164.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/newtx/t1ntxsups.fd
 File: t1ntxsups.fd 2015/01/17 v1.0
 )
 LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 12.0pt on input line 152.
+(Font)              scaled to size 12.0pt on input line 164.
 LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 10.0pt on input line 152.
- [114]
-[115] [116] [117] (./tables/adaptive_csimp/exp_parameters.tex)
-(./tables/adaptive_csimp/csimp_reuse_table.tex [118]
-Overfull \vbox (1.68996pt too high) has occurred while \output is active []
+(Font)              scaled to size 10.0pt on input line 164.
+ [119]
+[120] [121] [122] [123] (./tables/adaptive_csimp/exp_parameters.tex)
+(./tables/adaptive_csimp/csimp_reuse_table.tex [124]
+Overfull \vbox (1.68994pt too high) has occurred while \output is active []
 
 
-[119]) [120] [121]
-<images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.png, id=2355, 419.8887pt
+[125]) [126] [127]
+<images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.png, id=2391, 419.8887pt
  x 314.3745pt>
 File: images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.png Graphic file (t
 ype png)
 <use images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.
-png  used on input line 215.
-(pdftex.def)             Requested size: 433.62pt x 324.6632pt.
-<images/adaptive_csimp/convplots_csimp_03_0001_80_001_ip.png, id=2357, 419.8887
+png  used on input line 227.
+(pdftex.def)             Requested size: 397.48502pt x 297.60832pt.
+<images/adaptive_csimp/convplots_csimp_03_0001_80_001_ip.png, id=2393, 419.8887
 pt x 314.3745pt>
 File: images/adaptive_csimp/convplots_csimp_03_0001_80_001_ip.png Graphic file 
 (type png)
 <use images/adaptive_csimp/convplots_csimp_03_0001_80_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/convplots_csimp_03_0001_80_001_i
-p.png  used on input line 221.
-(pdftex.def)             Requested size: 433.62pt x 324.6632pt.
- [122 <./images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.png>] [123 <./im
+p.png  used on input line 233.
+(pdftex.def)             Requested size: 397.48502pt x 297.60832pt.
+ [128 <./images/adaptive_csimp/convplots_csimp_03_01_80_001_ip.png>] [129 <./im
 ages/adaptive_csimp/convplots_csimp_03_0001_80_001_ip.png>]
-[124] (./tables/adaptive_csimp/exp_parameters2.tex)
+[130] (./tables/adaptive_csimp/exp_parameters2.tex)
 (./tables/adaptive_csimp/dec_tol_csimp_reuse_table.tex)
-<images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_80_001_ip.png, id=2380, 
+<images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_80_001_ip.png, id=2417, 
 419.8887pt x 314.3745pt>
 File: images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_80_001_ip.png Graph
 ic file (type png)
 <use images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_80_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_
-80_001_ip.png  used on input line 239.
-(pdftex.def)             Requested size: 433.62pt x 324.6632pt.
- [125] [126] [127 <./images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_80_0
+80_001_ip.png  used on input line 251.
+(pdftex.def)             Requested size: 397.48502pt x 297.60832pt.
+ [131] [132] [133 <./images/adaptive_csimp/convplots_dec_tol_csimp_03_0001_80_0
 01_ip.png>]
 <images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_false_001_ip.png, id
-=2398, 462.528pt x 346.896pt>
+=2434, 462.528pt x 346.896pt>
 File: images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_false_001_ip.pn
 g Graphic file (type png)
 <use images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_false_001_ip.png
 >
 Package pdftex.def Info: images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001
-_80_false_001_ip.png  used on input line 249.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+_80_false_001_ip.png  used on input line 261.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 250.
+(Font)              scaled to size 10.95pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 250.
+(Font)              scaled to size 8.0pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 250.
+(Font)              scaled to size 6.1pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 250.
+(Font)              scaled to size 10.95pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 250.
+(Font)              scaled to size 8.0pt on input line 262.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.1pt on input line 250.
+(Font)              scaled to size 6.1pt on input line 262.
 <images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_true_001_ip.png, id=
-2399, 462.528pt x 346.896pt>
+2435, 462.528pt x 346.896pt>
 File: images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_true_001_ip.png
  Graphic file (type png)
 <use images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_true_001_ip.png>
 
 Package pdftex.def Info: images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001
-_80_true_001_ip.png  used on input line 254.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+_80_true_001_ip.png  used on input line 266.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_false_001_ip.png, id=24
-00, 462.528pt x 346.896pt>
+36, 462.528pt x 346.896pt>
 File: images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_false_001_ip.png G
 raphic file (type png)
 <use images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_false_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80
-_false_001_ip.png  used on input line 260.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_true_001_ip.png, id=240
-1, 462.528pt x 346.896pt>
+_false_001_ip.png  used on input line 272.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_true_001_ip.png, id=243
+7, 462.528pt x 346.896pt>
 File: images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_true_001_ip.png Gr
 aphic file (type png)
 <use images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_true_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80
-_true_001_ip.png  used on input line 265.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_false_001_ip.png, id=2402
+_true_001_ip.png  used on input line 277.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_false_001_ip.png, id=2438
 , 462.528pt x 346.896pt>
 File: images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_false_001_ip.png Gra
 phic file (type png)
 <use images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_false_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_f
-alse_001_ip.png  used on input line 270.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png, id=2403,
+alse_001_ip.png  used on input line 282.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png, id=2439,
  462.528pt x 346.896pt>
 File: images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png Grap
 hic file (type png)
 <use images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_t
-rue_001_ip.png  used on input line 274.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<images/adaptive_csimp/cantilever3d_false.png, id=2404, 709.65125pt x 519.9425p
+rue_001_ip.png  used on input line 286.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<images/adaptive_csimp/cantilever3d_false.png, id=2440, 709.65125pt x 519.9425p
 t>
 File: images/adaptive_csimp/cantilever3d_false.png Graphic file (type png)
 <use images/adaptive_csimp/cantilever3d_false.png>
 Package pdftex.def Info: images/adaptive_csimp/cantilever3d_false.png  used on 
-input line 284.
-(pdftex.def)             Requested size: 195.12767pt x 142.9648pt.
-<images/adaptive_csimp/cantilever3d_true.png, id=2405, 735.74875pt x 520.94624p
+input line 296.
+(pdftex.def)             Requested size: 178.86703pt x 131.04842pt.
+<images/adaptive_csimp/cantilever3d_true.png, id=2441, 735.74875pt x 520.94624p
 t>
 File: images/adaptive_csimp/cantilever3d_true.png Graphic file (type png)
 <use images/adaptive_csimp/cantilever3d_true.png>
 Package pdftex.def Info: images/adaptive_csimp/cantilever3d_true.png  used on i
-nput line 288.
-(pdftex.def)             Requested size: 195.12767pt x 138.16138pt.
-<images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_03_001_80.png, id=2410,
+nput line 300.
+(pdftex.def)             Requested size: 178.86703pt x 126.6433pt.
+<images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_03_001_80.png, id=2446,
  462.528pt x 346.896pt>
 File: images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_03_001_80.png Grap
 hic file (type png)
 <use images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_03_001_80.png>
 Package pdftex.def Info: images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate
-_03_001_80.png  used on input line 303.
-(pdftex.def)             Requested size: 175.61371pt x 131.71068pt.
+_03_001_80.png  used on input line 315.
+(pdftex.def)             Requested size: 160.97923pt x 120.73259pt.
 <images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_binary_03_001_80.png, i
-d=2411, 462.528pt x 346.896pt>
+d=2447, 462.528pt x 346.896pt>
 File: images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_binary_03_001_80.p
 ng Graphic file (type png)
 <use images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_binary_03_001_80.pn
 g>
 Package pdftex.def Info: images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate
-_binary_03_001_80.png  used on input line 308.
-(pdftex.def)             Requested size: 175.61371pt x 131.71068pt.
+_binary_03_001_80.png  used on input line 320.
+(pdftex.def)             Requested size: 160.97923pt x 120.73259pt.
 File: images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png Grap
 hic file (type png)
 <use images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png>
 Package pdftex.def Info: images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_t
-rue_001_ip.png  used on input line 319.
-(pdftex.def)             Requested size: 175.61371pt x 131.71068pt.
-<images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_0001_80_true.png, id=2412,
+rue_001_ip.png  used on input line 331.
+(pdftex.def)             Requested size: 160.97923pt x 120.73259pt.
+<images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_0001_80_true.png, id=2448,
  462.528pt x 346.896pt>
 File: images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_0001_80_true.png Grap
 hic file (type png)
 <use images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_0001_80_true.png>
 Package pdftex.def Info: images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_00
-01_80_true.png  used on input line 324.
-(pdftex.def)             Requested size: 175.61371pt x 131.71068pt.
+01_80_true.png  used on input line 336.
+(pdftex.def)             Requested size: 160.97923pt x 120.73259pt.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 332.
+(Font)              scaled to size 17.28pt on input line 344.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.5pt on input line 332.
+(Font)              scaled to size 12.5pt on input line 344.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.4pt on input line 332.
+(Font)              scaled to size 9.4pt on input line 344.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 332.
+(Font)              scaled to size 17.28pt on input line 344.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.5pt on input line 332.
+(Font)              scaled to size 12.5pt on input line 344.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.4pt on input line 332.
+(Font)              scaled to size 9.4pt on input line 344.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 332.
+(hyperref)                removing `math shift' on input line 344.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 332.
+(hyperref)                removing `subscript' on input line 344.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 332.
+(hyperref)                removing `math shift' on input line 344.
 
-[128] [129 <./images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_false_0
+[134] [135 <./images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_false_0
 01_ip.png> <./images/adaptive_csimp/cantilever_dec_tol_csimp_03_0001_80_true_00
 1_ip.png> <./images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_false_001_i
 p.png> <./images/adaptive_csimp/halfmbb_dec_tol_csimp_03_0001_80_true_001_ip.pn
 g> <./images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_false_001_ip.png> <.
 /images/adaptive_csimp/lbeam_dec_tol_csimp_03_0001_80_true_001_ip.png>]
-[130 <./images/adaptive_csimp/cantilever3d_false.png> <./images/adaptive_csimp/
+[136 <./images/adaptive_csimp/cantilever3d_false.png> <./images/adaptive_csimp/
 cantilever3d_true.png> <./images/adaptive_csimp/lbeam_dec_tol_csimp_intermediat
 e_03_001_80.png> <./images/adaptive_csimp/lbeam_dec_tol_csimp_intermediate_bina
-ry_03_001_80.png>] [131 <./images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_
-0001_80_true.png>] [132] [133] [134] [135] [136]
+ry_03_001_80.png>] [137 <./images/adaptive_csimp/lbeam_dec_tol_csimp_binary_03_
+0001_80_true.png>] [138] [139] [140] [141] [142] [143]
 (./tables/adaptive_csimp/dec_tol_csimp_xmin_table.tex)
 <./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_01_ip.png, i
-d=2485, 462.528pt x 346.896pt>
+d=2525, 462.528pt x 346.896pt>
 File: ./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_01_ip.p
 ng Graphic file (type png)
 <use ./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_01_ip.pn
 g>
 Package pdftex.def Info: ./images/adaptive_csimp/cantilever_dec_tol_csimp_01_00
-01_80_false_01_ip.png  used on input line 418.
-(pdftex.def)             Requested size: 175.61371pt x 131.71068pt.
+01_80_false_01_ip.png  used on input line 430.
+(pdftex.def)             Requested size: 160.97923pt x 120.73259pt.
 <./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_001_ip.png, 
-id=2486, 462.528pt x 346.896pt>
+id=2526, 462.528pt x 346.896pt>
 File: ./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_001_ip.
 png Graphic file (type png)
 <use ./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_001_ip.p
 ng>
 Package pdftex.def Info: ./images/adaptive_csimp/cantilever_dec_tol_csimp_01_00
-01_80_false_001_ip.png  used on input line 422.
-(pdftex.def)             Requested size: 175.61371pt x 131.71068pt.
- [137 <./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_01_ip.
-png> <./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_false_001_ip.
-png>] [138] [139])
+01_80_false_001_ip.png  used on input line 434.
+(pdftex.def)             Requested size: 160.97923pt x 120.73259pt.
+ [144] [145] [146 <./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_
+false_01_ip.png> <./images/adaptive_csimp/cantilever_dec_tol_csimp_01_0001_80_f
+alse_001_ip.png>])
 \openout2 = `Chapters/chap3.aux'.
 
 
 (./Chapters/chap3.tex
 Chapter 3.
-[140
+[147
 
 
 
-] [141] [142] [143]
-Overfull \hbox (0.26538pt too wide) in paragraph at lines 24--24
-|[]\T1/ntxtlf/b/n/14.4 Probabilistic con-straints and reliability-based topol-o
-gy op-ti-miza-
- []
 
-[144] [145] [146] [147]
-Overfull \hbox (16.06613pt too wide) in paragraph at lines 49--50
-\T1/ntxtlf/m/n/12 The com-pli-ance sam-ple mean for a fi-nite num-ber $\OML/ntx
-mi/m/it/12 L$ \T1/ntxtlf/m/n/12 of load-ing sce-nar-ios is $\OML/ntxmi/m/it/12 
-^^V[] \U/ntxmia/m/it/12 = [] [][] \OML/ntxmi/b/it/12 f[]K[]f[]$
- []
-
-[148] [149] [150]
-Overfull \hbox (1.332pt too wide) in paragraph at lines 70--70
+] [148] [149] [150] [151] [152] [153] [154] [155] [156] [157] [158]
+Overfull \hbox (1.332pt too wide) in paragraph at lines 82--82
 []|\T1/ntxtlf/m/n/12 Method|  
  []
 
 
-Overfull \hbox (4.08316pt too wide) in paragraph at lines 70--70
+Overfull \hbox (4.08316pt too wide) in paragraph at lines 82--82
 []|[]| 
  []
 
 
-Overfull \hbox (5.028pt too wide) in paragraph at lines 70--70
+Overfull \hbox (5.028pt too wide) in paragraph at lines 82--82
 []|\T1/ntxtlf/m/n/12 SVD?|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
 []|\T1/ntxtlf/m/n/12 Exact-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--76
+Underfull \hbox (badness 10000) in paragraph at lines 88--88
 []|\T1/ntxtlf/m/n/12 Exact-
  []
 
-[151] [152] [153]
-Overfull \hbox (1.332pt too wide) in paragraph at lines 115--115
-[]|\T1/ntxtlf/m/n/12 Method|  
- []
-
-
-Overfull \hbox (4.08316pt too wide) in paragraph at lines 115--115
-[]|[]| 
- []
-
-
-Overfull \hbox (5.028pt too wide) in paragraph at lines 115--115
-[]|\T1/ntxtlf/m/n/12 SVD?|  
- []
-
-
-Overfull \hbox (1.23772pt too wide) in paragraph at lines 115--115
-[]|[]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 119--119
-[]|\T1/ntxtlf/m/n/12 Exact-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--121
-[]|\T1/ntxtlf/m/n/12 Exact-
- []
-
-
-Overfull \hbox (4.35623pt too wide) in paragraph at lines 113--125
- [][] 
- []
-
-[154] [155] (./images/robust_exact/cantbeam.tex [156]) [157] [158] [159]
-[160]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[161]
-<./images/robust_exact/flowchart.png, id=2785, 852.18375pt x 199.74625pt>
+[159] [160] [161] [162]
+Overfull \hbox (1.332pt too wide) in paragraph at lines 127--127
+[]|\T1/ntxtlf/m/n/12 Method|  
+ []
+
+
+Overfull \hbox (4.08316pt too wide) in paragraph at lines 127--127
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.028pt too wide) in paragraph at lines 127--127
+[]|\T1/ntxtlf/m/n/12 SVD?|  
+ []
+
+
+Overfull \hbox (1.23772pt too wide) in paragraph at lines 127--127
+[]|[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]|\T1/ntxtlf/m/n/12 Exact-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\T1/ntxtlf/m/n/12 Exact-
+ []
+
+
+Overfull \hbox (40.49121pt too wide) in paragraph at lines 125--137
+ [][] 
+ []
+
+[163] [164] (./images/robust_exact/cantbeam.tex) [165] [166] [167] [168]
+[169]
+<./images/robust_exact/flowchart.png, id=2829, 852.18375pt x 199.74625pt>
 File: ./images/robust_exact/flowchart.png Graphic file (type png)
 <use ./images/robust_exact/flowchart.png>
 Package pdftex.def Info: ./images/robust_exact/flowchart.png  used on input lin
-e 238.
-(pdftex.def)             Requested size: 433.62pt x 101.64064pt.
-<./images/robust_exact/exact_svd_mean_csimp.png, id=2790, 462.528pt x 346.896pt
+e 246.
+(pdftex.def)             Requested size: 397.48502pt x 93.1706pt.
+ [170]
+<./images/robust_exact/exact_svd_mean_csimp.png, id=2838, 462.528pt x 346.896pt
 >
 File: ./images/robust_exact/exact_svd_mean_csimp.png Graphic file (type png)
 <use ./images/robust_exact/exact_svd_mean_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_csimp.png  used o
-n input line 249.
-(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./images/robust_exact/exact_mean_1.png, id=2791, 486.618pt x 343.2825pt>
+n input line 257.
+(pdftex.def)             Requested size: 397.48502pt x 298.12889pt.
+<./images/robust_exact/exact_mean_1.png, id=2839, 486.618pt x 343.2825pt>
 File: ./images/robust_exact/exact_mean_1.png Graphic file (type png)
 <use ./images/robust_exact/exact_mean_1.png>
 Package pdftex.def Info: ./images/robust_exact/exact_mean_1.png  used on input 
-line 257.
-(pdftex.def)             Requested size: 195.12767pt x 137.65103pt.
-<./images/robust_exact/exact_mean_2.png, id=2792, 543.2295pt x 364.9635pt>
+line 265.
+(pdftex.def)             Requested size: 178.86703pt x 126.17967pt.
+<./images/robust_exact/exact_mean_2.png, id=2840, 543.2295pt x 364.9635pt>
 File: ./images/robust_exact/exact_mean_2.png Graphic file (type png)
 <use ./images/robust_exact/exact_mean_2.png>
 Package pdftex.def Info: ./images/robust_exact/exact_mean_2.png  used on input 
-line 262.
-(pdftex.def)             Requested size: 195.12767pt x 131.0916pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[162 <./images/robust_exact/flowchart.png>] [163 <./images/robust_exact/exact_s
-vd_mean_csimp.png> <./images/robust_exact/exact_mean_1.png> <./images/robust_ex
-act/exact_mean_2.png>]
-<./images/robust_exact/exact_svd_mean_std_csimp.png, id=2811, 462.528pt x 346.8
+line 270.
+(pdftex.def)             Requested size: 178.86703pt x 120.171pt.
+ [171 <./images/robust_exact/flowchart.png>] [172 <./images/robust_exact/exact_
+svd_mean_csimp.png> <./images/robust_exact/exact_mean_1.png> <./images/robust_e
+xact/exact_mean_2.png>]
+<./images/robust_exact/exact_svd_mean_std_csimp.png, id=2859, 462.528pt x 346.8
 96pt>
 File: ./images/robust_exact/exact_svd_mean_std_csimp.png Graphic file (type png
 )
 <use ./images/robust_exact/exact_svd_mean_std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_std_csimp.png  us
-ed on input line 300.
-(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./images/robust_exact/exact_mean_std_1.png, id=2812, 491.436pt x 339.06676pt>
+ed on input line 308.
+(pdftex.def)             Requested size: 397.48502pt x 298.12889pt.
+<./images/robust_exact/exact_mean_std_1.png, id=2860, 491.436pt x 339.06676pt>
 File: ./images/robust_exact/exact_mean_std_1.png Graphic file (type png)
 <use ./images/robust_exact/exact_mean_std_1.png>
 Package pdftex.def Info: ./images/robust_exact/exact_mean_std_1.png  used on in
-put line 308.
-(pdftex.def)             Requested size: 195.12767pt x 134.63094pt.
-<./images/robust_exact/exact_mean_std_2.png, id=2813, 555.2745pt x 366.77025pt>
+put line 316.
+(pdftex.def)             Requested size: 178.86703pt x 123.4091pt.
+<./images/robust_exact/exact_mean_std_2.png, id=2861, 555.2745pt x 366.77025pt>
 
 File: ./images/robust_exact/exact_mean_std_2.png Graphic file (type png)
 <use ./images/robust_exact/exact_mean_std_2.png>
 Package pdftex.def Info: ./images/robust_exact/exact_mean_std_2.png  used on in
-put line 313.
-(pdftex.def)             Requested size: 195.12767pt x 128.88638pt.
- [164] [165 <./images/robust_exact/exact_svd_mean_std_csimp.png> <./images/robu
-st_exact/exact_mean_std_1.png> <./images/robust_exact/exact_mean_std_2.png>]
-<./images/robust_exact/mean_std_profile.png, id=2828, 462.528pt x 346.896pt>
+put line 321.
+(pdftex.def)             Requested size: 178.86703pt x 118.14677pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[173 <./images/robust_exact/exact_svd_mean_std_csimp.png>]
+<./images/robust_exact/mean_std_profile.png, id=2869, 462.528pt x 346.896pt>
 File: ./images/robust_exact/mean_std_profile.png Graphic file (type png)
 <use ./images/robust_exact/mean_std_profile.png>
 Package pdftex.def Info: ./images/robust_exact/mean_std_profile.png  used on in
-put line 350.
-(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./images/robust_exact/exact_svd_mean_0std_csimp.png, id=2829, 462.528pt x 346.
+put line 358.
+(pdftex.def)             Requested size: 397.48502pt x 298.12889pt.
+<./images/robust_exact/exact_svd_mean_0std_csimp.png, id=2870, 462.528pt x 346.
 896pt>
 File: ./images/robust_exact/exact_svd_mean_0std_csimp.png Graphic file (type pn
 g)
 <use ./images/robust_exact/exact_svd_mean_0std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_0std_csimp.png  u
-sed on input line 358.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_exact/exact_svd_mean_5std_csimp.png, id=2830, 462.528pt x 346.
+sed on input line 366.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_exact/exact_svd_mean_5std_csimp.png, id=2871, 462.528pt x 346.
 896pt>
 File: ./images/robust_exact/exact_svd_mean_5std_csimp.png Graphic file (type pn
 g)
 <use ./images/robust_exact/exact_svd_mean_5std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_5std_csimp.png  u
-sed on input line 363.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_exact/exact_svd_mean_10std_csimp.png, id=2831, 462.528pt x 346
+sed on input line 371.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_exact/exact_svd_mean_10std_csimp.png, id=2872, 462.528pt x 346
 .896pt>
 File: ./images/robust_exact/exact_svd_mean_10std_csimp.png Graphic file (type p
 ng)
 <use ./images/robust_exact/exact_svd_mean_10std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_10std_csimp.png  
-used on input line 368.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_exact/exact_svd_mean_15std_csimp.png, id=2832, 462.528pt x 346
+used on input line 376.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_exact/exact_svd_mean_15std_csimp.png, id=2873, 462.528pt x 346
 .896pt>
 File: ./images/robust_exact/exact_svd_mean_15std_csimp.png Graphic file (type p
 ng)
 <use ./images/robust_exact/exact_svd_mean_15std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_15std_csimp.png  
-used on input line 373.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_exact/exact_svd_mean_20std_csimp.png, id=2833, 462.528pt x 346
+used on input line 381.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_exact/exact_svd_mean_20std_csimp.png, id=2874, 462.528pt x 346
 .896pt>
 File: ./images/robust_exact/exact_svd_mean_20std_csimp.png Graphic file (type p
 ng)
 <use ./images/robust_exact/exact_svd_mean_20std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_20std_csimp.png  
-used on input line 378.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_exact/exact_svd_mean_25std_csimp.png, id=2834, 462.528pt x 346
+used on input line 386.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_exact/exact_svd_mean_25std_csimp.png, id=2875, 462.528pt x 346
 .896pt>
 File: ./images/robust_exact/exact_svd_mean_25std_csimp.png Graphic file (type p
 ng)
 <use ./images/robust_exact/exact_svd_mean_25std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_25std_csimp.png  
-used on input line 383.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_exact/exact_svd_mean_30std_csimp.png, id=2835, 462.528pt x 346
+used on input line 391.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_exact/exact_svd_mean_30std_csimp.png, id=2876, 462.528pt x 346
 .896pt>
 File: ./images/robust_exact/exact_svd_mean_30std_csimp.png Graphic file (type p
 ng)
 <use ./images/robust_exact/exact_svd_mean_30std_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_mean_30std_csimp.png  
-used on input line 388.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+used on input line 396.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--391
+Underfull \hbox (badness 10000) in paragraph at lines 364--399
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--391
+Underfull \hbox (badness 10000) in paragraph at lines 364--399
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--391
+Underfull \hbox (badness 10000) in paragraph at lines 364--399
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 55.35545pt on input line 393.
+LaTeX Warning: Float too large for page by 6.57333pt on input line 401.
 
-[166 <./images/robust_exact/mean_std_profile.png>] [167 <./images/robust_exact/
-exact_svd_mean_0std_csimp.png> <./images/robust_exact/exact_svd_mean_5std_csimp
-.png> <./images/robust_exact/exact_svd_mean_10std_csimp.png> <./images/robust_e
-xact/exact_svd_mean_15std_csimp.png> <./images/robust_exact/exact_svd_mean_20st
-d_csimp.png> <./images/robust_exact/exact_svd_mean_25std_csimp.png> <./images/r
-obust_exact/exact_svd_mean_30std_csimp.png>]
-<./images/robust_exact/exact_svd_max_csimp.png, id=2855, 462.528pt x 346.896pt>
+[174 <./images/robust_exact/exact_mean_std_1.png> <./images/robust_exact/exact_
+mean_std_2.png>] [175 <./images/robust_exact/mean_std_profile.png>] [176 <./ima
+ges/robust_exact/exact_svd_mean_0std_csimp.png> <./images/robust_exact/exact_sv
+d_mean_5std_csimp.png> <./images/robust_exact/exact_svd_mean_10std_csimp.png> <
+./images/robust_exact/exact_svd_mean_15std_csimp.png> <./images/robust_exact/ex
+act_svd_mean_20std_csimp.png> <./images/robust_exact/exact_svd_mean_25std_csimp
+.png> <./images/robust_exact/exact_svd_mean_30std_csimp.png>]
+<./images/robust_exact/exact_svd_max_csimp.png, id=2902, 462.528pt x 346.896pt>
 
 File: ./images/robust_exact/exact_svd_max_csimp.png Graphic file (type png)
 <use ./images/robust_exact/exact_svd_max_csimp.png>
 Package pdftex.def Info: ./images/robust_exact/exact_svd_max_csimp.png  used on
- input line 401.
-(pdftex.def)             Requested size: 433.62pt x 325.23007pt.
-<./images/robust_exact/exact_max_1.png, id=2856, 495.0495pt x 343.88475pt>
+ input line 409.
+(pdftex.def)             Requested size: 397.48502pt x 298.12889pt.
+<./images/robust_exact/exact_max_1.png, id=2903, 495.0495pt x 343.88475pt>
 File: ./images/robust_exact/exact_max_1.png Graphic file (type png)
 <use ./images/robust_exact/exact_max_1.png>
 Package pdftex.def Info: ./images/robust_exact/exact_max_1.png  used on input l
-ine 410.
-(pdftex.def)             Requested size: 195.12767pt x 135.54176pt.
-<./images/robust_exact/exact_max_2.png, id=2857, 546.24075pt x 370.986pt>
+ine 418.
+(pdftex.def)             Requested size: 178.86703pt x 124.24968pt.
+<./images/robust_exact/exact_max_2.png, id=2904, 546.24075pt x 370.986pt>
 File: ./images/robust_exact/exact_max_2.png Graphic file (type png)
 <use ./images/robust_exact/exact_max_2.png>
 Package pdftex.def Info: ./images/robust_exact/exact_max_2.png  used on input l
-ine 415.
-(pdftex.def)             Requested size: 195.12767pt x 132.51892pt.
- [168 <./images/robust_exact/exact_svd_max_csimp.png>] [169 <./images/robust_ex
+ine 423.
+(pdftex.def)             Requested size: 178.86703pt x 121.4804pt.
+ [177 <./images/robust_exact/exact_svd_max_csimp.png>] [178 <./images/robust_ex
 act/exact_max_1.png> <./images/robust_exact/exact_max_2.png>])
 \openout2 = `Chapters/chap4.aux'.
 
  (./Chapters/chap4.tex
 Chapter 4.
-[170
+[179
 
 
-] [171]
-Overfull \hbox (1.332pt too wide) in paragraph at lines 43--43
+
+] [180] [181]
+Overfull \hbox (1.332pt too wide) in paragraph at lines 54--54
 []|\T1/ntxtlf/m/n/12 Method|  
  []
 
 
-Overfull \hbox (4.08316pt too wide) in paragraph at lines 43--43
-[]|[]| 
- []
-
-[172] [173] [174]
-Overfull \hbox (1.332pt too wide) in paragraph at lines 96--96
-[]|\T1/ntxtlf/m/n/12 Method|  
- []
-
-
-Overfull \hbox (4.08316pt too wide) in paragraph at lines 96--96
+Overfull \hbox (4.08316pt too wide) in paragraph at lines 54--54
 []|[]| 
  []
 
 
-Overfull \hbox (6.18263pt too wide) in paragraph at lines 94--106
+Overfull \hbox (13.86485pt too wide) in paragraph at lines 52--64
  [][] 
  []
 
-[175] (./images/robust_approx/cantbeam.tex) [176] [177] [178]
-<./images/robust_approx/exact_approx_mean.png, id=2957, 462.528pt x 346.896pt>
+[182] [183] [184]
+Overfull \hbox (1.332pt too wide) in paragraph at lines 107--107
+[]|\T1/ntxtlf/m/n/12 Method|  
+ []
+
+
+Overfull \hbox (4.08316pt too wide) in paragraph at lines 107--107
+[]|[]| 
+ []
+
+
+Overfull \hbox (42.31761pt too wide) in paragraph at lines 105--117
+ [][] 
+ []
+
+[185] (./images/robust_approx/cantbeam.tex) [186] [187] [188]
+<./images/robust_approx/exact_approx_mean.png, id=3005, 462.528pt x 346.896pt>
 File: ./images/robust_approx/exact_approx_mean.png Graphic file (type png)
 <use ./images/robust_approx/exact_approx_mean.png>
 Package pdftex.def Info: ./images/robust_approx/exact_approx_mean.png  used on 
-input line 178.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/exact_approx_std.png, id=2958, 462.528pt x 346.896pt>
+input line 185.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/exact_approx_std.png, id=3006, 462.528pt x 346.896pt>
 File: ./images/robust_approx/exact_approx_std.png Graphic file (type png)
 <use ./images/robust_approx/exact_approx_std.png>
 Package pdftex.def Info: ./images/robust_approx/exact_approx_std.png  used on i
-nput line 184.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
- [179] [180 <./images/robust_approx/exact_approx_mean.png> <./images/robust_app
-rox/exact_approx_std.png>] [181]
-<./images/robust_approx/correcting_factors_hadamard_mean_10_01.png, id=2979, 46
+nput line 191.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+ [189] [190 <./images/robust_approx/exact_approx_mean.png> <./images/robust_app
+rox/exact_approx_std.png>] [191]
+<./images/robust_approx/correcting_factors_hadamard_mean_10_01.png, id=3026, 46
 2.528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_mean_10_01.png Graphic
  file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_mean_10_01.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_mea
-n_10_01.png  used on input line 205.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_mean_10_03.png, id=2980, 46
+n_10_01.png  used on input line 212.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_mean_10_03.png, id=3027, 46
 2.528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_mean_10_03.png Graphic
  file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_mean_10_03.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_mea
-n_10_03.png  used on input line 210.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_mean_10_05.png, id=2981, 46
+n_10_03.png  used on input line 217.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_mean_10_05.png, id=3028, 46
 2.528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_mean_10_05.png Graphic
  file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_mean_10_05.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_mea
-n_10_05.png  used on input line 215.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_mean_10_07.png, id=2982, 46
+n_10_05.png  used on input line 222.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_mean_10_07.png, id=3029, 46
 2.528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_mean_10_07.png Graphic
  file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_mean_10_07.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_mea
-n_10_07.png  used on input line 220.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_mean_10_09.png, id=2983, 46
+n_10_07.png  used on input line 227.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_mean_10_09.png, id=3030, 46
 2.528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_mean_10_09.png Graphic
  file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_mean_10_09.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_mea
-n_10_09.png  used on input line 225.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+n_10_09.png  used on input line 232.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--228
+Underfull \hbox (badness 10000) in paragraph at lines 210--235
 []$[]$ $[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--228
+Underfull \hbox (badness 10000) in paragraph at lines 210--235
 []$ $[]$
  []
 
-<./images/robust_approx/correcting_factors_hadamard_std_10_01.png, id=2984, 462
+<./images/robust_approx/correcting_factors_hadamard_std_10_01.png, id=3031, 462
 .528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_std_10_01.png Graphic 
 file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_std_10_01.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_std
-_10_01.png  used on input line 234.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_std_10_03.png, id=2985, 462
+_10_01.png  used on input line 241.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_std_10_03.png, id=3032, 462
 .528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_std_10_03.png Graphic 
 file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_std_10_03.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_std
-_10_03.png  used on input line 239.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_std_10_05.png, id=2986, 462
+_10_03.png  used on input line 246.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_std_10_05.png, id=3033, 462
 .528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_std_10_05.png Graphic 
 file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_std_10_05.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_std
-_10_05.png  used on input line 244.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_std_10_07.png, id=2987, 462
+_10_05.png  used on input line 251.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_std_10_07.png, id=3034, 462
 .528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_std_10_07.png Graphic 
 file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_std_10_07.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_std
-_10_07.png  used on input line 249.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
-<./images/robust_approx/correcting_factors_hadamard_std_10_09.png, id=2988, 462
+_10_07.png  used on input line 256.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+<./images/robust_approx/correcting_factors_hadamard_std_10_09.png, id=3035, 462
 .528pt x 346.896pt>
 File: ./images/robust_approx/correcting_factors_hadamard_std_10_09.png Graphic 
 file (type png)
 <use ./images/robust_approx/correcting_factors_hadamard_std_10_09.png>
 Package pdftex.def Info: ./images/robust_approx/correcting_factors_hadamard_std
-_10_09.png  used on input line 254.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+_10_09.png  used on input line 261.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--257
+Underfull \hbox (badness 10000) in paragraph at lines 239--264
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--257
+Underfull \hbox (badness 10000) in paragraph at lines 239--264
 [] []
  []
 
-[182] [183 <./images/robust_approx/correcting_factors_hadamard_mean_10_01.png> 
+[192] [193 <./images/robust_approx/correcting_factors_hadamard_mean_10_01.png> 
 <./images/robust_approx/correcting_factors_hadamard_mean_10_03.png> <./images/r
 obust_approx/correcting_factors_hadamard_mean_10_05.png> <./images/robust_appro
 x/correcting_factors_hadamard_mean_10_07.png> <./images/robust_approx/correctin
-g_factors_hadamard_mean_10_09.png>] [184 <./images/robust_approx/correcting_fac
+g_factors_hadamard_mean_10_09.png>] [194 <./images/robust_approx/correcting_fac
 tors_hadamard_std_10_01.png> <./images/robust_approx/correcting_factors_hadamar
 d_std_10_03.png> <./images/robust_approx/correcting_factors_hadamard_std_10_05.
 png> <./images/robust_approx/correcting_factors_hadamard_std_10_07.png> <./imag
-es/robust_approx/correcting_factors_hadamard_std_10_09.png>] [185] [186]
-[187] [188] [189] [190] [191] [192] [193] [194]
-<./images/robust_approx/exact_svd_mean_csimp.png, id=3111, 462.528pt x 346.896p
+es/robust_approx/correcting_factors_hadamard_std_10_09.png>] [195] [196]
+[197] [198] [199] [200] [201] [202] [203] [204] [205]
+<./images/robust_approx/exact_svd_mean_csimp.png, id=3162, 462.528pt x 346.896p
 t>
 File: ./images/robust_approx/exact_svd_mean_csimp.png Graphic file (type png)
 <use ./images/robust_approx/exact_svd_mean_csimp.png>
 Package pdftex.def Info: ./images/robust_approx/exact_svd_mean_csimp.png  used 
-on input line 435.
-(pdftex.def)             Requested size: 346.89731pt x 260.18723pt.
-<./images/robust_approx/trace_Hadamard10_mean_csimp.png, id=3112, 462.528pt x 3
+on input line 442.
+(pdftex.def)             Requested size: 317.98921pt x 238.50099pt.
+<./images/robust_approx/trace_Hadamard10_mean_csimp.png, id=3163, 462.528pt x 3
 44.0052pt>
 File: ./images/robust_approx/trace_Hadamard10_mean_csimp.png Graphic file (type
  png)
 <use ./images/robust_approx/trace_Hadamard10_mean_csimp.png>
 Package pdftex.def Info: ./images/robust_approx/trace_Hadamard10_mean_csimp.png
-  used on input line 440.
-(pdftex.def)             Requested size: 346.89731pt x 258.019pt.
+  used on input line 447.
+(pdftex.def)             Requested size: 317.98921pt x 236.51347pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--443
+Underfull \hbox (badness 10000) in paragraph at lines 440--450
 [][]
  []
 
-[195]
-<./images/robust_approx/exact_svd_mean_std_csimp.png, id=3121, 462.528pt x 344.
+[206] [207 <./images/robust_approx/exact_svd_mean_csimp.png> <./images/robust_a
+pprox/trace_Hadamard10_mean_csimp.png>]
+<./images/robust_approx/exact_svd_mean_std_csimp.png, id=3179, 462.528pt x 344.
 0052pt>
 File: ./images/robust_approx/exact_svd_mean_std_csimp.png Graphic file (type pn
 g)
 <use ./images/robust_approx/exact_svd_mean_std_csimp.png>
 Package pdftex.def Info: ./images/robust_approx/exact_svd_mean_std_csimp.png  u
-sed on input line 480.
-(pdftex.def)             Requested size: 346.89731pt x 258.019pt.
-<./images/robust_approx/diagonal_mean_std_csimp.png, id=3122, 462.528pt x 344.0
+sed on input line 487.
+(pdftex.def)             Requested size: 317.98921pt x 236.51347pt.
+<./images/robust_approx/diagonal_mean_std_csimp.png, id=3180, 462.528pt x 344.0
 052pt>
 File: ./images/robust_approx/diagonal_mean_std_csimp.png Graphic file (type png
 )
 <use ./images/robust_approx/diagonal_mean_std_csimp.png>
 Package pdftex.def Info: ./images/robust_approx/diagonal_mean_std_csimp.png  us
-ed on input line 485.
-(pdftex.def)             Requested size: 346.89731pt x 258.019pt.
+ed on input line 492.
+(pdftex.def)             Requested size: 317.98921pt x 236.51347pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--488
+Underfull \hbox (badness 10000) in paragraph at lines 485--495
 [][]
  []
 
-[196] [197 <./images/robust_approx/exact_svd_mean_csimp.png> <./images/robust_a
-pprox/trace_Hadamard10_mean_csimp.png>]
+[208]
 <./images/robust_approx/results_2d_high_rank_figures/exact_approx_mean.png, id=
-3145, 462.528pt x 346.896pt>
+3197, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/exact_approx_mean.png
  Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/exact_approx_mean.png>
 
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/ex
-act_approx_mean.png  used on input line 527.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+act_approx_mean.png  used on input line 534.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/exact_approx_std.png, id=3
-146, 462.528pt x 346.896pt>
+198, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/exact_approx_std.png 
 Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/exact_approx_std.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/ex
-act_approx_std.png  used on input line 533.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+act_approx_std.png  used on input line 540.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
+ [209] [210 <./images/robust_approx/exact_svd_mean_std_csimp.png> <./images/rob
+ust_approx/diagonal_mean_std_csimp.png>]
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_mean_10_01.png, id=3147, 462.528pt x 346.896pt>
+d_mean_10_01.png, id=3210, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_mean_10_01.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_mean_10_01.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_mean_10_01.png  used on input line 544.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_mean_10_01.png  used on input line 551.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_mean_10_03.png, id=3148, 462.528pt x 346.896pt>
+d_mean_10_03.png, id=3211, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_mean_10_03.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_mean_10_03.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_mean_10_03.png  used on input line 549.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_mean_10_03.png  used on input line 556.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_mean_10_05.png, id=3149, 462.528pt x 346.896pt>
+d_mean_10_05.png, id=3212, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_mean_10_05.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_mean_10_05.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_mean_10_05.png  used on input line 554.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_mean_10_05.png  used on input line 561.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_mean_10_07.png, id=3150, 462.528pt x 346.896pt>
+d_mean_10_07.png, id=3213, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_mean_10_07.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_mean_10_07.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_mean_10_07.png  used on input line 559.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_mean_10_07.png  used on input line 566.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_mean_10_09.png, id=3151, 462.528pt x 346.896pt>
+d_mean_10_09.png, id=3214, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_mean_10_09.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_mean_10_09.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_mean_10_09.png  used on input line 564.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_mean_10_09.png  used on input line 571.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--567
+Underfull \hbox (badness 10000) in paragraph at lines 549--574
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--567
+Underfull \hbox (badness 10000) in paragraph at lines 549--574
 [] []
  []
 
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_std_10_01.png, id=3152, 462.528pt x 346.896pt>
+d_std_10_01.png, id=3215, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_std_10_01.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_std_10_01.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_std_10_01.png  used on input line 573.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_std_10_01.png  used on input line 580.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_std_10_03.png, id=3153, 462.528pt x 346.896pt>
+d_std_10_03.png, id=3216, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_std_10_03.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_std_10_03.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_std_10_03.png  used on input line 578.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_std_10_03.png  used on input line 585.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_std_10_05.png, id=3154, 462.528pt x 346.896pt>
+d_std_10_05.png, id=3217, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_std_10_05.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_std_10_05.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_std_10_05.png  used on input line 583.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_std_10_05.png  used on input line 590.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_std_10_07.png, id=3155, 462.528pt x 346.896pt>
+d_std_10_07.png, id=3218, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_std_10_07.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_std_10_07.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_std_10_07.png  used on input line 588.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_std_10_07.png  used on input line 595.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamar
-d_std_10_09.png, id=3156, 462.528pt x 346.896pt>
+d_std_10_09.png, id=3219, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
 damard_std_10_09.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/correcting_factors_had
 amard_std_10_09.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/co
-rrecting_factors_hadamard_std_10_09.png  used on input line 593.
-(pdftex.def)             Requested size: 195.12767pt x 146.34637pt.
+rrecting_factors_hadamard_std_10_09.png  used on input line 600.
+(pdftex.def)             Requested size: 178.86703pt x 134.15085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--596
+Underfull \hbox (badness 10000) in paragraph at lines 578--603
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--596
+Underfull \hbox (badness 10000) in paragraph at lines 578--603
 [] []
  []
 
 <./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_csimp.png, 
-id=3157, 462.528pt x 346.896pt>
+id=3220, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_csimp.
 png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_csimp.p
 ng>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/ex
-act_svd_mean_csimp.png  used on input line 603.
-(pdftex.def)             Requested size: 390.25534pt x 292.70335pt.
+act_svd_mean_csimp.png  used on input line 610.
+(pdftex.def)             Requested size: 357.73409pt x 268.31229pt.
 <./images/robust_approx/results_2d_high_rank_figures/trace_Hadamard10_mean_csim
-p.png, id=3158, 462.528pt x 346.896pt>
+p.png, id=3221, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/trace_Hadamard10_mean
 _csimp.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/trace_Hadamard10_mean_
 csimp.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/tr
-ace_Hadamard10_mean_csimp.png  used on input line 608.
-(pdftex.def)             Requested size: 346.89731pt x 260.18723pt.
+ace_Hadamard10_mean_csimp.png  used on input line 615.
+(pdftex.def)             Requested size: 317.98921pt x 238.50099pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--611
+Underfull \hbox (badness 10000) in paragraph at lines 608--618
 [][]
  []
 
 <./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_std_csimp.p
-ng, id=3159, 462.528pt x 346.896pt>
+ng, id=3222, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_std_cs
 imp.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_std_csi
 mp.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/ex
-act_svd_mean_std_csimp.png  used on input line 644.
-(pdftex.def)             Requested size: 346.89731pt x 260.18723pt.
+act_svd_mean_std_csimp.png  used on input line 651.
+(pdftex.def)             Requested size: 317.98921pt x 238.50099pt.
 <./images/robust_approx/results_2d_high_rank_figures/diagonal_mean_std_csimp.pn
-g, id=3160, 462.528pt x 346.896pt>
+g, id=3223, 462.528pt x 346.896pt>
 File: ./images/robust_approx/results_2d_high_rank_figures/diagonal_mean_std_csi
 mp.png Graphic file (type png)
 <use ./images/robust_approx/results_2d_high_rank_figures/diagonal_mean_std_csim
 p.png>
 Package pdftex.def Info: ./images/robust_approx/results_2d_high_rank_figures/di
-agonal_mean_std_csimp.png  used on input line 649.
-(pdftex.def)             Requested size: 346.89731pt x 260.18723pt.
+agonal_mean_std_csimp.png  used on input line 656.
+(pdftex.def)             Requested size: 317.98921pt x 238.50099pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 642--652
+Underfull \hbox (badness 10000) in paragraph at lines 649--659
 [][]
  []
 
-[198] [199 <./images/robust_approx/exact_svd_mean_std_csimp.png> <./images/robu
-st_approx/diagonal_mean_std_csimp.png>] [200 <./images/robust_approx/results_2d
-_high_rank_figures/exact_approx_mean.png> <./images/robust_approx/results_2d_hi
-gh_rank_figures/exact_approx_std.png>] [201 <./images/robust_approx/results_2d_
-high_rank_figures/correcting_factors_hadamard_mean_10_01.png> <./images/robust_
-approx/results_2d_high_rank_figures/correcting_factors_hadamard_mean_10_03.png>
- <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadama
-rd_mean_10_05.png> <./images/robust_approx/results_2d_high_rank_figures/correct
-ing_factors_hadamard_mean_10_07.png> <./images/robust_approx/results_2d_high_ra
-nk_figures/correcting_factors_hadamard_mean_10_09.png>] [202 <./images/robust_a
-pprox/results_2d_high_rank_figures/correcting_factors_hadamard_std_10_01.png> <
-./images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamard
-_std_10_03.png> <./images/robust_approx/results_2d_high_rank_figures/correcting
-_factors_hadamard_std_10_05.png> <./images/robust_approx/results_2d_high_rank_f
-igures/correcting_factors_hadamard_std_10_07.png> <./images/robust_approx/resul
-ts_2d_high_rank_figures/correcting_factors_hadamard_std_10_09.png>] [203 <./ima
-ges/robust_approx/results_2d_high_rank_figures/exact_svd_mean_csimp.png> <./ima
-ges/robust_approx/results_2d_high_rank_figures/trace_Hadamard10_mean_csimp.png>
-] [204 <./images/robust_approx/results_2d_high_rank_figures/exact_svd_mean_std_
-csimp.png> <./images/robust_approx/results_2d_high_rank_figures/diagonal_mean_s
-td_csimp.png>] [205]
-<./images/robust_approx/exact_mean_1.png, id=3219, 486.618pt x 343.2825pt>
+[211 <./images/robust_approx/results_2d_high_rank_figures/exact_approx_mean.png
+> <./images/robust_approx/results_2d_high_rank_figures/exact_approx_std.png>]
+[212 <./images/robust_approx/results_2d_high_rank_figures/correcting_factors_ha
+damard_mean_10_01.png> <./images/robust_approx/results_2d_high_rank_figures/cor
+recting_factors_hadamard_mean_10_03.png> <./images/robust_approx/results_2d_hig
+h_rank_figures/correcting_factors_hadamard_mean_10_05.png> <./images/robust_app
+rox/results_2d_high_rank_figures/correcting_factors_hadamard_mean_10_07.png> <.
+/images/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamard_
+mean_10_09.png>] [213 <./images/robust_approx/results_2d_high_rank_figures/corr
+ecting_factors_hadamard_std_10_01.png> <./images/robust_approx/results_2d_high_
+rank_figures/correcting_factors_hadamard_std_10_03.png> <./images/robust_approx
+/results_2d_high_rank_figures/correcting_factors_hadamard_std_10_05.png> <./ima
+ges/robust_approx/results_2d_high_rank_figures/correcting_factors_hadamard_std_
+10_07.png> <./images/robust_approx/results_2d_high_rank_figures/correcting_fact
+ors_hadamard_std_10_09.png>] [214 <./images/robust_approx/results_2d_high_rank_
+figures/exact_svd_mean_csimp.png> <./images/robust_approx/results_2d_high_rank_
+figures/trace_Hadamard10_mean_csimp.png>] [215 <./images/robust_approx/results_
+2d_high_rank_figures/exact_svd_mean_std_csimp.png> <./images/robust_approx/resu
+lts_2d_high_rank_figures/diagonal_mean_std_csimp.png>] [216]
+<./images/robust_approx/exact_mean_1.png, id=3269, 486.618pt x 343.2825pt>
 File: ./images/robust_approx/exact_mean_1.png Graphic file (type png)
 <use ./images/robust_approx/exact_mean_1.png>
 Package pdftex.def Info: ./images/robust_approx/exact_mean_1.png  used on input
- line 696.
-(pdftex.def)             Requested size: 195.12767pt x 137.65103pt.
-<./images/robust_approx/exact_mean_2.png, id=3220, 543.2295pt x 364.9635pt>
+ line 703.
+(pdftex.def)             Requested size: 178.86703pt x 126.17967pt.
+<./images/robust_approx/exact_mean_2.png, id=3270, 543.2295pt x 364.9635pt>
 File: ./images/robust_approx/exact_mean_2.png Graphic file (type png)
 <use ./images/robust_approx/exact_mean_2.png>
 Package pdftex.def Info: ./images/robust_approx/exact_mean_2.png  used on input
- line 701.
-(pdftex.def)             Requested size: 195.12767pt x 131.0916pt.
-<./images/robust_approx/trace_mean_1.png, id=3221, 493.845pt x 342.078pt>
+ line 708.
+(pdftex.def)             Requested size: 178.86703pt x 120.171pt.
+<./images/robust_approx/trace_mean_1.png, id=3271, 493.845pt x 342.078pt>
 File: ./images/robust_approx/trace_mean_1.png Graphic file (type png)
 <use ./images/robust_approx/trace_mean_1.png>
 Package pdftex.def Info: ./images/robust_approx/trace_mean_1.png  used on input
- line 711.
-(pdftex.def)             Requested size: 195.12767pt x 135.15846pt.
-<./images/robust_approx/trace_mean_2.png, id=3222, 539.616pt x 364.9635pt>
+ line 718.
+(pdftex.def)             Requested size: 178.86703pt x 123.8944pt.
+<./images/robust_approx/trace_mean_2.png, id=3272, 539.616pt x 364.9635pt>
 File: ./images/robust_approx/trace_mean_2.png Graphic file (type png)
 <use ./images/robust_approx/trace_mean_2.png>
 Package pdftex.def Info: ./images/robust_approx/trace_mean_2.png  used on input
- line 716.
-(pdftex.def)             Requested size: 195.12767pt x 131.97148pt.
- [206 <./images/robust_approx/exact_mean_1.png> <./images/robust_approx/exact_m
+ line 723.
+(pdftex.def)             Requested size: 178.86703pt x 120.97293pt.
+ [217 <./images/robust_approx/exact_mean_1.png> <./images/robust_approx/exact_m
 ean_2.png> <./images/robust_approx/trace_mean_1.png> <./images/robust_approx/tr
 ace_mean_2.png>]
-<./images/robust_approx/exact_mean_std_1.png, id=3235, 491.436pt x 339.06676pt>
+<./images/robust_approx/exact_mean_std_1.png, id=3285, 491.436pt x 339.06676pt>
 
 File: ./images/robust_approx/exact_mean_std_1.png Graphic file (type png)
 <use ./images/robust_approx/exact_mean_std_1.png>
 Package pdftex.def Info: ./images/robust_approx/exact_mean_std_1.png  used on i
-nput line 756.
-(pdftex.def)             Requested size: 195.12767pt x 134.63094pt.
-<./images/robust_approx/exact_mean_std_2.png, id=3236, 555.2745pt x 366.77025pt
+nput line 763.
+(pdftex.def)             Requested size: 178.86703pt x 123.4091pt.
+<./images/robust_approx/exact_mean_std_2.png, id=3286, 555.2745pt x 366.77025pt
 >
 File: ./images/robust_approx/exact_mean_std_2.png Graphic file (type png)
 <use ./images/robust_approx/exact_mean_std_2.png>
 Package pdftex.def Info: ./images/robust_approx/exact_mean_std_2.png  used on i
-nput line 761.
-(pdftex.def)             Requested size: 195.12767pt x 128.88638pt.
-<./images/robust_approx/diagonal_mean_std_1.png, id=3237, 493.24275pt x 325.817
+nput line 768.
+(pdftex.def)             Requested size: 178.86703pt x 118.14677pt.
+<./images/robust_approx/diagonal_mean_std_1.png, id=3287, 493.24275pt x 325.817
 25pt>
 File: ./images/robust_approx/diagonal_mean_std_1.png Graphic file (type png)
 <use ./images/robust_approx/diagonal_mean_std_1.png>
 Package pdftex.def Info: ./images/robust_approx/diagonal_mean_std_1.png  used o
-n input line 771.
-(pdftex.def)             Requested size: 195.12767pt x 128.89276pt.
-<./images/robust_approx/diagonal_mean_std_2.png, id=3238, 546.843pt x 368.577pt
+n input line 778.
+(pdftex.def)             Requested size: 178.86703pt x 118.15419pt.
+<./images/robust_approx/diagonal_mean_std_2.png, id=3288, 546.843pt x 368.577pt
 >
 File: ./images/robust_approx/diagonal_mean_std_2.png Graphic file (type png)
 <use ./images/robust_approx/diagonal_mean_std_2.png>
 Package pdftex.def Info: ./images/robust_approx/diagonal_mean_std_2.png  used o
-n input line 776.
-(pdftex.def)             Requested size: 195.12767pt x 131.5178pt.
- [207] [208 <./images/robust_approx/exact_mean_std_1.png> <./images/robust_appr
-ox/exact_mean_std_2.png> <./images/robust_approx/diagonal_mean_std_1.png> <./im
-ages/robust_approx/diagonal_mean_std_2.png>]) [209]
+n input line 783.
+(pdftex.def)             Requested size: 178.86703pt x 120.55658pt.
+
+[218] [219 <./images/robust_approx/exact_mean_std_1.png> <./images/robust_appro
+x/exact_mean_std_2.png> <./images/robust_approx/diagonal_mean_std_1.png> <./ima
+ges/robust_approx/diagonal_mean_std_2.png>]) [220]
 \openout2 = `Chapters/chap5.aux'.
 
  (./Chapters/chap5.tex
 Chapter 5.
-[210
+[221
 
 
-] [211] [212]) [213] (./thesis.bbl [214
+] [222] [223]) [224] (./thesis.bbl [225
 
-] [215] [216]
-Underfull \hbox (badness 2512) in paragraph at lines 196--200
-[]\T1/ntxtlf/m/n/12 Elishakoff, I., Haftka, R. T. and Fang, J. (1994), `Struc-t
-ural de-sign un-der
- []
-
-[217] [218] [219] [220] [221] [222] [223] [224] [225] [226] [227] [228]
-[229] [230]) [231]
+] [226] [227] [228] [229] [230]
+[231] [232] [233] [234] [235] [236] [237] [238] [239] [240] [241] [242])
+[243]
 \openout2 = `Chapters/appendix.aux'.
 
- (./Chapters/appendix.tex [232
+ (./Chapters/appendix.tex [244
 
-]) [233]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
+]) [245]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
  (./thesis.aux
 (./StartPages/cover.aux) (./StartPages/abstract.aux)
 (./StartPages/copyright.aux) (./StartPages/DECLARATION.aux)
@@ -2983,23 +3109,23 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
 (./StartPages/FiguresTables.aux) (./StartPages/symbols.aux)
 (./Chapters/chap1.aux) (./Chapters/chap2.aux) (./Chapters/chap3.aux)
 (./Chapters/chap4.aux) (./Chapters/chap5.aux) (./Chapters/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 84957C830223580623A59A31975E6756;8015.
+(rerunfilecheck)             Checksum: 6F65C42A4026C30B7A2E1147AE23B653;7889.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 46326 strings out of 480608
- 1047054 string characters out of 5903630
- 1440793 words of memory out of 5000000
- 60023 multiletter control sequences out of 15000+600000
+ 48419 strings out of 480608
+ 1096317 string characters out of 5903630
+ 1494806 words of memory out of 5000000
+ 62098 multiletter control sequences out of 15000+600000
  663996 words of font info for 217 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,19n,98p,2129b,1031s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,19n,98p,2129b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/newtx/ntxsups_t1.enc}{/us
 r/local/texlive/2020/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/local/t
 exlive/2020/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/local/texlive
@@ -3020,10 +3146,10 @@ ve/2020/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/newtx/ztmr.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
 pe1/public/newtx/ztmri.pfb>
-Output written on thesis.pdf (258 pages, 1852724 bytes).
+Output written on thesis.pdf (272 pages, 1862042 bytes).
 PDF statistics:
- 3658 PDF objects out of 4296 (max. 8388607)
- 3192 compressed objects within 32 object streams
- 1034 named destinations out of 1200 (max. 500000)
- 1255 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3715 PDF objects out of 4296 (max. 8388607)
+ 3234 compressed objects within 33 object streams
+ 1042 named destinations out of 1200 (max. 500000)
+ 1239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

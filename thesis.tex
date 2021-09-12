@@ -1,6 +1,15 @@
 %%Base template MIT thesis
 \documentclass[12pt,vi,twoside]{mitthesis}
 
+\usepackage{geometry}
+
+\newgeometry{
+    top=1in,
+    bottom=1in,
+    outer=1in,
+    inner=2in,
+}
+
 %\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
@@ -14,6 +23,7 @@
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
+\usepackage{tcolorbox}
 \usepackage{comment}
 \usepackage{algorithm, algorithmic}
 \usepackage{adjustbox}

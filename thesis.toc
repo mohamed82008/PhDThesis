@@ -1,125 +1,123 @@
 \babel@toc {english}{}
-\contentsline {chapter}{ACKNOWLEDGEMENTS}{6}{Doc-Start}%
+\contentsline {chapter}{ACKNOWLEDGEMENTS}{7}{Doc-Start}%
 \contentsline {chapter}{LIST OF FIGURES}{i}{Doc-Start}%
 \contentsline {chapter}{LIST OF TABLES}{vii}{Doc-Start}%
-\contentsline {chapter}{LIST OF ABBREVIATIONS}{xii}{Doc-Start}%
+\contentsline {chapter}{LIST OF ABBREVIATIONS}{xiii}{Doc-Start}%
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Aims}{3}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Overview of topology optimization}{4}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Continuum vs discrete topology optimization}{4}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Sizing, shape and topology optimization}{4}{subsection.1.3.2}%
-\contentsline {section}{\numberline {1.4}Quasi-static linear elasticity}{6}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Strong form}{6}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Weak form}{9}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Finite dimensional weak form}{10}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Basis functions}{12}{subsection.1.4.4}%
-\contentsline {subsubsection}{\numberline {1.4.4.1}Line elements}{12}{subsubsection.1.4.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.4.2}Quadrilateral elements}{13}{subsubsection.1.4.4.2}%
-\contentsline {subsubsection}{\numberline {1.4.4.3}Hexahedral elements}{14}{subsubsection.1.4.4.3}%
-\contentsline {subsection}{\numberline {1.4.5}Variable substitution}{15}{subsection.1.4.5}%
-\contentsline {subsubsection}{\numberline {1.4.5.1}Quadrilateral elements}{17}{subsubsection.1.4.5.1}%
-\contentsline {subsubsection}{\numberline {1.4.5.2}Hexahedral elements}{19}{subsubsection.1.4.5.2}%
-\contentsline {subsection}{\numberline {1.4.6}Gaussian quadrature integration}{21}{subsection.1.4.6}%
-\contentsline {subsection}{\numberline {1.4.7}Matrix-vector weak form}{21}{subsection.1.4.7}%
-\contentsline {subsection}{\numberline {1.4.8}Analysis to topology optimization}{25}{subsection.1.4.8}%
-\contentsline {section}{\numberline {1.5}Topology optimization formulations}{27}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Design parameterization}{27}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Compliance minimization}{29}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Compliance-constrained optimization}{30}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Filter types}{30}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Nested vs simultaneous analysis and design}{32}{subsection.1.5.5}%
-\contentsline {subsection}{\numberline {1.5.6}Solid isotropic material with penalization}{35}{subsection.1.5.6}%
-\contentsline {subsection}{\numberline {1.5.7}Continuation SIMP}{38}{subsection.1.5.7}%
-\contentsline {subsection}{\numberline {1.5.8}Evolutionary structural optimization}{40}{subsection.1.5.8}%
-\contentsline {subsection}{\numberline {1.5.9}Genetic evolutionary structural optimization}{41}{subsection.1.5.9}%
-\contentsline {subsection}{\numberline {1.5.10}Topology optimization problem classes}{42}{subsection.1.5.10}%
-\contentsline {section}{\numberline {1.6}Nonlinear programming}{45}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Formulations}{46}{subsection.1.6.1}%
-\contentsline {subsubsection}{\numberline {1.6.1.1}A linear objective is all you need}{47}{subsubsection.1.6.1.1}%
-\contentsline {subsubsection}{\numberline {1.6.1.2}Slack variables}{48}{subsubsection.1.6.1.2}%
-\contentsline {subsubsection}{\numberline {1.6.1.3}Equality constraints and empty interiors}{49}{subsubsection.1.6.1.3}%
-\contentsline {subsection}{\numberline {1.6.2}Regularity conditions}{52}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Sufficient optimality conditions for regular points}{53}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}Method of moving asymptotes}{55}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}Primal-dual interior point method}{61}{subsection.1.6.5}%
-\contentsline {subsection}{\numberline {1.6.6}Augmented Lagrangian algorithm}{76}{subsection.1.6.6}%
-\contentsline {section}{\numberline {1.7}Topology optimization under uncertainty}{82}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Robust optimization}{82}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Stochastic and risk-averse optimization}{84}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Reliability-based design optimization}{86}{subsection.1.7.3}%
-\contentsline {subsection}{\numberline {1.7.4}Relationship between uncertainty paradigms}{90}{subsection.1.7.4}%
-\contentsline {section}{\numberline {1.8}Linear algebra}{92}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Solving a linear system}{92}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}Eigenvalue decomposition}{94}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}Singular value decomposition}{95}{subsection.1.8.3}%
-\contentsline {subsection}{\numberline {1.8.4}Trace estimation}{96}{subsection.1.8.4}%
-\contentsline {subsection}{\numberline {1.8.5}Diagonal estimation}{96}{subsection.1.8.5}%
-\contentsline {section}{\numberline {1.9}Scope and limitations of the study}{98}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Significance of the study}{99}{section.1.10}%
-\contentsline {chapter}{\numberline {2}Adaptive continuation SIMP}{100}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{100}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Literature review}{102}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Penalty adaptation}{106}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Test Problems}{111}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Implementation}{114}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Finite element analysis}{114}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Optimization}{114}{subsection.2.5.2}%
-\contentsline {section}{\numberline {2.6}Evaluating SIMP}{116}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Results and Discussion}{119}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Fixed tolerance}{119}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Decreasing tolerance}{124}{subsection.2.7.2}%
-\contentsline {section}{\numberline {2.8}Effect of $x_{min}$}{128}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Conclusion}{139}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Exact compliance-based optimization with finitely many loading scenarios}{140}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{140}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Literature review}{140}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Mean compliance minimization}{140}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Risk-averse compliance minimization}{142}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Probabilistic constraints and reliability-based topology optimization}{144}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Maximum compliance constraint}{146}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Compliance sample mean and its gradient}{148}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Naive approach}{148}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Singular value decomposition}{150}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Scalar-valued function of load compliances and its gradient}{151}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Naive approach}{152}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Singular value decomposition}{153}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Maximum compliance constraint}{155}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Setup and Implementation}{156}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Test problems}{157}{subsection.3.6.1}%
-\contentsline {subsubsection}{\numberline {3.6.1.1}2D cantilever beam}{157}{subsubsection.3.6.1.1}%
-\contentsline {subsubsection}{\numberline {3.6.1.2}3D cantilever beam}{159}{subsubsection.3.6.1.2}%
-\contentsline {subsection}{\numberline {3.6.2}Software}{159}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Settings}{159}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Results and Discussion}{161}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Speed comparison}{161}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Optimization}{162}{subsection.3.7.2}%
-\contentsline {subsubsection}{\numberline {3.7.2.1}Mean compliance minimization}{162}{subsubsection.3.7.2.1}%
-\contentsline {subsubsection}{\numberline {3.7.2.2}Mean-std compliance minimization}{164}{subsubsection.3.7.2.2}%
-\contentsline {subsubsection}{\numberline {3.7.2.3}Maximum compliance constrained optimization}{166}{subsubsection.3.7.2.3}%
-\contentsline {section}{\numberline {3.8}Conclusion}{168}{section.3.8}%
-\contentsline {chapter}{\numberline {4}Approximate compliance-based optimization with finitely many loading scenarios}{170}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{170}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Proposed algorithms}{171}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Approximating the compliance sample mean and its gradient}{171}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Approximating scalar-valued function of load compliances and its gradient}{173}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Setup and Implementation}{176}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Test problems}{176}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Software}{178}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Settings}{178}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Accuracy and speed comparison}{179}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Bias correction}{181}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Experiments}{182}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Mathematical analysis}{182}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Optimization}{194}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Low rank loads}{194}{subsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.1.1}Mean compliance minimization}{195}{subsubsection.4.6.1.1}%
-\contentsline {subsubsection}{\numberline {4.6.1.2}Mean-std compliance minimization}{196}{subsubsection.4.6.1.2}%
-\contentsline {subsection}{\numberline {4.6.2}High rank loads}{198}{subsection.4.6.2}%
-\contentsline {subsection}{\numberline {4.6.3}3D cantilever beam problem}{205}{subsection.4.6.3}%
-\contentsline {subsubsection}{\numberline {4.6.3.1}Mean compliance minimization}{207}{subsubsection.4.6.3.1}%
-\contentsline {subsubsection}{\numberline {4.6.3.2}Mean-std compliance minimization}{209}{subsubsection.4.6.3.2}%
-\contentsline {section}{\numberline {4.7}Conclusion}{209}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusion and future work}{210}{chapter.5}%
-\contentsline {chapter}{Appendices}{232}{section*.60}%
-\contentsline {section}{\numberline {.1}Partial derivative of the inverse quadratic form}{232}{section.Alph0.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Aims}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Overview of topology optimization}{5}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Continuum vs discrete topology optimization}{5}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Sizing, shape and topology optimization}{5}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Quasi-static linear elasticity}{7}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Strong form}{7}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Weak form}{10}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Finite dimensional weak form}{11}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Basis functions}{13}{subsection.1.4.4}%
+\contentsline {subsubsection}{\numberline {1.4.4.1}Line elements}{13}{subsubsection.1.4.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.4.2}Quadrilateral elements}{15}{subsubsection.1.4.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.4.3}Hexahedral elements}{16}{subsubsection.1.4.4.3}%
+\contentsline {subsection}{\numberline {1.4.5}Variable substitution}{16}{subsection.1.4.5}%
+\contentsline {subsubsection}{\numberline {1.4.5.1}Quadrilateral elements}{19}{subsubsection.1.4.5.1}%
+\contentsline {subsubsection}{\numberline {1.4.5.2}Hexahedral elements}{20}{subsubsection.1.4.5.2}%
+\contentsline {subsection}{\numberline {1.4.6}Gaussian quadrature integration}{22}{subsection.1.4.6}%
+\contentsline {subsection}{\numberline {1.4.7}Matrix-vector weak form}{23}{subsection.1.4.7}%
+\contentsline {subsection}{\numberline {1.4.8}Analysis to topology optimization}{27}{subsection.1.4.8}%
+\contentsline {section}{\numberline {1.5}Topology optimization formulations}{30}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Design parameterization}{30}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Compliance minimization}{32}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Compliance-constrained optimization}{33}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Filter types}{33}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Nested vs simultaneous analysis and design}{35}{subsection.1.5.5}%
+\contentsline {subsection}{\numberline {1.5.6}Solid isotropic material with penalization}{38}{subsection.1.5.6}%
+\contentsline {subsection}{\numberline {1.5.7}Continuation SIMP}{41}{subsection.1.5.7}%
+\contentsline {subsection}{\numberline {1.5.8}Evolutionary structural optimization}{43}{subsection.1.5.8}%
+\contentsline {subsection}{\numberline {1.5.9}Genetic evolutionary structural optimization}{44}{subsection.1.5.9}%
+\contentsline {subsection}{\numberline {1.5.10}Topology optimization problem classes}{46}{subsection.1.5.10}%
+\contentsline {section}{\numberline {1.6}Nonlinear programming}{48}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Formulations}{49}{subsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.1.1}A linear objective is all you need}{50}{subsubsection.1.6.1.1}%
+\contentsline {subsubsection}{\numberline {1.6.1.2}Slack variables}{51}{subsubsection.1.6.1.2}%
+\contentsline {subsubsection}{\numberline {1.6.1.3}Equality constraints and empty interiors}{52}{subsubsection.1.6.1.3}%
+\contentsline {subsection}{\numberline {1.6.2}Regularity conditions}{55}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Sufficient optimality conditions for regular points}{57}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Method of moving asymptotes}{59}{subsection.1.6.4}%
+\contentsline {subsection}{\numberline {1.6.5}Primal-dual interior point method}{65}{subsection.1.6.5}%
+\contentsline {subsection}{\numberline {1.6.6}Augmented Lagrangian algorithm}{81}{subsection.1.6.6}%
+\contentsline {section}{\numberline {1.7}Topology optimization under uncertainty}{86}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Robust optimization}{86}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Stochastic and risk-averse optimization}{88}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Reliability-based design optimization}{90}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Relationship between uncertainty paradigms}{94}{subsection.1.7.4}%
+\contentsline {section}{\numberline {1.8}Linear algebra}{96}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Solving a linear system}{96}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Eigenvalue decomposition}{98}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Singular value decomposition}{99}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Trace estimation}{100}{subsection.1.8.4}%
+\contentsline {subsection}{\numberline {1.8.5}Diagonal estimation}{100}{subsection.1.8.5}%
+\contentsline {section}{\numberline {1.9}Scope and limitations of the study}{102}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Significance of the study}{103}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Adaptive continuation SIMP}{104}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{105}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Literature review}{107}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Penalty adaptation}{111}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Test Problems}{116}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Implementation}{119}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Finite element analysis}{119}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Optimization}{120}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Evaluating SIMP}{121}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Results and Discussion}{125}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Fixed tolerance}{125}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Decreasing tolerance}{130}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}Effect of $x_{min}$}{134}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Conclusion}{146}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Exact compliance-based optimization with finitely many loading scenarios}{147}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{148}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Literature review}{148}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Mean compliance minimization}{148}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Risk-averse compliance minimization}{150}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Probabilistic constraints and reliability-based topology optimization}{152}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Maximum compliance constraint}{154}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Compliance sample mean and its gradient}{157}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Naive approach}{157}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Singular value decomposition}{158}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Scalar-valued function of load compliances and its gradient}{160}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Naive approach}{160}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Singular value decomposition}{162}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Maximum compliance constraint}{163}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Setup and Implementation}{165}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Test problems}{165}{subsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.1}2D cantilever beam}{165}{subsubsection.3.6.1.1}%
+\contentsline {subsubsection}{\numberline {3.6.1.2}3D cantilever beam}{167}{subsubsection.3.6.1.2}%
+\contentsline {subsection}{\numberline {3.6.2}Settings}{168}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7}Results and Discussion}{170}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Speed comparison}{170}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Optimization}{170}{subsection.3.7.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.1}Mean compliance minimization}{171}{subsubsection.3.7.2.1}%
+\contentsline {subsubsection}{\numberline {3.7.2.2}Mean-std compliance minimization}{173}{subsubsection.3.7.2.2}%
+\contentsline {subsubsection}{\numberline {3.7.2.3}Maximum compliance constrained optimization}{174}{subsubsection.3.7.2.3}%
+\contentsline {section}{\numberline {3.8}Conclusion}{177}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Approximate compliance-based optimization with finitely many loading scenarios}{179}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{180}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Proposed algorithms}{181}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Approximating the compliance sample mean and its gradient}{181}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Approximating scalar-valued function of load compliances and its gradient}{183}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Setup and Implementation}{186}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Test problems}{186}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Settings}{188}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Accuracy and speed comparison}{189}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Bias correction}{191}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Experiments}{192}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Mathematical analysis}{192}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Optimization}{205}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Low rank loads}{205}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.1}Mean compliance minimization}{206}{subsubsection.4.6.1.1}%
+\contentsline {subsubsection}{\numberline {4.6.1.2}Mean-std compliance minimization}{208}{subsubsection.4.6.1.2}%
+\contentsline {subsection}{\numberline {4.6.2}High rank loads}{209}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}3D cantilever beam problem}{216}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}Mean compliance minimization}{217}{subsubsection.4.6.3.1}%
+\contentsline {subsubsection}{\numberline {4.6.3.2}Mean-std compliance minimization}{218}{subsubsection.4.6.3.2}%
+\contentsline {section}{\numberline {4.7}Conclusion}{220}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Conclusion and future work}{221}{chapter.5}%
+\contentsline {chapter}{Appendices}{244}{section*.60}%
+\contentsline {section}{\numberline {.1}Partial derivative of the inverse quadratic form}{244}{section.Alph0.1}%

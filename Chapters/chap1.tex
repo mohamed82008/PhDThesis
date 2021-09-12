@@ -4,14 +4,22 @@
 %% You can process specific files by typing their names in at the
 %% \files=
 %% prompt when you run the file main.tex through LaTeX.
+
+\begin{titlepage}\centering
+\vspace*{\fill}
+
 \chapter{INTRODUCTION}\thispagestyle{EmptyHeader}
 \label{chp:1}
+
+\vspace*{\fill}
+\end{titlepage}
+
 
 \section{Motivation}
 
 In mechanical design, the performance of a component largely depends on its shape and the material it is made of. Each component is expected to handle specific loading and position requirements at the "interfaces" of the component with the external environment. For example, a table is expected to handle a specific load over its top surface area, while having a fixed base, and being contained in a specific bounding box. The requirements therefore do not dictate any specific shape to the legs or their number. The shape is actually a decision the designer has to make.
 
-Designing against failure is the primary goal of mechanical design. Mechanical failure of a structure can happen due to a number of factors, e.g. yielding, potentially large deformations due to system bifurcation/instability, fracture, fatigue, creep, etc. It is therefore the job of a designer to identify the best designs that prevent against failure while maximizing or minimizing one or more performance or economic metrics. Automating this task using mathematical models and optimisation algorithms is the purpose of the field of topology and shape optimisation.
+Designing against failure is the primary goal of mechanical design. Mechanical failure of a structure can occur as a result of a number of factors, e.g. yielding, potentially large deformations due to system bifurcation/instability, fracture, fatigue, creep, etc. It is therefore the job of a designer to identify the best designs that prevent against failure while maximizing or minimizing one or more performance or economic metrics. Automating this task using mathematical models and optimisation algorithms is the purpose of the field of topology and shape optimisation.
 
 There are a number of computational challenges that one faces when trying to computationally optimize the shape of a large or high resolution structure with many degrees of freedom. For example, evaluating the performance metrics may require an expensive physical simulation in the form of a finite element analysis (FEA). The optimization algorithm used should be able to handle a large number of decision variables and constraints. The design produced must be robust to changes or uncertainty in the load, boundary conditions, shape, material properties or other problem data.
 
@@ -30,7 +38,7 @@ Topology optimization problems can fall into 2 broad categories:
     \item Continuum topology optimization
     \item Discrete topology optimization
 \end{enumerate}
-Continuum topology optimization is topology optimization of continuum structures, where continuum structures are structures modelled as one or more volumes of continuum materials, each of which can be meshed to any arbitrary level of fineness. Discrete topology optimization is topology optimization of discrete structures where discrete structures are structures modelled as a finite set of components connected at specific interface points, e.g. truss systems. In this thesis, the focus is on continuum topology optimization however the techniques proposed can generalize to truss or discrete topology optimization as well.
+Continuum topology optimization is topology optimization of continuum structures, where continuum structures are structures modelled as one or more volumes of continuum materials, each of which can be meshed to any arbitrary level of fineness. Discrete topology optimization is topology optimization of discrete structures where discrete structures are structures modelled as a finite set of components connected at specific interface points, e.g. truss systems. In this thesis, the focus is on continuum topology optimization however the techniques proposed can be generalized to truss or discrete topology optimization as well.
 
 \subsection{Sizing, shape and topology optimization}
 
@@ -42,7 +50,7 @@ In design optimization literature, there is a distinction between the following 
 \end{enumerate}
 Topology optimization, also known as generalized shape optimization, is used to refer the case when the algorithm is allowed to choose where to place holes in the shape. Shape optimization on the other hand is used to refer to the case when the algorithm can change the surface of the shape without creating new surfaces or voids. Sizing optimisation is used to refer to the case where a base design is fixed and parameterized and only a few "size" parameters are allowed to change, e.g. the radius of a cylindrical part of the design.
 
-In order to evaluate objectives and constraints of topology optimization problems, solving a finite element analysis (FEA) is necessary. In the next section, I introduce the theory of linear elasticity before talking more about topology optimization formulations.
+In order to evaluate objectives and constraints of topology optimization problems, solving a finite element analysis (FEA) is necessary. In the next section, the theory of linear elasticity is introduced before presenting particular topology optimization formulations.
 
 \newpage
 \section{Quasi-static linear elasticity}
@@ -314,18 +322,18 @@ In order to evaluate objectives and constraints of topology optimization problem
 		K^e_{i'(p, i) j'(s, k)} & = \int_{-1}^1 \int_{-1}^1 N^p_{,j}(\bm{\xi})C_{ijkm}N^s_{,m}(\bm{\xi}) \,|\bm{J}^e|d\xi_1 d\xi_2
 	\end{align}
 	And the $i'(p, i)^{th}$ entry of $\bm{F}^e$ where $\exists A: CC^e_A = p$ is:
-	\begin{align}
-        F^e_{i'(p, i)} & = \int_{-1}^1 \int_{-1}^1 N^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 + \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 N^p(\xi_{\bar{j}(f)})t_i \,J^{ef} d\xi_{\bar{j}(f)}
-	\end{align}
-	
+	\begin{multline}
+        F^e_{i'(p, i)} = \int_{-1}^1 \int_{-1}^1 N^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 + \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 N^p(\xi_{\bar{j}(f)})t_i \,J^{ef} d\xi_{\bar{j}(f)}  
+	\end{multline}
+
 	Similarly for the hexahedral case, , the $(i'(p, i), j'(s, k))^{th}$ entry of $\bm{K}^e$ where $(\exists A: CC^e_A = p) \wedge (\exists B: CC^e_B = s)$ is:
 	\begin{align}
 		K^e_{i'(p, i) j'(s, k)} = \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 N^p_{,j}(\bm{\xi})C_{ijkm}N^s_{,m}(\bm{\xi}) \,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3
 	\end{align}
 	And the $i'(p, i)^{th}$ entry of $\bm{F}^e$ where $\exists A: CC^e_A = p$ is:
-	\begin{align}
-        F^e_{i'(p, i)} = \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 N^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3 + \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 \int_{-1}^1 N^p(\xi_{\bar{j}(f)}, \xi_{\bar{k}(f)})t_i \,|\bm{J}^{ef}| d\xi_{\bar{j}(f)} d\xi_{\bar{k}(f)}
-	\end{align}
+	\begin{multline}
+        F^e_{i'(p, i)} = \int_{-1}^1 \int_{-1}^1 \int_{-1}^1 N^p(\bm{\xi})f_i \rho\,|\bm{J}^e|d\xi_1 d\xi_2 d\xi_3 + \\ \sum_{f \in \partial \Omega^e_{Ni}}\int_{-1}^1 \int_{-1}^1 N^p(\xi_{\bar{j}(f)}, \xi_{\bar{k}(f)})t_i \,|\bm{J}^{ef}| d\xi_{\bar{j}(f)} d\xi_{\bar{k}(f)}
+	\end{multline}
 
 	The weak form can therefore be written more compactly as:
 	\begin{align}
@@ -427,7 +435,6 @@ Filters are typically used in topology optimization to achieve 1 or more of:
     \item Reduce mesh dependence, e.g. chequerboard pattern.
     \item Speed up the optimization algorithm's convergence
     \item Increase feature thickness in the final design
-    \item 
 \end{enumerate}
 Filters recompute the density of each element as the weighted mean of the densities of the elements in its neighbourhoods. There are various weighting schemes used in literature but it's unclear if or when any one method is more favourable than the others. The filtering operator is equivalent to multiplying a vector by a matrix $\bm{A}$ where each row in $\bm{A}$ sums up to 1. There are 2 ways to apply filters in topology optimization:
 \begin{enumerate}
@@ -488,7 +495,7 @@ However, since the NAND formulation assumes that the global stiffness matrix $\b
 \begin{align}
     \bm{\rho}(\bm{x}) = (1 - \rho_{min}) \bm{A} \bm{x} + \rho_{min} \bm{1}
 \end{align}
-where $\rho_{min}$ is a positive constant $\ll 1$ called the minimum pseudo-density. $\rho_{min}$ approximates the pseudo-density of a void element without letting $\bm{K}$ be singular. However, $\rho_{min}$ was also shown by me to play a significant role in the VCCM problem \citep{TAREK2020112880}.
+where $\rho_{min}$ is a positive constant $\ll 1$ called the minimum pseudo-density. $\rho_{min}$ approximates the pseudo-density of a void element without letting $\bm{K}$ be singular. However, $\rho_{min}$ was also shown by the author to play a significant role in the VCCM problem \citep{TAREK2020112880}.
 
 \subsection{Solid isotropic material with penalization}
 
@@ -1662,8 +1669,8 @@ where $diag(\bm{A})$ is the diagonal of $\bm{A}$ as a vector, $\bm{D}_{\bm{v}}$ 
 In this thesis, a number of techniques to accelerate topology optimization algorithms are proposed.
 \begin{enumerate}
     \item In chapter \ref{chp:2}, an accelerate technique for continuation SIMP is proposed whereby the penalty is adapted to reduce the number of sub-problems solved in a systematic way. The gains are demonstrated using various compliance minimization problems.
-    \item In chapter \ref{chp:3}, the problem of loading uncertainty is presented and tackled using novel efficient exact methods. The computational time complexities of the proposed methods will be shown to be strictly better than the naive straight-forward approaches.
-    \item In chapter \ref{chp:4}, approximate methods for stochastic and risk-averse compliance-based topology optimization problems will be presented.
+    \item In chapter \ref{chp:3}, the problem of loading uncertainty is presented and tackled using novel efficient exact methods. The computational time complexities of the proposed methods are shown to be strictly better than the naive straight-forward approaches.
+    \item In chapter \ref{chp:4}, approximate methods for stochastic and risk-averse compliance-based topology optimization problems are presented.
 \end{enumerate}
 
 \newpage

@@ -78,30 +78,28 @@
 \BOOKMARK [1][-]{section.3.5}{Maximum compliance constraint}{chapter.3}% 78
 \BOOKMARK [1][-]{section.3.6}{Setup and Implementation}{chapter.3}% 79
 \BOOKMARK [2][-]{subsection.3.6.1}{Test problems}{section.3.6}% 80
-\BOOKMARK [2][-]{subsection.3.6.2}{Software}{section.3.6}% 81
-\BOOKMARK [2][-]{subsection.3.6.3}{Settings}{section.3.6}% 82
-\BOOKMARK [1][-]{section.3.7}{Results and Discussion}{chapter.3}% 83
-\BOOKMARK [2][-]{subsection.3.7.1}{Speed comparison}{section.3.7}% 84
-\BOOKMARK [2][-]{subsection.3.7.2}{Optimization}{section.3.7}% 85
-\BOOKMARK [1][-]{section.3.8}{Conclusion}{chapter.3}% 86
-\BOOKMARK [0][-]{chapter.4}{Approximate compliance-based optimization with finitely many loading scenarios}{}% 87
-\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 88
-\BOOKMARK [1][-]{section.4.2}{Proposed algorithms}{chapter.4}% 89
-\BOOKMARK [2][-]{subsection.4.2.1}{Approximating the compliance sample mean and its gradient}{section.4.2}% 90
-\BOOKMARK [2][-]{subsection.4.2.2}{Approximating scalar-valued function of load compliances and its gradient}{section.4.2}% 91
-\BOOKMARK [1][-]{section.4.3}{Setup and Implementation}{chapter.4}% 92
-\BOOKMARK [2][-]{subsection.4.3.1}{Test problems}{section.4.3}% 93
-\BOOKMARK [2][-]{subsection.4.3.2}{Software}{section.4.3}% 94
-\BOOKMARK [2][-]{subsection.4.3.3}{Settings}{section.4.3}% 95
-\BOOKMARK [1][-]{section.4.4}{Accuracy and speed comparison}{chapter.4}% 96
-\BOOKMARK [1][-]{section.4.5}{Bias correction}{chapter.4}% 97
-\BOOKMARK [2][-]{subsection.4.5.1}{Experiments}{section.4.5}% 98
-\BOOKMARK [2][-]{subsection.4.5.2}{Mathematical analysis}{section.4.5}% 99
-\BOOKMARK [1][-]{section.4.6}{Optimization}{chapter.4}% 100
-\BOOKMARK [2][-]{subsection.4.6.1}{Low rank loads}{section.4.6}% 101
-\BOOKMARK [2][-]{subsection.4.6.2}{High rank loads}{section.4.6}% 102
-\BOOKMARK [2][-]{subsection.4.6.3}{3D cantilever beam problem}{section.4.6}% 103
-\BOOKMARK [1][-]{section.4.7}{Conclusion}{chapter.4}% 104
-\BOOKMARK [0][-]{chapter.5}{Conclusion and future work}{}% 105
-\BOOKMARK [0][-]{section*.60}{Appendices}{}% 106
-\BOOKMARK [1][-]{section.Alph0.1}{Partial derivative of the inverse quadratic form}{section*.60}% 107
+\BOOKMARK [2][-]{subsection.3.6.2}{Settings}{section.3.6}% 81
+\BOOKMARK [1][-]{section.3.7}{Results and Discussion}{chapter.3}% 82
+\BOOKMARK [2][-]{subsection.3.7.1}{Speed comparison}{section.3.7}% 83
+\BOOKMARK [2][-]{subsection.3.7.2}{Optimization}{section.3.7}% 84
+\BOOKMARK [1][-]{section.3.8}{Conclusion}{chapter.3}% 85
+\BOOKMARK [0][-]{chapter.4}{Approximate compliance-based optimization with finitely many loading scenarios}{}% 86
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 87
+\BOOKMARK [1][-]{section.4.2}{Proposed algorithms}{chapter.4}% 88
+\BOOKMARK [2][-]{subsection.4.2.1}{Approximating the compliance sample mean and its gradient}{section.4.2}% 89
+\BOOKMARK [2][-]{subsection.4.2.2}{Approximating scalar-valued function of load compliances and its gradient}{section.4.2}% 90
+\BOOKMARK [1][-]{section.4.3}{Setup and Implementation}{chapter.4}% 91
+\BOOKMARK [2][-]{subsection.4.3.1}{Test problems}{section.4.3}% 92
+\BOOKMARK [2][-]{subsection.4.3.2}{Settings}{section.4.3}% 93
+\BOOKMARK [1][-]{section.4.4}{Accuracy and speed comparison}{chapter.4}% 94
+\BOOKMARK [1][-]{section.4.5}{Bias correction}{chapter.4}% 95
+\BOOKMARK [2][-]{subsection.4.5.1}{Experiments}{section.4.5}% 96
+\BOOKMARK [2][-]{subsection.4.5.2}{Mathematical analysis}{section.4.5}% 97
+\BOOKMARK [1][-]{section.4.6}{Optimization}{chapter.4}% 98
+\BOOKMARK [2][-]{subsection.4.6.1}{Low rank loads}{section.4.6}% 99
+\BOOKMARK [2][-]{subsection.4.6.2}{High rank loads}{section.4.6}% 100
+\BOOKMARK [2][-]{subsection.4.6.3}{3D cantilever beam problem}{section.4.6}% 101
+\BOOKMARK [1][-]{section.4.7}{Conclusion}{chapter.4}% 102
+\BOOKMARK [0][-]{chapter.5}{Conclusion and future work}{}% 103
+\BOOKMARK [0][-]{section*.60}{Appendices}{}% 104
+\BOOKMARK [1][-]{section.Alph0.1}{Partial derivative of the inverse quadratic form}{section*.60}% 105

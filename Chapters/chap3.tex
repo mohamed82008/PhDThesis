@@ -1,5 +1,17 @@
+\begin{titlepage}\centering
+\vspace*{\fill}
+
 \chapter{Exact compliance-based optimization with finitely many loading scenarios}\thispagestyle{EmptyHeader}
 \label{chp:3}
+
+\begin{tcolorbox}
+This work is accepted for publication in the Journal of Structural and Multidisciplinary Optimization. The accepted manuscript can be found on arXiv (https://arxiv.org/abs/2103.04594). The paper is titled: "Robust and stochastic compliance-based topology optimization with finitely many loading scenarios"  \citep{tarek2021robust}
+\end{tcolorbox}
+
+\vspace*{\fill}
+\end{titlepage}
+
+\newpage
 
 \section{Introduction}
 
@@ -178,10 +190,6 @@ Handling load uncertainty naively in topology optimization can prohibitively inc
     \subsubsection{3D cantilever beam}
 
       A 3D version of the 2D cantilever beam test problem above was also solved using the methods proposed. A 60 mm x 20 mm x 20 mm 3D cantilever beam was used with hexahedral elements of cubic shape and side length of 1 mm. The loads $\bm{F}_1$, $\bm{F}_2$ and $\bm{F}_3$ were positioned at (60, 10, 10), (30, 20, 10) and (40, 0, 10) where the coordinates represent the length, height and depth respectively. The remaining loads and multipliers were sampled from the same distributions as the 2D problem. A density filter radius of 3 mm was also used for the 3D problem.
-
-  \subsection{Software}
-
-    All the topology optimization algorithms described in this chapter were implemented in TopOpt.jl \footnote{https://github.com/mohamed82008/TopOpt.jl} using the Julia programming language \citep{Bezanson2014} version 1.3 for handling generic unstructured, iso-parametric meshes.
 
   \subsection{Settings}
 

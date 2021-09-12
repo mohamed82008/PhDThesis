@@ -1,5 +1,16 @@
+\begin{titlepage}\centering
+\vspace*{\fill}
+
 \chapter{Approximate compliance-based optimization with finitely many loading scenarios}\thispagestyle{EmptyHeader}
 \label{chp:4}
+
+\begin{tcolorbox}
+This work is submitted for publication in the Journal of Structural and Multidisciplinary Optimization. The submitted manuscript can be found on arXiv (https://arxiv.org/abs/2108.03654). The paper is titled: "Approximation schemes for stochastic compliance-based topology optimization with many loading scenarios".
+\end{tcolorbox}
+
+\vspace*{\fill}
+\end{titlepage}
+
 
 \section{Introduction}
 
@@ -126,10 +137,6 @@ In this chapter, computationally efficient approximation schemes are proposed to
       \bm{f}_i = s_1 \bm{F}_1 + s_2 \bm{F}_2 + s_3 \bm{F}_3 + \frac{1}{R - 3} \sum_{j=4}^{R} s_j \bm{F}_j
     \end{align}
     where $\bm{F}_1$, $\bm{F}_2$ and $\bm{F}_3$ are unit vectors with directions as shown in Figure \ref{fig:CantBeam} and $R$ is an integer greater than or equal to 4. $\bm{F}_2$ and $\bm{F}_3$ are at 45 degrees. $s_1$, $s_2$ and $s_3$ are identically and independently uniformly distributed random variables between -2 and 2. $\bm{F}_j$ for $j$ in $4 \dots R$ are vectors with non-zeros at all the surface degrees of freedom without a Dirichlet boundary condition. The non-zero values are identically and independently normally distributed random variables with mean 0 and standard deviation 1. $s_j$ for $j$ in $4 \dots R$ are also identically and independently normally distributed random variables with mean 0 and standard deviation 1. The same loading scenarios were used for the 3 test problems. Let $\bm{F}$ be the matrix whose columns are the sampled $\bm{f}_i$ vectors. Given the way the loading scenarios have been defined the rank of $\bm{F}$ is almost certainly going to be around $R$.
-
-  \subsection{Software}
-
-    All the topology optimization algorithms described in this chapter were implemented in TopOpt.jl \footnote{https://github.com/JuliaTopOpt/TopOpt.jl} using the Julia programming language \citep{Bezanson2014} for handling generic unstructured, iso-parametric meshes.
 
   \subsection{Settings}
 
